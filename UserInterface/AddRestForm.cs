@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BusinessLogic
+namespace UserInterface
 {
-    public partial class Form1 : Form
+    public partial class AddRestForm : Form
     {
-        public Form1()
+        public AddRestForm()
         {
             InitializeComponent();
         }
+
+        
     }
 }

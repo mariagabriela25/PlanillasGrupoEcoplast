@@ -54,6 +54,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TODepartment.cs" />
+    <Compile Include="TOEmployee.cs" />
+    <Compile Include="TORest.cs" />
+    <Compile Include="TOSchedule.cs" />
+    <Compile Include="TOUser.cs" />
+    <Compile Include="TOWorkDayDetail.cs" />
+    <Compile Include="TOWorkWeekDetail.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
