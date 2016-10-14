@@ -9,7 +9,7 @@ namespace BusinessLogic
     public class Department
     {
         public int Code { get; set; }
-        public int Name { get; set; }
+        public String Name { get; set; }
         public List<Schedule> ScheduleList { get; set; }
     }
 }
