@@ -9,7 +9,7 @@ namespace TransferObjects
     public class TODepartment
     {
         public int Code { get; set; }
-        public int Name { get; set; }
+        public String Name { get; set; }
         public List<TOSchedule> ScheduleList { get; set; }
     }
 }
