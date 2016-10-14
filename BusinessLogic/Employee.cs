@@ -81,9 +81,6 @@ namespace BusinessLogic
             DAEmployee dae = new DAEmployee();
 
             employee.Code = this.Code;
-            employee.Name = this.Name;
-            employee.LastName = this.LastName;
-            department.Name = this.Department.Name;
             department.Code = this.Department.Code;
             employee.Departament = department;
 
