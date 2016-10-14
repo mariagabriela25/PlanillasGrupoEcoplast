@@ -10,5 +10,6 @@ namespace TransferObjects
     {
         public int Code { get; set; }
         public int Minutes { get; set; }
+        
     }
 }
