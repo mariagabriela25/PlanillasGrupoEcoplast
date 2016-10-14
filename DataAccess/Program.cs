@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransferObjects;
 
 namespace DataAccess
 {
@@ -16,7 +17,9 @@ namespace DataAccess
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            new DAORest().deleteRest(3);
+            
+            ////Application.Run(new Form1());
         }
     }
 }

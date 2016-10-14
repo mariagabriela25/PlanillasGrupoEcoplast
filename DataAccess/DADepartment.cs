@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace TransferObjects
+namespace DataAccess
 {
-    public class TORest
+    class DADepartment
     {
-        public int Code { get; set; }
-        public int Minutes { get; set; }
         
     }
 }
