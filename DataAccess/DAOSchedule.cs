@@ -7,8 +7,28 @@ using TransferObjects;
 
 namespace DataAccess
 {
-    class DAOSchedule
+    public class DAOSchedule
     {
-        
+        public void AddSchedule()
+        {
+        }
+
+        public void DeleteSchedule()
+        {
+        }
+
+        public void ModifySchedule()
+        {
+        }
+
+        public TOSchedule GetSchedule()
+        {
+            return null;
+        }
+
+        public List<TOSchedule> GetAllSchedules()
+        {
+            return null;
+        }
     }
 }
