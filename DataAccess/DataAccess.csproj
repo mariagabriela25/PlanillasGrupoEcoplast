@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DADepartment.cs" />
     <Compile Include="DAEmployee.cs" />
+    <Compile Include="DAORest.cs" />
     <Compile Include="DAOSchedule.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
