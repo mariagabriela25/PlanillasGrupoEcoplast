@@ -44,7 +44,6 @@
             // mpMenu
             // 
             resources.ApplyResources(this.mpMenu, "mpMenu");
-            this.mpMenu.CustomBackground = true;
             this.mpMenu.HorizontalScrollbarBarColor = false;
             this.mpMenu.HorizontalScrollbarHighlightOnWheel = false;
             this.mpMenu.HorizontalScrollbarSize = 0;
