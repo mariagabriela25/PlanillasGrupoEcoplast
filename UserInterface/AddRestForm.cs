@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogic;
 
 namespace UserInterface
 {
@@ -17,6 +18,15 @@ namespace UserInterface
             InitializeComponent();
         }
 
-        
+
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            new Rest().addRest(new Rest
+            {
+                Code = 3,
+                Minutes = (int)nudMinutos.Value
+            });
+        }
     }
 }

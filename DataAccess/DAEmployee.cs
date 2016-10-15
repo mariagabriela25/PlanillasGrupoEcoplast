@@ -13,7 +13,7 @@ namespace DataAccess
 
     public class DAEmployee
     {
-        SqlConnection conex = new SqlConnection("");
+        SqlConnection conex = new SqlConnection("Data Source=.\\SQL;Initial Catalog=BaseEcoplast;Integrated Security=true");
 
         public void AddEmployee(TOEmployee employee)
         {
@@ -21,7 +21,7 @@ namespace DataAccess
             query.Parameters.AddWithValue("@CodEmpleado", employee.Code);
             query.Parameters.AddWithValue("@Nombre", employee.Name);
             query.Parameters.AddWithValue("@Apellido", employee.LastName);
-            query.Parameters.AddWithValue("@CodDepartamento", employee.Departament);
+            query.Parameters.AddWithValue("@CodDepartamento", employee.Departament.Code);
 
             if (conex.State != ConnectionState.Open)
             {
@@ -59,6 +59,10 @@ namespace DataAccess
             List<TOEmployee> employees = new List<TOEmployee>();
             SqlCommand query = new SqlCommand("SELECT Empleado.*, NombreDepartamento FROM Empleado, Departamento WHERE Departamento.CodDepartamento = Empleado.CodDepartamento;", conex);
 
+            if (conex.State != ConnectionState.Open)
+            {
+                conex.Open();
+            }
             SqlDataReader reader = query.ExecuteReader();
 
             if(reader.HasRows)
@@ -78,6 +82,13 @@ namespace DataAccess
                     employees.Add(e);
                 }
             }
+
+            if (conex.State != ConnectionState.Closed)
+            {
+                conex.Close();
+            }
+
+
             return employees;
         }
 

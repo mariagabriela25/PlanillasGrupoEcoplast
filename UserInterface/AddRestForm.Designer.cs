@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudMinutos = new System.Windows.Forms.NumericUpDown();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblText = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinutos)).BeginInit();
             this.SuspendLayout();
             // 
-            // numericUpDown1
+            // nudMinutos
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(50, 91);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 0;
+            this.nudMinutos.Location = new System.Drawing.Point(50, 91);
+            this.nudMinutos.Name = "nudMinutos";
+            this.nudMinutos.Size = new System.Drawing.Size(120, 20);
+            this.nudMinutos.TabIndex = 0;
             // 
             // btnSave
             // 
@@ -49,6 +50,7 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Guardar";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblText
             // 
@@ -66,10 +68,10 @@
             this.ClientSize = new System.Drawing.Size(348, 261);
             this.Controls.Add(this.lblText);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nudMinutos);
             this.Name = "AddRestForm";
             this.Text = "AddRestForm";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -77,8 +79,9 @@
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudMinutos;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblText;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

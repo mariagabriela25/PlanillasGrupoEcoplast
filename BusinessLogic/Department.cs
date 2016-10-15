@@ -11,5 +11,11 @@ namespace BusinessLogic
         public int Code { get; set; }
         public String Name { get; set; }
         public List<Schedule> ScheduleList { get; set; }
+
+        public Department(int code, string name)
+        {
+            this.Code = code;
+            this.Name = name;
+        }
     }
 }
