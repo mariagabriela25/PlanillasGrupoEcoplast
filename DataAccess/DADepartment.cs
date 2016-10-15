@@ -10,6 +10,6 @@ namespace DataAccess
 {
     class DADepartment
     {
-        
+       
     }
 }
