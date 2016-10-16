@@ -41,7 +41,7 @@ namespace BusinessLogic
             return rests;
         }
 
-        public Rest getRes(int code)
+        public Rest getRest(int code)
         {
             TORest rest = new DAORest().getRest(code);
             if (rest != null)

@@ -13,7 +13,7 @@ namespace DataAccess
 
     public class DAEmployee
     {
-        SqlConnection conex = new SqlConnection("Data Source=.\\SQL;Initial Catalog=BaseEcoplast;Integrated Security=true");
+        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConex);
 
         public void AddEmployee(TOEmployee employee)
         {
