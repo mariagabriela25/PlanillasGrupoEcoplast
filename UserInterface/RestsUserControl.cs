@@ -55,17 +55,17 @@ namespace UserInterface
 
         private void mtDelete_Click(object sender, EventArgs e)
         {
-
-            if (MessageBox.Show("¿Está seguro de que desea eliminar este Descanso?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            for (int i = 0; i < mgRests.RowCount; i++)
             {
-                for (int i = 0; i < mgRests.RowCount; i++)
+                if (mgRests.Rows[i].Selected)
                 {
-                    if (mgRests.Rows[i].Selected)
+                    if (MessageBox.Show("¿Está seguro de que desea eliminar este Descanso?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         new Rest().deleteRest(int.Parse(mgRests.Rows[i].Cells[0].Value.ToString()));
                         refresh();
                     }
                 }
+
             }
         }
     }

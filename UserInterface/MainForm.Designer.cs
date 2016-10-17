@@ -40,6 +40,7 @@
             // 
             resources.ApplyResources(this.metroUserControl1, "metroUserControl1");
             this.metroUserControl1.Name = "metroUserControl1";
+            this.metroUserControl1.UseSelectable = true;
             // 
             // mpMenu
             // 

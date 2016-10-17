@@ -53,7 +53,7 @@ namespace DataAccess
                     rests.Add(new TORest
                     {
                         Code = reader.GetInt32(0),
-                        Minutes = reader.GetInt32(0)
+                        Minutes = reader.GetInt32(1)
                     });
                 }
             }

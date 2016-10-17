@@ -39,6 +39,11 @@
             // 
             this.nudMinutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudMinutos.Location = new System.Drawing.Point(23, 117);
+            this.nudMinutos.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.nudMinutos.Name = "nudMinutos";
             this.nudMinutos.Size = new System.Drawing.Size(120, 26);
             this.nudMinutos.TabIndex = 0;
@@ -75,6 +80,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.nudMinutos);
             this.Name = "AddRestForm";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Agregar Descanso";
             this.Load += new System.EventHandler(this.AddRestForm_Load);
