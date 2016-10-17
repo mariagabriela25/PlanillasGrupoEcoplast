@@ -94,11 +94,11 @@
     <Compile Include="MenuUserControl.Designer.cs">
       <DependentUpon>MenuUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifyEmployeeForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="PayrollControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ModifyEmployeeForm.Designer.cs">
-      <DependentUpon>ModifyEmployeeForm.cs</DependentUpon>
+    <Compile Include="PayrollControl.Designer.cs">
+      <DependentUpon>PayrollControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,9 +114,6 @@
     <Compile Include="WelcomeUserControl.Designer.cs">
       <DependentUpon>WelcomeUserControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddEmployeeForm.resx">
-      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddRestForm.resx">
       <DependentUpon>AddRestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,8 +129,8 @@
     <EmbeddedResource Include="MenuUserControl.resx">
       <DependentUpon>MenuUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifyEmployeeForm.resx">
-      <DependentUpon>ModifyEmployeeForm.cs</DependentUpon>
+    <EmbeddedResource Include="PayrollControl.resx">
+      <DependentUpon>PayrollControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
