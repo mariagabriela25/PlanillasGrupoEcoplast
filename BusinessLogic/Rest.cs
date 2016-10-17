@@ -17,7 +17,6 @@ namespace BusinessLogic
         {
             new DAORest().addRest(new TORest
             {
-                Code = rest.Code,
                 Minutes = rest.Minutes
             });
         }

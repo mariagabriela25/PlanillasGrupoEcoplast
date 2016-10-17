@@ -150,7 +150,7 @@
             this.Controls.Add(this.mtDepartments);
             this.Controls.Add(this.mtEmployees);
             this.Name = "MenuUserControl";
-            this.Size = new System.Drawing.Size(153, 550);
+            this.Size = new System.Drawing.Size(157, 550);
             this.ResumeLayout(false);
 
         }
