@@ -34,5 +34,18 @@ namespace UserInterface
             MainForm.Instance.BackButton.Visible = true;
             MainForm.Instance.LabelTitle.Text = "Administración de Descansos";
         }
+
+        private void mtEmployees_Click(object sender, EventArgs e)
+        {
+            if (!MainForm.Instance.Content.Controls.ContainsKey("EmployeeUserControl"))
+            {
+                EmployeeUserControl uc = new EmployeeUserControl();
+                uc.Dock = DockStyle.Fill;
+                MainForm.Instance.Content.Controls.Add(uc);
+            }
+            MainForm.Instance.Content.Controls["EmployeeUserControl"].BringToFront();
+            MainForm.Instance.BackButton.Visible = true;
+            MainForm.Instance.LabelTitle.Text = "Administración de Empleados";
+        }
     }
 }

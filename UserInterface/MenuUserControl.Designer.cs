@@ -38,6 +38,7 @@
             // 
             // mtEmployees
             // 
+            this.mtEmployees.ActiveControl = null;
             this.mtEmployees.BackColor = System.Drawing.SystemColors.Control;
             this.mtEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtEmployees.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -52,10 +53,13 @@
             this.mtEmployees.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.mtEmployees.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.mtEmployees.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtEmployees.UseSelectable = true;
             this.mtEmployees.UseTileImage = true;
+            this.mtEmployees.Click += new System.EventHandler(this.mtEmployees_Click);
             // 
             // mtDepartments
             // 
+            this.mtDepartments.ActiveControl = null;
             this.mtDepartments.BackColor = System.Drawing.SystemColors.Control;
             this.mtDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtDepartments.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -70,10 +74,12 @@
             this.mtDepartments.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.mtDepartments.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.mtDepartments.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtDepartments.UseSelectable = true;
             this.mtDepartments.UseTileImage = true;
             // 
             // mtSchedules
             // 
+            this.mtSchedules.ActiveControl = null;
             this.mtSchedules.BackColor = System.Drawing.SystemColors.Control;
             this.mtSchedules.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtSchedules.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -88,10 +94,12 @@
             this.mtSchedules.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.mtSchedules.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.mtSchedules.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtSchedules.UseSelectable = true;
             this.mtSchedules.UseTileImage = true;
             // 
             // mtRests
             // 
+            this.mtRests.ActiveControl = null;
             this.mtRests.BackColor = System.Drawing.SystemColors.Control;
             this.mtRests.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtRests.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -106,11 +114,13 @@
             this.mtRests.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.mtRests.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.mtRests.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtRests.UseSelectable = true;
             this.mtRests.UseTileImage = true;
             this.mtRests.Click += new System.EventHandler(this.mtRests_Click);
             // 
             // mtPayroll
             // 
+            this.mtPayroll.ActiveControl = null;
             this.mtPayroll.BackColor = System.Drawing.SystemColors.Control;
             this.mtPayroll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtPayroll.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -125,6 +135,7 @@
             this.mtPayroll.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.mtPayroll.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.mtPayroll.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtPayroll.UseSelectable = true;
             this.mtPayroll.UseTileImage = true;
             this.mtPayroll.Click += new System.EventHandler(this.mtPayroll_Click);
             // 

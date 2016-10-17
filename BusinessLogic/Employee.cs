@@ -23,6 +23,10 @@ namespace BusinessLogic
             this.Department = department;
         }
 
+        public Employee()
+        {
+        }
+
         public void AddEmployee()
         {
             TOEmployee employee = new TOEmployee();
