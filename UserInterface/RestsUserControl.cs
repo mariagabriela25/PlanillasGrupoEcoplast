@@ -69,5 +69,9 @@ namespace UserInterface
             }
         }
 
+        private void mgRests_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
