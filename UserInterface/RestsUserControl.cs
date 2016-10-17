@@ -49,8 +49,8 @@ namespace UserInterface
 
         private void mtRefresh_Click(object sender, EventArgs e)
         {
-            mgRests.DataSource = null;
             refresh();
+            mgRests.Refresh();
         }
 
         private void mtDelete_Click(object sender, EventArgs e)
@@ -68,5 +68,6 @@ namespace UserInterface
 
             }
         }
+
     }
 }

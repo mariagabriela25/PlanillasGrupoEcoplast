@@ -12,13 +12,12 @@ namespace DataAccess
     public class DAORest
     {
 
-        SqlConnection connection = new SqlConnection("Data Source = .\\sql2014;Initial Catalog = BaseEcoplast; Integrated Security = true");
+        SqlConnection connection = new SqlConnection(DataAccess.Properties.Settings.Default.StringConex);
 
         public void addRest(TORest rest)
         {
-            String query = "insert into Descanso (codDescanso, CantMinutos) values (@codDescanso, @CantMinutos); ";
+            String query = "insert into Descanso (CantMinutos) values (@CantMinutos); ";
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@codDescanso", rest.Code);
             command.Parameters.AddWithValue("@CantMinutos", rest.Minutes);
 
             if (connection.State != ConnectionState.Open)

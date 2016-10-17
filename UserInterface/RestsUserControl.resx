@@ -129,6 +129,17 @@
         TkSuQmCC
 </value>
   </data>
+  <data name="mtDelete.TileImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4AoPChcthYjk4AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC1SURBVFhH
+        7Y6xDYNAEAS/AAogIKYGItfhKhC9UAApVOQUxy7ivec/JwZ0j3UvEexIE/3t/oZcYow1fEALuak1dg4J
+        wm7HG8z5/IvcSmav63gcHgdYmkG/2yKP6aYo1x7QwnthW/3uwmDlCFdnR623wfEMvZm13kaOU8YVDuAA
+        DuAADuAADuAADjg1YEoZVyatt8FxnzKu9Fpvg+MKPj8xH6Sr0vo8EGjgAl/wXyQrHY3W/hDCG11khB19
+        fR3bAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="mtRefresh.TileImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -145,17 +156,6 @@
         j6sWnmCDMfzGV3gH51AHUx1QdVCtOgs+wC5rnZCM59DReT352FH0KtdjbbdI5jZRc7086BEdc4Oq4jEO
         Wss8TKTf1jW3YY3vxEv4A+vyBiesZDkEjKNORSM2lIPxfXgdY146dMKexW4r0z4U01vTMbyJL/A9fkf9
         ctqmN1AvJUcw8B2i0fgDtaixfLWtdCsAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="mtDelete.TileImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4AoPChcthYjk4AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC1SURBVFhH
-        7Y6xDYNAEAS/AAogIKYGItfhKhC9UAApVOQUxy7ivec/JwZ0j3UvEexIE/3t/oZcYow1fEALuak1dg4J
-        wm7HG8z5/IvcSmav63gcHgdYmkG/2yKP6aYo1x7QwnthW/3uwmDlCFdnR623wfEMvZm13kaOU8YVDuAA
-        DuAADuAADuAADjg1YEoZVyatt8FxnzKu9Fpvg+MKPj8xH6Sr0vo8EGjgAl/wXyQrHY3W/hDCG11khB19
-        fR3bAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

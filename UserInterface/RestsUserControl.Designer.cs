@@ -38,8 +38,8 @@
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.mgRests = new MetroFramework.Controls.MetroGrid();
             this.mtAdd = new MetroFramework.Controls.MetroTile();
-            this.mtRefresh = new MetroFramework.Controls.MetroTile();
             this.mtDelete = new MetroFramework.Controls.MetroTile();
+            this.mtRefresh = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mgRests)).BeginInit();
             this.SuspendLayout();
@@ -154,25 +154,6 @@
             this.mtAdd.UseTileImage = true;
             this.mtAdd.Click += new System.EventHandler(this.mtAdd_Click);
             // 
-            // mtRefresh
-            // 
-            this.mtRefresh.ActiveControl = null;
-            this.mtRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtRefresh.Location = new System.Drawing.Point(204, 27);
-            this.mtRefresh.Name = "mtRefresh";
-            this.mtRefresh.Size = new System.Drawing.Size(135, 46);
-            this.mtRefresh.Style = MetroFramework.MetroColorStyle.Lime;
-            this.mtRefresh.TabIndex = 3;
-            this.mtRefresh.Text = "Actualizar";
-            this.mtRefresh.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.mtRefresh.TileImage = ((System.Drawing.Image)(resources.GetObject("mtRefresh.TileImage")));
-            this.mtRefresh.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtRefresh.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
-            this.mtRefresh.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.mtRefresh.UseSelectable = true;
-            this.mtRefresh.UseTileImage = true;
-            this.mtRefresh.Click += new System.EventHandler(this.mtRefresh_Click);
-            // 
             // mtDelete
             // 
             this.mtDelete.ActiveControl = null;
@@ -192,12 +173,31 @@
             this.mtDelete.UseTileImage = true;
             this.mtDelete.Click += new System.EventHandler(this.mtDelete_Click);
             // 
+            // mtRefresh
+            // 
+            this.mtRefresh.ActiveControl = null;
+            this.mtRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mtRefresh.Location = new System.Drawing.Point(204, 27);
+            this.mtRefresh.Name = "mtRefresh";
+            this.mtRefresh.Size = new System.Drawing.Size(135, 46);
+            this.mtRefresh.Style = MetroFramework.MetroColorStyle.Lime;
+            this.mtRefresh.TabIndex = 5;
+            this.mtRefresh.Text = "Actualizar";
+            this.mtRefresh.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.mtRefresh.TileImage = ((System.Drawing.Image)(resources.GetObject("mtRefresh.TileImage")));
+            this.mtRefresh.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mtRefresh.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.mtRefresh.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtRefresh.UseSelectable = true;
+            this.mtRefresh.UseTileImage = true;
+            this.mtRefresh.Click += new System.EventHandler(this.mtRefresh_Click);
+            // 
             // RestsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.mtDelete);
             this.Controls.Add(this.mtRefresh);
+            this.Controls.Add(this.mtDelete);
             this.Controls.Add(this.mtAdd);
             this.Controls.Add(this.mgRests);
             this.Controls.Add(this.metroGrid1);
@@ -215,7 +215,7 @@
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private MetroFramework.Controls.MetroGrid mgRests;
         private MetroFramework.Controls.MetroTile mtAdd;
-        private MetroFramework.Controls.MetroTile mtRefresh;
         private MetroFramework.Controls.MetroTile mtDelete;
+        private MetroFramework.Controls.MetroTile mtRefresh;
     }
 }

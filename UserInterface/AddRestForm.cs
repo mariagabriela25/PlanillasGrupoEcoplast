@@ -27,7 +27,6 @@ namespace UserInterface
         {
             new Rest().addRest(new Rest
             {
-                Code = 7,
                 Minutes = (int)nudMinutos.Value
             });
             this.Close();
