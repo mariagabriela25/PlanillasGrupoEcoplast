@@ -77,6 +77,7 @@
             this.mtEmployees.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.mtEmployees.UseSelectable = true;
             this.mtEmployees.UseTileImage = true;
+            this.mtEmployees.Click += new System.EventHandler(this.mtEmployees_Click);
             // 
             // mtDepartments
             // 
@@ -140,7 +141,26 @@
             this.mtRests.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.mtRests.UseSelectable = true;
             this.mtRests.UseTileImage = true;
-            this.mtRests.Click += new System.EventHandler(this.mtRests_Click_1);
+            this.mtRests.Click += new System.EventHandler(this.mtRests_Click);
+            // 
+            // mtPayroll
+            // 
+            this.mtPayroll.BackColor = System.Drawing.SystemColors.Control;
+            this.mtPayroll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mtPayroll.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.mtPayroll.Location = new System.Drawing.Point(0, 3);
+            this.mtPayroll.Name = "mtPayroll";
+            this.mtPayroll.Size = new System.Drawing.Size(153, 85);
+            this.mtPayroll.Style = MetroFramework.MetroColorStyle.Lime;
+            this.mtPayroll.TabIndex = 4;
+            this.mtPayroll.Text = "Planillas";
+            this.mtPayroll.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.mtPayroll.TileImage = ((System.Drawing.Image)(resources.GetObject("mtPayroll.TileImage")));
+            this.mtPayroll.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.mtPayroll.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.mtPayroll.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtPayroll.UseTileImage = true;
+            this.mtPayroll.Click += new System.EventHandler(this.mtPayroll_Click);
             // 
             // MenuUserControl
             // 
@@ -154,7 +174,7 @@
             this.Controls.Add(this.mtPayroll);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MenuUserControl";
-            this.Size = new System.Drawing.Size(168, 562);
+            this.Size = new System.Drawing.Size(153, 550);
             this.ResumeLayout(false);
 
         }

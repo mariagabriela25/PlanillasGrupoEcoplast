@@ -64,17 +64,17 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployeeForm.Designer.cs">
+      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddRestForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddRestForm.Designer.cs">
       <DependentUpon>AddRestForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -87,6 +87,18 @@
     </Compile>
     <Compile Include="MenuUserControl.Designer.cs">
       <DependentUpon>MenuUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyEmployeeForm.Designer.cs">
+      <DependentUpon>ModifyEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayrollControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PayrollControl.Designer.cs">
+      <DependentUpon>PayrollControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +117,9 @@
     <EmbeddedResource Include="AddRestForm.resx">
       <DependentUpon>AddRestForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeUserControl.resx">
+      <DependentUpon>EmployeeUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.es-CR.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuUserControl.resx">
       <DependentUpon>MenuUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyEmployeeForm.resx">
+      <DependentUpon>ModifyEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollControl.resx">
+      <DependentUpon>PayrollControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
