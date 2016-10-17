@@ -12,7 +12,7 @@ namespace DataAccess
     public class DAORest
     {
 
-        SqlConnection connection = new SqlConnection("Data Source = .\\sql2014;Initial Catalog = BaseEcoplast; Integrated Security = true");
+        SqlConnection connection = new SqlConnection("Data Source = .;Initial Catalog = BaseEcoplast; Integrated Security = true");
 
         public void addRest(TORest rest)
         {

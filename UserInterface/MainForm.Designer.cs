@@ -34,12 +34,16 @@
             this.mpContent = new MetroFramework.Controls.MetroPanel();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbDate = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroUserControl1
             // 
             resources.ApplyResources(this.metroUserControl1, "metroUserControl1");
             this.metroUserControl1.Name = "metroUserControl1";
+            this.metroUserControl1.UseSelectable = true;
             // 
             // mpMenu
             // 
@@ -77,13 +81,27 @@
             // lblTitle
             // 
             resources.ApplyResources(this.lblTitle, "lblTitle");
-            this.lblTitle.ForeColor = System.Drawing.Color.Lime;
+            this.lblTitle.ForeColor = System.Drawing.Color.DimGray;
             this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbDate
+            // 
+            resources.ApplyResources(this.lbDate, "lbDate");
+            this.lbDate.Name = "lbDate";
             // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbDate);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.mpContent);
@@ -92,6 +110,7 @@
             this.Name = "MainForm";
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,5 +123,7 @@
         private MetroFramework.Controls.MetroPanel mpContent;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbDate;
     }
 }

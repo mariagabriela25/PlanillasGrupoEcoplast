@@ -66,7 +66,6 @@ namespace UserInterface
             WelcomeUserControl uc = new WelcomeUserControl();
             uc.Dock = DockStyle.Fill;
             mpContent.Controls.Add(uc);
-
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -75,5 +74,11 @@ namespace UserInterface
             btnBack.Visible = false;
             lblTitle.Text = "Sistema de Planillas";
         }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

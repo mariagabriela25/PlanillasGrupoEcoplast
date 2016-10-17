@@ -22,7 +22,7 @@ namespace UserInterface
 
         }
 
-        private void mtRests_Click(object sender, EventArgs e)
+        private void mtRests_Click_1(object sender, EventArgs e)
         {
             if (!MainForm.Instance.Content.Controls.ContainsKey("RestsUserControl"))
             {
@@ -34,5 +34,6 @@ namespace UserInterface
             MainForm.Instance.BackButton.Visible = true;
             MainForm.Instance.LabelTitle.Text = "Administración de Descansos";
         }
+
     }
 }
