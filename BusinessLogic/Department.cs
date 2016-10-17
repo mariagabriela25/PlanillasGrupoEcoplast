@@ -20,6 +20,8 @@ namespace BusinessLogic
             this.Name = name;
         }
 
+        public Department() { }
+
         public void AddDepartment()
         {            
             TODepartment department = new TODepartment();

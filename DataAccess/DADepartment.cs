@@ -12,9 +12,9 @@ namespace DataAccess
 {
     public class DADepartment
     {
-        SqlConnection conexion = new SqlConnection("Data Source=.; Initial Catalog= BaseEcoplast; Integrated Security=true");
+        //SqlConnection conexion = new SqlConnection("Data Source=.; Initial Catalog= BaseEcoplast; Integrated Security=true");
 
-        //SqlConnection conexion = new SqlConnection(DataAccess.Properties.Settings.Default.StringConex);
+        SqlConnection conexion = new SqlConnection(DataAccess.Properties.Settings.Default.StringConex);
 
         public void addDepartment(TODepartment dep)
         {

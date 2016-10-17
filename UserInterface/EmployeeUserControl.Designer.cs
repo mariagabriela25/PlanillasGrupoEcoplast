@@ -95,6 +95,7 @@
             this.mtDelete.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.mtDelete.UseSelectable = true;
             this.mtDelete.UseTileImage = true;
+            this.mtDelete.Click += new System.EventHandler(this.mtDelete_Click);
             // 
             // mtModify
             // 
@@ -113,6 +114,7 @@
             this.mtModify.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.mtModify.UseSelectable = true;
             this.mtModify.UseTileImage = true;
+            this.mtModify.Click += new System.EventHandler(this.mtModify_Click);
             // 
             // mgEmployees
             // 

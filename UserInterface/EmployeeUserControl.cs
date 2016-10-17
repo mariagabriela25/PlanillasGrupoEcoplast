@@ -45,7 +45,7 @@ namespace UserInterface
 
         private void mtAdd_Click(object sender, EventArgs e)
         {
-
+            new AddEmployeeForm().Show();
         }
 
         private void mgEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -57,6 +57,36 @@ namespace UserInterface
         {
             mgEmployees.DataSource = null;
             refresh();
+        }
+
+        private void mtDelete_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < mgEmployees.RowCount; i++)
+            {
+                if (mgEmployees.Rows[i].Selected)
+                {
+                    if (MessageBox.Show("¿Está seguro de que desea eliminar este Empleado?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Employee empl = new Employee();
+                        empl.Code = int.Parse(mgEmployees.Rows[i].Cells[0].Value.ToString());
+                        empl.DeleteEmployee();
+                        refresh();
+                    }
+                }
+
+            }
+        }
+
+        private void mtModify_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < mgEmployees.RowCount; i++)
+            {
+                if (mgEmployees.Rows[i].Selected)
+                {
+                    new ModifyEmployeeForm(int.Parse(mgEmployees.Rows[i].Cells[0].Value.ToString())).Show();   
+                }
+            }
+
         }
     }
 }
