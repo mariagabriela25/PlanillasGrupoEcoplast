@@ -55,5 +55,18 @@ namespace UserInterface
             MainForm.Instance.BackButton.Visible = true;
             MainForm.Instance.LabelTitle.Text = "Administración de Empleados";
         }
+
+        private void mtSchedules_Click(object sender, EventArgs e)
+        {
+            if (!MainForm.Instance.Content.Controls.ContainsKey("ScheduleUserControl"))
+            {
+                ScheduleUserControl uc = new ScheduleUserControl();
+                uc.Dock = DockStyle.Fill;
+                MainForm.Instance.Content.Controls.Add(uc);
+            }
+            MainForm.Instance.Content.Controls["ScheduleUserControl"].BringToFront();
+            MainForm.Instance.BackButton.Visible = true;
+            MainForm.Instance.LabelTitle.Text = "Administración de Horarios";
+        }
     }
 }

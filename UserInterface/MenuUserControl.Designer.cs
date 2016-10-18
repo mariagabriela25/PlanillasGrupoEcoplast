@@ -43,7 +43,7 @@
             this.mtEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtEmployees.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mtEmployees.Location = new System.Drawing.Point(0, 116);
-            this.mtEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.mtEmployees.Name = "mtEmployees";
             this.mtEmployees.Size = new System.Drawing.Size(204, 105);
             this.mtEmployees.Style = MetroFramework.MetroColorStyle.Green;
@@ -65,7 +65,7 @@
             this.mtDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtDepartments.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mtDepartments.Location = new System.Drawing.Point(0, 228);
-            this.mtDepartments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtDepartments.Margin = new System.Windows.Forms.Padding(4);
             this.mtDepartments.Name = "mtDepartments";
             this.mtDepartments.Size = new System.Drawing.Size(204, 105);
             this.mtDepartments.Style = MetroFramework.MetroColorStyle.Green;
@@ -86,7 +86,7 @@
             this.mtSchedules.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtSchedules.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mtSchedules.Location = new System.Drawing.Point(0, 341);
-            this.mtSchedules.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtSchedules.Margin = new System.Windows.Forms.Padding(4);
             this.mtSchedules.Name = "mtSchedules";
             this.mtSchedules.Size = new System.Drawing.Size(204, 105);
             this.mtSchedules.Style = MetroFramework.MetroColorStyle.Green;
@@ -99,6 +99,7 @@
             this.mtSchedules.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.mtSchedules.UseSelectable = true;
             this.mtSchedules.UseTileImage = true;
+            this.mtSchedules.Click += new System.EventHandler(this.mtSchedules_Click);
             // 
             // mtRests
             // 
@@ -107,7 +108,7 @@
             this.mtRests.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtRests.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mtRests.Location = new System.Drawing.Point(0, 453);
-            this.mtRests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtRests.Margin = new System.Windows.Forms.Padding(4);
             this.mtRests.Name = "mtRests";
             this.mtRests.Size = new System.Drawing.Size(204, 105);
             this.mtRests.Style = MetroFramework.MetroColorStyle.Green;
@@ -129,7 +130,7 @@
             this.mtPayroll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtPayroll.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mtPayroll.Location = new System.Drawing.Point(0, 4);
-            this.mtPayroll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtPayroll.Margin = new System.Windows.Forms.Padding(4);
             this.mtPayroll.Name = "mtPayroll";
             this.mtPayroll.Size = new System.Drawing.Size(204, 105);
             this.mtPayroll.Style = MetroFramework.MetroColorStyle.Green;
@@ -154,7 +155,7 @@
             this.Controls.Add(this.mtSchedules);
             this.Controls.Add(this.mtDepartments);
             this.Controls.Add(this.mtEmployees);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuUserControl";
             this.Size = new System.Drawing.Size(209, 677);
             this.ResumeLayout(false);
