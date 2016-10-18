@@ -32,10 +32,10 @@
             this.metroUserControl1 = new MetroFramework.Controls.MetroUserControl();
             this.mpMenu = new MetroFramework.Controls.MetroPanel();
             this.mpContent = new MetroFramework.Controls.MetroPanel();
-            this.btnBack = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbDate = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +69,24 @@
             this.mpContent.VerticalScrollbarHighlightOnWheel = false;
             this.mpContent.VerticalScrollbarSize = 0;
             // 
+            // lblTitle
+            // 
+            resources.ApplyResources(this.lblTitle, "lblTitle");
+            this.lblTitle.ForeColor = System.Drawing.Color.DimGray;
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
+            // 
+            // lbDate
+            // 
+            resources.ApplyResources(this.lbDate, "lbDate");
+            this.lbDate.Name = "lbDate";
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // btnBack
             // 
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -77,24 +95,6 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // lblTitle
-            // 
-            resources.ApplyResources(this.lblTitle, "lblTitle");
-            this.lblTitle.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
-            // lbDate
-            // 
-            resources.ApplyResources(this.lbDate, "lbDate");
-            this.lbDate.Name = "lbDate";
             // 
             // MainForm
             // 

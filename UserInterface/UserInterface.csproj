@@ -112,6 +112,12 @@
     <Compile Include="ModifyEmployeeForm.Designer.cs">
       <DependentUpon>ModifyEmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyScheduleForm.Designer.cs">
+      <DependentUpon>ModifyScheduleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PayrollControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     <EmbeddedResource Include="AddRestForm.resx">
       <DependentUpon>AddRestForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddScheduleForm.resx">
+      <DependentUpon>AddScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeUserControl.resx">
       <DependentUpon>EmployeeUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyEmployeeForm.resx">
       <DependentUpon>ModifyEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyScheduleForm.resx">
+      <DependentUpon>ModifyScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PayrollControl.resx">
       <DependentUpon>PayrollControl.cs</DependentUpon>

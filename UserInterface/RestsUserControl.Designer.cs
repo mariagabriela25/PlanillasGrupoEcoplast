@@ -71,7 +71,8 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(56, 93);
+            this.metroGrid1.Location = new System.Drawing.Point(75, 114);
+            this.metroGrid1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -84,7 +85,7 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(240, 150);
+            this.metroGrid1.Size = new System.Drawing.Size(320, 185);
             this.metroGrid1.TabIndex = 0;
             // 
             // mgRests
@@ -97,10 +98,10 @@
             this.mgRests.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.mgRests.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(173)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.mgRests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
@@ -109,46 +110,47 @@
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.mgRests.DefaultCellStyle = dataGridViewCellStyle5;
             this.mgRests.EnableHeadersVisualStyles = false;
             this.mgRests.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgRests.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mgRests.Location = new System.Drawing.Point(22, 93);
+            this.mgRests.Location = new System.Drawing.Point(55, 114);
+            this.mgRests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mgRests.MultiSelect = false;
             this.mgRests.Name = "mgRests";
             this.mgRests.ReadOnly = true;
             this.mgRests.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(188)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(173)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(219)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.mgRests.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.mgRests.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgRests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgRests.Size = new System.Drawing.Size(588, 307);
-            this.mgRests.Style = MetroFramework.MetroColorStyle.Lime;
+            this.mgRests.Size = new System.Drawing.Size(758, 378);
+            this.mgRests.Style = MetroFramework.MetroColorStyle.Teal;
             this.mgRests.TabIndex = 1;
             // 
             // mtAdd
             // 
             this.mtAdd.ActiveControl = null;
             this.mtAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtAdd.Location = new System.Drawing.Point(22, 27);
+            this.mtAdd.Location = new System.Drawing.Point(55, 4);
+            this.mtAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtAdd.Name = "mtAdd";
-            this.mtAdd.Size = new System.Drawing.Size(135, 46);
-            this.mtAdd.Style = MetroFramework.MetroColorStyle.Lime;
+            this.mtAdd.Size = new System.Drawing.Size(246, 69);
+            this.mtAdd.Style = MetroFramework.MetroColorStyle.Teal;
             this.mtAdd.TabIndex = 2;
             this.mtAdd.Text = "Agregar";
-            this.mtAdd.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.mtAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mtAdd.TileImage = ((System.Drawing.Image)(resources.GetObject("mtAdd.TileImage")));
             this.mtAdd.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtAdd.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.mtAdd.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.mtAdd.UseSelectable = true;
             this.mtAdd.UseTileImage = true;
@@ -158,16 +160,16 @@
             // 
             this.mtDelete.ActiveControl = null;
             this.mtDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtDelete.Location = new System.Drawing.Point(384, 27);
+            this.mtDelete.Location = new System.Drawing.Point(574, 4);
+            this.mtDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtDelete.Name = "mtDelete";
-            this.mtDelete.Size = new System.Drawing.Size(135, 46);
-            this.mtDelete.Style = MetroFramework.MetroColorStyle.Lime;
+            this.mtDelete.Size = new System.Drawing.Size(239, 69);
+            this.mtDelete.Style = MetroFramework.MetroColorStyle.Teal;
             this.mtDelete.TabIndex = 4;
             this.mtDelete.Text = "Eliminar";
-            this.mtDelete.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.mtDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mtDelete.TileImage = ((System.Drawing.Image)(resources.GetObject("mtDelete.TileImage")));
             this.mtDelete.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtDelete.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.mtDelete.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.mtDelete.UseSelectable = true;
             this.mtDelete.UseTileImage = true;
@@ -177,16 +179,16 @@
             // 
             this.mtRefresh.ActiveControl = null;
             this.mtRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtRefresh.Location = new System.Drawing.Point(204, 27);
+            this.mtRefresh.Location = new System.Drawing.Point(309, 4);
+            this.mtRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtRefresh.Name = "mtRefresh";
-            this.mtRefresh.Size = new System.Drawing.Size(135, 46);
-            this.mtRefresh.Style = MetroFramework.MetroColorStyle.Lime;
+            this.mtRefresh.Size = new System.Drawing.Size(257, 69);
+            this.mtRefresh.Style = MetroFramework.MetroColorStyle.Teal;
             this.mtRefresh.TabIndex = 5;
             this.mtRefresh.Text = "Actualizar";
-            this.mtRefresh.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.mtRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mtRefresh.TileImage = ((System.Drawing.Image)(resources.GetObject("mtRefresh.TileImage")));
             this.mtRefresh.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtRefresh.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.mtRefresh.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.mtRefresh.UseSelectable = true;
             this.mtRefresh.UseTileImage = true;
@@ -194,15 +196,16 @@
             // 
             // RestsUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mtRefresh);
             this.Controls.Add(this.mtDelete);
             this.Controls.Add(this.mtAdd);
             this.Controls.Add(this.mgRests);
             this.Controls.Add(this.metroGrid1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RestsUserControl";
-            this.Size = new System.Drawing.Size(626, 424);
+            this.Size = new System.Drawing.Size(835, 522);
             this.Load += new System.EventHandler(this.RestsUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mgRests)).EndInit();
