@@ -76,6 +76,12 @@
     <Compile Include="AddRestForm.Designer.cs">
       <DependentUpon>AddRestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmployeeUserControl.Designer.cs">
+      <DependentUpon>EmployeeUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
