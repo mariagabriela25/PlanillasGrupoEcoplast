@@ -64,6 +64,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDepartmentForm.Designer.cs">
+      <DependentUpon>AddDepartmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="AddScheduleForm.Designer.cs">
       <DependentUpon>AddScheduleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DepartmentUserControl.Designer.cs">
+      <DependentUpon>DepartmentUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeUserControl.cs">
       <SubType>UserControl</SubType>
@@ -144,11 +156,17 @@
     <Compile Include="WelcomeUserControl.Designer.cs">
       <DependentUpon>WelcomeUserControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddDepartmentForm.resx">
+      <DependentUpon>AddDepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddRestForm.resx">
       <DependentUpon>AddRestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddScheduleForm.resx">
       <DependentUpon>AddScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentUserControl.resx">
+      <DependentUpon>DepartmentUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeUserControl.resx">
       <DependentUpon>EmployeeUserControl.cs</DependentUpon>

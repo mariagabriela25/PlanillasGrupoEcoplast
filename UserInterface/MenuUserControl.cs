@@ -68,5 +68,18 @@ namespace UserInterface
             MainForm.Instance.BackButton.Visible = true;
             MainForm.Instance.LabelTitle.Text = "Administración de Horarios";
         }
+
+        private void mtDepartments_Click(object sender, EventArgs e)
+        {
+            if (!MainForm.Instance.Content.Controls.ContainsKey("DepartmentUserControl"))
+            {
+                DepartmentUserControl uc = new DepartmentUserControl();
+                uc.Dock = DockStyle.Fill;
+                MainForm.Instance.Content.Controls.Add(uc);
+            }
+            MainForm.Instance.Content.Controls["DepartmentUserControl"].BringToFront();
+            MainForm.Instance.BackButton.Visible = true;
+            MainForm.Instance.LabelTitle.Text = "Administración de Departamentos";
+        }
     }
 }
