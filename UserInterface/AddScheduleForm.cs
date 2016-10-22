@@ -13,9 +13,12 @@ namespace UserInterface
 {
     public partial class AddScheduleForm : MetroFramework.Forms.MetroForm
     {
-        public AddScheduleForm()
+        ScheduleUserControl scheduleControl;
+
+        public AddScheduleForm(ScheduleUserControl sh)
         {
             InitializeComponent();
+            scheduleControl = sh;
         }
 
         private void mtAddRest_Click_1(object sender, EventArgs e)
@@ -91,9 +94,10 @@ namespace UserInterface
             newSchedule.InitialHour = initialTime;
             newSchedule.finalHour = finalTime;
             newSchedule.OrdinaryHours = Int32.Parse(nupOrdinaryHours.Value.ToString());
-            newSchedule.ExtraHours = Int32.Parse(nupNightExtra.Value.ToString()) + Int32.Parse(nupDayExtra.Value.ToString());
+            newSchedule.ExtraDayHours = Int32.Parse(nupDayExtra.Value.ToString());
+            newSchedule.ExtraNightHours = Int32.Parse(nupNightExtra.Value.ToString());
             newSchedule.Dept = d;
-            newSchedule.TotalHours = newSchedule.OrdinaryHours + newSchedule.ExtraHours;
+            newSchedule.TotalHours = newSchedule.OrdinaryHours + newSchedule.ExtraDayHours + newSchedule.ExtraNightHours;
 
             if (cbRest1.SelectedItem != null)
             {
@@ -109,6 +113,7 @@ namespace UserInterface
             }
 
             newSchedule.AddSchedule();
+            scheduleControl.refresh();
             this.Close();
         }
 
@@ -131,6 +136,11 @@ namespace UserInterface
             {
                 cbRest1.Items.Add(rest);
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

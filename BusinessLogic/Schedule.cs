@@ -14,18 +14,20 @@ namespace BusinessLogic
         public DateTime InitialHour { get; set; }
         public DateTime finalHour { get; set; }
         public int OrdinaryHours { get; set; }
-        public int ExtraHours { get; set; }
+        public int ExtraDayHours { get; set; }
+        public int ExtraNightHours { get; set; }
         public int TotalHours { get; set; }
         public Department Dept { get; set; }
         public List<Rest> RestList { get; set; }
 
-        public Schedule (string Code, DateTime InitialHour, DateTime finalHour, int OrdinaryHours, int ExtraHours, int TotalHours, Department Dept)
+        public Schedule (string Code, DateTime InitialHour, DateTime finalHour, int OrdinaryHours, int ExtraDayHours, int ExtraNightHours, int TotalHours, Department Dept)
         {
             this.Code = Code;
             this.InitialHour = InitialHour;
             this.finalHour = finalHour;
             this.OrdinaryHours = OrdinaryHours;
-            this.ExtraHours = ExtraHours;
+            this.ExtraDayHours = ExtraDayHours;
+            this.ExtraNightHours = ExtraNightHours;
             this.TotalHours = TotalHours;
             this.RestList = new List<Rest>();
             this.Dept = Dept;
@@ -51,7 +53,8 @@ namespace BusinessLogic
             tos.InitialHour = InitialHour;
             tos.finalHour = finalHour;
             tos.OrdinaryHours = OrdinaryHours;
-            tos.ExtraHours = ExtraHours;
+            tos.ExtraDayHours = ExtraDayHours;
+            tos.ExtraNightHours = ExtraNightHours;
             tos.TotalHours = TotalHours;
 
             tod.Code = Dept.Code;
@@ -84,7 +87,8 @@ namespace BusinessLogic
             tos.InitialHour = InitialHour;
             tos.finalHour = finalHour;
             tos.OrdinaryHours = OrdinaryHours;
-            tos.ExtraHours = ExtraHours;
+            tos.ExtraDayHours = ExtraDayHours;
+            tos.ExtraNightHours = ExtraNightHours;
             tos.TotalHours = TotalHours;
 
             tod.Code = Dept.Code;
@@ -109,7 +113,7 @@ namespace BusinessLogic
 
             DAOSchedule daoS = new DAOSchedule();
             TOSchedule s = daoS.GetSchedule(this.Code);
-            Schedule schedule = new Schedule(s.Code, s.InitialHour, s.finalHour, s.OrdinaryHours, s.ExtraHours, s.TotalHours, new Department(s.depart.Code, s.depart.Name));
+            Schedule schedule = new Schedule(s.Code, s.InitialHour, s.finalHour, s.OrdinaryHours, s.ExtraDayHours, s.ExtraNightHours, s.TotalHours, new Department(s.depart.Code, s.depart.Name));
             
             foreach (var item in s.RestList)
             {
@@ -135,7 +139,7 @@ namespace BusinessLogic
             
             foreach (TOSchedule s in listReturn)
             {
-                Schedule schedule = new Schedule(s.Code, s.InitialHour, s.finalHour, s.OrdinaryHours, s.ExtraHours, s.TotalHours, new Department(s.depart.Code, s.depart.Name));
+                Schedule schedule = new Schedule(s.Code, s.InitialHour, s.finalHour, s.OrdinaryHours, s.ExtraDayHours, s.ExtraNightHours, s.TotalHours, new Department(s.depart.Code, s.depart.Name));
 
                 foreach (var item in s.RestList)
                 {
