@@ -34,5 +34,16 @@ namespace DataAccess.Properties {
                 return ((string)(this["StringConex"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ecoplast.database.windows.net;Initial Catalog=Anziz;Persist Security " +
+            "Info=True;User ID=ecoplast;Password=ECO123456.")]
+        public string StringConexAnviz {
+            get {
+                return ((string)(this["StringConexAnviz"]));
+            }
+        }
     }
 }

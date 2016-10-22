@@ -13,9 +13,11 @@ namespace UserInterface
 {
     public partial class AddDepartmentForm : MetroFramework.Forms.MetroForm
     {
-        public AddDepartmentForm()
+        private DepartmentUserControl c;
+        public AddDepartmentForm(DepartmentUserControl clasepadre)
         {
             InitializeComponent();
+            c = clasepadre;
         }
 
         private void AddDepartmentForm_Load(object sender, EventArgs e)
@@ -26,6 +28,7 @@ namespace UserInterface
         private void mbSave_Click(object sender, EventArgs e)
         {
             new Department(Int32.Parse(mtbCode.Text), mtbName.Text).AddDepartment();
+            c.refresh();
             this.Close();
         }
     }

@@ -29,8 +29,8 @@ namespace UserInterface
 
         private void mtAdd_Click(object sender, EventArgs e)
         {
-            new AddDepartmentForm().Show();
-            refresh();
+            new AddDepartmentForm(this).Show();
+            //refresh();
         }
 
         private void mtModify_Click(object sender, EventArgs e)

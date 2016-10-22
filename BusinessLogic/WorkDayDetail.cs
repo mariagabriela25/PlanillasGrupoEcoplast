@@ -14,6 +14,17 @@ namespace BusinessLogic
         public int TotalHours { get; set; }
         public DateTime Date { get; set; }
         public string Note { get; set; }
+        public Boolean State { get; set; }
+
+        public WorkDayDetail(int code, int ordinaryhours, int totalhours, DateTime date, string note, Boolean state)
+        {
+            this.Code = code;
+            this.OrdinaryHours = ordinaryhours;
+            this.TotalHours = totalhours;
+            this.Date = date;
+            this.Note = note;
+            this.State = state;
+        }
 
     }
 }

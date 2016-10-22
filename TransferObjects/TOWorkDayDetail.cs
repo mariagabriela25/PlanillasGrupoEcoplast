@@ -14,5 +14,7 @@ namespace TransferObjects
         public int TotalHours { get; set; }
         public DateTime Date { get; set; }
         public string Note { get; set; }
+        public Boolean State { get; set; }
+
     }
 }
