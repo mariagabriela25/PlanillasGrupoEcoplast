@@ -12,7 +12,8 @@ namespace TransferObjects
         public DateTime InitialHour { get; set; }
         public DateTime finalHour { get; set; }
         public int OrdinaryHours { get; set; }
-        public int ExtraHours { get; set; }
+        public int ExtraDayHours { get; set; }
+        public int ExtraNightHours { get; set; }
         public int TotalHours { get; set; }
         public List<TORest> RestList { get; set; }
         public TODepartment depart { get; set; }

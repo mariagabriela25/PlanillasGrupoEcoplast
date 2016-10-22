@@ -22,7 +22,7 @@ namespace UserInterface
 
         private void mtAddSchedule_Click(object sender, EventArgs e)
         {
-            new AddScheduleForm().Show();
+            new AddScheduleForm(this).Show();
         }
 
         private void ScheduleUserControl_Load(object sender, EventArgs e)
@@ -36,7 +36,8 @@ namespace UserInterface
             dt.Columns.Add("Entrada");
             dt.Columns.Add("Salida");
             dt.Columns.Add("H. Ordinarias");
-            dt.Columns.Add("H. Extras");
+            dt.Columns.Add("H. Extra Diurnas");
+            dt.Columns.Add("H. Extra Nocturnas");
             dt.Columns.Add("Total de horas");
             dt.Columns.Add("Descansos");
             dt.Columns.Add("Departamento");
@@ -49,9 +50,36 @@ namespace UserInterface
                 String rests = "";
                 foreach (var item in lr)
                 {
-                    rests += item.Minutes + ", ";
+                    if(!rests.Equals("")) {
+                        rests += ", ";
+                    }
+                    rests += item.Minutes;
                 }
-                dt.Rows.Add(s.Code, s.InitialHour, s.finalHour, s.OrdinaryHours, s.ExtraHours, s.TotalHours, rests, s.Dept.Name);
+                int iniHour = s.InitialHour.Hour;
+                int iniMin = s.InitialHour.Minute;
+                String iniHourString = "" +iniHour;
+                String iniMinString = ""+iniMin;
+                if (iniHour < 10)
+                {
+                    iniHourString = "0" + iniHour;
+                }
+                if (iniMin < 10)
+                {
+                    iniMinString = "0" + iniMin;
+                }
+                int finHour = s.finalHour.Hour;
+                int finMin = s.finalHour.Minute;
+                String finHourString = ""+finHour;
+                String finMinString = ""+finMin;
+                if (finHour < 10)
+                {
+                    finHourString = "0" + finHour;
+                }
+                if (finMin < 10)
+                {
+                    finMinString = "0" + finMin;
+                }
+                dt.Rows.Add(s.Code, iniHourString + ":" + iniMinString, finHourString + ":"+ finMinString, s.OrdinaryHours, s.ExtraDayHours, s.ExtraNightHours, s.TotalHours, rests, s.Dept.Name);
             }
             mgSchedules.DataSource = dt;
         }
@@ -60,17 +88,6 @@ namespace UserInterface
         {
             mgSchedules.DataSource = null;
             refresh();
-        }
-
-        private void mtModifySchedule_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < mgSchedules.RowCount; i++)
-            {
-                if (mgSchedules.Rows[i].Selected)
-                {
-                    new ModifyScheduleForm(mgSchedules.Rows[i].Cells[0].Value.ToString()).Show();
-                }
-            }
         }
 
         private void mtDeleteSchedule_Click(object sender, EventArgs e)
@@ -89,6 +106,11 @@ namespace UserInterface
                 }
 
             }
+        }
+
+        private void mgSchedules_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
