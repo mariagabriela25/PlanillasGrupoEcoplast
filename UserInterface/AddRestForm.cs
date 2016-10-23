@@ -13,9 +13,12 @@ namespace UserInterface
 {
     public partial class AddRestForm : MetroFramework.Forms.MetroForm
     {
-        public AddRestForm()
+        RestsUserControl uc;
+
+        public AddRestForm(RestsUserControl ruc)
         {
             InitializeComponent();
+            uc = ruc;
         }
 
         private void AddRestForm_Load(object sender, EventArgs e)
@@ -29,6 +32,7 @@ namespace UserInterface
             {
                 Minutes = (int)nudMinutos.Value
             });
+            uc.refresh();
             this.Close();
         }
     }

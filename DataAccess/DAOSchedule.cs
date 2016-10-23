@@ -15,8 +15,8 @@ namespace DataAccess
 
         public Boolean AddSchedule(TOSchedule newSchedule)
         {
-            try
-            {
+            //try
+            //{
                 if (conex.State != ConnectionState.Open)
                 {
                     conex.Open();
@@ -53,11 +53,11 @@ namespace DataAccess
                 }
 
                 return true;
-        }
-            catch (Exception)
-            {
-                return false;
-            }
+        //}
+        //    catch (Exception)
+        //    {
+        //        return false;
+        //    }
         }
 
         public Boolean DeleteSchedule(String scheduleCode)

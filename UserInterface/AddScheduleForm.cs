@@ -33,11 +33,7 @@ namespace UserInterface
                     cbRest2.ValueMember = "Code";
                     foreach (Rest rest in listRests)
                     {
-                        if (!rest.Code.Equals(((Rest)(cbRest1.SelectedItem)).Code))
-                        {
                             cbRest2.Items.Add(rest);
-                        }
-                        
                     }
                     lbRest2.Visible = true;
                     cbRest2.Visible = true;
@@ -54,11 +50,7 @@ namespace UserInterface
                             cbRest3.ValueMember = "Code";
                             foreach (Rest rest in listRests)
                             {
-                                if (!rest.Code.Equals(((Rest)(cbRest1.SelectedItem)).Code) && !rest.Code.Equals(((Rest)(cbRest2.SelectedItem)).Code))
-                                {
                                     cbRest3.Items.Add(rest);
-                                }
-
                             }
                             lbRest3.Visible = true;
                             cbRest3.Visible = true;
