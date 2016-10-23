@@ -14,10 +14,13 @@ namespace UserInterface
     public partial class ModifyEmployeeForm : MetroFramework.Forms.MetroForm
     {
         private int code;
-        public ModifyEmployeeForm(int Code)
+        EmployeeUserControl uc;
+
+        public ModifyEmployeeForm(int Code, EmployeeUserControl euc)
         {
             InitializeComponent();
             code = Code;
+            uc = euc;
         }
 
         private void ModifyEmployeeForm_Load(object sender, EventArgs e)
@@ -40,6 +43,7 @@ namespace UserInterface
                 empl.Code = code;
                 empl.Department = (Department)mcbDepart.SelectedItem;
                 empl.ModifyEmployee();
+                uc.refresh();
                 this.Close();
             }
         }

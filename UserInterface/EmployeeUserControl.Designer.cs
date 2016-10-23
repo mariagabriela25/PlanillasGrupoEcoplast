@@ -68,7 +68,7 @@
             this.mgEmployees.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgEmployees.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mgEmployees.Location = new System.Drawing.Point(83, 126);
-            this.mgEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mgEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.mgEmployees.Name = "mgEmployees";
             this.mgEmployees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -81,7 +81,7 @@
             this.mgEmployees.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mgEmployees.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgEmployees.Size = new System.Drawing.Size(1066, 549);
+            this.mgEmployees.Size = new System.Drawing.Size(1066, 893);
             this.mgEmployees.Style = MetroFramework.MetroColorStyle.Teal;
             this.mgEmployees.TabIndex = 7;
             this.mgEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgEmployees_CellContentClick);
@@ -172,9 +172,9 @@
             this.Controls.Add(this.mtDelete);
             this.Controls.Add(this.mtRefresh);
             this.Controls.Add(this.mtAdd);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeUserControl";
-            this.Size = new System.Drawing.Size(1153, 679);
+            this.Size = new System.Drawing.Size(1153, 1038);
             this.Load += new System.EventHandler(this.EmployeeUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mgEmployees)).EndInit();
             this.ResumeLayout(false);

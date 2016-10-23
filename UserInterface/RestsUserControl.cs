@@ -44,7 +44,7 @@ namespace UserInterface
 
         private void mtAdd_Click(object sender, EventArgs e)
         {
-            new AddRestForm().Show();
+            new AddRestForm(this).Show();
         }
 
         private void mtRefresh_Click(object sender, EventArgs e)
