@@ -10,7 +10,6 @@ namespace TransferObjects
     {
         public int Code { get; set; }
         public int OrdinaryHours { get; set; }
-        public int ExtraHours { get; set; }
         public int TotalHours { get; set; }
         public DateTime Date { get; set; }
         public string Note { get; set; }

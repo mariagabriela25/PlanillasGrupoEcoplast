@@ -70,7 +70,6 @@ namespace UserInterface
 
 
             DateTime finalDay = new DateTime();
-
             if (schedule.InitialHour.Hour >= schedule.finalHour.Hour)
             {
                 finalDay = initialDay.AddDays(1);
@@ -78,30 +77,99 @@ namespace UserInterface
             {
                 finalDay = initialDay;
             }
-
             TimeSpan timeout = new TimeSpan(23, 59, 59);
             finalDay = finalDay.Date + timeout;
 
+
             FillGrid(new Check().GetChecks(31, initialDay, finalDay));
 
-            //List<Check> checks = new Check().GetChecks(31, initialDay, finalDay);
+            TimeSpan expected = schedule.finalHour.Subtract(schedule.InitialHour);
+            mlWeekRange.Text = expected.Hours.ToString();
+
         }
+
 
         public void FillGrid(List<Check> checks)
         {
             dt = new DataTable();
-            dt.Columns.Add("Usuario");
-            dt.Columns.Add("Marca");
-            dt.Columns.Add("Tipo");
+            dt.Columns.Add("Marca Entrada");
+            dt.Columns.Add("Descansos");
+            dt.Columns.Add("Marca Salida");
+            
+            List<Check> rests = new List<Check>();
+
+            Check checkin = null;
+            Check checkout = null;
 
             foreach (Check ch in checks)
             {
-              
-                dt.Rows.Add(ch.ID, ch.CheckTime, convertType(ch.CheckType));
+                String type = convertType(ch.CheckType);
+                if (type.Equals("Entrada"))
+                {
+                    checkin = ch;
+                }
+                else if (type.Equals("Salida"))
+                {
+                    checkout = ch;
+                }
+                else
+                {
+                    rests.Add(ch);
+                }
             }
-            mgrWorkDayDetail.DataSource = dt;
-        }
 
+            if (checkout == null && checkin == null)
+            {
+                dt.Rows.Add("Marca Ausente", RestChecksFormat(rests), "Marca Ausente");
+            } else if(checkin == null)
+            {
+                dt.Rows.Add("Marca Ausente", RestChecksFormat(rests), 
+                    String.Format("{0:T}", checkout.CheckTime));
+
+                TimeSpan worked = checkout.CheckTime.Subtract(rests[0].CheckTime);
+                worked = RoundTimeSpan(worked);
+                mlWorkedRange.Text = worked.Hours.ToString();
+            } else if (checkout == null)
+            {
+                dt.Rows.Add(String.Format("{0:T}", checkin.CheckTime),
+                    RestChecksFormat(rests), "Marca Ausente");
+
+                TimeSpan worked = rests[rests.Count - 1].CheckTime.Subtract(checkin.CheckTime);
+                worked = RoundTimeSpan(worked);
+                mlWorkedRange.Text = worked.Hours.ToString();
+
+            } else
+            {
+                dt.Rows.Add(String.Format("{0:T}", checkin.CheckTime),
+                    RestChecksFormat(rests),
+                    String.Format("{0:T}", checkout.CheckTime));
+
+                TimeSpan worked = checkout.CheckTime.Subtract(checkin.CheckTime);
+                worked = RoundTimeSpan(worked);
+                mlWorkedRange.Text = worked.Hours.ToString();
+            }
+
+            mgrWorkDayDetail.DataSource = dt;
+            mgrWorkDayDetail.AutoResizeColumns();
+
+        }
+        public TimeSpan RoundTimeSpan(TimeSpan value)
+        {
+            return TimeSpan.FromMinutes(System.Math.Ceiling(value.TotalMinutes / 30) * 30);
+        }
+        public String RestChecksFormat(List<Check> list)
+        {
+            string txt = "";
+            foreach(Check ch in list)
+            {
+                if (!txt.Equals(""))
+                {
+                    txt += ", ";
+                }
+                txt += String.Format("{0:T}", ch.CheckTime);
+            }
+            return txt;
+        }
         public string convertType(string type)
         {
             if (type.Equals("I"))
@@ -116,6 +184,19 @@ namespace UserInterface
             {
                 return "Salida";
             }
+        }
+
+        private void mbSave_Click(object sender, EventArgs e)
+        {
+            WorkDayDetail workday = new WorkDayDetail();
+            int hours = radioWorked.Checked ? Int32.Parse(mlWorkedRange.Text) : Int32.Parse(mlWeekRange.Text);
+
+            workday.OrdinaryHours = hours;
+            workday.TotalHours = hours;
+            workday.Date = mdtDay.Value;
+            workday.Note = mtbNote.Text;
+            workday.AddWorkDay();
+
         }
     }
 }

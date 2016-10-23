@@ -10,7 +10,6 @@ namespace BusinessLogic
     {
         public int Code { get; set; }
         public int OrdinaryHours { get; set; }
-        public int ExtraHours { get; set; }
         public int TotalHours { get; set; }
         public DateTime Date { get; set; }
         public string Note { get; set; }
@@ -24,6 +23,14 @@ namespace BusinessLogic
             this.Date = date;
             this.Note = note;
             this.State = state;
+        }
+
+        public WorkDayDetail() {}
+
+        public Boolean AddWorkDay()
+        {
+
+            return true;
         }
 
     }
