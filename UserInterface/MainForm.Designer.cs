@@ -107,8 +107,11 @@
             this.Controls.Add(this.mpContent);
             this.Controls.Add(this.mpMenu);
             this.Controls.Add(this.metroUserControl1);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Lime;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

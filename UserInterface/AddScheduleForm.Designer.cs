@@ -59,6 +59,8 @@
             this.mtAddRest = new MetroFramework.Controls.MetroButton();
             this.mbSave = new MetroFramework.Controls.MetroButton();
             this.cbDepartment = new System.Windows.Forms.ComboBox();
+            this.mBtDeleteRest2 = new MetroFramework.Controls.MetroButton();
+            this.mBtDeleteRest3 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.nupFinalHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupFinalMinute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupInitialHour)).BeginInit();
@@ -402,11 +404,41 @@
             this.cbDepartment.Size = new System.Drawing.Size(280, 28);
             this.cbDepartment.TabIndex = 37;
             // 
+            // mBtDeleteRest2
+            // 
+            this.mBtDeleteRest2.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.mBtDeleteRest2.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.mBtDeleteRest2.Location = new System.Drawing.Point(1219, 336);
+            this.mBtDeleteRest2.Name = "mBtDeleteRest2";
+            this.mBtDeleteRest2.Size = new System.Drawing.Size(295, 35);
+            this.mBtDeleteRest2.Style = MetroFramework.MetroColorStyle.Lime;
+            this.mBtDeleteRest2.TabIndex = 71;
+            this.mBtDeleteRest2.Text = "Eliminar Descanso #2";
+            this.mBtDeleteRest2.UseSelectable = true;
+            this.mBtDeleteRest2.Visible = false;
+            this.mBtDeleteRest2.Click += new System.EventHandler(this.mBtDeleteRest2_Click);
+            // 
+            // mBtDeleteRest3
+            // 
+            this.mBtDeleteRest3.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.mBtDeleteRest3.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.mBtDeleteRest3.Location = new System.Drawing.Point(1219, 399);
+            this.mBtDeleteRest3.Name = "mBtDeleteRest3";
+            this.mBtDeleteRest3.Size = new System.Drawing.Size(295, 35);
+            this.mBtDeleteRest3.Style = MetroFramework.MetroColorStyle.Lime;
+            this.mBtDeleteRest3.TabIndex = 72;
+            this.mBtDeleteRest3.Text = "Eliminar Descanso #3";
+            this.mBtDeleteRest3.UseSelectable = true;
+            this.mBtDeleteRest3.Visible = false;
+            this.mBtDeleteRest3.Click += new System.EventHandler(this.mBtDeleteRest3_Click);
+            // 
             // AddScheduleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 710);
+            this.ClientSize = new System.Drawing.Size(1560, 710);
+            this.Controls.Add(this.mBtDeleteRest3);
+            this.Controls.Add(this.mBtDeleteRest2);
             this.Controls.Add(this.cbDepartment);
             this.Controls.Add(this.mbSave);
             this.Controls.Add(this.mtAddRest);
@@ -487,5 +519,7 @@
         private MetroFramework.Controls.MetroButton mtAddRest;
         private MetroFramework.Controls.MetroButton mbSave;
         private System.Windows.Forms.ComboBox cbDepartment;
+        private MetroFramework.Controls.MetroButton mBtDeleteRest2;
+        private MetroFramework.Controls.MetroButton mBtDeleteRest3;
     }
 }

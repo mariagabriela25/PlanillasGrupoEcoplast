@@ -154,7 +154,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="mpMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 568</value>
+    <value>195, 568</value>
   </data>
   <data name="mpMenu.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -175,13 +175,13 @@
     <value>True</value>
   </data>
   <data name="mpContent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>324, 211</value>
+    <value>234, 211</value>
   </data>
   <data name="mpContent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="mpContent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1516, 568</value>
+    <value>1891, 568</value>
   </data>
   <data name="mpContent.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -674,11 +674,11 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1871, 808</value>
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1612, 810</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -687,7 +687,7 @@
     <value>27, 74, 27, 25</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>WindowsDefaultLocation</value>
+    <value>WindowsDefaultBounds</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

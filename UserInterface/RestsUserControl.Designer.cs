@@ -37,9 +37,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestsUserControl));
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.mgRests = new MetroFramework.Controls.MetroGrid();
-            this.mtAdd = new MetroFramework.Controls.MetroTile();
-            this.mtDelete = new MetroFramework.Controls.MetroTile();
             this.mtModify = new MetroFramework.Controls.MetroTile();
+            this.mtDelete = new MetroFramework.Controls.MetroTile();
+            this.mtAdd = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mgRests)).BeginInit();
             this.SuspendLayout();
@@ -118,7 +118,7 @@
             this.mgRests.EnableHeadersVisualStyles = false;
             this.mgRests.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgRests.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mgRests.Location = new System.Drawing.Point(55, 114);
+            this.mgRests.Location = new System.Drawing.Point(14, 114);
             this.mgRests.Margin = new System.Windows.Forms.Padding(4);
             this.mgRests.MultiSelect = false;
             this.mgRests.Name = "mgRests";
@@ -138,30 +138,30 @@
             this.mgRests.Style = MetroFramework.MetroColorStyle.Teal;
             this.mgRests.TabIndex = 1;
             // 
-            // mtAdd
+            // mtModify
             // 
-            this.mtAdd.ActiveControl = null;
-            this.mtAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtAdd.Location = new System.Drawing.Point(42, 4);
-            this.mtAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.mtAdd.Name = "mtAdd";
-            this.mtAdd.Size = new System.Drawing.Size(259, 69);
-            this.mtAdd.Style = MetroFramework.MetroColorStyle.Teal;
-            this.mtAdd.TabIndex = 2;
-            this.mtAdd.Text = "Agregar";
-            this.mtAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mtAdd.TileImage = ((System.Drawing.Image)(resources.GetObject("mtAdd.TileImage")));
-            this.mtAdd.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtAdd.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.mtAdd.UseSelectable = true;
-            this.mtAdd.UseTileImage = true;
-            this.mtAdd.Click += new System.EventHandler(this.mtAdd_Click);
+            this.mtModify.ActiveControl = null;
+            this.mtModify.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mtModify.Location = new System.Drawing.Point(281, 4);
+            this.mtModify.Margin = new System.Windows.Forms.Padding(4);
+            this.mtModify.Name = "mtModify";
+            this.mtModify.Size = new System.Drawing.Size(257, 69);
+            this.mtModify.Style = MetroFramework.MetroColorStyle.Teal;
+            this.mtModify.TabIndex = 5;
+            this.mtModify.Text = "Modificar";
+            this.mtModify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mtModify.TileImage = ((System.Drawing.Image)(resources.GetObject("mtModify.TileImage")));
+            this.mtModify.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mtModify.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtModify.UseSelectable = true;
+            this.mtModify.UseTileImage = true;
+            this.mtModify.Click += new System.EventHandler(this.mtRefresh_Click);
             // 
             // mtDelete
             // 
             this.mtDelete.ActiveControl = null;
             this.mtDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtDelete.Location = new System.Drawing.Point(574, 4);
+            this.mtDelete.Location = new System.Drawing.Point(546, 4);
             this.mtDelete.Margin = new System.Windows.Forms.Padding(4);
             this.mtDelete.Name = "mtDelete";
             this.mtDelete.Size = new System.Drawing.Size(257, 69);
@@ -176,24 +176,24 @@
             this.mtDelete.UseTileImage = true;
             this.mtDelete.Click += new System.EventHandler(this.mtDelete_Click);
             // 
-            // mtModify
+            // mtAdd
             // 
-            this.mtModify.ActiveControl = null;
-            this.mtModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtModify.Location = new System.Drawing.Point(309, 4);
-            this.mtModify.Margin = new System.Windows.Forms.Padding(4);
-            this.mtModify.Name = "mtModify";
-            this.mtModify.Size = new System.Drawing.Size(257, 69);
-            this.mtModify.Style = MetroFramework.MetroColorStyle.Teal;
-            this.mtModify.TabIndex = 5;
-            this.mtModify.Text = "Modificar";
-            this.mtModify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mtModify.TileImage = ((System.Drawing.Image)(resources.GetObject("mtModify.TileImage")));
-            this.mtModify.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtModify.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.mtModify.UseSelectable = true;
-            this.mtModify.UseTileImage = true;
-            this.mtModify.Click += new System.EventHandler(this.mtRefresh_Click);
+            this.mtAdd.ActiveControl = null;
+            this.mtAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mtAdd.Location = new System.Drawing.Point(14, 4);
+            this.mtAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.mtAdd.Name = "mtAdd";
+            this.mtAdd.Size = new System.Drawing.Size(259, 69);
+            this.mtAdd.Style = MetroFramework.MetroColorStyle.Teal;
+            this.mtAdd.TabIndex = 2;
+            this.mtAdd.Text = "Agregar";
+            this.mtAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mtAdd.TileImage = ((System.Drawing.Image)(resources.GetObject("mtAdd.TileImage")));
+            this.mtAdd.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mtAdd.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtAdd.UseSelectable = true;
+            this.mtAdd.UseTileImage = true;
+            this.mtAdd.Click += new System.EventHandler(this.mtAdd_Click);
             // 
             // RestsUserControl
             // 

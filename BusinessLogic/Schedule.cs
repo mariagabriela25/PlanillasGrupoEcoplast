@@ -104,6 +104,8 @@ namespace BusinessLogic
                 toList.Add(tr);
             }
 
+            tos.RestList = toList;
+
             DAOSchedule daoS = new DAOSchedule();
             daoS.ModifySchedule(tos);
         }

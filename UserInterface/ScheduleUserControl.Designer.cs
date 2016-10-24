@@ -44,37 +44,38 @@
             this.mgSchedules.AllowUserToAddRows = false;
             this.mgSchedules.AllowUserToDeleteRows = false;
             this.mgSchedules.AllowUserToResizeRows = false;
+            this.mgSchedules.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.mgSchedules.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.mgSchedules.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mgSchedules.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mgSchedules.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.mgSchedules.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.mgSchedules.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.mgSchedules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.mgSchedules.DefaultCellStyle = dataGridViewCellStyle2;
             this.mgSchedules.EnableHeadersVisualStyles = false;
             this.mgSchedules.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgSchedules.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mgSchedules.Location = new System.Drawing.Point(84, 142);
+            this.mgSchedules.Location = new System.Drawing.Point(18, 85);
             this.mgSchedules.Name = "mgSchedules";
             this.mgSchedules.ReadOnly = true;
             this.mgSchedules.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -83,7 +84,7 @@
             this.mgSchedules.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgSchedules.RowTemplate.Height = 24;
             this.mgSchedules.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgSchedules.Size = new System.Drawing.Size(1300, 560);
+            this.mgSchedules.Size = new System.Drawing.Size(1662, 627);
             this.mgSchedules.Style = MetroFramework.MetroColorStyle.Teal;
             this.mgSchedules.TabIndex = 6;
             this.mgSchedules.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgSchedules_CellContentClick);
@@ -91,10 +92,10 @@
             // mtUpdateSchedule
             // 
             this.mtUpdateSchedule.ActiveControl = null;
-            this.mtUpdateSchedule.Location = new System.Drawing.Point(412, 3);
+            this.mtUpdateSchedule.Location = new System.Drawing.Point(521, 3);
             this.mtUpdateSchedule.Name = "mtUpdateSchedule";
-            this.mtUpdateSchedule.Size = new System.Drawing.Size(330, 76);
-            this.mtUpdateSchedule.Style = MetroFramework.MetroColorStyle.Teal;
+            this.mtUpdateSchedule.Size = new System.Drawing.Size(581, 76);
+            this.mtUpdateSchedule.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtUpdateSchedule.TabIndex = 5;
             this.mtUpdateSchedule.Text = "Modificar";
             this.mtUpdateSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -108,10 +109,10 @@
             // mtDeleteSchedule
             // 
             this.mtDeleteSchedule.ActiveControl = null;
-            this.mtDeleteSchedule.Location = new System.Drawing.Point(748, 3);
+            this.mtDeleteSchedule.Location = new System.Drawing.Point(1108, 3);
             this.mtDeleteSchedule.Name = "mtDeleteSchedule";
-            this.mtDeleteSchedule.Size = new System.Drawing.Size(337, 76);
-            this.mtDeleteSchedule.Style = MetroFramework.MetroColorStyle.Teal;
+            this.mtDeleteSchedule.Size = new System.Drawing.Size(549, 76);
+            this.mtDeleteSchedule.Style = MetroFramework.MetroColorStyle.Red;
             this.mtDeleteSchedule.TabIndex = 4;
             this.mtDeleteSchedule.Text = "Eliminar";
             this.mtDeleteSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -125,10 +126,10 @@
             // mtAddSchedule
             // 
             this.mtAddSchedule.ActiveControl = null;
-            this.mtAddSchedule.Location = new System.Drawing.Point(84, 3);
+            this.mtAddSchedule.Location = new System.Drawing.Point(18, 3);
             this.mtAddSchedule.Name = "mtAddSchedule";
-            this.mtAddSchedule.Size = new System.Drawing.Size(322, 76);
-            this.mtAddSchedule.Style = MetroFramework.MetroColorStyle.Teal;
+            this.mtAddSchedule.Size = new System.Drawing.Size(497, 76);
+            this.mtAddSchedule.Style = MetroFramework.MetroColorStyle.Silver;
             this.mtAddSchedule.TabIndex = 0;
             this.mtAddSchedule.Text = "Agregar";
             this.mtAddSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,7 +150,7 @@
             this.Controls.Add(this.mtDeleteSchedule);
             this.Controls.Add(this.mtAddSchedule);
             this.Name = "ScheduleUserControl";
-            this.Size = new System.Drawing.Size(1387, 755);
+            this.Size = new System.Drawing.Size(1791, 755);
             this.Load += new System.EventHandler(this.ScheduleUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mgSchedules)).EndInit();
             this.ResumeLayout(false);

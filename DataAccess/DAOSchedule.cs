@@ -109,16 +109,22 @@ namespace DataAccess
 
             query.ExecuteNonQuery();
 
-            query = new SqlCommand("DELETE FROM Horario_Posee_Descanso WHERE CodHorario = @CodHorario;", conex);
-
+            query = new SqlCommand("DELETE FROM Depart_Tiene_Horario WHERE CodHorario = @CodHorario;", conex);
             query.Parameters.AddWithValue("@CodHorario", schedule.Code);
-
             query.ExecuteNonQuery();
 
-            query = new SqlCommand("INSERT INTO Horario_Posee_Descanso (CodHorario, CodDescanso) VALUES (@CodHorario, @CodDescanso);", conex);
+            query = new SqlCommand("INSERT INTO Depart_Tiene_Horario (CodDepartamento, CodHorario) VALUES (@CodDepartamento, @CodHorario);", conex);
+            query.Parameters.AddWithValue("@CodDepartamento", schedule.depart.Code);
+            query.Parameters.AddWithValue("@CodHorario", schedule.Code);
+            query.ExecuteNonQuery();
 
+            query = new SqlCommand("DELETE FROM Horario_Posee_Descanso WHERE CodHorario = @CodHorario;", conex);
+            query.Parameters.AddWithValue("@CodHorario", schedule.Code);
+            query.ExecuteNonQuery();
+            
             foreach (var item in schedule.RestList)
             {
+                query = new SqlCommand("INSERT INTO Horario_Posee_Descanso (CodDescanso, CodHorario) VALUES (@CodDescanso, @CodHorario);", conex);
                 query.Parameters.AddWithValue("@CodHorario", schedule.Code);
                 query.Parameters.AddWithValue("@CodDescanso", item.Code);
                 query.ExecuteNonQuery();
@@ -357,8 +363,7 @@ namespace DataAccess
 
             return schedules;
         }
-
-
+        
         public List<TOSchedule> GetSchedulesDep(int depCode)
         {
             int c = 0;
