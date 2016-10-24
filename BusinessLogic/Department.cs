@@ -34,6 +34,18 @@ namespace BusinessLogic
 
         }
 
+        public void ModifyDepartment()
+        {
+            TODepartment department = new TODepartment();
+            DADepartment daDep = new DADepartment();
+
+            department.Code = this.Code;
+            department.Name = this.Name;
+
+            daDep.modifyDepartment(department);
+
+        }
+
         public void DeleteDepartment()
         {
             TODepartment department = new TODepartment();
