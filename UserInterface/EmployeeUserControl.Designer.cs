@@ -35,7 +35,6 @@
             this.mgEmployees = new MetroFramework.Controls.MetroGrid();
             this.mtModify = new MetroFramework.Controls.MetroTile();
             this.mtDelete = new MetroFramework.Controls.MetroTile();
-            this.mtRefresh = new MetroFramework.Controls.MetroTile();
             this.mtAdd = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.mgEmployees)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +89,7 @@
             // 
             this.mtModify.ActiveControl = null;
             this.mtModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtModify.Location = new System.Drawing.Point(577, 4);
+            this.mtModify.Location = new System.Drawing.Point(331, 4);
             this.mtModify.Margin = new System.Windows.Forms.Padding(4);
             this.mtModify.Name = "mtModify";
             this.mtModify.Size = new System.Drawing.Size(260, 73);
@@ -109,7 +108,7 @@
             // 
             this.mtDelete.ActiveControl = null;
             this.mtDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtDelete.Location = new System.Drawing.Point(845, 4);
+            this.mtDelete.Location = new System.Drawing.Point(599, 4);
             this.mtDelete.Margin = new System.Windows.Forms.Padding(4);
             this.mtDelete.Name = "mtDelete";
             this.mtDelete.Size = new System.Drawing.Size(252, 73);
@@ -123,25 +122,6 @@
             this.mtDelete.UseSelectable = true;
             this.mtDelete.UseTileImage = true;
             this.mtDelete.Click += new System.EventHandler(this.mtDelete_Click);
-            // 
-            // mtRefresh
-            // 
-            this.mtRefresh.ActiveControl = null;
-            this.mtRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtRefresh.Location = new System.Drawing.Point(331, 4);
-            this.mtRefresh.Margin = new System.Windows.Forms.Padding(4);
-            this.mtRefresh.Name = "mtRefresh";
-            this.mtRefresh.Size = new System.Drawing.Size(238, 73);
-            this.mtRefresh.Style = MetroFramework.MetroColorStyle.Teal;
-            this.mtRefresh.TabIndex = 4;
-            this.mtRefresh.Text = "Actualizar";
-            this.mtRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mtRefresh.TileImage = ((System.Drawing.Image)(resources.GetObject("mtRefresh.TileImage")));
-            this.mtRefresh.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtRefresh.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.mtRefresh.UseSelectable = true;
-            this.mtRefresh.UseTileImage = true;
-            this.mtRefresh.Click += new System.EventHandler(this.mtRefresh_Click);
             // 
             // mtAdd
             // 
@@ -170,7 +150,6 @@
             this.Controls.Add(this.mgEmployees);
             this.Controls.Add(this.mtModify);
             this.Controls.Add(this.mtDelete);
-            this.Controls.Add(this.mtRefresh);
             this.Controls.Add(this.mtAdd);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeUserControl";
@@ -184,7 +163,6 @@
         #endregion
 
         private MetroFramework.Controls.MetroTile mtAdd;
-        private MetroFramework.Controls.MetroTile mtRefresh;
         private MetroFramework.Controls.MetroTile mtDelete;
         private MetroFramework.Controls.MetroTile mtModify;
         private MetroFramework.Controls.MetroGrid mgEmployees;

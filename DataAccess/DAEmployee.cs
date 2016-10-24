@@ -129,10 +129,12 @@ namespace DataAccess
 
         public void ModifyEmployee(TOEmployee employee)
         {
-            SqlCommand query = new SqlCommand("UPDATE Empleado SET CodDepartamento = @CodDepartamento WHERE CodEmpleado = @CodEmpleado;", conex);
+            SqlCommand query = new SqlCommand("UPDATE Empleado SET CodDepartamento = @CodDepartamento, Nombre = @Nombre, Apellido = @Apellido WHERE CodEmpleado = @CodEmpleado;", conex);
             query.Parameters.AddWithValue("@CodDepartamento", employee.Departament.Code);
             query.Parameters.AddWithValue("@CodEmpleado", employee.Code);
-
+            query.Parameters.AddWithValue("@Nombre", employee.Name);
+            query.Parameters.AddWithValue("@Apellido", employee.LastName);
+            
             if (conex.State != ConnectionState.Open)
             {
                 conex.Open();

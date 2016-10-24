@@ -88,6 +88,9 @@ namespace BusinessLogic
             department.Code = this.Department.Code;
             employee.Departament = department;
 
+            employee.Name = this.Name;
+            employee.LastName = this.LastName;
+
             dae.ModifyEmployee(employee);
         }
     }

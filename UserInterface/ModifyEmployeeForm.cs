@@ -25,23 +25,41 @@ namespace UserInterface
 
         private void ModifyEmployeeForm_Load(object sender, EventArgs e)
         {
-            List<Department> list = new Department().GetAllDepartment();
+            mLbEmployeeID.Text = code + "";
+
+            Employee emp = new Employee();
+            emp.Code = code;
+            emp = emp.GetEmployee();
+            txtEmployeeLastNames.Text = emp.LastName;
+            txtEmployeeNames.Text = emp.Name;
 
             mcbDepart.DisplayMember = "Name";
             mcbDepart.ValueMember = "Code";
+
+            mcbDepart.Items.Add(emp.Department);
+
+            List<Department> list = new Department().GetAllDepartment();
+
             foreach (Department dep in list)
             {
-                mcbDepart.Items.Add(dep);
+                if (dep.Code != emp.Department.Code)
+                {
+                    mcbDepart.Items.Add(dep);
+                }
             }
+
+            mcbDepart.SelectedIndex = 0;
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro de que desea modificar el departamento del Empleado? " + code, "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro de que desea modificar el Empleado #"+code+"? ", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Employee empl = new Employee();
                 empl.Code = code;
                 empl.Department = (Department)mcbDepart.SelectedItem;
+                empl.Name = txtEmployeeNames.Text;
+                empl.LastName = txtEmployeeLastNames.Text;
                 empl.ModifyEmployee();
                 uc.refresh();
                 this.Close();
