@@ -357,5 +357,139 @@ namespace DataAccess
 
             return schedules;
         }
+
+
+        public List<TOSchedule> GetSchedulesDep(int depCode)
+        {
+            int c = 0;
+            if (conex.State != ConnectionState.Open)
+            {
+                conex.Open();
+            }
+
+            List<TOSchedule> schedules = new List<TOSchedule>();
+            SqlCommand query = new SqlCommand("SELECT H.*, D.CodDepartamento, D.NombreDepartamento, DS.*" +
+                " FROM Horario H JOIN Depart_Tiene_Horario HD ON H.CodHorario = HD.CodHorario JOIN Departamento D" +
+                " ON HD.CodDepartamento = D.CodDepartamento JOIN Horario_Posee_Descanso HDS ON H.CodHorario = HDS.CodHorario" +
+                " JOIN Descanso DS ON HDS.CodDescanso = DS.CodDescanso" +
+                "WHERE D.CodDepartamento = @departmentCode;", conex);
+
+            query.Parameters.AddWithValue("@departmentCode", depCode);
+
+            if (conex.State != ConnectionState.Open)
+            {
+                conex.Open();
+            }
+
+            SqlDataReader reader = query.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                String oldScheduleCode = "";
+                TOSchedule s = new TOSchedule();
+
+                while (reader.Read())
+                {
+                    String currentScheduleCode = reader.GetString(0);
+
+                    s.Code = currentScheduleCode;
+
+                    if (currentScheduleCode == oldScheduleCode)
+                    {
+                        TORest newRest = new TORest();
+                        newRest.Code = reader.GetInt32(9);
+                        newRest.Minutes = reader.GetInt32(10);
+                        s.RestList.Add(newRest);
+                    }
+                    else if (s.RestList.Count > 0)
+                    {
+                        TOSchedule sDone = s;
+                        sDone.Code = oldScheduleCode;
+                        schedules.Add(sDone);
+                        s = new TOSchedule();
+                        s.Code = currentScheduleCode;
+                        s.RestList = new List<TORest>();
+
+                        String iniHour = reader.GetTimeSpan(1).ToString();
+
+                        String[] iniArray = iniHour.Split(':');
+                        int iniHourH = int.Parse(iniArray.GetValue(0).ToString());
+                        int iniHourM = int.Parse(iniArray.GetValue(1).ToString());
+
+                        s.InitialHour = new DateTime(2016, 10, 18, iniHourH, iniHourM, 0);
+
+                        String finHour = reader.GetTimeSpan(2).ToString();
+
+                        String[] finArray = finHour.Split(':');
+                        int finHourH = int.Parse(finArray.GetValue(0).ToString());
+                        int finHourM = int.Parse(finArray.GetValue(1).ToString());
+
+                        s.finalHour = new DateTime(2016, 10, 18, finHourH, finHourM, 0);
+
+                        s.OrdinaryHours = reader.GetInt32(3);
+                        s.TotalHours = reader.GetInt32(4);
+                        s.ExtraDayHours = reader.GetInt32(5);
+                        s.ExtraNightHours = reader.GetInt32(6);
+
+                        TODepartment td = new TODepartment();
+                        td.Code = reader.GetInt32(7);
+                        td.Name = reader.GetString(8);
+                        s.depart = td;
+
+                        TORest rest = new TORest();
+                        rest.Code = reader.GetInt32(9);
+                        rest.Minutes = reader.GetInt32(10);
+                        s.RestList.Add(rest);
+                    }
+                    if (c == 0)
+                    {
+                        String iniHour = reader.GetTimeSpan(1).ToString();
+
+                        String[] iniArray = iniHour.Split(':');
+                        int iniHourH = int.Parse(iniArray.GetValue(0).ToString());
+                        int iniHourM = int.Parse(iniArray.GetValue(1).ToString());
+
+                        s.InitialHour = new DateTime(2016, 10, 18, iniHourH, iniHourM, 0);
+
+                        String finHour = reader.GetTimeSpan(2).ToString();
+
+                        String[] finArray = finHour.Split(':');
+                        int finHourH = int.Parse(finArray.GetValue(0).ToString());
+                        int finHourM = int.Parse(finArray.GetValue(1).ToString());
+
+                        s.finalHour = new DateTime(2016, 10, 18, finHourH, finHourM, 0);
+
+                        s.OrdinaryHours = reader.GetInt32(3);
+                        s.TotalHours = reader.GetInt32(4);
+                        s.ExtraDayHours = reader.GetInt32(5);
+                        s.ExtraNightHours = reader.GetInt32(6);
+
+                        TODepartment td = new TODepartment();
+                        td.Code = reader.GetInt32(7);
+                        td.Name = reader.GetString(8);
+                        s.depart = td;
+
+                        TORest rest = new TORest();
+                        rest.Code = reader.GetInt32(9);
+                        rest.Minutes = reader.GetInt32(10);
+                        s.RestList.Add(rest);
+                        c = 1;
+                    }
+
+                    oldScheduleCode = currentScheduleCode;
+
+                }
+                schedules.Add(s);
+
+            }
+
+            if (conex.State != ConnectionState.Closed)
+            {
+                conex.Close();
+            }
+
+            return schedules;
+        }
+
     }
 }

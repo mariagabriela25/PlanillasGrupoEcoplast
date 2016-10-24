@@ -155,5 +155,30 @@ namespace BusinessLogic
 
             return schedules;
         }
+
+        public List<Schedule> GetDepSchedules(int departmentCode)
+        {
+            DAOSchedule daos = new DAOSchedule();
+            List<Schedule> schedules = new List<Schedule>();
+            List<TOSchedule> listReturn = daos.GetSchedulesDep(departmentCode);
+
+            foreach (TOSchedule s in listReturn)
+            {
+                Schedule schedule = new Schedule(s.Code, s.InitialHour, s.finalHour, s.OrdinaryHours, s.ExtraDayHours, s.ExtraNightHours, s.TotalHours, new Department(s.depart.Code, s.depart.Name));
+
+                foreach (var item in s.RestList)
+                {
+                    Rest r = new Rest();
+                    r.Code = item.Code;
+                    r.Minutes = item.Minutes;
+                    schedule.AddRest(r);
+                }
+
+                schedules.Add(schedule);
+            }
+
+            return schedules;
+        }
+
     }
 }

@@ -93,5 +93,21 @@ namespace BusinessLogic
 
             dae.ModifyEmployee(employee);
         }
+
+        public List<Employee> GetEmployeesDep(int depCode)
+        {
+            DAEmployee dae = new DAEmployee();
+            List<Employee> employees = new List<Employee>();
+            List<TOEmployee> list = dae.GetEmployeesDepartment(depCode);
+            foreach (TOEmployee e in list)
+            {
+                Employee employee = new Employee(e.Code, e.Name, e.LastName, new Department(e.Departament.Code, e.Departament.Name));
+                employees.Add(employee);
+            }
+
+            return employees;
+        }
+
+
     }
 }
