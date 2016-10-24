@@ -43,9 +43,10 @@
             // 
             this.mtAdd.ActiveControl = null;
             this.mtAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtAdd.Location = new System.Drawing.Point(78, 38);
+            this.mtAdd.Location = new System.Drawing.Point(104, 47);
+            this.mtAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtAdd.Name = "mtAdd";
-            this.mtAdd.Size = new System.Drawing.Size(172, 59);
+            this.mtAdd.Size = new System.Drawing.Size(229, 73);
             this.mtAdd.Style = MetroFramework.MetroColorStyle.Teal;
             this.mtAdd.TabIndex = 4;
             this.mtAdd.Text = "Agregar";
@@ -61,9 +62,10 @@
             // 
             this.mtModify.ActiveControl = null;
             this.mtModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtModify.Location = new System.Drawing.Point(297, 38);
+            this.mtModify.Location = new System.Drawing.Point(396, 47);
+            this.mtModify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtModify.Name = "mtModify";
-            this.mtModify.Size = new System.Drawing.Size(164, 59);
+            this.mtModify.Size = new System.Drawing.Size(219, 73);
             this.mtModify.Style = MetroFramework.MetroColorStyle.Teal;
             this.mtModify.TabIndex = 7;
             this.mtModify.Text = "Modificar";
@@ -79,9 +81,10 @@
             // 
             this.mtDelete.ActiveControl = null;
             this.mtDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtDelete.Location = new System.Drawing.Point(512, 38);
+            this.mtDelete.Location = new System.Drawing.Point(683, 47);
+            this.mtDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtDelete.Name = "mtDelete";
-            this.mtDelete.Size = new System.Drawing.Size(163, 59);
+            this.mtDelete.Size = new System.Drawing.Size(217, 73);
             this.mtDelete.Style = MetroFramework.MetroColorStyle.Teal;
             this.mtDelete.TabIndex = 8;
             this.mtDelete.Text = "Eliminar";
@@ -95,6 +98,8 @@
             // 
             // mgDepartment
             // 
+            this.mgDepartment.AllowUserToAddRows = false;
+            this.mgDepartment.AllowUserToDeleteRows = false;
             this.mgDepartment.AllowUserToResizeRows = false;
             this.mgDepartment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mgDepartment.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -120,8 +125,10 @@
             this.mgDepartment.EnableHeadersVisualStyles = false;
             this.mgDepartment.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgDepartment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mgDepartment.Location = new System.Drawing.Point(78, 126);
+            this.mgDepartment.Location = new System.Drawing.Point(104, 155);
+            this.mgDepartment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mgDepartment.Name = "mgDepartment";
+            this.mgDepartment.ReadOnly = true;
             this.mgDepartment.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -133,20 +140,21 @@
             this.mgDepartment.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mgDepartment.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgDepartment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgDepartment.Size = new System.Drawing.Size(639, 368);
+            this.mgDepartment.Size = new System.Drawing.Size(852, 453);
             this.mgDepartment.TabIndex = 9;
             // 
             // DepartmentUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.mgDepartment);
             this.Controls.Add(this.mtDelete);
             this.Controls.Add(this.mtModify);
             this.Controls.Add(this.mtAdd);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DepartmentUserControl";
-            this.Size = new System.Drawing.Size(740, 512);
+            this.Size = new System.Drawing.Size(987, 630);
             this.Load += new System.EventHandler(this.DepartmentUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mgDepartment)).EndInit();
             this.ResumeLayout(false);

@@ -41,6 +41,8 @@
             // 
             // mgEmployees
             // 
+            this.mgEmployees.AllowUserToAddRows = false;
+            this.mgEmployees.AllowUserToDeleteRows = false;
             this.mgEmployees.AllowUserToResizeRows = false;
             this.mgEmployees.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mgEmployees.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -69,6 +71,7 @@
             this.mgEmployees.Location = new System.Drawing.Point(83, 126);
             this.mgEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.mgEmployees.Name = "mgEmployees";
+            this.mgEmployees.ReadOnly = true;
             this.mgEmployees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(173)))));

@@ -53,5 +53,14 @@ namespace BusinessLogic
             }
             return null;
         }
+
+        public void modifyRest()
+        {
+            new DAORest().modifyRest(new TORest
+            {
+                Code = this.Code,
+                Minutes = this.Minutes
+            });
+        }
     }
 }
