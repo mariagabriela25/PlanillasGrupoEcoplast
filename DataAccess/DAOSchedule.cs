@@ -373,10 +373,10 @@ namespace DataAccess
             }
 
             List<TOSchedule> schedules = new List<TOSchedule>();
-            SqlCommand query = new SqlCommand("SELECT H.*, D.CodDepartamento, D.NombreDepartamento, DS.*" +
-                " FROM Horario H JOIN Depart_Tiene_Horario HD ON H.CodHorario = HD.CodHorario JOIN Departamento D" +
-                " ON HD.CodDepartamento = D.CodDepartamento JOIN Horario_Posee_Descanso HDS ON H.CodHorario = HDS.CodHorario" +
-                " JOIN Descanso DS ON HDS.CodDescanso = DS.CodDescanso" +
+            SqlCommand query = new SqlCommand("SELECT H.*, D.CodDepartamento, D.NombreDepartamento, DS.* " +
+                " FROM Horario H JOIN Depart_Tiene_Horario HD ON H.CodHorario = HD.CodHorario JOIN Departamento D " +
+                "ON HD.CodDepartamento = D.CodDepartamento JOIN Horario_Posee_Descanso HDS ON H.CodHorario = HDS.CodHorario " +
+                "JOIN Descanso DS ON HDS.CodDescanso = DS.CodDescanso " +
                 "WHERE D.CodDepartamento = @departmentCode;", conex);
 
             query.Parameters.AddWithValue("@departmentCode", depCode);

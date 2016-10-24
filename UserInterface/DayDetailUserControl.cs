@@ -49,7 +49,6 @@ namespace UserInterface
         private void DayDetailUserControl_Load(object sender, EventArgs e)
         {
             List<Department> list = new Department().GetAllDepartment();
-
             mcbDepartment.DisplayMember = "Name";
             mcbDepartment.ValueMember = "Code";
             foreach (Department dep in list)
@@ -61,8 +60,8 @@ namespace UserInterface
         private void mcbDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            List<Schedule> list = new Schedule().GetAllSchedules();
-
+            List<Schedule> list = new Schedule().GetDepSchedules(((Department)mcbDepartment.SelectedItem).Code);
+            mcbSchedule.Items.Clear();
             mcbSchedule.DisplayMember = "Code";
             mcbSchedule.ValueMember = "Code";
 
@@ -74,8 +73,8 @@ namespace UserInterface
 
         private void mcbSchedule_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Employee> list = new Employee().GetAllEmployees();
-
+            List<Employee> list = new Employee().GetEmployeesDep(((Department)mcbDepartment.SelectedItem).Code);
+            mcbEmployee.Items.Clear();
             mcbEmployee.DisplayMember = "Name";
             mcbEmployee.ValueMember = "Code";
 
