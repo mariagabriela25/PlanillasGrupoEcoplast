@@ -30,12 +30,17 @@ namespace UserInterface
         private void mtAdd_Click(object sender, EventArgs e)
         {
             new AddDepartmentForm(this).Show();
-            //refresh();
         }
 
         private void mtModify_Click(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < mgDepartment.RowCount; i++)
+            {
+                if (mgDepartment.Rows[i].Selected)
+                {
+                    new ModifyDepartmentForm(int.Parse(mgDepartment.Rows[i].Cells[0].Value.ToString()), this).Show();
+                }
+            }
         }
 
         private void mtDelete_Click(object sender, EventArgs e)
@@ -44,7 +49,7 @@ namespace UserInterface
             {
                 if (mgDepartment.Rows[i].Selected)
                 {
-                    if (MessageBox.Show("¿Está seguro de que desea eliminar este Departamento?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Está seguro de que desea eliminar el departamento de "+ mgDepartment.Rows[i].Cells[1].Value.ToString() + "?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Department dep = new Department();
                         dep.Code = int.Parse(mgDepartment.Rows[i].Cells[0].Value.ToString());

@@ -37,6 +37,7 @@ namespace UserInterface
                     }
                     lbRest2.Visible = true;
                     cbRest2.Visible = true;
+                    mBtDeleteRest2.Visible = true;
                 }
                 else
                 {
@@ -54,6 +55,7 @@ namespace UserInterface
                             }
                             lbRest3.Visible = true;
                             cbRest3.Visible = true;
+                            mBtDeleteRest3.Visible = true;
                         }
                         else
                         {
@@ -133,6 +135,24 @@ namespace UserInterface
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mBtDeleteRest2_Click(object sender, EventArgs e)
+        {
+            cbRest2.SelectedItem = null;
+            lbRest2.Visible = false;
+            cbRest2.Visible = false;
+            mBtDeleteRest2.Visible = false;
+            cbRest2.Items.Clear();
+        }
+
+        private void mBtDeleteRest3_Click(object sender, EventArgs e)
+        {
+            cbRest3.SelectedItem = null;
+            lbRest3.Visible = false;
+            cbRest3.Visible = false;
+            mBtDeleteRest3.Visible = false;
+            cbRest3.Items.Clear();
         }
     }
 }
