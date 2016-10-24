@@ -99,6 +99,7 @@
             this.Controls.Add(this.mLbDepartCode);
             this.Controls.Add(this.mLbCode);
             this.Name = "ModifyDepartmentForm";
+            this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Modificar Departamento";
             this.Load += new System.EventHandler(this.ModifyDepartmentForm_Load);
             this.ResumeLayout(false);

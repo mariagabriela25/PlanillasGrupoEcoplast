@@ -113,8 +113,9 @@ namespace BusinessLogic
 
             DAOSchedule daoS = new DAOSchedule();
             TOSchedule s = daoS.GetSchedule(this.Code);
+
             Schedule schedule = new Schedule(s.Code, s.InitialHour, s.finalHour, s.OrdinaryHours, s.ExtraDayHours, s.ExtraNightHours, s.TotalHours, new Department(s.depart.Code, s.depart.Name));
-            
+
             foreach (var item in s.RestList)
             {
                 Rest r = new Rest();

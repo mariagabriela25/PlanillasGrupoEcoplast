@@ -15,8 +15,8 @@ namespace DataAccess
 
         public Boolean AddSchedule(TOSchedule newSchedule)
         {
-            //try
-            //{
+            try
+            {
                 if (conex.State != ConnectionState.Open)
                 {
                     conex.Open();
@@ -53,11 +53,11 @@ namespace DataAccess
                 }
 
                 return true;
-        //}
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
+        }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public Boolean DeleteSchedule(String scheduleCode)
@@ -133,74 +133,90 @@ namespace DataAccess
 
         public TOSchedule GetSchedule(String scheduleCode)
         {
+            int c = 0;
+            TOSchedule sDone = new TOSchedule();
+
+            if (conex.State != ConnectionState.Open)
+            {
+                conex.Open();
+            }
+            
+            SqlCommand query = new SqlCommand("SELECT H.*, D.CodDepartamento, D.NombreDepartamento, DS.*" +
+                " FROM Horario H JOIN Depart_Tiene_Horario HD ON H.CodHorario = HD.CodHorario JOIN Departamento D" +
+                " ON HD.CodDepartamento = D.CodDepartamento JOIN Horario_Posee_Descanso HDS ON H.CodHorario = HDS.CodHorario" +
+  " JOIN Descanso DS ON HDS.CodDescanso = DS.CodDescanso WHERE H.CodHorario = @CodHorario;", conex);
+
+            query.Parameters.AddWithValue("@CodHorario", scheduleCode);
+            
             if (conex.State != ConnectionState.Open)
             {
                 conex.Open();
             }
 
-            TOSchedule foundSchedule = new TOSchedule();
-
-            SqlCommand query = new SqlCommand("SELECT * FROM Horario h JOIN Horario_Posee_Descanso hd ON h.CodHorario = hd.CodHorario JOIN Descanso d ON hd.CodDescanso = d.CodDescanso WHERE h.CodHorario = @CodHorario;", conex);
-            query.Parameters.AddWithValue("@CodHorario", scheduleCode);
-
             SqlDataReader reader = query.ExecuteReader();
 
-            List<TORest> rests = new List<TORest>();
+            String oldScheduleCode = "";
+            TOSchedule s = new TOSchedule();
 
             if (reader.HasRows)
             {
-
-                foundSchedule.Code = reader.GetString(0);
-
-                String iniHour = reader.GetTimeSpan(1).ToString();
-
-                String[] iniArray = iniHour.Split(':');
-                int iniHourH = int.Parse(iniArray.GetValue(0).ToString());
-                int iniHourM = int.Parse(iniArray.GetValue(1).ToString());
-
-                foundSchedule.InitialHour = new DateTime(2016, 10, 18, iniHourH, iniHourM, 0);
-
-                String finHour = reader.GetTimeSpan(2).ToString();
-
-                String[] finArray = finHour.Split(':');
-                int finHourH = int.Parse(iniArray.GetValue(0).ToString());
-                int finHourM = int.Parse(iniArray.GetValue(1).ToString());
-
-                foundSchedule.finalHour = new DateTime(2016, 10, 18, finHourH, finHourM, 0);
-
-                foundSchedule.OrdinaryHours = reader.GetInt32(3);
-                foundSchedule.TotalHours = reader.GetInt32(4);
-                foundSchedule.ExtraDayHours = reader.GetInt32(5);
-                foundSchedule.ExtraNightHours = reader.GetInt32(6);
-
+                
                 while (reader.Read())
                 {
-                    TORest rest = new TORest();
-                    rest.Code = reader.GetInt32(7);
-                    rest.Minutes = reader.GetInt32(9);
-                    rests.Add(rest);
+                    String currentScheduleCode = reader.GetString(0);
+
+                    s.Code = currentScheduleCode;
+
+                    if (currentScheduleCode == oldScheduleCode)
+                    {
+                        TORest newRest = new TORest();
+                        newRest.Code = reader.GetInt32(9);
+                        newRest.Minutes = reader.GetInt32(10);
+                        s.RestList.Add(newRest);
+                    }
+                    else if (s.RestList.Count > 0)
+                    {
+                        break;
+                    }
+                    if (c == 0)
+                    {
+                        String iniHour = reader.GetTimeSpan(1).ToString();
+
+                        String[] iniArray = iniHour.Split(':');
+                        int iniHourH = int.Parse(iniArray.GetValue(0).ToString());
+                        int iniHourM = int.Parse(iniArray.GetValue(1).ToString());
+
+                        s.InitialHour = new DateTime(2016, 10, 18, iniHourH, iniHourM, 0);
+
+                        String finHour = reader.GetTimeSpan(2).ToString();
+
+                        String[] finArray = finHour.Split(':');
+                        int finHourH = int.Parse(finArray.GetValue(0).ToString());
+                        int finHourM = int.Parse(finArray.GetValue(1).ToString());
+
+                        s.finalHour = new DateTime(2016, 10, 18, finHourH, finHourM, 0);
+
+                        s.OrdinaryHours = reader.GetInt32(3);
+                        s.TotalHours = reader.GetInt32(4);
+                        s.ExtraDayHours = reader.GetInt32(5);
+                        s.ExtraNightHours = reader.GetInt32(6);
+
+                        TODepartment td = new TODepartment();
+                        td.Code = reader.GetInt32(7);
+                        td.Name = reader.GetString(8);
+                        s.depart = td;
+
+                        TORest rest = new TORest();
+                        rest.Code = reader.GetInt32(9);
+                        rest.Minutes = reader.GetInt32(10);
+                        s.RestList.Add(rest);
+                        c = 1;
+                    }
+
+                    oldScheduleCode = currentScheduleCode;
+
                 }
 
-            }
-
-            foundSchedule.RestList = rests;
-
-            query = new SqlCommand("SELECT * FROM depart_tiene_horario dth JOIN departamento d ON dth.CodDepartamento = d.CodDepartamento WHERE dth.CodHorario = @CodHorario;", conex);
-            query.Parameters.AddWithValue("@CodHorario", scheduleCode);
-
-            reader = query.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    int dCode = reader.GetInt32(0);
-                    String dName = reader.GetString(2);
-                    TODepartment td = new TODepartment();
-                    td.Code = dCode;
-                    td.Name = dName;
-                    foundSchedule.depart = td;
-                }
             }
 
             if (conex.State != ConnectionState.Closed)
@@ -208,7 +224,9 @@ namespace DataAccess
                 conex.Close();
             }
 
-            return foundSchedule;
+            sDone = s;
+            sDone.Code = oldScheduleCode;
+            return sDone;
         }
 
         public List<TOSchedule> GetAllSchedules()

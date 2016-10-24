@@ -439,6 +439,7 @@
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.lbCode);
             this.Name = "AddScheduleForm";
+            this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Agregar nuevo horario";
             this.Load += new System.EventHandler(this.AddScheduleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nupFinalHour)).EndInit();

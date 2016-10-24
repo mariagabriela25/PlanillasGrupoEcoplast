@@ -86,8 +86,13 @@ namespace UserInterface
 
         private void mtUpdateSchedule_Click(object sender, EventArgs e)
         {
-            mgSchedules.DataSource = null;
-            refresh();
+            for (int i = 0; i < mgSchedules.RowCount; i++)
+            {
+                if (mgSchedules.Rows[i].Selected)
+                {
+                    new ModifyScheduleForm(mgSchedules.Rows[i].Cells[0].Value.ToString(), this).Show();
+                }
+            }
         }
 
         private void mtDeleteSchedule_Click(object sender, EventArgs e)

@@ -57,8 +57,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nupFinalHour = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
             this.lbCode = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nupDayExtra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupNightExtra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupOrdinaryHours)).BeginInit();
@@ -87,7 +87,7 @@
             this.mbSave.Size = new System.Drawing.Size(284, 55);
             this.mbSave.Style = MetroFramework.MetroColorStyle.Lime;
             this.mbSave.TabIndex = 67;
-            this.mbSave.Text = "Guardar";
+            this.mbSave.Text = "Guardar cambios";
             this.mbSave.UseSelectable = true;
             // 
             // mtAddRest
@@ -101,6 +101,7 @@
             this.mtAddRest.TabIndex = 66;
             this.mtAddRest.Text = "¿Más descansos?";
             this.mtAddRest.UseSelectable = true;
+            this.mtAddRest.Click += new System.EventHandler(this.mtAddRest_Click);
             // 
             // label12
             // 
@@ -381,30 +382,32 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "ENTRADA";
             // 
-            // txtCode
-            // 
-            this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(67, 602);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.ReadOnly = true;
-            this.txtCode.Size = new System.Drawing.Size(249, 27);
-            this.txtCode.TabIndex = 39;
-            // 
             // lbCode
             // 
             this.lbCode.AutoSize = true;
             this.lbCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCode.Location = new System.Drawing.Point(63, 543);
             this.lbCode.Name = "lbCode";
-            this.lbCode.Size = new System.Drawing.Size(91, 24);
+            this.lbCode.Size = new System.Drawing.Size(222, 24);
             this.lbCode.TabIndex = 38;
-            this.lbCode.Text = "CÓDIGO";
+            this.lbCode.Text = "CÓDIGO DE HORARIO";
+            // 
+            // txtCode
+            // 
+            this.txtCode.AutoSize = true;
+            this.txtCode.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode.Location = new System.Drawing.Point(61, 593);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(120, 33);
+            this.txtCode.TabIndex = 69;
+            this.txtCode.Text = "txtCode";
             // 
             // ModifyScheduleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 717);
+            this.Controls.Add(this.txtCode);
             this.Controls.Add(this.cbDepartment);
             this.Controls.Add(this.mbSave);
             this.Controls.Add(this.mtAddRest);
@@ -434,9 +437,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nupFinalHour);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCode);
             this.Controls.Add(this.lbCode);
             this.Name = "ModifyScheduleForm";
+            this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Modificar Horario";
             this.Load += new System.EventHandler(this.ModifyScheduleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nupDayExtra)).EndInit();
@@ -482,7 +485,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown nupFinalHour;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label lbCode;
+        private System.Windows.Forms.Label txtCode;
     }
 }

@@ -106,6 +106,7 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.mLbCode);
             this.Name = "ModifyRestForm";
+            this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Modificar Descanso";
             this.Load += new System.EventHandler(this.ModifyRestForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutos)).EndInit();

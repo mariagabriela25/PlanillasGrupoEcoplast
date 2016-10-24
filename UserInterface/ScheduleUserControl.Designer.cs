@@ -28,67 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleUserControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.mtAddSchedule = new MetroFramework.Controls.MetroTile();
-            this.mtDeleteSchedule = new MetroFramework.Controls.MetroTile();
-            this.mtUpdateSchedule = new MetroFramework.Controls.MetroTile();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleUserControl));
             this.mgSchedules = new MetroFramework.Controls.MetroGrid();
+            this.mtUpdateSchedule = new MetroFramework.Controls.MetroTile();
+            this.mtDeleteSchedule = new MetroFramework.Controls.MetroTile();
+            this.mtAddSchedule = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.mgSchedules)).BeginInit();
             this.SuspendLayout();
-            // 
-            // mtAddSchedule
-            // 
-            this.mtAddSchedule.ActiveControl = null;
-            this.mtAddSchedule.Location = new System.Drawing.Point(84, 3);
-            this.mtAddSchedule.Name = "mtAddSchedule";
-            this.mtAddSchedule.Size = new System.Drawing.Size(322, 76);
-            this.mtAddSchedule.Style = MetroFramework.MetroColorStyle.Teal;
-            this.mtAddSchedule.TabIndex = 0;
-            this.mtAddSchedule.Text = "Agregar";
-            this.mtAddSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mtAddSchedule.TileImage = ((System.Drawing.Image)(resources.GetObject("mtAddSchedule.TileImage")));
-            this.mtAddSchedule.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtAddSchedule.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.mtAddSchedule.UseSelectable = true;
-            this.mtAddSchedule.UseTileImage = true;
-            this.mtAddSchedule.Click += new System.EventHandler(this.mtAddSchedule_Click);
-            // 
-            // mtDeleteSchedule
-            // 
-            this.mtDeleteSchedule.ActiveControl = null;
-            this.mtDeleteSchedule.Location = new System.Drawing.Point(748, 3);
-            this.mtDeleteSchedule.Name = "mtDeleteSchedule";
-            this.mtDeleteSchedule.Size = new System.Drawing.Size(337, 76);
-            this.mtDeleteSchedule.Style = MetroFramework.MetroColorStyle.Teal;
-            this.mtDeleteSchedule.TabIndex = 4;
-            this.mtDeleteSchedule.Text = "Eliminar";
-            this.mtDeleteSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mtDeleteSchedule.TileImage = ((System.Drawing.Image)(resources.GetObject("mtDeleteSchedule.TileImage")));
-            this.mtDeleteSchedule.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtDeleteSchedule.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.mtDeleteSchedule.UseSelectable = true;
-            this.mtDeleteSchedule.UseTileImage = true;
-            this.mtDeleteSchedule.Click += new System.EventHandler(this.mtDeleteSchedule_Click);
-            // 
-            // mtUpdateSchedule
-            // 
-            this.mtUpdateSchedule.ActiveControl = null;
-            this.mtUpdateSchedule.Location = new System.Drawing.Point(412, 3);
-            this.mtUpdateSchedule.Name = "mtUpdateSchedule";
-            this.mtUpdateSchedule.Size = new System.Drawing.Size(330, 76);
-            this.mtUpdateSchedule.Style = MetroFramework.MetroColorStyle.Teal;
-            this.mtUpdateSchedule.TabIndex = 5;
-            this.mtUpdateSchedule.Text = "Guardar cambios";
-            this.mtUpdateSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mtUpdateSchedule.TileImage = ((System.Drawing.Image)(resources.GetObject("mtUpdateSchedule.TileImage")));
-            this.mtUpdateSchedule.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtUpdateSchedule.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.mtUpdateSchedule.UseSelectable = true;
-            this.mtUpdateSchedule.UseTileImage = true;
-            this.mtUpdateSchedule.Click += new System.EventHandler(this.mtUpdateSchedule_Click);
             // 
             // mgSchedules
             // 
@@ -138,6 +87,57 @@
             this.mgSchedules.Style = MetroFramework.MetroColorStyle.Teal;
             this.mgSchedules.TabIndex = 6;
             this.mgSchedules.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgSchedules_CellContentClick);
+            // 
+            // mtUpdateSchedule
+            // 
+            this.mtUpdateSchedule.ActiveControl = null;
+            this.mtUpdateSchedule.Location = new System.Drawing.Point(412, 3);
+            this.mtUpdateSchedule.Name = "mtUpdateSchedule";
+            this.mtUpdateSchedule.Size = new System.Drawing.Size(330, 76);
+            this.mtUpdateSchedule.Style = MetroFramework.MetroColorStyle.Teal;
+            this.mtUpdateSchedule.TabIndex = 5;
+            this.mtUpdateSchedule.Text = "Modificar";
+            this.mtUpdateSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mtUpdateSchedule.TileImage = ((System.Drawing.Image)(resources.GetObject("mtUpdateSchedule.TileImage")));
+            this.mtUpdateSchedule.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mtUpdateSchedule.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtUpdateSchedule.UseSelectable = true;
+            this.mtUpdateSchedule.UseTileImage = true;
+            this.mtUpdateSchedule.Click += new System.EventHandler(this.mtUpdateSchedule_Click);
+            // 
+            // mtDeleteSchedule
+            // 
+            this.mtDeleteSchedule.ActiveControl = null;
+            this.mtDeleteSchedule.Location = new System.Drawing.Point(748, 3);
+            this.mtDeleteSchedule.Name = "mtDeleteSchedule";
+            this.mtDeleteSchedule.Size = new System.Drawing.Size(337, 76);
+            this.mtDeleteSchedule.Style = MetroFramework.MetroColorStyle.Teal;
+            this.mtDeleteSchedule.TabIndex = 4;
+            this.mtDeleteSchedule.Text = "Eliminar";
+            this.mtDeleteSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mtDeleteSchedule.TileImage = ((System.Drawing.Image)(resources.GetObject("mtDeleteSchedule.TileImage")));
+            this.mtDeleteSchedule.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mtDeleteSchedule.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtDeleteSchedule.UseSelectable = true;
+            this.mtDeleteSchedule.UseTileImage = true;
+            this.mtDeleteSchedule.Click += new System.EventHandler(this.mtDeleteSchedule_Click);
+            // 
+            // mtAddSchedule
+            // 
+            this.mtAddSchedule.ActiveControl = null;
+            this.mtAddSchedule.Location = new System.Drawing.Point(84, 3);
+            this.mtAddSchedule.Name = "mtAddSchedule";
+            this.mtAddSchedule.Size = new System.Drawing.Size(322, 76);
+            this.mtAddSchedule.Style = MetroFramework.MetroColorStyle.Teal;
+            this.mtAddSchedule.TabIndex = 0;
+            this.mtAddSchedule.Text = "Agregar";
+            this.mtAddSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mtAddSchedule.TileImage = ((System.Drawing.Image)(resources.GetObject("mtAddSchedule.TileImage")));
+            this.mtAddSchedule.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mtAddSchedule.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtAddSchedule.UseSelectable = true;
+            this.mtAddSchedule.UseTileImage = true;
+            this.mtAddSchedule.Click += new System.EventHandler(this.mtAddSchedule_Click);
             // 
             // ScheduleUserControl
             // 
