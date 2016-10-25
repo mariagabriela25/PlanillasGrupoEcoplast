@@ -15,15 +15,15 @@ namespace DataAccess
 
         public Boolean AddWorkDayDetail(TOWorkDayDetail workday)
         {
-            SqlCommand query = new SqlCommand("INSERT INTO DetalleDiaLaborado VALUES (@CodeEmpl, @OrdinaryHour, @TotalHours, @Date, @WeekCode, @Note, @ID, @State)", conex);
-            query.Parameters.AddWithValue("@CodeEmpl", workday.Code);
+            SqlCommand query = new SqlCommand("INSERT INTO DetalleDiaLaborado VALUES (@CodeEmpl, @OrdinaryHour, @TotalHours, @Date, @Note, @ID, @State, @WeekCode)", conex);
+            query.Parameters.AddWithValue("@CodeEmpl", workday.CodeEmployee);
             query.Parameters.AddWithValue("@OrdinaryHour", workday.OrdinaryHours);
             query.Parameters.AddWithValue("@TotalHours", workday.TotalHours);
             query.Parameters.AddWithValue("@Date", workday.Date);
-            query.Parameters.AddWithValue("@WeekCode", System.Data.SqlTypes.SqlString.Null);
             query.Parameters.AddWithValue("@Note", workday.Note == null ? System.Data.SqlTypes.SqlString.Null : workday.Note);
             query.Parameters.AddWithValue("@ID", 1);
             query.Parameters.AddWithValue("@State", workday.State == true ? 1 : 0);
+            query.Parameters.AddWithValue("@WeekCode", System.Data.SqlTypes.SqlString.Null);
 
             if (conex.State != System.Data.ConnectionState.Open)
             {
