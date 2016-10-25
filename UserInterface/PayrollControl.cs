@@ -22,5 +22,14 @@ namespace UserInterface
 
         }
 
+        private void mt_day_hours_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void mt_week_hours_Click(object sender, EventArgs e)
+        {
+            new WeekDetailUserControl().Show();
+        }
     }
 }
