@@ -35,13 +35,14 @@
             this.mgEmployees = new MetroFramework.Controls.MetroGrid();
             this.mtModify = new MetroFramework.Controls.MetroTile();
             this.mtDelete = new MetroFramework.Controls.MetroTile();
-            this.mtRefresh = new MetroFramework.Controls.MetroTile();
             this.mtAdd = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.mgEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // mgEmployees
             // 
+            this.mgEmployees.AllowUserToAddRows = false;
+            this.mgEmployees.AllowUserToDeleteRows = false;
             this.mgEmployees.AllowUserToResizeRows = false;
             this.mgEmployees.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mgEmployees.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -68,8 +69,9 @@
             this.mgEmployees.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgEmployees.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mgEmployees.Location = new System.Drawing.Point(83, 126);
-            this.mgEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mgEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.mgEmployees.Name = "mgEmployees";
+            this.mgEmployees.ReadOnly = true;
             this.mgEmployees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(173)))));
@@ -81,7 +83,7 @@
             this.mgEmployees.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mgEmployees.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgEmployees.Size = new System.Drawing.Size(1066, 549);
+            this.mgEmployees.Size = new System.Drawing.Size(1066, 893);
             this.mgEmployees.Style = MetroFramework.MetroColorStyle.Teal;
             this.mgEmployees.TabIndex = 7;
             this.mgEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgEmployees_CellContentClick);
@@ -90,7 +92,7 @@
             // 
             this.mtModify.ActiveControl = null;
             this.mtModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtModify.Location = new System.Drawing.Point(577, 4);
+            this.mtModify.Location = new System.Drawing.Point(331, 4);
             this.mtModify.Margin = new System.Windows.Forms.Padding(4);
             this.mtModify.Name = "mtModify";
             this.mtModify.Size = new System.Drawing.Size(260, 73);
@@ -109,7 +111,7 @@
             // 
             this.mtDelete.ActiveControl = null;
             this.mtDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtDelete.Location = new System.Drawing.Point(845, 4);
+            this.mtDelete.Location = new System.Drawing.Point(599, 4);
             this.mtDelete.Margin = new System.Windows.Forms.Padding(4);
             this.mtDelete.Name = "mtDelete";
             this.mtDelete.Size = new System.Drawing.Size(252, 73);
@@ -123,25 +125,6 @@
             this.mtDelete.UseSelectable = true;
             this.mtDelete.UseTileImage = true;
             this.mtDelete.Click += new System.EventHandler(this.mtDelete_Click);
-            // 
-            // mtRefresh
-            // 
-            this.mtRefresh.ActiveControl = null;
-            this.mtRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtRefresh.Location = new System.Drawing.Point(331, 4);
-            this.mtRefresh.Margin = new System.Windows.Forms.Padding(4);
-            this.mtRefresh.Name = "mtRefresh";
-            this.mtRefresh.Size = new System.Drawing.Size(238, 73);
-            this.mtRefresh.Style = MetroFramework.MetroColorStyle.Teal;
-            this.mtRefresh.TabIndex = 4;
-            this.mtRefresh.Text = "Actualizar";
-            this.mtRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mtRefresh.TileImage = ((System.Drawing.Image)(resources.GetObject("mtRefresh.TileImage")));
-            this.mtRefresh.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtRefresh.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.mtRefresh.UseSelectable = true;
-            this.mtRefresh.UseTileImage = true;
-            this.mtRefresh.Click += new System.EventHandler(this.mtRefresh_Click);
             // 
             // mtAdd
             // 
@@ -170,11 +153,10 @@
             this.Controls.Add(this.mgEmployees);
             this.Controls.Add(this.mtModify);
             this.Controls.Add(this.mtDelete);
-            this.Controls.Add(this.mtRefresh);
             this.Controls.Add(this.mtAdd);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeUserControl";
-            this.Size = new System.Drawing.Size(1153, 679);
+            this.Size = new System.Drawing.Size(1153, 1038);
             this.Load += new System.EventHandler(this.EmployeeUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mgEmployees)).EndInit();
             this.ResumeLayout(false);
@@ -184,7 +166,6 @@
         #endregion
 
         private MetroFramework.Controls.MetroTile mtAdd;
-        private MetroFramework.Controls.MetroTile mtRefresh;
         private MetroFramework.Controls.MetroTile mtDelete;
         private MetroFramework.Controls.MetroTile mtModify;
         private MetroFramework.Controls.MetroGrid mgEmployees;

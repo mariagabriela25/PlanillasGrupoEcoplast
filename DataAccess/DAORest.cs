@@ -87,7 +87,7 @@ namespace DataAccess
                 rest = new TORest
                 {
                     Code = reader.GetInt32(0),
-                    Minutes = reader.GetInt32(0)
+                    Minutes = reader.GetInt32(1)
                 };
 
             }
@@ -98,6 +98,26 @@ namespace DataAccess
             }
 
             return rest;
+        }
+
+        public void modifyRest(TORest modRest)
+        {
+            String query = "UPDATE Descanso SET CantMinutos = @CantMinutos WHERE CodDescanso = @CodDescanso; ";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@CodDescanso", modRest.Code);
+            command.Parameters.AddWithValue("@CantMinutos", modRest.Minutes);
+
+            if (connection.State != ConnectionState.Open)
+            {
+                connection.Open();
+            }
+
+            command.ExecuteNonQuery();
+
+            if (connection.State != ConnectionState.Closed)
+            {
+                connection.Close();
+            }
         }
 
         public void deleteRest(int code)

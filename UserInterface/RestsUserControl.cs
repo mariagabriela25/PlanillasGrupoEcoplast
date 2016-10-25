@@ -44,13 +44,18 @@ namespace UserInterface
 
         private void mtAdd_Click(object sender, EventArgs e)
         {
-            new AddRestForm().Show();
+            new AddRestForm(this).Show();
         }
 
         private void mtRefresh_Click(object sender, EventArgs e)
         {
-            refresh();
-            mgRests.Refresh();
+            for (int i = 0; i < mgRests.RowCount; i++)
+            {
+                if (mgRests.Rows[i].Selected)
+                {
+                    new ModifyRestForm(int.Parse(mgRests.Rows[i].Cells[0].Value.ToString()), this).Show();
+                }
+            }
         }
 
         private void mtDelete_Click(object sender, EventArgs e)

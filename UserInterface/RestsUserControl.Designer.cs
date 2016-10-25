@@ -37,9 +37,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestsUserControl));
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.mgRests = new MetroFramework.Controls.MetroGrid();
-            this.mtAdd = new MetroFramework.Controls.MetroTile();
+            this.mtModify = new MetroFramework.Controls.MetroTile();
             this.mtDelete = new MetroFramework.Controls.MetroTile();
-            this.mtRefresh = new MetroFramework.Controls.MetroTile();
+            this.mtAdd = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mgRests)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +72,7 @@
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid1.Location = new System.Drawing.Point(75, 114);
-            this.metroGrid1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroGrid1.Margin = new System.Windows.Forms.Padding(4);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -90,6 +90,7 @@
             // 
             // mgRests
             // 
+            this.mgRests.AllowUserToAddRows = false;
             this.mgRests.AllowUserToDeleteRows = false;
             this.mgRests.AllowUserToResizeRows = false;
             this.mgRests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
@@ -117,8 +118,8 @@
             this.mgRests.EnableHeadersVisualStyles = false;
             this.mgRests.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgRests.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mgRests.Location = new System.Drawing.Point(55, 114);
-            this.mgRests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mgRests.Location = new System.Drawing.Point(14, 114);
+            this.mgRests.Margin = new System.Windows.Forms.Padding(4);
             this.mgRests.MultiSelect = false;
             this.mgRests.Name = "mgRests";
             this.mgRests.ReadOnly = true;
@@ -137,33 +138,33 @@
             this.mgRests.Style = MetroFramework.MetroColorStyle.Teal;
             this.mgRests.TabIndex = 1;
             // 
-            // mtAdd
+            // mtModify
             // 
-            this.mtAdd.ActiveControl = null;
-            this.mtAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtAdd.Location = new System.Drawing.Point(55, 4);
-            this.mtAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.mtAdd.Name = "mtAdd";
-            this.mtAdd.Size = new System.Drawing.Size(246, 69);
-            this.mtAdd.Style = MetroFramework.MetroColorStyle.Teal;
-            this.mtAdd.TabIndex = 2;
-            this.mtAdd.Text = "Agregar";
-            this.mtAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mtAdd.TileImage = ((System.Drawing.Image)(resources.GetObject("mtAdd.TileImage")));
-            this.mtAdd.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtAdd.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.mtAdd.UseSelectable = true;
-            this.mtAdd.UseTileImage = true;
-            this.mtAdd.Click += new System.EventHandler(this.mtAdd_Click);
+            this.mtModify.ActiveControl = null;
+            this.mtModify.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mtModify.Location = new System.Drawing.Point(281, 4);
+            this.mtModify.Margin = new System.Windows.Forms.Padding(4);
+            this.mtModify.Name = "mtModify";
+            this.mtModify.Size = new System.Drawing.Size(257, 69);
+            this.mtModify.Style = MetroFramework.MetroColorStyle.Teal;
+            this.mtModify.TabIndex = 5;
+            this.mtModify.Text = "Modificar";
+            this.mtModify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mtModify.TileImage = ((System.Drawing.Image)(resources.GetObject("mtModify.TileImage")));
+            this.mtModify.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mtModify.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtModify.UseSelectable = true;
+            this.mtModify.UseTileImage = true;
+            this.mtModify.Click += new System.EventHandler(this.mtRefresh_Click);
             // 
             // mtDelete
             // 
             this.mtDelete.ActiveControl = null;
             this.mtDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtDelete.Location = new System.Drawing.Point(574, 4);
-            this.mtDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtDelete.Location = new System.Drawing.Point(546, 4);
+            this.mtDelete.Margin = new System.Windows.Forms.Padding(4);
             this.mtDelete.Name = "mtDelete";
-            this.mtDelete.Size = new System.Drawing.Size(239, 69);
+            this.mtDelete.Size = new System.Drawing.Size(257, 69);
             this.mtDelete.Style = MetroFramework.MetroColorStyle.Teal;
             this.mtDelete.TabIndex = 4;
             this.mtDelete.Text = "Eliminar";
@@ -175,35 +176,35 @@
             this.mtDelete.UseTileImage = true;
             this.mtDelete.Click += new System.EventHandler(this.mtDelete_Click);
             // 
-            // mtRefresh
+            // mtAdd
             // 
-            this.mtRefresh.ActiveControl = null;
-            this.mtRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtRefresh.Location = new System.Drawing.Point(309, 4);
-            this.mtRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.mtRefresh.Name = "mtRefresh";
-            this.mtRefresh.Size = new System.Drawing.Size(257, 69);
-            this.mtRefresh.Style = MetroFramework.MetroColorStyle.Teal;
-            this.mtRefresh.TabIndex = 5;
-            this.mtRefresh.Text = "Actualizar";
-            this.mtRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mtRefresh.TileImage = ((System.Drawing.Image)(resources.GetObject("mtRefresh.TileImage")));
-            this.mtRefresh.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mtRefresh.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.mtRefresh.UseSelectable = true;
-            this.mtRefresh.UseTileImage = true;
-            this.mtRefresh.Click += new System.EventHandler(this.mtRefresh_Click);
+            this.mtAdd.ActiveControl = null;
+            this.mtAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mtAdd.Location = new System.Drawing.Point(14, 4);
+            this.mtAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.mtAdd.Name = "mtAdd";
+            this.mtAdd.Size = new System.Drawing.Size(259, 69);
+            this.mtAdd.Style = MetroFramework.MetroColorStyle.Teal;
+            this.mtAdd.TabIndex = 2;
+            this.mtAdd.Text = "Agregar";
+            this.mtAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mtAdd.TileImage = ((System.Drawing.Image)(resources.GetObject("mtAdd.TileImage")));
+            this.mtAdd.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mtAdd.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtAdd.UseSelectable = true;
+            this.mtAdd.UseTileImage = true;
+            this.mtAdd.Click += new System.EventHandler(this.mtAdd_Click);
             // 
             // RestsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.mtRefresh);
+            this.Controls.Add(this.mtModify);
             this.Controls.Add(this.mtDelete);
             this.Controls.Add(this.mtAdd);
             this.Controls.Add(this.mgRests);
             this.Controls.Add(this.metroGrid1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RestsUserControl";
             this.Size = new System.Drawing.Size(835, 522);
             this.Load += new System.EventHandler(this.RestsUserControl_Load);
@@ -219,6 +220,6 @@
         private MetroFramework.Controls.MetroGrid mgRests;
         private MetroFramework.Controls.MetroTile mtAdd;
         private MetroFramework.Controls.MetroTile mtDelete;
-        private MetroFramework.Controls.MetroTile mtRefresh;
+        private MetroFramework.Controls.MetroTile mtModify;
     }
 }

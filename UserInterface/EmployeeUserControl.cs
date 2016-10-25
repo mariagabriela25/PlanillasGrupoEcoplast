@@ -45,7 +45,7 @@ namespace UserInterface
 
         private void mtAdd_Click(object sender, EventArgs e)
         {
-            new AddEmployeeForm().Show();
+            new AddEmployeeForm(this).Show();
         }
 
         private void mgEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -83,7 +83,7 @@ namespace UserInterface
             {
                 if (mgEmployees.Rows[i].Selected)
                 {
-                    new ModifyEmployeeForm(int.Parse(mgEmployees.Rows[i].Cells[0].Value.ToString())).Show();   
+                    new ModifyEmployeeForm(int.Parse(mgEmployees.Rows[i].Cells[0].Value.ToString()), this).Show();   
                 }
             }
 

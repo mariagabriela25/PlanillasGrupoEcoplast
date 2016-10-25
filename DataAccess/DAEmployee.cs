@@ -129,10 +129,12 @@ namespace DataAccess
 
         public void ModifyEmployee(TOEmployee employee)
         {
-            SqlCommand query = new SqlCommand("UPDATE Empleado SET CodDepartamento = @CodDepartamento WHERE CodEmpleado = @CodEmpleado;", conex);
+            SqlCommand query = new SqlCommand("UPDATE Empleado SET CodDepartamento = @CodDepartamento, Nombre = @Nombre, Apellido = @Apellido WHERE CodEmpleado = @CodEmpleado;", conex);
             query.Parameters.AddWithValue("@CodDepartamento", employee.Departament.Code);
             query.Parameters.AddWithValue("@CodEmpleado", employee.Code);
-
+            query.Parameters.AddWithValue("@Nombre", employee.Name);
+            query.Parameters.AddWithValue("@Apellido", employee.LastName);
+            
             if (conex.State != ConnectionState.Open)
             {
                 conex.Open();
@@ -145,6 +147,46 @@ namespace DataAccess
                 conex.Close();
             }
 
+        }
+
+
+        public List<TOEmployee> GetEmployeesDepartment(int departmentCode)
+        {
+            List<TOEmployee> employees = new List<TOEmployee>();
+            SqlCommand query = new SqlCommand("SELECT * FROM Empleado inner join Departamento ON Empleado.CodDepartamento = Departamento.CodDepartamento WHERE Empleado.CodDepartamento = @depCode;", conex);
+            query.Parameters.AddWithValue("@depCode", departmentCode);
+
+            if (conex.State != ConnectionState.Open)
+            {
+                conex.Open();
+            }
+            SqlDataReader reader = query.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+
+                while (reader.Read())
+                {
+                    TOEmployee e = new TOEmployee();
+                    TODepartment d = new TODepartment();
+                    e.Code = reader.GetInt32(0);
+                    e.Name = reader.GetString(1);
+                    e.LastName = reader.GetString(2);
+                    d.Code = reader.GetInt32(3);
+                    d.Name = reader.GetString(4);
+                    e.Departament = d;
+
+                    employees.Add(e);
+                }
+            }
+
+            if (conex.State != ConnectionState.Closed)
+            {
+                conex.Close();
+            }
+
+
+            return employees;
         }
 
     }

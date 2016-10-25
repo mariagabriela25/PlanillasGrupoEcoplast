@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mcbDepartment = new MetroFramework.Controls.MetroComboBox();
             this.mcbSchedule = new MetroFramework.Controls.MetroComboBox();
             this.mcbEmployee = new MetroFramework.Controls.MetroComboBox();
@@ -43,6 +43,11 @@
             this.mbCalculate = new MetroFramework.Controls.MetroButton();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.mdtDay = new MetroFramework.Controls.MetroDateTime();
+            this.mlWorkedRange = new MetroFramework.Controls.MetroLabel();
+            this.mlWeekRange = new MetroFramework.Controls.MetroLabel();
+            this.mbSave = new MetroFramework.Controls.MetroButton();
+            this.radioWorked = new MetroFramework.Controls.MetroRadioButton();
+            this.radioExpected = new MetroFramework.Controls.MetroRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.mgrWorkDayDetail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,40 +90,40 @@
             this.mgrWorkDayDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mgrWorkDayDetail.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.mgrWorkDayDetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mgrWorkDayDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mgrWorkDayDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.mgrWorkDayDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.mgrWorkDayDetail.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mgrWorkDayDetail.DefaultCellStyle = dataGridViewCellStyle2;
             this.mgrWorkDayDetail.EnableHeadersVisualStyles = false;
             this.mgrWorkDayDetail.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgrWorkDayDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mgrWorkDayDetail.Location = new System.Drawing.Point(35, 194);
+            this.mgrWorkDayDetail.Location = new System.Drawing.Point(3, 173);
             this.mgrWorkDayDetail.Name = "mgrWorkDayDetail";
             this.mgrWorkDayDetail.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mgrWorkDayDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mgrWorkDayDetail.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mgrWorkDayDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgrWorkDayDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgrWorkDayDetail.Size = new System.Drawing.Size(645, 99);
+            this.mgrWorkDayDetail.Size = new System.Drawing.Size(734, 87);
             this.mgrWorkDayDetail.TabIndex = 9;
             // 
             // mtbNote
@@ -136,7 +141,7 @@
             this.mtbNote.CustomButton.UseSelectable = true;
             this.mtbNote.CustomButton.Visible = false;
             this.mtbNote.Lines = new string[0];
-            this.mtbNote.Location = new System.Drawing.Point(35, 334);
+            this.mtbNote.Location = new System.Drawing.Point(35, 307);
             this.mtbNote.MaxLength = 32767;
             this.mtbNote.Name = "mtbNote";
             this.mtbNote.PasswordChar = '\0';
@@ -154,7 +159,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(35, 312);
+            this.metroLabel1.Location = new System.Drawing.Point(35, 285);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(41, 19);
             this.metroLabel1.TabIndex = 11;
@@ -215,11 +220,67 @@
             this.mdtDay.Size = new System.Drawing.Size(200, 29);
             this.mdtDay.TabIndex = 18;
             // 
+            // mlWorkedRange
+            // 
+            this.mlWorkedRange.AutoSize = true;
+            this.mlWorkedRange.Location = new System.Drawing.Point(155, 266);
+            this.mlWorkedRange.Name = "mlWorkedRange";
+            this.mlWorkedRange.Size = new System.Drawing.Size(15, 19);
+            this.mlWorkedRange.TabIndex = 21;
+            this.mlWorkedRange.Text = "-";
+            // 
+            // mlWeekRange
+            // 
+            this.mlWeekRange.AutoSize = true;
+            this.mlWeekRange.Location = new System.Drawing.Point(602, 263);
+            this.mlWeekRange.Name = "mlWeekRange";
+            this.mlWeekRange.Size = new System.Drawing.Size(15, 19);
+            this.mlWeekRange.TabIndex = 22;
+            this.mlWeekRange.Text = "-";
+            // 
+            // mbSave
+            // 
+            this.mbSave.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.mbSave.Location = new System.Drawing.Point(35, 345);
+            this.mbSave.Name = "mbSave";
+            this.mbSave.Size = new System.Drawing.Size(119, 57);
+            this.mbSave.TabIndex = 23;
+            this.mbSave.Text = "Guardar";
+            this.mbSave.UseSelectable = true;
+            this.mbSave.Click += new System.EventHandler(this.mbSave_Click);
+            // 
+            // radioWorked
+            // 
+            this.radioWorked.AutoSize = true;
+            this.radioWorked.Checked = true;
+            this.radioWorked.Location = new System.Drawing.Point(35, 267);
+            this.radioWorked.Name = "radioWorked";
+            this.radioWorked.Size = new System.Drawing.Size(114, 15);
+            this.radioWorked.TabIndex = 24;
+            this.radioWorked.TabStop = true;
+            this.radioWorked.Text = "Horas Laboradas:";
+            this.radioWorked.UseSelectable = true;
+            // 
+            // radioExpected
+            // 
+            this.radioExpected.AutoSize = true;
+            this.radioExpected.Location = new System.Drawing.Point(470, 266);
+            this.radioExpected.Name = "radioExpected";
+            this.radioExpected.Size = new System.Drawing.Size(124, 15);
+            this.radioExpected.TabIndex = 25;
+            this.radioExpected.Text = "Horas Establecidas:";
+            this.radioExpected.UseSelectable = true;
+            // 
             // DayDetailUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.radioExpected);
+            this.Controls.Add(this.radioWorked);
+            this.Controls.Add(this.mbSave);
+            this.Controls.Add(this.mlWeekRange);
+            this.Controls.Add(this.mlWorkedRange);
             this.Controls.Add(this.mdtDay);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.mbCalculate);
@@ -233,7 +294,7 @@
             this.Controls.Add(this.mcbSchedule);
             this.Controls.Add(this.mcbDepartment);
             this.Name = "DayDetailUserControl";
-            this.Size = new System.Drawing.Size(740, 405);
+            this.Size = new System.Drawing.Size(740, 419);
             this.Load += new System.EventHandler(this.DayDetailUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mgrWorkDayDetail)).EndInit();
             this.ResumeLayout(false);
@@ -255,5 +316,10 @@
         private MetroFramework.Controls.MetroButton mbCalculate;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroDateTime mdtDay;
+        private MetroFramework.Controls.MetroLabel mlWorkedRange;
+        private MetroFramework.Controls.MetroLabel mlWeekRange;
+        private MetroFramework.Controls.MetroButton mbSave;
+        private MetroFramework.Controls.MetroRadioButton radioWorked;
+        private MetroFramework.Controls.MetroRadioButton radioExpected;
     }
 }

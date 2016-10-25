@@ -45,6 +45,36 @@ namespace DataAccess
             }
         }
 
+        public void modifyDepartment(TODepartment dep)
+        {
+            try
+            {
+
+                if (conexion.State != System.Data.ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                SqlCommand command = new SqlCommand("UPDATE Departamento SET NombreDepartamento = @NombreDepartamento WHERE CodDepartamento = @CodDepartamento;", conexion);
+
+                command.Parameters.AddWithValue("@NombreDepartamento", dep.Name);
+                command.Parameters.AddWithValue("@CodDepartamento", dep.Code);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (conexion.State != System.Data.ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
 
         public void deleteDepartment(TODepartment dep)
         {

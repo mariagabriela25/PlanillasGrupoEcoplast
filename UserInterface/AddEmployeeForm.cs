@@ -13,9 +13,12 @@ namespace UserInterface
 {
     public partial class AddEmployeeForm : MetroFramework.Forms.MetroForm
     {
-        public AddEmployeeForm()
+        EmployeeUserControl uc;
+
+        public AddEmployeeForm(EmployeeUserControl euc)
         {
             InitializeComponent();
+            uc = euc;
         }
 
         private void AddEmployeeForm_Load(object sender, EventArgs e)
@@ -35,6 +38,7 @@ namespace UserInterface
         {
             Department de = (Department)mcbDepart.SelectedItem;
             new Employee(Int32.Parse(mtCod.Text), mtName.Text, mtLastName.Text, new Department(de.Code, de.Name)).AddEmployee();
+            uc.refresh();
             this.Close();
         }
     }
