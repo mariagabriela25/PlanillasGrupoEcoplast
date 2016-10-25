@@ -47,5 +47,13 @@ namespace BusinessLogic
             return new DAOWorkDay().AddWorkDayDetail(workday);
         }
 
+        public void get_WorkDayUser(int code_Employee, DateTime firstDate, DateTime lastDate)
+        {
+            TOWorkDayDetail toe = new TOWorkDayDetail(code_Employee, firstDate, lastDate);
+            DAOWorkDay daow = new DAOWorkDay();
+            this.TotalHours = daow.getWorkDay(toe).TotalHours;
+            
+        }
+
     }
 }

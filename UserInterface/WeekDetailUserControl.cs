@@ -14,16 +14,22 @@ namespace UserInterface
     public partial class WeekDetailUserControl : MetroFramework.Forms.MetroForm
     {
 
-        List<Employee> list;
-        DataTable dt;
-        int code;
+       private WorkDayDetail work_day;
+       private WorkWeekDetail work_week;
+       private List<Employee> list;
+       private DataTable dt;
+       private const int HORAS = 48;
+        int codeE;
         public WeekDetailUserControl()
         {
             InitializeComponent();
         }
 
-        private void DayHoursForm_Load(object sender, EventArgs e)
+        private void WeekDetailUserControl_Load(object sender, EventArgs e)
         {
+            work_day = new WorkDayDetail();
+            work_week = new WorkWeekDetail();
+
             dt = new DataTable();
             dt.Columns.Add("Código del Empleado");
             dt.Columns.Add("Nombre");
@@ -57,16 +63,55 @@ namespace UserInterface
                     if (mg_employees.Rows[i].Selected)
                     {
                         String selected_employee = mg_employees.Rows[i].Cells[1].Value.ToString() + " " + mg_employees.Rows[i].Cells[2].Value.ToString();
-                        code = Int32.Parse(mg_employees.Rows[i].Cells[0].Value.ToString());
-                        tb_selection.Text = code + " " + selected_employee;
+                    codeE = Int32.Parse(mg_employees.Rows[i].Cells[0].Value.ToString());
+                        tb_selection.Text = selected_employee;
                     }
                 }
         }
 
         private void mt_calculate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DateTime firstDate = Convert.ToDateTime(tb_firstDate.Text);
+                DateTime lastDate = Convert.ToDateTime(tb_lastDate.Text);
+
+                work_day.get_WorkDayUser(codeE, firstDate, lastDate);
+                
+                tb_week.Text = firstDate.ToShortDateString() + " al " + lastDate.ToShortDateString();
+                ml_week.Visible = true;
+                tb_week.Visible = true;
+
+                int totalHours = Int32.Parse(work_day.TotalHours.ToString());
+
+                tb_totalHours.Text = totalHours.ToString();
+                ml_total.Visible = true;
+                tb_totalHours.Visible = true;
+
+                int Extrahours = 0;
+                if (totalHours - HORAS >= 0)
+                {
+                    Extrahours = totalHours - HORAS;
+                }
+
+
+                tb_ExtraHours.Text = Extrahours.ToString();
+                ml_extra.Visible = true;
+                tb_ExtraHours.Visible = true;
+               
+            }
+            catch (FormatException)
+            {
+                tb_firstDate.Text = "";
+                tb_lastDate.Text = "";
+                MessageBox.Show("Recuerde Digitar la fecha de manera correcta:  dia/mes/año");
+            } catch (System.Data.SqlTypes.SqlNullValueException)
+            {
+                MessageBox.Show("No se encuentran Registros Asociados");
+            }
             
         }
+
     }
 }
 

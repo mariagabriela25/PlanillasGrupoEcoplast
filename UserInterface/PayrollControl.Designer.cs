@@ -36,7 +36,7 @@
             // 
             this.mt_week_hours.ActiveControl = null;
             this.mt_week_hours.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mt_week_hours.Location = new System.Drawing.Point(182, 269);
+            this.mt_week_hours.Location = new System.Drawing.Point(331, 269);
             this.mt_week_hours.Name = "mt_week_hours";
             this.mt_week_hours.Size = new System.Drawing.Size(155, 53);
             this.mt_week_hours.TabIndex = 0;
@@ -48,7 +48,7 @@
             // mt_day_hours
             // 
             this.mt_day_hours.ActiveControl = null;
-            this.mt_day_hours.Location = new System.Drawing.Point(182, 159);
+            this.mt_day_hours.Location = new System.Drawing.Point(331, 165);
             this.mt_day_hours.Name = "mt_day_hours";
             this.mt_day_hours.Size = new System.Drawing.Size(155, 53);
             this.mt_day_hours.TabIndex = 1;
