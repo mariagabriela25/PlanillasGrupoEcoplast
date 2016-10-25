@@ -73,20 +73,13 @@ namespace UserInterface
         {
             try
             {
-                DateTime firstDate = Convert.ToDateTime(tb_firstDate.Text);
-                DateTime lastDate = Convert.ToDateTime(tb_lastDate.Text);
-
-                work_day.get_WorkDayUser(codeE, firstDate, lastDate);
+                work_day.get_WorkDayUser(codeE, Int32.Parse(nudWeek.Value.ToString()));
                 
-                tb_week.Text = firstDate.ToShortDateString() + " al " + lastDate.ToShortDateString();
+                tb_week.Text = nudWeek.Value.ToString();
                 ml_week.Visible = true;
                 tb_week.Visible = true;
 
                 int totalHours = Int32.Parse(work_day.TotalHours.ToString());
-
-                tb_totalHours.Text = totalHours.ToString();
-                ml_total.Visible = true;
-                tb_totalHours.Visible = true;
 
                 int Extrahours = 0;
                 if (totalHours - HORAS >= 0)
@@ -98,20 +91,48 @@ namespace UserInterface
                 tb_ExtraHours.Text = Extrahours.ToString();
                 ml_extra.Visible = true;
                 tb_ExtraHours.Visible = true;
-               
+
+                if (totalHours < HORAS)
+                {
+                    tb_ordinaryHours.Text = totalHours.ToString();
+                }
+                else
+                {
+                    tb_ordinaryHours.Text = HORAS + "";
+                }
+                
+                ml_total.Visible = true;
+                tb_ordinaryHours.Visible = true;
+
             }
-            catch (FormatException)
-            {
-                tb_firstDate.Text = "";
-                tb_lastDate.Text = "";
-                MessageBox.Show("Recuerde Digitar la fecha de manera correcta:  dia/mes/año");
-            } catch (System.Data.SqlTypes.SqlNullValueException)
+            catch (System.Data.SqlTypes.SqlNullValueException)
             {
                 MessageBox.Show("No se encuentran Registros Asociados");
             }
             
         }
 
+        private void mBtSaveWeekDetail_Click(object sender, EventArgs e)
+        {
+            int employeeCode = codeE;
+            int weekNumber = Int32.Parse(tb_week.Text);
+            double extraHours = Double.Parse(tb_ExtraHours.Text);
+            double ordinaryHours = Double.Parse(tb_ordinaryHours.Text);
+            int currentYear = new DateTime().Year;
+            double totalHours = extraHours + ordinaryHours;
+
+            work_week = new WorkWeekDetail(0,ordinaryHours,totalHours,extraHours,employeeCode,weekNumber,currentYear);
+            Boolean saved = work_week.SaveWeekReport();
+
+            if(saved)
+            {
+                MessageBox.Show("Detalle Guardado de forma correcta");
+            }
+
+            tb_week.Text = "";
+            tb_ExtraHours.Text = "";
+            tb_ordinaryHours.Text = "";
+        }
     }
 }
 
