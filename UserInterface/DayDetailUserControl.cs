@@ -276,7 +276,7 @@ namespace UserInterface
             WorkDayDetail workday = new WorkDayDetail();
             double hours = radioWorked.Checked ? worked.Hours + (worked.Minutes != 0 ? 0.5 : 0) : expected.Hours + (expected.Minutes != 0 ? 0.5 : 0);
 
-            workday.Code = ((Employee)mcbEmployee.SelectedItem).Code;
+            workday.CodeEmployee = ((Employee)mcbEmployee.SelectedItem).Code;
             workday.OrdinaryHours = hours;
             workday.TotalHours = hours;
             workday.Date = mdtDay.Value;
@@ -284,6 +284,13 @@ namespace UserInterface
             workday.Note = mtbNote.Text.Equals("") ? null : mtbNote.Text;
             workday.State = true;
             workday.AddWorkDay();
+
+            mtbNote.Text = "";
+            mlWeekRange.Text = "";
+            mlWorkedRange.Text = "";
+
+            mgrWorkDayDetail.DataSource = null;
+
 
         }
     }
