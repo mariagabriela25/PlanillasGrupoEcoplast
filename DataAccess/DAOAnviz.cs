@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using TransferObjects;
+using System.Windows.Forms;
 
 namespace DataAccess
 {
@@ -15,42 +16,52 @@ namespace DataAccess
 
         public List<TOCheck> GetChecks(int id, DateTime inicio, DateTime fin)
         {
-            List<TOCheck> list = new List<TOCheck>();
-            TOCheck check;
-
-            SqlCommand query = new SqlCommand("SELECT Userid, CheckTime, CheckType FROM Checkinout " +
-                "WHERE CheckTime Between @Inicio AND @Fin AND Userid = @ID ORDER BY CheckTime", conex);
-
-            query.Parameters.AddWithValue("@Inicio", inicio);
-            query.Parameters.AddWithValue("@Fin", fin);
-            query.Parameters.AddWithValue("@ID", id);
-
-            if (conex.State != System.Data.ConnectionState.Open)
+            try
             {
-                conex.Open();
-            }
-            SqlDataReader reader = query.ExecuteReader();
+                List<TOCheck> list = new List<TOCheck>();
+                TOCheck check;
 
-            if(reader.HasRows)
-            {
-                reader.Read();
-                do
+                SqlCommand query = new SqlCommand("SELECT Userid, CheckTime, CheckType FROM Checkinout " +
+                    "WHERE CheckTime Between @Inicio AND @Fin AND Userid = @ID ORDER BY CheckTime", conex);
+
+                query.Parameters.AddWithValue("@Inicio", inicio);
+                query.Parameters.AddWithValue("@Fin", fin);
+                query.Parameters.AddWithValue("@ID", id);
+
+                if (conex.State != System.Data.ConnectionState.Open)
                 {
-                    check = new TOCheck();
-                    check.ID = Int32.Parse(reader.GetString(0));
-                    check.CheckTime = reader.GetDateTime(1);
-                    check.CheckType = reader.GetString(2);
-                    list.Add(check);
-                    
-                } while (reader.GetString(2) != "O" && reader.Read() && reader.GetString(2) != "I");
-            }
+                    conex.Open();
+                }
+                SqlDataReader reader = query.ExecuteReader();
 
-            if (conex.State != System.Data.ConnectionState.Closed)
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    do
+                    {
+                        check = new TOCheck();
+                        check.ID = Int32.Parse(reader.GetString(0));
+                        check.CheckTime = reader.GetDateTime(1);
+                        check.CheckType = reader.GetString(2);
+                        list.Add(check);
+
+                    } while (reader.GetString(2) != "O" && reader.Read() && reader.GetString(2) != "I");
+                } else
+                {
+                    return null;
+                }
+
+                if (conex.State != System.Data.ConnectionState.Closed)
+                {
+                    conex.Close();
+                }
+
+                return list;
+            } catch(Exception e)
             {
-                conex.Close();
+                MessageBox.Show("Error de conexion");
             }
-
-            return list;
+            return null;
         }
 
     }
