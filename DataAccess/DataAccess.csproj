@@ -64,7 +64,6 @@
     <Compile Include="DADepartment.cs" />
     <Compile Include="DAEmployee.cs" />
     <Compile Include="DAOAnviz.cs" />
-    <Compile Include="DAORest.cs" />
     <Compile Include="DAOSchedule.cs" />
     <Compile Include="DAOuser.cs" />
     <Compile Include="DAOWeekDetail.cs" />

@@ -32,7 +32,7 @@
             this.mtEmployees = new MetroFramework.Controls.MetroTile();
             this.mtDepartments = new MetroFramework.Controls.MetroTile();
             this.mtSchedules = new MetroFramework.Controls.MetroTile();
-            this.mtRests = new MetroFramework.Controls.MetroTile();
+            this.mtDailyPayroll = new MetroFramework.Controls.MetroTile();
             this.mtPayroll = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
@@ -42,9 +42,10 @@
             this.mtEmployees.BackColor = System.Drawing.SystemColors.Control;
             this.mtEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtEmployees.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.mtEmployees.Location = new System.Drawing.Point(0, 94);
+            this.mtEmployees.Location = new System.Drawing.Point(0, 4);
+            this.mtEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtEmployees.Name = "mtEmployees";
-            this.mtEmployees.Size = new System.Drawing.Size(153, 85);
+            this.mtEmployees.Size = new System.Drawing.Size(204, 105);
             this.mtEmployees.Style = MetroFramework.MetroColorStyle.Green;
             this.mtEmployees.TabIndex = 0;
             this.mtEmployees.Text = "Empleados";
@@ -63,9 +64,10 @@
             this.mtDepartments.BackColor = System.Drawing.SystemColors.Control;
             this.mtDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtDepartments.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.mtDepartments.Location = new System.Drawing.Point(0, 185);
+            this.mtDepartments.Location = new System.Drawing.Point(0, 117);
+            this.mtDepartments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtDepartments.Name = "mtDepartments";
-            this.mtDepartments.Size = new System.Drawing.Size(153, 85);
+            this.mtDepartments.Size = new System.Drawing.Size(204, 105);
             this.mtDepartments.Style = MetroFramework.MetroColorStyle.Green;
             this.mtDepartments.TabIndex = 1;
             this.mtDepartments.Text = "Departamentos";
@@ -84,9 +86,10 @@
             this.mtSchedules.BackColor = System.Drawing.SystemColors.Control;
             this.mtSchedules.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtSchedules.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.mtSchedules.Location = new System.Drawing.Point(0, 277);
+            this.mtSchedules.Location = new System.Drawing.Point(0, 230);
+            this.mtSchedules.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtSchedules.Name = "mtSchedules";
-            this.mtSchedules.Size = new System.Drawing.Size(153, 85);
+            this.mtSchedules.Size = new System.Drawing.Size(204, 105);
             this.mtSchedules.Style = MetroFramework.MetroColorStyle.Green;
             this.mtSchedules.TabIndex = 2;
             this.mtSchedules.Text = "Horarios";
@@ -99,26 +102,26 @@
             this.mtSchedules.UseTileImage = true;
             this.mtSchedules.Click += new System.EventHandler(this.mtSchedules_Click);
             // 
-            // mtRests
+            // mtDailyPayroll
             // 
-            this.mtRests.ActiveControl = null;
-            this.mtRests.BackColor = System.Drawing.SystemColors.Control;
-            this.mtRests.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtRests.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.mtRests.Location = new System.Drawing.Point(0, 368);
-            this.mtRests.Name = "mtRests";
-            this.mtRests.Size = new System.Drawing.Size(153, 85);
-            this.mtRests.Style = MetroFramework.MetroColorStyle.Green;
-            this.mtRests.TabIndex = 3;
-            this.mtRests.Text = "Descansos";
-            this.mtRests.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.mtRests.TileImage = ((System.Drawing.Image)(resources.GetObject("mtRests.TileImage")));
-            this.mtRests.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.mtRests.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
-            this.mtRests.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.mtRests.UseSelectable = true;
-            this.mtRests.UseTileImage = true;
-            this.mtRests.Click += new System.EventHandler(this.mtRests_Click);
+            this.mtDailyPayroll.ActiveControl = null;
+            this.mtDailyPayroll.BackColor = System.Drawing.SystemColors.Control;
+            this.mtDailyPayroll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mtDailyPayroll.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.mtDailyPayroll.Location = new System.Drawing.Point(0, 343);
+            this.mtDailyPayroll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtDailyPayroll.Name = "mtDailyPayroll";
+            this.mtDailyPayroll.Size = new System.Drawing.Size(204, 105);
+            this.mtDailyPayroll.Style = MetroFramework.MetroColorStyle.Green;
+            this.mtDailyPayroll.TabIndex = 3;
+            this.mtDailyPayroll.Text = "Planilla Diaria";
+            this.mtDailyPayroll.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.mtDailyPayroll.TileImage = ((System.Drawing.Image)(resources.GetObject("mtDailyPayroll.TileImage")));
+            this.mtDailyPayroll.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.mtDailyPayroll.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
+            this.mtDailyPayroll.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtDailyPayroll.UseSelectable = true;
+            this.mtDailyPayroll.UseTileImage = true;
             // 
             // mtPayroll
             // 
@@ -126,12 +129,13 @@
             this.mtPayroll.BackColor = System.Drawing.SystemColors.Control;
             this.mtPayroll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtPayroll.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.mtPayroll.Location = new System.Drawing.Point(0, 3);
+            this.mtPayroll.Location = new System.Drawing.Point(0, 456);
+            this.mtPayroll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtPayroll.Name = "mtPayroll";
-            this.mtPayroll.Size = new System.Drawing.Size(153, 85);
+            this.mtPayroll.Size = new System.Drawing.Size(204, 105);
             this.mtPayroll.Style = MetroFramework.MetroColorStyle.Green;
             this.mtPayroll.TabIndex = 4;
-            this.mtPayroll.Text = "Planillas";
+            this.mtPayroll.Text = "Planilla Semanal";
             this.mtPayroll.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.mtPayroll.TileImage = ((System.Drawing.Image)(resources.GetObject("mtPayroll.TileImage")));
             this.mtPayroll.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -143,16 +147,17 @@
             // 
             // MenuUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lime;
             this.Controls.Add(this.mtPayroll);
-            this.Controls.Add(this.mtRests);
+            this.Controls.Add(this.mtDailyPayroll);
             this.Controls.Add(this.mtSchedules);
             this.Controls.Add(this.mtDepartments);
             this.Controls.Add(this.mtEmployees);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MenuUserControl";
-            this.Size = new System.Drawing.Size(157, 550);
+            this.Size = new System.Drawing.Size(209, 677);
             this.ResumeLayout(false);
 
         }
@@ -162,7 +167,7 @@
         private MetroFramework.Controls.MetroTile mtEmployees;
         private MetroFramework.Controls.MetroTile mtDepartments;
         private MetroFramework.Controls.MetroTile mtSchedules;
-        private MetroFramework.Controls.MetroTile mtRests;
+        private MetroFramework.Controls.MetroTile mtDailyPayroll;
         private MetroFramework.Controls.MetroTile mtPayroll;
     }
 }

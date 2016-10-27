@@ -87,7 +87,6 @@
             this.mgSchedules.Size = new System.Drawing.Size(1662, 627);
             this.mgSchedules.Style = MetroFramework.MetroColorStyle.Teal;
             this.mgSchedules.TabIndex = 6;
-            this.mgSchedules.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgSchedules_CellContentClick);
             // 
             // mtUpdateSchedule
             // 

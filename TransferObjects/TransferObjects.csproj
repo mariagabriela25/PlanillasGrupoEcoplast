@@ -57,7 +57,6 @@
     <Compile Include="TOCheck.cs" />
     <Compile Include="TODepartment.cs" />
     <Compile Include="TOEmployee.cs" />
-    <Compile Include="TORest.cs" />
     <Compile Include="TOSchedule.cs" />
     <Compile Include="TOUser.cs" />
     <Compile Include="TOWorkDayDetail.cs" />
