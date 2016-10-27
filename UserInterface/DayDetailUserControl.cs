@@ -112,7 +112,7 @@ namespace UserInterface
             TimeSpan timeout = new TimeSpan(23, 59, 59);
             finalDay = finalDay.Date + timeout;
 
-            FillGrid(new Check().GetChecks(employee.Code, initialDay, finalDay));
+            //FillGrid(new Check().GetChecks(employee.Code, initialDay, finalDay));
 
             expected = schedule.finalHour.Subtract(schedule.InitialHour);
             mlWeekRange.Text = expected.ToString();
@@ -120,99 +120,99 @@ namespace UserInterface
         }
 
 
-        public void FillGrid(List<Check> checks)
-        {
-            dt = new DataTable();
-            dt.Columns.Add("Origen");
-            dt.Columns.Add("Marca Entrada");
-            dt.Columns.Add("Descansos");
-            dt.Columns.Add("Marca Salida");
+        //public void FillGrid(List<Check> checks)
+        //{
+        //    dt = new DataTable();
+        //    dt.Columns.Add("Origen");
+        //    dt.Columns.Add("Marca Entrada");
+        //    dt.Columns.Add("Descansos");
+        //    dt.Columns.Add("Marca Salida");
 
-            if (checks == null)
-            {
-                dt.Rows.Add("Empleado", "", "No existen marcas registradas para el dia", "");
-                mgrWorkDayDetail.DataSource = dt;
-                mgrWorkDayDetail.AutoResizeColumns();
-                mbSave.Enabled = false;
-            }
-            else
-            {
+        //    if (checks == null)
+        //    {
+        //        dt.Rows.Add("Empleado", "", "No existen marcas registradas para el dia", "");
+        //        mgrWorkDayDetail.DataSource = dt;
+        //        mgrWorkDayDetail.AutoResizeColumns();
+        //        mbSave.Enabled = false;
+        //    }
+        //    else
+        //    {
 
-                List<Check> rests = new List<Check>();
+        //        List<Check> rests = new List<Check>();
 
-                foreach (Check ch in checks)
-                {
-                    String type = convertType(ch.CheckType);
-                    if (type.Equals("Entrada"))
-                    {
-                        checkin = ch;
-                    }
-                    else if (type.Equals("Salida"))
-                    {
-                        checkout = ch;
-                    }
-                    else
-                    {
-                        rests.Add(ch);
-                    }
-                }
+        //        foreach (Check ch in checks)
+        //        {
+        //            String type = convertType(ch.CheckType);
+        //            if (type.Equals("Entrada"))
+        //            {
+        //                checkin = ch;
+        //            }
+        //            else if (type.Equals("Salida"))
+        //            {
+        //                checkout = ch;
+        //            }
+        //            else
+        //            {
+        //                rests.Add(ch);
+        //            }
+        //        }
 
-                if (checkout == null && checkin == null)
-                {
-                    dt.Rows.Add("Empleado", "Marca Ausente", RestChecksFormat(rests), "Marca Ausente");
-                    dt.Rows.Add("Horario", schedule.InitialHour.TimeOfDay, schedule.RestList.Count, schedule.finalHour.TimeOfDay);
+        //        if (checkout == null && checkin == null)
+        //        {
+        //            dt.Rows.Add("Empleado", "Marca Ausente", RestChecksFormat(rests), "Marca Ausente");
+        //            dt.Rows.Add("Horario", schedule.InitialHour.TimeOfDay, schedule.RestList.Count, schedule.finalHour.TimeOfDay);
 
-                    DateTime entry = SetCheckIn(schedule.InitialHour, rests[0].CheckTime);
-                    DateTime exit = SetCheckOut(schedule.finalHour, rests[rests.Count - 1].CheckTime);
-                    worked = exit.Subtract(entry);
-                    mlWorkedRange.Text = worked.ToString();
+        //            DateTime entry = SetCheckIn(schedule.InitialHour, rests[0].CheckTime);
+        //            DateTime exit = SetCheckOut(schedule.finalHour, rests[rests.Count - 1].CheckTime);
+        //            worked = exit.Subtract(entry);
+        //            mlWorkedRange.Text = worked.ToString();
 
-                }
-                else if (checkin == null)
-                {
+        //        }
+        //        else if (checkin == null)
+        //        {
 
-                    dt.Rows.Add("Empleado", "Marca Ausente", RestChecksFormat(rests),
-                        String.Format("{0:T}", checkout.CheckTime));
-                    dt.Rows.Add("Horario", schedule.InitialHour.TimeOfDay, schedule.RestList.Count, schedule.finalHour.TimeOfDay);
+        //            dt.Rows.Add("Empleado", "Marca Ausente", RestChecksFormat(rests),
+        //                String.Format("{0:T}", checkout.CheckTime));
+        //            dt.Rows.Add("Horario", schedule.InitialHour.TimeOfDay, schedule.RestList.Count, schedule.finalHour.TimeOfDay);
 
-                    DateTime entry = SetCheckIn(schedule.InitialHour, rests[0].CheckTime);
-                    DateTime exit = SetCheckOut(schedule.finalHour, checkout.CheckTime);
-                    worked = exit.Subtract(entry);
-                    mlWorkedRange.Text = worked.ToString();
+        //            DateTime entry = SetCheckIn(schedule.InitialHour, rests[0].CheckTime);
+        //            DateTime exit = SetCheckOut(schedule.finalHour, checkout.CheckTime);
+        //            worked = exit.Subtract(entry);
+        //            mlWorkedRange.Text = worked.ToString();
 
-                }
-                else if (checkout == null)
-                {
-                    dt.Rows.Add("Empleado", String.Format("{0:T}", checkin.CheckTime),
-                        RestChecksFormat(rests), "Marca Ausente");
-                    dt.Rows.Add("Horario", schedule.InitialHour.TimeOfDay, schedule.RestList.Count, schedule.finalHour.TimeOfDay);
+        //        }
+        //        else if (checkout == null)
+        //        {
+        //            dt.Rows.Add("Empleado", String.Format("{0:T}", checkin.CheckTime),
+        //                RestChecksFormat(rests), "Marca Ausente");
+        //            dt.Rows.Add("Horario", schedule.InitialHour.TimeOfDay, schedule.RestList.Count, schedule.finalHour.TimeOfDay);
 
-                    DateTime entry = SetCheckIn(schedule.InitialHour, checkin.CheckTime);
-                    DateTime exit = SetCheckOut(schedule.finalHour, rests[rests.Count - 1].CheckTime);
-                    worked = exit.Subtract(entry);
-                    mlWorkedRange.Text = worked.ToString();
+        //            DateTime entry = SetCheckIn(schedule.InitialHour, checkin.CheckTime);
+        //            DateTime exit = SetCheckOut(schedule.finalHour, rests[rests.Count - 1].CheckTime);
+        //            worked = exit.Subtract(entry);
+        //            mlWorkedRange.Text = worked.ToString();
 
-                }
-                else
-                {
-                    dt.Rows.Add("Empleado", String.Format("{0:T}", checkin.CheckTime),
-                        RestChecksFormat(rests),
-                        String.Format("{0:T}", checkout.CheckTime));
-                    dt.Rows.Add("Horario", schedule.InitialHour.TimeOfDay, schedule.RestList.Count, schedule.finalHour.TimeOfDay);
+        //        }
+        //        else
+        //        {
+        //            dt.Rows.Add("Empleado", String.Format("{0:T}", checkin.CheckTime),
+        //                RestChecksFormat(rests),
+        //                String.Format("{0:T}", checkout.CheckTime));
+        //            dt.Rows.Add("Horario", schedule.InitialHour.TimeOfDay, schedule.RestList.Count, schedule.finalHour.TimeOfDay);
 
-                    DateTime entry = SetCheckIn(schedule.InitialHour, checkin.CheckTime);
-                    DateTime exit = SetCheckOut(schedule.finalHour, checkout.CheckTime);
-                    worked = exit.Subtract(entry);
-                    mlWorkedRange.Text = worked.ToString();
-                }
+        //            DateTime entry = SetCheckIn(schedule.InitialHour, checkin.CheckTime);
+        //            DateTime exit = SetCheckOut(schedule.finalHour, checkout.CheckTime);
+        //            worked = exit.Subtract(entry);
+        //            mlWorkedRange.Text = worked.ToString();
+        //        }
 
-                mgrWorkDayDetail.DataSource = dt;
-                mgrWorkDayDetail.AutoResizeColumns();
-                //mgrWorkDayDetail.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                mbSave.Enabled = true;
+        //        mgrWorkDayDetail.DataSource = dt;
+        //        mgrWorkDayDetail.AutoResizeColumns();
+        //        //mgrWorkDayDetail.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        //        mbSave.Enabled = true;
 
-            }
-        }
+        //    }
+        //}
 
         public String RestChecksFormat(List<Check> list)
         {

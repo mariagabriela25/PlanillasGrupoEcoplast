@@ -43,7 +43,7 @@
             this.mtEmployees.BackColor = System.Drawing.SystemColors.Control;
             this.mtEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtEmployees.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.mtEmployees.Location = new System.Drawing.Point(0, 4);
+            this.mtEmployees.Location = new System.Drawing.Point(0, 117);
             this.mtEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.mtEmployees.Name = "mtEmployees";
             this.mtEmployees.Size = new System.Drawing.Size(204, 105);
@@ -65,7 +65,7 @@
             this.mtDepartments.BackColor = System.Drawing.SystemColors.Control;
             this.mtDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtDepartments.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.mtDepartments.Location = new System.Drawing.Point(0, 117);
+            this.mtDepartments.Location = new System.Drawing.Point(0, 4);
             this.mtDepartments.Margin = new System.Windows.Forms.Padding(4);
             this.mtDepartments.Name = "mtDepartments";
             this.mtDepartments.Size = new System.Drawing.Size(204, 105);
