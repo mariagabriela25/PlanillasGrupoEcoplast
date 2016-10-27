@@ -28,11 +28,17 @@ namespace BusinessLogic
             List<TOCheck> list = new DAOAnviz().GetChecks(ID, Inicio, Fin);
             List<Check> checks = new List<Check>();
 
-            foreach(TOCheck c in  list)
+            if (list != null)
             {
-                checks.Add(new Check(c.ID, c.CheckTime, c.CheckType));
+                foreach (TOCheck c in list)
+                {
+                    checks.Add(new Check(c.ID, c.CheckTime, c.CheckType));
+                }
+                return checks;
+            } else
+            {
+                return null;
             }
-            return checks;   
         }
     }
 }
