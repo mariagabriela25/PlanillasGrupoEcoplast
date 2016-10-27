@@ -53,7 +53,6 @@ namespace UserInterface
 
         private void DayReviewUserControl_Load(object sender, EventArgs e)
         {
-            backgroundWorker2.WorkerReportsProgress = true;
 
             List<Department> list = new Department().GetAllDepartment();
             cbDepart.DisplayMember = "Name";
@@ -62,6 +61,9 @@ namespace UserInterface
             {
                 cbDepart.Items.Add(d); 
             }
+
+
+            backgroundWorker2.WorkerReportsProgress = true;
         }
 
         private void cbDepart_SelectedIndexChanged(object sender, EventArgs e)
