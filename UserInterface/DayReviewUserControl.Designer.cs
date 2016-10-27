@@ -33,6 +33,9 @@
             this.mlWeekNum = new MetroFramework.Controls.MetroLabel();
             this.mbCheck = new MetroFramework.Controls.MetroButton();
             this.cbDepart = new System.Windows.Forms.ComboBox();
+            this.mpgCalculation = new MetroFramework.Controls.MetroProgressBar();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.mnWeekNum)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +83,7 @@
             // 
             // mbCheck
             // 
+            this.mbCheck.Enabled = false;
             this.mbCheck.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.mbCheck.Location = new System.Drawing.Point(197, 114);
             this.mbCheck.Name = "mbCheck";
@@ -96,19 +100,44 @@
             this.cbDepart.Name = "cbDepart";
             this.cbDepart.Size = new System.Drawing.Size(176, 21);
             this.cbDepart.TabIndex = 5;
+            this.cbDepart.SelectedIndexChanged += new System.EventHandler(this.cbDepart_SelectedIndexChanged);
+            // 
+            // mpgCalculation
+            // 
+            this.mpgCalculation.Location = new System.Drawing.Point(-2, 210);
+            this.mpgCalculation.Name = "mpgCalculation";
+            this.mpgCalculation.Size = new System.Drawing.Size(548, 5);
+            this.mpgCalculation.TabIndex = 6;
+            // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            this.backgroundWorker2.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker2_ProgressChanged);
+            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(257, 182);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 7;
             // 
             // DayReviewUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.mpgCalculation);
             this.Controls.Add(this.cbDepart);
             this.Controls.Add(this.mbCheck);
             this.Controls.Add(this.mlWeekNum);
             this.Controls.Add(this.mnWeekNum);
             this.Controls.Add(this.mlDepart);
             this.Name = "DayReviewUserControl";
-            this.Size = new System.Drawing.Size(542, 504);
+            this.Size = new System.Drawing.Size(547, 248);
+            this.Load += new System.EventHandler(this.DayReviewUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mnWeekNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -121,5 +150,9 @@
         private MetroFramework.Controls.MetroLabel mlWeekNum;
         private MetroFramework.Controls.MetroButton mbCheck;
         private System.Windows.Forms.ComboBox cbDepart;
+        private MetroFramework.Controls.MetroProgressBar mpgCalculation;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.Label label1;
     }
 }

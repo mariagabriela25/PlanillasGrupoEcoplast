@@ -24,7 +24,7 @@ namespace UserInterface
         public DayReviewUserControl()
         {
             InitializeComponent();
-            EstandarDate = DateTime.Today;
+            EstandarDate = DateTime.Now;
             firstDayOfWeek = DayOfWeek.Monday;
             System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-CR");
         }
@@ -34,20 +34,65 @@ namespace UserInterface
             WeekNum = Int32.Parse(mnWeekNum.Value.ToString());
             SundayDate = CalcWeekNum(WeekNum);
             CodDepartment = ((Department)cbDepart.SelectedItem).Code;
+            backgroundWorker2.RunWorkerAsync();
+            //Llamada al constructor del ValidationProcess
+
         }
 
         public DateTime CalcWeekNum(int weeknum)
         {
-            DayOfWeek firstDay = DayOfWeek.Monday;
             EstandarDate = EstandarDate.AddDays(DayOfWeek.Sunday - EstandarDate.DayOfWeek);
 
-            int week = new GregorianCalendar().GetWeekOfYear(EstandarDate, CalendarWeekRule.FirstDay, firstDay);
+            int week = new GregorianCalendar().GetWeekOfYear(EstandarDate, CalendarWeekRule.FirstDay, firstDayOfWeek);
             if (weeknum != week)
             {
                 EstandarDate = EstandarDate.AddDays((weeknum - week) * 7);
             }
 
             return EstandarDate;
+        }
+
+        private void DayReviewUserControl_Load(object sender, EventArgs e)
+        {
+            backgroundWorker2.WorkerReportsProgress = true;
+            // This event will be raised on the worker thread when the worker starts
+            //backgroundWorker2.DoWork += new DoWorkEventHandler(backgroundWorker2_DoWork);
+            // This event will be raised when we call ReportProgress
+            //backgroundWorker2.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker2_ProgressChanged);
+
+            List<Department> list = new Department().GetAllDepartment();
+            cbDepart.DisplayMember = "Name";
+            cbDepart.ValueMember = "Code";
+            foreach (Department d in list)
+            {
+                cbDepart.Items.Add(d); 
+            }
+        }
+
+        private void cbDepart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            mbCheck.Enabled = true;
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            for (int i = 0; i < 100; i++)
+            {
+
+                backgroundWorker2.ReportProgress(i);
+                System.Threading.Thread.Sleep(25);
+            }
+        }
+
+        private void backgroundWorker2_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            mpgCalculation.Value = e.ProgressPercentage;
+            this.label1.Text = e.ProgressPercentage.ToString() + "%";
+        }
+
+        private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            new AnomaliesReview().Show();
         }
     }
 }
