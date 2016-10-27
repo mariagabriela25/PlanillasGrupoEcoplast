@@ -34,6 +34,7 @@
             this.mtSchedules = new MetroFramework.Controls.MetroTile();
             this.mtDailyPayroll = new MetroFramework.Controls.MetroTile();
             this.mtPayroll = new MetroFramework.Controls.MetroTile();
+            this.mtExportData = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // mtEmployees
@@ -43,7 +44,7 @@
             this.mtEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtEmployees.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mtEmployees.Location = new System.Drawing.Point(0, 4);
-            this.mtEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.mtEmployees.Name = "mtEmployees";
             this.mtEmployees.Size = new System.Drawing.Size(204, 105);
             this.mtEmployees.Style = MetroFramework.MetroColorStyle.Green;
@@ -65,7 +66,7 @@
             this.mtDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtDepartments.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mtDepartments.Location = new System.Drawing.Point(0, 117);
-            this.mtDepartments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtDepartments.Margin = new System.Windows.Forms.Padding(4);
             this.mtDepartments.Name = "mtDepartments";
             this.mtDepartments.Size = new System.Drawing.Size(204, 105);
             this.mtDepartments.Style = MetroFramework.MetroColorStyle.Green;
@@ -87,7 +88,7 @@
             this.mtSchedules.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtSchedules.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mtSchedules.Location = new System.Drawing.Point(0, 230);
-            this.mtSchedules.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtSchedules.Margin = new System.Windows.Forms.Padding(4);
             this.mtSchedules.Name = "mtSchedules";
             this.mtSchedules.Size = new System.Drawing.Size(204, 105);
             this.mtSchedules.Style = MetroFramework.MetroColorStyle.Green;
@@ -109,7 +110,7 @@
             this.mtDailyPayroll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtDailyPayroll.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mtDailyPayroll.Location = new System.Drawing.Point(0, 343);
-            this.mtDailyPayroll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtDailyPayroll.Margin = new System.Windows.Forms.Padding(4);
             this.mtDailyPayroll.Name = "mtDailyPayroll";
             this.mtDailyPayroll.Size = new System.Drawing.Size(204, 105);
             this.mtDailyPayroll.Style = MetroFramework.MetroColorStyle.Green;
@@ -130,7 +131,7 @@
             this.mtPayroll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtPayroll.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.mtPayroll.Location = new System.Drawing.Point(0, 456);
-            this.mtPayroll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtPayroll.Margin = new System.Windows.Forms.Padding(4);
             this.mtPayroll.Name = "mtPayroll";
             this.mtPayroll.Size = new System.Drawing.Size(204, 105);
             this.mtPayroll.Style = MetroFramework.MetroColorStyle.Green;
@@ -145,19 +146,41 @@
             this.mtPayroll.UseTileImage = true;
             this.mtPayroll.Click += new System.EventHandler(this.mtPayroll_Click);
             // 
+            // mtExportData
+            // 
+            this.mtExportData.ActiveControl = null;
+            this.mtExportData.BackColor = System.Drawing.SystemColors.Control;
+            this.mtExportData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mtExportData.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.mtExportData.Location = new System.Drawing.Point(0, 569);
+            this.mtExportData.Margin = new System.Windows.Forms.Padding(4);
+            this.mtExportData.Name = "mtExportData";
+            this.mtExportData.Size = new System.Drawing.Size(204, 105);
+            this.mtExportData.Style = MetroFramework.MetroColorStyle.Green;
+            this.mtExportData.TabIndex = 5;
+            this.mtExportData.Text = "Exportar Datos";
+            this.mtExportData.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.mtExportData.TileImage = ((System.Drawing.Image)(resources.GetObject("mtExportData.TileImage")));
+            this.mtExportData.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.mtExportData.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
+            this.mtExportData.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.mtExportData.UseSelectable = true;
+            this.mtExportData.UseTileImage = true;
+            // 
             // MenuUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lime;
+            this.Controls.Add(this.mtExportData);
             this.Controls.Add(this.mtPayroll);
             this.Controls.Add(this.mtDailyPayroll);
             this.Controls.Add(this.mtSchedules);
             this.Controls.Add(this.mtDepartments);
             this.Controls.Add(this.mtEmployees);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuUserControl";
-            this.Size = new System.Drawing.Size(209, 677);
+            this.Size = new System.Drawing.Size(209, 695);
             this.ResumeLayout(false);
 
         }
@@ -169,5 +192,6 @@
         private MetroFramework.Controls.MetroTile mtSchedules;
         private MetroFramework.Controls.MetroTile mtDailyPayroll;
         private MetroFramework.Controls.MetroTile mtPayroll;
+        private MetroFramework.Controls.MetroTile mtExportData;
     }
 }
