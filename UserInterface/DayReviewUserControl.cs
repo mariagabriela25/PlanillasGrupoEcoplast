@@ -18,7 +18,7 @@ namespace UserInterface
         private int WeekNum;
         private DateTime EstandarDate;
         private DateTime SundayDate;
-        private int CodDepartment;
+        public int CodDepartment;
         DayOfWeek firstDayOfWeek;
 
         public DayReviewUserControl()
@@ -34,9 +34,8 @@ namespace UserInterface
             WeekNum = Int32.Parse(mnWeekNum.Value.ToString());
             SundayDate = CalcWeekNum(WeekNum);
             CodDepartment = ((Department)cbDepart.SelectedItem).Code;
-            backgroundWorker2.RunWorkerAsync();
-            //Llamada al constructor del ValidationProcess
 
+            backgroundWorker2.RunWorkerAsync();
         }
 
         public DateTime CalcWeekNum(int weeknum)
@@ -55,10 +54,6 @@ namespace UserInterface
         private void DayReviewUserControl_Load(object sender, EventArgs e)
         {
             backgroundWorker2.WorkerReportsProgress = true;
-            // This event will be raised on the worker thread when the worker starts
-            //backgroundWorker2.DoWork += new DoWorkEventHandler(backgroundWorker2_DoWork);
-            // This event will be raised when we call ReportProgress
-            //backgroundWorker2.ProgressChanged += new ProgressChangedEventHandler(backgroundWorker2_ProgressChanged);
 
             List<Department> list = new Department().GetAllDepartment();
             cbDepart.DisplayMember = "Name";
@@ -72,15 +67,19 @@ namespace UserInterface
         private void cbDepart_SelectedIndexChanged(object sender, EventArgs e)
         {
             mbCheck.Enabled = true;
+            
         }
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-            for (int i = 0; i < 100; i++)
+            List<Employee> employees = new Employee().GetEmployeesDep(CodDepartment);
+            int cont = 0;
+            foreach (Employee em in employees)
             {
-
-                backgroundWorker2.ReportProgress(i);
+                Boolean test = new ValidationProcess(WeekNum, SundayDate, CodDepartment, em.Code).core();
+                backgroundWorker2.ReportProgress(cont);
                 System.Threading.Thread.Sleep(25);
+                cont++;
             }
         }
 

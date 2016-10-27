@@ -19,15 +19,7 @@ namespace UserInterface
 
         private void mtPayroll_Click(object sender, EventArgs e)
         {
-            if (!MainForm.Instance.Content.Controls.ContainsKey("DayReviewUserControl"))
-            {
-                DayReviewUserControl dd = new DayReviewUserControl();
-                dd.Dock = DockStyle.Fill;
-                MainForm.Instance.Content.Controls.Add(dd);
-            }
-            MainForm.Instance.Content.Controls["DayReviewUserControl"].BringToFront();
-            MainForm.Instance.BackButton.Visible = true;
-            MainForm.Instance.LabelTitle.Text = "Administración de Planillas";
+
         }
 
         private void mtEmployees_Click(object sender, EventArgs e)
@@ -67,6 +59,19 @@ namespace UserInterface
             MainForm.Instance.Content.Controls["DepartmentUserControl"].BringToFront();
             MainForm.Instance.BackButton.Visible = true;
             MainForm.Instance.LabelTitle.Text = "Administración de Departamentos";
+        }
+
+        private void mtDailyPayroll_Click(object sender, EventArgs e)
+        {
+            if (!MainForm.Instance.Content.Controls.ContainsKey("DayReviewUserControl"))
+            {
+                DayReviewUserControl dd = new DayReviewUserControl();
+                dd.Dock = DockStyle.Fill;
+                MainForm.Instance.Content.Controls.Add(dd);
+            }
+            MainForm.Instance.Content.Controls["DayReviewUserControl"].BringToFront();
+            MainForm.Instance.BackButton.Visible = true;
+            MainForm.Instance.LabelTitle.Text = "Administración de Planillas";
         }
     }
 }

@@ -12,11 +12,6 @@ namespace BusinessLogic
         Check checkin;
         Check checkout;
 
-      
-
-
-        public TimeSpan worked;
-        public TimeSpan expected;
         public TimeSpan allowedPositive;
         public TimeSpan allowedNegative;
         public TimeSpan penaltyPositive;
@@ -26,70 +21,147 @@ namespace BusinessLogic
 
         int weekNumber;
 
-        DateTime lastDay;
+        DateTime lastWeekDay;
+        DateTime firstWeekDay;
+
+        DateTime currentDay;
+        DateTime nextDay;
 
         int department;
+        int employee;
 
         List<Anomaly> weeklyAnomalies;
 
-
-
-        public ValidationProcess(int weekNumber, DateTime lastDay, int departmentCode ) {
-            checkin = null;
-            checkout = null;
+        public ValidationProcess(int weekNumber, DateTime lastWeekDay, int departmentCode, int employeeCode) {
 
             allowedPositive = new TimeSpan(0, 10, 0);
             allowedNegative = new TimeSpan(0, -10, 0);
-            penaltyPositive = new TimeSpan(0, 30, 0);
+            penaltyPositive = new TimeSpan(1, 0, 0);
             penaltyNegative = new TimeSpan(0, -30, 0);
             interval = new TimeSpan(0, 30, 0);
 
             this.weekNumber = weekNumber;
-            this.lastDay = lastDay;
+            this.lastWeekDay = lastWeekDay;
+            this.firstWeekDay = lastWeekDay.AddDays(-6);
+
             this.department = departmentCode;
-        }
+            this.employee = employeeCode;
 
-
-        private List<Anomaly> core(object sender, EventArgs e)
-        {
             weeklyAnomalies = new List<Anomaly>();
 
+        }
+        public Boolean core()
+        {
             checkin = null;
             checkout = null;
 
-            List<Employee> employees = new Employee().GetEmployeesDep(department);
-            Schedule schedule = null;
+            List<Schedule> schedules = new Schedule().GetDepSchedules(department);
+
+            TimeSpan timein = new TimeSpan(0, 0, 0);
+            TimeSpan timeout = new TimeSpan(23, 59, 59);
+            
+            currentDay = firstWeekDay.Date + timein;
+            nextDay = currentDay.AddDays(1).Date + timeout;
+
+            while (nextDay <= lastWeekDay) {
+
+                List<Check> checks = new Check().GetChecks(employee, currentDay, nextDay);
+                if (checks == null)
+                {
+                    return false;
+                }
+                else
+                {
 
 
-            DateTime initialDay = lastDay.AddDays(-6);
+                    for (int i = 0; i < checks.Count; i++)
+                    {
 
-          //  TimeSpan timein = new TimeSpan(schedule.InitialHour.Hour - 1, schedule.InitialHour.Minute, 0);
-           // initialDay = initialDay.Date + timein;
+                        if (i == 0 && checkin == null && checks[i].CheckType.Equals("I"))
+                        {
+                            checkin = checks[i];
+                        }
+                        else if (i == 1 && checkout == null && checks[i].CheckType.Equals("O"))
+                        {
+                            checkout = checks[i];
+                        }
+                    }
 
+                    if (checkin != null && checkout != null)
+                    {
+                        for (int i = 0; i < schedules.Count; i++)
+                        {
 
-            DateTime finalDay = new DateTime();
+                            if (SetCheckIn(schedules[i].InitialHour, checkin.CheckTime) &&
+                                SetCheckOut(schedules[i].finalHour, checkout.CheckTime))
+                            {
+                                //VA A GUARDAR A LA BASE  
+                            }
+                            else
+                            {
+                                //LISTA DE ANOMALIAS
+                            }
+                        }
 
-            if (schedule.InitialHour.Hour >= schedule.finalHour.Hour)
+                    }
+                    else
+                    {
+                        //VAYA ANOMALIA
+                    }
+
+                    checkin = null;
+                    checkout = null;
+
+                    currentDay = nextDay + timein;
+                    nextDay = nextDay.AddDays(1);
+                }
+            }
+            return true;
+        }
+
+        public Boolean SetCheckIn(DateTime timein, DateTime checkin)
+        {
+            TimeSpan range = timein.TimeOfDay.Subtract(checkin.TimeOfDay);
+            if (allowedNegative <= range && range <= penaltyPositive)
             {
-                finalDay = initialDay.AddDays(1);
+                return true;
+            } else
+            {
+                return false;
+            }
+            
+        }
+
+        public Boolean SetCheckOut(DateTime timeout, DateTime checkout)
+        {
+            TimeSpan range = timeout.TimeOfDay.Subtract(checkout.TimeOfDay);
+            if (penaltyNegative <= range && range <= allowedPositive)
+            {
+                return true;
             }
             else
             {
-                finalDay = initialDay;
+                return false;
             }
-
-            TimeSpan timeout = new TimeSpan(23, 59, 59);
-            finalDay = finalDay.Date + timeout;
-
-           // FillGrid(new Check().GetChecks(employee.Code, initialDay, finalDay));
-
-            expected = schedule.finalHour.Subtract(schedule.InitialHour);
-            //  mlWeekRange.Text = expected.ToString();
-
-
-            return weeklyAnomalies;
         }
 
+        private DateTime Round(DateTime dateTime)
+        {
+            var halfIntervelTicks = ((interval.Ticks + 1) >> 1);
+
+            return dateTime.AddTicks(halfIntervelTicks - ((dateTime.Ticks + halfIntervelTicks) % interval.Ticks));
+        }
 
     }
 }
+
+
+
+            //if (schedule.InitialHour.Hour >= schedule.finalHour.Hour)
+            //{
+            //    finalDay = initialDay.AddDays(1);
+            //}
+            //else
+            //{
+            //    finalDay = initialDay;
+            //}
