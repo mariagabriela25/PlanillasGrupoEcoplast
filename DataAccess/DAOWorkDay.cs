@@ -39,5 +39,37 @@ namespace DataAccess
             return true;
         }
 
+        public TOWorkDayDetail getWorkDay(TOWorkDayDetail tow)
+        {
+            TOWorkDayDetail workDay = new TOWorkDayDetail();
+
+            SqlCommand query = new SqlCommand ("select SUM(TotalHoras) from DetalleDiaLaborado where codEmpleado = @CodeEmployee and codSemana = @CodeWeek", conex);
+            query.Parameters.AddWithValue("@CodeEmployee", tow.CodeEmployee);
+            query.Parameters.AddWithValue("@CodeWeek", tow.WeekCode);
+
+            if (conex.State != System.Data.ConnectionState.Open)
+            {
+                conex.Open();
+            }
+            
+            SqlDataReader reader = query.ExecuteReader();
+
+            if(reader.HasRows)
+            {
+                reader.Read();
+
+                workDay.TotalHours = (Double) reader.GetDecimal(0);
+            }
+
+
+
+            if (conex.State != System.Data.ConnectionState.Closed)
+            {
+                conex.Close();
+            }
+
+            return workDay;
+        }
+
     }
 }

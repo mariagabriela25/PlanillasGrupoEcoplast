@@ -12,7 +12,7 @@ using System.Globalization;
 
 namespace UserInterface
 {
-    public partial class DayDetailUserControl : UserControl
+    public partial class DayDetailUserControl : MetroFramework.Forms.MetroForm
     {
 
         public DataTable dt;

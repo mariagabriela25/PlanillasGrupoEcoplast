@@ -28,26 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.mt_week_hours = new MetroFramework.Controls.MetroTile();
+            this.mt_day_hours = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
-            // metroTile1
+            // mt_week_hours
             // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.BackColor = System.Drawing.Color.Black;
-            this.metroTile1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.metroTile1.Location = new System.Drawing.Point(198, 117);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(127, 45);
-            this.metroTile1.TabIndex = 0;
-            this.metroTile1.Text = "Reporte Semanal";
-            this.metroTile1.UseSelectable = true;
+            this.mt_week_hours.ActiveControl = null;
+            this.mt_week_hours.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.mt_week_hours.Location = new System.Drawing.Point(331, 269);
+            this.mt_week_hours.Name = "mt_week_hours";
+            this.mt_week_hours.Size = new System.Drawing.Size(155, 53);
+            this.mt_week_hours.TabIndex = 0;
+            this.mt_week_hours.Text = "Horas por Semana";
+            this.mt_week_hours.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mt_week_hours.UseSelectable = true;
+            this.mt_week_hours.Click += new System.EventHandler(this.mt_week_hours_Click);
+            // 
+            // mt_day_hours
+            // 
+            this.mt_day_hours.ActiveControl = null;
+            this.mt_day_hours.Location = new System.Drawing.Point(331, 165);
+            this.mt_day_hours.Name = "mt_day_hours";
+            this.mt_day_hours.Size = new System.Drawing.Size(155, 53);
+            this.mt_day_hours.TabIndex = 1;
+            this.mt_day_hours.Text = "Horas por Día ";
+            this.mt_day_hours.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mt_day_hours.UseSelectable = true;
+            this.mt_day_hours.Click += new System.EventHandler(this.mt_day_hours_Click);
             // 
             // PayrollControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.metroTile1);
+            this.Controls.Add(this.mt_day_hours);
+            this.Controls.Add(this.mt_week_hours);
             this.Name = "PayrollControl";
             this.Size = new System.Drawing.Size(539, 503);
             this.Load += new System.EventHandler(this.PayrollControl_Load);
@@ -57,6 +72,7 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroTile mt_week_hours;
+        private MetroFramework.Controls.MetroTile mt_day_hours;
     }
 }

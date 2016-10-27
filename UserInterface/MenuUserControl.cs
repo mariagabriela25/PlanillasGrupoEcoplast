@@ -19,13 +19,13 @@ namespace UserInterface
 
         private void mtPayroll_Click(object sender, EventArgs e)
         {
-            if (!MainForm.Instance.Content.Controls.ContainsKey("DayDetailUserControl"))
+            if (!MainForm.Instance.Content.Controls.ContainsKey("PayrollControl"))
             {
-                DayDetailUserControl dd = new DayDetailUserControl();
-                dd.Dock = DockStyle.Fill;
-                MainForm.Instance.Content.Controls.Add(dd);
+                PayrollControl pc = new PayrollControl();
+                pc.Dock = DockStyle.Fill;
+                MainForm.Instance.Content.Controls.Add(pc);
             }
-            MainForm.Instance.Content.Controls["DayDetailUserControl"].BringToFront();
+            MainForm.Instance.Content.Controls["PayrollControl"].BringToFront();
             MainForm.Instance.BackButton.Visible = true;
             MainForm.Instance.LabelTitle.Text = "Administración de Planillas";
         }

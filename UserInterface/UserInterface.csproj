@@ -94,11 +94,11 @@
     <Compile Include="DayDetailUserControl.Designer.cs">
       <DependentUpon>DayDetailUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DayReviewUserControl.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="WeekDetailUserControl.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DayReviewUserControl.Designer.cs">
-      <DependentUpon>DayReviewUserControl.cs</DependentUpon>
+    <Compile Include="WeekDetailUserControl.Designer.cs">
+      <DependentUpon>WeekDetailUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DepartmentUserControl.cs">
       <SubType>UserControl</SubType>
@@ -192,8 +192,8 @@
     <EmbeddedResource Include="DayDetailUserControl.resx">
       <DependentUpon>DayDetailUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DayReviewUserControl.resx">
-      <DependentUpon>DayReviewUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="WeekDetailUserControl.resx">
+      <DependentUpon>WeekDetailUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DepartmentUserControl.resx">
       <DependentUpon>DepartmentUserControl.cs</DependentUpon>
