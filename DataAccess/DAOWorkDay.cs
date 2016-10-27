@@ -23,7 +23,7 @@ namespace DataAccess
             query.Parameters.AddWithValue("@Note", workday.Note == null ? System.Data.SqlTypes.SqlString.Null : workday.Note);
             query.Parameters.AddWithValue("@ID", 1);
             query.Parameters.AddWithValue("@State", workday.State == true ? 1 : 0);
-            query.Parameters.AddWithValue("@WeekCode", System.Data.SqlTypes.SqlString.Null);
+            query.Parameters.AddWithValue("@WeekCode", workday.WeekCode);
 
             if (conex.State != System.Data.ConnectionState.Open)
             {
