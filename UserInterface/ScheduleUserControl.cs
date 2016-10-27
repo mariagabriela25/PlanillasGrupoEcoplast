@@ -36,25 +36,13 @@ namespace UserInterface
             dt.Columns.Add("Entrada");
             dt.Columns.Add("Salida");
             dt.Columns.Add("H. Ordinarias");
-            dt.Columns.Add("H. Extra Diurnas");
-            dt.Columns.Add("H. Extra Nocturnas");
-            dt.Columns.Add("Total de horas");
-            dt.Columns.Add("Descansos");
             dt.Columns.Add("Departamento");
 
             List<Schedule> schedules = new Schedule().GetAllSchedules();
 
             foreach (Schedule s in schedules)
             {
-                List<Rest> lr = s.RestList;
-                String rests = "";
-                foreach (var item in lr)
-                {
-                    if(!rests.Equals("")) {
-                        rests += ", ";
-                    }
-                    rests += item.Minutes;
-                }
+                
                 int iniHour = s.InitialHour.Hour;
                 int iniMin = s.InitialHour.Minute;
                 String iniHourString = "" +iniHour;
@@ -79,7 +67,7 @@ namespace UserInterface
                 {
                     finMinString = "0" + finMin;
                 }
-                dt.Rows.Add(s.Code, iniHourString + ":" + iniMinString, finHourString + ":"+ finMinString, s.OrdinaryHours, s.ExtraDayHours, s.ExtraNightHours, s.TotalHours, rests, s.Dept.Name);
+                dt.Rows.Add(s.Code, iniHourString + ":" + iniMinString, finHourString + ":"+ finMinString, s.OrdinaryHours, s.Dept.Name);
             }
             mgSchedules.DataSource = dt;
         }
@@ -113,9 +101,5 @@ namespace UserInterface
             }
         }
 
-        private void mgSchedules_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

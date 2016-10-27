@@ -112,7 +112,7 @@ namespace UserInterface
             TimeSpan timeout = new TimeSpan(23, 59, 59);
             finalDay = finalDay.Date + timeout;
 
-            FillGrid(new Check().GetChecks(employee.Code, initialDay, finalDay));
+            //FillGrid(new Check().GetChecks(employee.Code, initialDay, finalDay));
 
             expected = schedule.finalHour.Subtract(schedule.InitialHour);
             mlWeekRange.Text = expected.ToString();
@@ -120,80 +120,99 @@ namespace UserInterface
         }
 
 
-        public void FillGrid(List<Check> checks)
-        {
-            dt = new DataTable();
-            dt.Columns.Add("Marca Entrada");
-            dt.Columns.Add("Descansos");
-            dt.Columns.Add("Marca Salida");
-            
-            List<Check> rests = new List<Check>();
+        //public void FillGrid(List<Check> checks)
+        //{
+        //    dt = new DataTable();
+        //    dt.Columns.Add("Origen");
+        //    dt.Columns.Add("Marca Entrada");
+        //    dt.Columns.Add("Descansos");
+        //    dt.Columns.Add("Marca Salida");
 
-            foreach (Check ch in checks)
-            {
-                String type = convertType(ch.CheckType);
-                if (type.Equals("Entrada"))
-                {
-                    checkin = ch;
-                }
-                else if (type.Equals("Salida"))
-                {
-                    checkout = ch;
-                }
-                else
-                {
-                    rests.Add(ch);
-                }
-            }
+        //    if (checks == null)
+        //    {
+        //        dt.Rows.Add("Empleado", "", "No existen marcas registradas para el dia", "");
+        //        mgrWorkDayDetail.DataSource = dt;
+        //        mgrWorkDayDetail.AutoResizeColumns();
+        //        mbSave.Enabled = false;
+        //    }
+        //    else
+        //    {
 
-            if (checkout == null && checkin == null)
-            {
-                dt.Rows.Add("Marca Ausente", RestChecksFormat(rests), "Marca Ausente");
+        //        List<Check> rests = new List<Check>();
 
-                DateTime entry = SetCheckIn(schedule.InitialHour, rests[0].CheckTime);
-                DateTime exit = SetCheckOut(schedule.finalHour, rests[rests.Count-1].CheckTime);
-                worked = exit.Subtract(entry);
-                mlWorkedRange.Text = worked.ToString();
+        //        foreach (Check ch in checks)
+        //        {
+        //            String type = convertType(ch.CheckType);
+        //            if (type.Equals("Entrada"))
+        //            {
+        //                checkin = ch;
+        //            }
+        //            else if (type.Equals("Salida"))
+        //            {
+        //                checkout = ch;
+        //            }
+        //            else
+        //            {
+        //                rests.Add(ch);
+        //            }
+        //        }
 
-            } else if(checkin == null)
-            {
+        //        if (checkout == null && checkin == null)
+        //        {
+        //            dt.Rows.Add("Empleado", "Marca Ausente", RestChecksFormat(rests), "Marca Ausente");
+        //            dt.Rows.Add("Horario", schedule.InitialHour.TimeOfDay, schedule.RestList.Count, schedule.finalHour.TimeOfDay);
 
-                dt.Rows.Add("Marca Ausente", RestChecksFormat(rests), 
-                    String.Format("{0:T}", checkout.CheckTime));
- 
-                DateTime entry = SetCheckIn(schedule.InitialHour, rests[0].CheckTime);
-                DateTime exit = SetCheckOut(schedule.finalHour, checkout.CheckTime);
-                worked = exit.Subtract(entry);
-                mlWorkedRange.Text = worked.ToString();
+        //            DateTime entry = SetCheckIn(schedule.InitialHour, rests[0].CheckTime);
+        //            DateTime exit = SetCheckOut(schedule.finalHour, rests[rests.Count - 1].CheckTime);
+        //            worked = exit.Subtract(entry);
+        //            mlWorkedRange.Text = worked.ToString();
 
-            }
-            else if (checkout == null)
-            {
-                dt.Rows.Add(String.Format("{0:T}", checkin.CheckTime),
-                    RestChecksFormat(rests), "Marca Ausente");
+        //        }
+        //        else if (checkin == null)
+        //        {
 
-                DateTime entry = SetCheckIn(schedule.InitialHour, checkin.CheckTime);
-                DateTime exit = SetCheckOut(schedule.finalHour, rests[rests.Count-1].CheckTime);
-                worked = exit.Subtract(entry);
-                mlWorkedRange.Text = worked.ToString();
+        //            dt.Rows.Add("Empleado", "Marca Ausente", RestChecksFormat(rests),
+        //                String.Format("{0:T}", checkout.CheckTime));
+        //            dt.Rows.Add("Horario", schedule.InitialHour.TimeOfDay, schedule.RestList.Count, schedule.finalHour.TimeOfDay);
 
-            }
-            else
-            {
-                dt.Rows.Add(String.Format("{0:T}", checkin.CheckTime),
-                    RestChecksFormat(rests),
-                    String.Format("{0:T}", checkout.CheckTime));
+        //            DateTime entry = SetCheckIn(schedule.InitialHour, rests[0].CheckTime);
+        //            DateTime exit = SetCheckOut(schedule.finalHour, checkout.CheckTime);
+        //            worked = exit.Subtract(entry);
+        //            mlWorkedRange.Text = worked.ToString();
 
-                DateTime entry = SetCheckIn(schedule.InitialHour, checkin.CheckTime);
-                DateTime exit = SetCheckOut(schedule.finalHour, checkout.CheckTime);
-                worked = exit.Subtract(entry);
-                mlWorkedRange.Text = worked.ToString();
-            }
+        //        }
+        //        else if (checkout == null)
+        //        {
+        //            dt.Rows.Add("Empleado", String.Format("{0:T}", checkin.CheckTime),
+        //                RestChecksFormat(rests), "Marca Ausente");
+        //            dt.Rows.Add("Horario", schedule.InitialHour.TimeOfDay, schedule.RestList.Count, schedule.finalHour.TimeOfDay);
 
-            mgrWorkDayDetail.DataSource = dt;
-            mgrWorkDayDetail.AutoResizeColumns();
+        //            DateTime entry = SetCheckIn(schedule.InitialHour, checkin.CheckTime);
+        //            DateTime exit = SetCheckOut(schedule.finalHour, rests[rests.Count - 1].CheckTime);
+        //            worked = exit.Subtract(entry);
+        //            mlWorkedRange.Text = worked.ToString();
 
-        }
+        //        }
+        //        else
+        //        {
+        //            dt.Rows.Add("Empleado", String.Format("{0:T}", checkin.CheckTime),
+        //                RestChecksFormat(rests),
+        //                String.Format("{0:T}", checkout.CheckTime));
+        //            dt.Rows.Add("Horario", schedule.InitialHour.TimeOfDay, schedule.RestList.Count, schedule.finalHour.TimeOfDay);
+
+        //            DateTime entry = SetCheckIn(schedule.InitialHour, checkin.CheckTime);
+        //            DateTime exit = SetCheckOut(schedule.finalHour, checkout.CheckTime);
+        //            worked = exit.Subtract(entry);
+        //            mlWorkedRange.Text = worked.ToString();
+        //        }
+
+        //        mgrWorkDayDetail.DataSource = dt;
+        //        mgrWorkDayDetail.AutoResizeColumns();
+        //        //mgrWorkDayDetail.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        //        mbSave.Enabled = true;
+
+        //    }
+        //}
 
         public String RestChecksFormat(List<Check> list)
         {
@@ -279,11 +298,11 @@ namespace UserInterface
             workday.CodeEmployee = ((Employee)mcbEmployee.SelectedItem).Code;
             workday.OrdinaryHours = hours;
             workday.TotalHours = hours;
-            workday.Date = mdtDay.Value;
+            workday.Date = mdtDay.Value + new TimeSpan(0, 0, 0);
             workday.WeekCode = System.Globalization.CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(workday.Date, CalendarWeekRule.FirstDay, workday.Date.DayOfWeek) - 1;
             workday.Note = mtbNote.Text.Equals("") ? null : mtbNote.Text;
             workday.State = true;
-            workday.AddWorkDay();
+            Boolean saved = workday.AddWorkDay();
 
             mtbNote.Text = "";
             mlWeekRange.Text = "";
@@ -291,7 +310,16 @@ namespace UserInterface
 
             mgrWorkDayDetail.DataSource = null;
 
+            if(saved)
+            {
+                MessageBox.Show("Detalle Guardado exitosamente");
+            }
 
+        }
+
+        private void mcbEmployee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            mbCalculate.Enabled = true;
         }
     }
 }

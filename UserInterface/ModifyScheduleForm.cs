@@ -30,11 +30,7 @@ namespace UserInterface
             Schedule s = new Schedule();
             s.Code = sCode;
             s = s.GetSchedule();
-
-            nupOrdinaryHours.Value = s.OrdinaryHours;
-            nupDayExtra.Value = s.ExtraDayHours;
-            nupNightExtra.Value = s.ExtraNightHours;
-
+            
             nupInitialHour.Value = s.InitialHour.Hour;
             nupInitialMinute.Value = s.InitialHour.Minute;
 
@@ -56,123 +52,7 @@ namespace UserInterface
             }
 
             cbDepartment.SelectedIndex = 0;
-
-            List<Rest> listRests = new Rest().getAllRests();
-
-            for (int i = 0; i < s.RestList.Count; i++)
-            {
-                if (i==0)
-                {
-                    cbRest1.Items.Add(s.RestList[i]);
-
-                    cbRest1.DisplayMember = "Minutes";
-                    cbRest1.ValueMember = "Code";
-                    foreach (Rest rest in listRests)
-                    {
-                        if (rest.Code != s.RestList[i].Code)
-                        {
-                            cbRest1.Items.Add(rest);
-                        }
-                    }
-
-                    cbRest1.SelectedIndex = 0;
-                }
-
-                if (i == 1)
-                {
-                    cbRest2.Visible = true;
-                    lbRest2.Visible = true;
-                    cbRest2.Items.Add(s.RestList[i]);
-
-                    cbRest2.DisplayMember = "Minutes";
-                    cbRest2.ValueMember = "Code";
-                    foreach (Rest rest in listRests)
-                    {
-                        if (rest.Code != s.RestList[i].Code)
-                        {
-                            cbRest2.Items.Add(rest);
-                        }
-                    }
-
-                    cbRest2.SelectedIndex = 0;
-                    mBtDeleteRest2.Visible = true;
-                }
-
-                if (i == 2)
-                {
-                    cbRest3.Visible = true;
-                    lbRest3.Visible = true;
-                    cbRest3.Items.Add(s.RestList[i]);
-
-                    cbRest3.DisplayMember = "Minutes";
-                    cbRest3.ValueMember = "Code";
-                    foreach (Rest rest in listRests)
-                    {
-                        if (rest.Code != s.RestList[i].Code)
-                        {
-                            cbRest3.Items.Add(rest);
-                        }
-                    }
-
-                    cbRest3.SelectedIndex = 0;
-                    mBtDeleteRest3.Visible = true;
-                }
-            }
-           
-        }
-
-        private void mtAddRest_Click(object sender, EventArgs e)
-        {
-            if (cbRest1.SelectedItem != null)
-            {
-                if (!lbRest2.Visible)
-                {
-                    List<Rest> listRests = new Rest().getAllRests();
-
-                    cbRest2.DisplayMember = "Minutes";
-                    cbRest2.ValueMember = "Code";
-                    foreach (Rest rest in listRests)
-                    {
-                        cbRest2.Items.Add(rest);
-                    }
-                    lbRest2.Visible = true;
-                    cbRest2.Visible = true;
-                    mBtDeleteRest2.Visible = true;
-                }
-                else
-                {
-                    if (cbRest2.SelectedItem != null)
-                    {
-                        if (lbRest2.Visible && !lbRest3.Visible)
-                        {
-                            List<Rest> listRests = new Rest().getAllRests();
-
-                            cbRest3.DisplayMember = "Minutes";
-                            cbRest3.ValueMember = "Code";
-                            foreach (Rest rest in listRests)
-                            {
-                                cbRest3.Items.Add(rest);
-                            }
-                            lbRest3.Visible = true;
-                            cbRest3.Visible = true;
-                            mBtDeleteRest3.Visible = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("¡No se permiten más descansos!");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Debe elegir primero el Descanso #2");
-                    }
-
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe elegir primero el Descanso #1");
-            }
+                       
         }
 
         private void mbSave_Click(object sender, EventArgs e)
@@ -186,46 +66,25 @@ namespace UserInterface
             newSchedule.Code = txtCode.Text;
             newSchedule.InitialHour = initialTime;
             newSchedule.finalHour = finalTime;
-            newSchedule.OrdinaryHours = Int32.Parse(nupOrdinaryHours.Value.ToString());
-            newSchedule.ExtraDayHours = Int32.Parse(nupDayExtra.Value.ToString());
-            newSchedule.ExtraNightHours = Int32.Parse(nupNightExtra.Value.ToString());
-            newSchedule.Dept = d;
-            newSchedule.TotalHours = newSchedule.OrdinaryHours + newSchedule.ExtraDayHours + newSchedule.ExtraNightHours;
 
-            if (cbRest1.SelectedItem != null)
+
+            if (newSchedule.finalHour < newSchedule.InitialHour)
             {
-                newSchedule.AddRest((Rest)cbRest1.SelectedItem);
-            }
-            if (cbRest2.SelectedItem != null)
+                int expected1 = 24 - newSchedule.InitialHour.Hour + newSchedule.finalHour.Hour;
+                newSchedule.OrdinaryHours = expected1;
+        }
+            else
             {
-                newSchedule.AddRest((Rest)cbRest2.SelectedItem);
+                int expected2 = newSchedule.finalHour.Hour - newSchedule.InitialHour.Hour;
+        newSchedule.OrdinaryHours = expected2;
             }
-            if (cbRest3.SelectedItem != null)
-            {
-                newSchedule.AddRest((Rest)cbRest3.SelectedItem);
-            }
+
+    newSchedule.Dept = d;
 
             newSchedule.ModifySchedule();
             uc.refresh();
             this.Close();
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            cbRest2.SelectedItem = null;
-            lbRest2.Visible = false;
-            cbRest2.Visible = false;
-            mBtDeleteRest2.Visible = false;
-            cbRest2.Items.Clear();
-        }
-
-        private void mBtDeleteRest3_Click(object sender, EventArgs e)
-        {
-            cbRest3.SelectedItem = null;
-            lbRest3.Visible = false;
-            cbRest3.Visible = false;
-            mBtDeleteRest3.Visible = false;
-            cbRest3.Items.Clear();
-        }
     }
 }
