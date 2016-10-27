@@ -22,7 +22,7 @@ namespace DataAccess
                 TOCheck check;
 
                 SqlCommand query = new SqlCommand("SELECT Userid, CheckTime, CheckType FROM Checkinout " +
-                    "WHERE CheckTime Between @Inicio AND @Fin AND Userid = @ID ORDER BY CheckTime", conex);
+                    "WHERE CheckTime Between @Inicio AND @Fin AND Userid = @ID AND CheckType != '2' ORDER BY CheckTime", conex);
 
                 query.Parameters.AddWithValue("@Inicio", inicio);
                 query.Parameters.AddWithValue("@Fin", fin);
@@ -36,16 +36,16 @@ namespace DataAccess
 
                 if (reader.HasRows)
                 {
-                    reader.Read();
-                    do
-                    {
+                    
+                    while(reader.Read()) {
+
                         check = new TOCheck();
                         check.ID = Int32.Parse(reader.GetString(0));
                         check.CheckTime = reader.GetDateTime(1);
                         check.CheckType = reader.GetString(2);
                         list.Add(check);
 
-                    } while (reader.GetString(2) != "O" && reader.Read() && reader.GetString(2) != "I");
+                    }
                 } else
                 {
                     return null;

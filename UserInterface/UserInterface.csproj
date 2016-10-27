@@ -82,17 +82,23 @@
     <Compile Include="AddScheduleForm.Designer.cs">
       <DependentUpon>AddScheduleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChecksUserControl.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="AnomaliesReview.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChecksUserControl.Designer.cs">
-      <DependentUpon>ChecksUserControl.cs</DependentUpon>
+    <Compile Include="AnomaliesReview.Designer.cs">
+      <DependentUpon>AnomaliesReview.cs</DependentUpon>
     </Compile>
     <Compile Include="DayDetailUserControl.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="DayDetailUserControl.Designer.cs">
       <DependentUpon>DayDetailUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DayReviewUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DayReviewUserControl.Designer.cs">
+      <DependentUpon>DayReviewUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="WeekDetailUserControl.cs">
       <SubType>Form</SubType>
@@ -174,11 +180,14 @@
     <EmbeddedResource Include="AddScheduleForm.resx">
       <DependentUpon>AddScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChecksUserControl.resx">
-      <DependentUpon>ChecksUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="AnomaliesReview.resx">
+      <DependentUpon>AnomaliesReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DayDetailUserControl.resx">
       <DependentUpon>DayDetailUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayReviewUserControl.resx">
+      <DependentUpon>DayReviewUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeekDetailUserControl.resx">
       <DependentUpon>WeekDetailUserControl.cs</DependentUpon>
