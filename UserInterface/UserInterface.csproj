@@ -82,6 +82,12 @@
     <Compile Include="AddScheduleForm.Designer.cs">
       <DependentUpon>AddScheduleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChecksUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChecksUserControl.Designer.cs">
+      <DependentUpon>ChecksUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DayDetailUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddScheduleForm.resx">
       <DependentUpon>AddScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChecksUserControl.resx">
+      <DependentUpon>ChecksUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DayDetailUserControl.resx">
       <DependentUpon>DayDetailUserControl.cs</DependentUpon>
