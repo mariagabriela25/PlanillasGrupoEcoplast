@@ -74,7 +74,7 @@ namespace BusinessLogic
 
                     currentDay = nextDay.Date + timein;
                     nextDay = nextDay.AddDays(1);
-                    MessageBox.Show("NO HAY MARCAS");
+                    MessageBox.Show("Dia no laborado, Dia: " + currentDay.Date);
                 }
                 else
                 {
@@ -102,20 +102,25 @@ namespace BusinessLogic
                             if (SetCheckIn(schedules[i].InitialHour, checkin.CheckTime) &&
                                 SetCheckOut(schedules[i].finalHour, checkout.CheckTime))
                             {
-                                MessageBox.Show("ID: " + employee + " Dia: " + currentDay.Date);
+                                MessageBox.Show("Chequeo correcto, Dia: " + currentDay.Date);
                                 flag = true;
+                                int ordinaryhours = schedules[i].OrdinaryHours;
                                 break;
                             }
                         }
                         if(!flag)
                         {
-                            MessageBox.Show("Intervalo invalido Dia: " + currentDay.Date);
+                            MessageBox.Show("Intervalo invalido, Dia: " + currentDay.Date);
                         }
 
                     }
+                    else if (checkin == null && checkout == null)
+                    {
+                        MessageBox.Show("Dia no laboradorado, Dia: " + currentDay.Date);    
+                    }
                     else
                     {
-                        MessageBox.Show("Marca Ausente, Dia: " + currentDay.Date);
+                        MessageBox.Show("Ausencia de marca, Dia: " + currentDay.Date);
                     }
 
                     checkin = null;
@@ -163,14 +168,3 @@ namespace BusinessLogic
 
     }
 }
-
-
-
-            //if (schedule.InitialHour.Hour >= schedule.finalHour.Hour)
-            //{
-            //    finalDay = initialDay.AddDays(1);
-            //}
-            //else
-            //{
-            //    finalDay = initialDay;
-            //}

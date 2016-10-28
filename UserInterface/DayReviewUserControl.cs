@@ -34,7 +34,6 @@ namespace UserInterface
             WeekNum = Int32.Parse(mnWeekNum.Value.ToString());
             SundayDate = CalcWeekNum(WeekNum);
             CodDepartment = ((Department)cbDepart.SelectedItem).Code;
-
             backgroundWorker2.RunWorkerAsync();
         }
 
@@ -75,13 +74,14 @@ namespace UserInterface
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
             List<Employee> employees = new Employee().GetEmployeesDep(CodDepartment);
+            mpgCalculation.Maximum = employees.Count;
             int cont = 0;
+
             foreach (Employee em in employees)
             {
                 Boolean test = new ValidationProcess(WeekNum, SundayDate, CodDepartment, em.Code).core();
-                backgroundWorker2.ReportProgress(cont);
-                System.Threading.Thread.Sleep(25);
-                cont++;
+                backgroundWorker2.ReportProgress(++cont);
+                System.Threading.Thread.Sleep(5);
             }
         }
 
