@@ -34,6 +34,7 @@ namespace UserInterface
 
         private void ChecksRangeForm_Load(object sender, EventArgs e)
         {
+            
             lbDates.Text = iDate.Day+ "/"+iDate.Month+"/"+iDate.Year + " a " + fDate.Day + "/" + fDate.Month + "/" + fDate.Year;
             lbEmployeeNumber.Text = choosenEmployee.Code+"";
             lbEmployeeName.Text = choosenEmployee.Name;
@@ -46,7 +47,7 @@ namespace UserInterface
             dt.Columns.Add("Marca");
 
             List<Check> checksList = new List<Check>();
-            checksList = new Check().GetChecks(choosenEmployee.Code, iDate, fDate);
+            checksList = new Check().GetChecksWithRests(choosenEmployee.Code, iDate, fDate);
 
             if (checksList != null)
             {
@@ -86,8 +87,9 @@ namespace UserInterface
                 mgEmployeeRegisteredChecks.RowHeadersWidth = 4;
 
                 mgEmployeeRegisteredChecks.AutoResizeColumns();
-                mgEmployeeRegisteredChecks.AutoSize = true;
+                //mgEmployeeRegisteredChecks.AutoSize = true;
                 mgEmployeeRegisteredChecks.UseStyleColors = true;
+                mgEmployeeRegisteredChecks.Height = SystemInformation.VirtualScreen.Height-200;
             }
            
 

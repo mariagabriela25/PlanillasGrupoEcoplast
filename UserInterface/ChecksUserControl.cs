@@ -26,6 +26,7 @@ namespace UserInterface
 
         private void ChecksUserControl_Load(object sender, EventArgs e)
         {
+
             empControl = new Employee();
             selectedEmployees = new List<Employee>();
 
@@ -33,7 +34,7 @@ namespace UserInterface
             mlvEmployees.Items.Clear();
             mlvEmployees.View = View.Details;
 
-            mlvEmployees.Columns.Add("Número Empleado");
+            mlvEmployees.Columns.Add("Empleado");
             mlvEmployees.Columns.Add("Nombre");
             mlvEmployees.Columns.Add("Departamento");
 
@@ -44,12 +45,12 @@ namespace UserInterface
             foreach (var item in employeesList)
             {
                 ListViewItem lvi;
-                lvi = new ListViewItem(new string[] { item.Code + "", item.Name + " " + item.LastName, item.Department.Name });
+                lvi = new ListViewItem(new string[] {"        "+ item.Code, item.Name + " " + item.LastName, item.Department.Name });
                 mlvEmployees.Items.Add(lvi);
             }
 
+            //mlvEmployees.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             mlvEmployees.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            mlvEmployees.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             mlvEmployees.EndUpdate();
             mlvEmployees.AllowSorting = true;
             

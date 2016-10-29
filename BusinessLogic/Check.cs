@@ -40,5 +40,37 @@ namespace BusinessLogic
                 return null;
             }
         }
+
+        public List<Check> GetChecksWithRests(int ID, DateTime Inicio, DateTime Fin)
+        {
+            List<TOCheck> list = new DAOAnviz().GetChecksWithRests(ID, Inicio, Fin);
+            List<Check> checks = new List<Check>();
+
+            if (list != null)
+            {
+                foreach (TOCheck c in list)
+                {
+                    String cType = c.CheckType;
+                    switch (cType)
+                    {
+                        case "I":
+                            cType = "Entrada";
+                            break;
+                        case "O":
+                            cType = "Salida";
+                            break;
+                        case "2":
+                            cType = "DS";
+                            break;
+                    }
+                    checks.Add(new Check(c.ID, c.CheckTime, cType));
+                }
+                return checks;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

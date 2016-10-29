@@ -43,7 +43,7 @@
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.Location = new System.Drawing.Point(36, 47);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(150, 25);
+            this.metroLabel1.Size = new System.Drawing.Size(144, 25);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "FECHA INICIAL:";
             // 
@@ -54,7 +54,7 @@
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel2.Location = new System.Drawing.Point(50, 107);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(136, 25);
+            this.metroLabel2.Size = new System.Drawing.Size(130, 25);
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "FECHA FINAL:";
             // 
@@ -62,9 +62,9 @@
             // 
             this.mdtFinalDate.Location = new System.Drawing.Point(367, 102);
             this.mdtFinalDate.Margin = new System.Windows.Forms.Padding(4);
-            this.mdtFinalDate.MinimumSize = new System.Drawing.Size(0, 30);
+            this.mdtFinalDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.mdtFinalDate.Name = "mdtFinalDate";
-            this.mdtFinalDate.Size = new System.Drawing.Size(487, 30);
+            this.mdtFinalDate.Size = new System.Drawing.Size(363, 29);
             this.mdtFinalDate.TabIndex = 19;
             this.mdtFinalDate.ValueChanged += new System.EventHandler(this.mdtFinalDate_ValueChanged);
             // 
@@ -72,9 +72,9 @@
             // 
             this.mdtInitialDate.Location = new System.Drawing.Point(367, 42);
             this.mdtInitialDate.Margin = new System.Windows.Forms.Padding(4);
-            this.mdtInitialDate.MinimumSize = new System.Drawing.Size(0, 30);
+            this.mdtInitialDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.mdtInitialDate.Name = "mdtInitialDate";
-            this.mdtInitialDate.Size = new System.Drawing.Size(487, 30);
+            this.mdtInitialDate.Size = new System.Drawing.Size(363, 29);
             this.mdtInitialDate.TabIndex = 20;
             this.mdtInitialDate.ValueChanged += new System.EventHandler(this.mdtInitialDate_ValueChanged);
             // 
@@ -82,7 +82,7 @@
             // 
             this.mbSave.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.mbSave.ForeColor = System.Drawing.Color.Lime;
-            this.mbSave.Location = new System.Drawing.Point(589, 699);
+            this.mbSave.Location = new System.Drawing.Point(465, 706);
             this.mbSave.Margin = new System.Windows.Forms.Padding(4);
             this.mbSave.Name = "mbSave";
             this.mbSave.Size = new System.Drawing.Size(265, 61);
@@ -94,13 +94,18 @@
             // 
             // mlvEmployees
             // 
-            this.mlvEmployees.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.mlvEmployees.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
+            this.mlvEmployees.AllowSorting = true;
+            this.mlvEmployees.Font = new System.Drawing.Font("Arial", 16F);
             this.mlvEmployees.FullRowSelect = true;
             this.mlvEmployees.Location = new System.Drawing.Point(36, 175);
+            this.mlvEmployees.Margin = new System.Windows.Forms.Padding(0);
             this.mlvEmployees.Name = "mlvEmployees";
             this.mlvEmployees.OwnerDraw = true;
-            this.mlvEmployees.Size = new System.Drawing.Size(818, 497);
+            this.mlvEmployees.Size = new System.Drawing.Size(694, 497);
+            this.mlvEmployees.Style = MetroFramework.MetroColorStyle.Lime;
             this.mlvEmployees.TabIndex = 23;
+            this.mlvEmployees.Theme = MetroFramework.MetroThemeStyle.Light;
             this.mlvEmployees.UseCompatibleStateImageBehavior = false;
             this.mlvEmployees.UseSelectable = true;
             // 
