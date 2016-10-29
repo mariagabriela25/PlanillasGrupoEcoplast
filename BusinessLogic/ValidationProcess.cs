@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BusinessLogic
 {
@@ -63,12 +64,17 @@ namespace BusinessLogic
             currentDay = firstWeekDay.Date + timein;
             nextDay = currentDay.AddDays(1).Date + timeout;
 
-            while (nextDay <= lastWeekDay) {
+            while (currentDay <= lastWeekDay) {
 
                 List<Check> checks = new Check().GetChecks(employee, currentDay, nextDay);
                 if (checks == null)
                 {
-                    return false;
+                    checkin = null;
+                    checkout = null;
+
+                    currentDay = nextDay.Date + timein;
+                    nextDay = nextDay.AddDays(1);
+                    MessageBox.Show("Dia no laborado, Dia: " + currentDay.Date);
                 }
                 else
                 {
@@ -77,11 +83,11 @@ namespace BusinessLogic
                     for (int i = 0; i < checks.Count; i++)
                     {
 
-                        if (i == 0 && checkin == null && checks[i].CheckType.Equals("I"))
+                        if (checks[i].CheckTime.Date == currentDay && checkin == null && checks[i].CheckType.Equals("I"))
                         {
                             checkin = checks[i];
                         }
-                        else if (i == 1 && checkout == null && checks[i].CheckType.Equals("O"))
+                        else if (checkin != null && checkout == null && checks[i].CheckType.Equals("O"))
                         {
                             checkout = checks[i];
                         }
@@ -89,30 +95,38 @@ namespace BusinessLogic
 
                     if (checkin != null && checkout != null)
                     {
+                        bool flag = false;
                         for (int i = 0; i < schedules.Count; i++)
                         {
 
                             if (SetCheckIn(schedules[i].InitialHour, checkin.CheckTime) &&
                                 SetCheckOut(schedules[i].finalHour, checkout.CheckTime))
                             {
-                                //VA A GUARDAR A LA BASE  
+                                MessageBox.Show("Chequeo correcto, Dia: " + currentDay.Date);
+                                flag = true;
+                                int ordinaryhours = schedules[i].OrdinaryHours;
+                                break;
                             }
-                            else
-                            {
-                                //LISTA DE ANOMALIAS
-                            }
+                        }
+                        if(!flag)
+                        {
+                            MessageBox.Show("Intervalo invalido, Dia: " + currentDay.Date);
                         }
 
                     }
+                    else if (checkin == null && checkout == null)
+                    {
+                        MessageBox.Show("Dia no laboradorado, Dia: " + currentDay.Date);    
+                    }
                     else
                     {
-                        //VAYA ANOMALIA
+                        MessageBox.Show("Ausencia de marca, Dia: " + currentDay.Date);
                     }
 
                     checkin = null;
                     checkout = null;
 
-                    currentDay = nextDay + timein;
+                    currentDay = nextDay.Date + timein;
                     nextDay = nextDay.AddDays(1);
                 }
             }
@@ -154,14 +168,3 @@ namespace BusinessLogic
 
     }
 }
-
-
-
-            //if (schedule.InitialHour.Hour >= schedule.finalHour.Hour)
-            //{
-            //    finalDay = initialDay.AddDays(1);
-            //}
-            //else
-            //{
-            //    finalDay = initialDay;
-            //}

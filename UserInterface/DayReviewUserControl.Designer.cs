@@ -105,6 +105,7 @@
             // mpgCalculation
             // 
             this.mpgCalculation.Location = new System.Drawing.Point(-2, 210);
+            this.mpgCalculation.Maximum = 6;
             this.mpgCalculation.Name = "mpgCalculation";
             this.mpgCalculation.Size = new System.Drawing.Size(548, 5);
             this.mpgCalculation.TabIndex = 6;

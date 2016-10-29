@@ -60,6 +60,7 @@ namespace DataAccess
             } catch(Exception e)
             {
                 MessageBox.Show("Error de conexion");
+                GetChecks(id, inicio, fin);
             }
             return null;
         }
