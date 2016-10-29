@@ -88,6 +88,18 @@
     <Compile Include="AnomaliesReview.Designer.cs">
       <DependentUpon>AnomaliesReview.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChecksRangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChecksRangeForm.Designer.cs">
+      <DependentUpon>ChecksRangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChecksUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChecksUserControl.Designer.cs">
+      <DependentUpon>ChecksUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DayDetailUserControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +194,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AnomaliesReview.resx">
       <DependentUpon>AnomaliesReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChecksRangeForm.resx">
+      <DependentUpon>ChecksRangeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChecksUserControl.resx">
+      <DependentUpon>ChecksUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DayDetailUserControl.resx">
       <DependentUpon>DayDetailUserControl.cs</DependentUpon>
