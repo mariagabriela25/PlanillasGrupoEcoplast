@@ -19,7 +19,15 @@ namespace UserInterface
 
         private void mtPayroll_Click(object sender, EventArgs e)
         {
-
+            if (!MainForm.Instance.Content.Controls.ContainsKey("WeekPayrollControl"))
+            {
+                WeekPayrollControl uc = new WeekPayrollControl();
+                uc.Dock = DockStyle.Fill;
+                MainForm.Instance.Content.Controls.Add(uc);
+            }
+            MainForm.Instance.Content.Controls["WeekPayrollControl"].BringToFront();
+            MainForm.Instance.BackButton.Visible = true;
+            MainForm.Instance.LabelTitle.Text = "Planilla Semanal";
         }
 
         private void mtEmployees_Click(object sender, EventArgs e)

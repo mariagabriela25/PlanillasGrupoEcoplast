@@ -180,6 +180,12 @@
     <Compile Include="ScheduleUserControl.Designer.cs">
       <DependentUpon>ScheduleUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="WeekPayrollControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeekPayrollControl.Designer.cs">
+      <DependentUpon>WeekPayrollControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="WelcomeUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </Compile>
     <EmbeddedResource Include="ScheduleUserControl.resx">
       <DependentUpon>ScheduleUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeekPayrollControl.resx">
+      <DependentUpon>WeekPayrollControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WelcomeUserControl.resx">
       <DependentUpon>WelcomeUserControl.cs</DependentUpon>

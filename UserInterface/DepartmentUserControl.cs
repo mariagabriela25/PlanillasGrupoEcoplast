@@ -16,12 +16,50 @@ namespace UserInterface
     {
 
         private DataTable dt;
+        private List<Department> list;
+
+        private void filter(object sender, EventArgs e)
+        {
+            try
+            {
+                String filter = tb_filter.Text.Trim();
+                var query = from l in list where l.Name.ToLower().StartsWith(filter.ToLower()) select l;
+                var array = query.ToArray();
+
+                dt = new DataTable();
+                dt.Columns.Add("Código del Departamento");
+                dt.Columns.Add("Nombre");
+
+                foreach (Department dep in array)
+                {
+                    dt.Rows.Add(dep.Code, dep.Name);
+                }
+                mgDepartment.DataSource = dt;
+            }
+            catch { }
+        }
+
 
         public DepartmentUserControl()
         {
             InitializeComponent();
         }
-        
+
+        public void refresh()
+        {
+            dt = new DataTable();
+            dt.Columns.Add("Código Departamento");
+            dt.Columns.Add("Nombre");
+
+            list = new Department().GetAllDepartment();
+
+            foreach (Department dep in list)
+            {
+                dt.Rows.Add(dep.Code, dep.Name);
+            }
+            mgDepartment.DataSource = dt;
+        }
+
         private void DepartmentUserControl_Load(object sender, EventArgs e)
         {
             refresh();
@@ -61,20 +99,7 @@ namespace UserInterface
             }
         }
 
-        public void refresh()
-        {
-            dt = new DataTable();
-            dt.Columns.Add("Código Departamento");
-            dt.Columns.Add("Nombre");
-
-            List<Department> departments = new Department().GetAllDepartment();
-
-            foreach (Department dep in departments)
-            {
-                dt.Rows.Add(dep.Code, dep.Name);
-            }
-            mgDepartment.DataSource = dt;
-        }
+        
 
        
     }

@@ -36,6 +36,8 @@
             this.mtDelete = new MetroFramework.Controls.MetroTile();
             this.mtModify = new MetroFramework.Controls.MetroTile();
             this.mtAdd = new MetroFramework.Controls.MetroTile();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.tb_filter = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.mgDepartment)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,8 +70,7 @@
             this.mgDepartment.EnableHeadersVisualStyles = false;
             this.mgDepartment.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgDepartment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mgDepartment.Location = new System.Drawing.Point(104, 155);
-            this.mgDepartment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mgDepartment.Location = new System.Drawing.Point(78, 207);
             this.mgDepartment.Name = "mgDepartment";
             this.mgDepartment.ReadOnly = true;
             this.mgDepartment.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -83,7 +84,7 @@
             this.mgDepartment.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mgDepartment.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgDepartment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgDepartment.Size = new System.Drawing.Size(852, 453);
+            this.mgDepartment.Size = new System.Drawing.Size(639, 287);
             this.mgDepartment.Style = MetroFramework.MetroColorStyle.Teal;
             this.mgDepartment.TabIndex = 9;
             // 
@@ -91,10 +92,9 @@
             // 
             this.mtDelete.ActiveControl = null;
             this.mtDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtDelete.Location = new System.Drawing.Point(683, 47);
-            this.mtDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.mtDelete.Location = new System.Drawing.Point(512, 38);
             this.mtDelete.Name = "mtDelete";
-            this.mtDelete.Size = new System.Drawing.Size(273, 73);
+            this.mtDelete.Size = new System.Drawing.Size(205, 59);
             this.mtDelete.Style = MetroFramework.MetroColorStyle.Teal;
             this.mtDelete.TabIndex = 8;
             this.mtDelete.Text = "Eliminar";
@@ -110,10 +110,9 @@
             // 
             this.mtModify.ActiveControl = null;
             this.mtModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtModify.Location = new System.Drawing.Point(396, 47);
-            this.mtModify.Margin = new System.Windows.Forms.Padding(4);
+            this.mtModify.Location = new System.Drawing.Point(297, 38);
             this.mtModify.Name = "mtModify";
-            this.mtModify.Size = new System.Drawing.Size(279, 73);
+            this.mtModify.Size = new System.Drawing.Size(209, 59);
             this.mtModify.Style = MetroFramework.MetroColorStyle.Teal;
             this.mtModify.TabIndex = 7;
             this.mtModify.Text = "Modificar";
@@ -129,10 +128,9 @@
             // 
             this.mtAdd.ActiveControl = null;
             this.mtAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mtAdd.Location = new System.Drawing.Point(104, 47);
-            this.mtAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.mtAdd.Location = new System.Drawing.Point(78, 38);
             this.mtAdd.Name = "mtAdd";
-            this.mtAdd.Size = new System.Drawing.Size(284, 73);
+            this.mtAdd.Size = new System.Drawing.Size(213, 59);
             this.mtAdd.Style = MetroFramework.MetroColorStyle.Teal;
             this.mtAdd.TabIndex = 4;
             this.mtAdd.Text = "Agregar";
@@ -144,21 +142,63 @@
             this.mtAdd.UseTileImage = true;
             this.mtAdd.Click += new System.EventHandler(this.mtAdd_Click);
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(78, 162);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(125, 19);
+            this.metroLabel2.TabIndex = 12;
+            this.metroLabel2.Text = "Filtrar por Nombre:";
+            // 
+            // tb_filter
+            // 
+            // 
+            // 
+            // 
+            this.tb_filter.CustomButton.Image = null;
+            this.tb_filter.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.tb_filter.CustomButton.Name = "";
+            this.tb_filter.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.tb_filter.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tb_filter.CustomButton.TabIndex = 1;
+            this.tb_filter.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tb_filter.CustomButton.UseSelectable = true;
+            this.tb_filter.CustomButton.Visible = false;
+            this.tb_filter.Lines = new string[0];
+            this.tb_filter.Location = new System.Drawing.Point(209, 162);
+            this.tb_filter.MaxLength = 32767;
+            this.tb_filter.Name = "tb_filter";
+            this.tb_filter.PasswordChar = '\0';
+            this.tb_filter.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tb_filter.SelectedText = "";
+            this.tb_filter.SelectionLength = 0;
+            this.tb_filter.SelectionStart = 0;
+            this.tb_filter.ShortcutsEnabled = true;
+            this.tb_filter.Size = new System.Drawing.Size(184, 23);
+            this.tb_filter.TabIndex = 13;
+            this.tb_filter.UseSelectable = true;
+            this.tb_filter.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tb_filter.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_filter.TextChanged += new System.EventHandler(this.filter);
+            // 
             // DepartmentUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.tb_filter);
+            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.mgDepartment);
             this.Controls.Add(this.mtDelete);
             this.Controls.Add(this.mtModify);
             this.Controls.Add(this.mtAdd);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DepartmentUserControl";
-            this.Size = new System.Drawing.Size(987, 630);
+            this.Size = new System.Drawing.Size(740, 512);
             this.Load += new System.EventHandler(this.DepartmentUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mgDepartment)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -168,5 +208,7 @@
         private MetroFramework.Controls.MetroTile mtModify;
         private MetroFramework.Controls.MetroTile mtDelete;
         private MetroFramework.Controls.MetroGrid mgDepartment;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox tb_filter;
     }
 }

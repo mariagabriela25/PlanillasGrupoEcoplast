@@ -11,6 +11,9 @@ namespace BusinessLogic
     public class WorkWeekDetail
     {
         public int Code { get; set; }
+
+        public String Name { get; set; }
+
         public double CCSSHours { get; set; }
         public double TotalHours { get; set; }
         public double ExtraHours { get; set; }
@@ -46,6 +49,34 @@ namespace BusinessLogic
 
             DAOWeekDetail dwd = new DAOWeekDetail();
             return dwd.SaveWeekDetail(twd);
+        }
+
+        public List<WorkWeekDetail> getWeek(int weekNumber)
+        {
+            DAOWeekDetail daow = new DAOWeekDetail();
+            TOWorkWeekDetail tow = new TOWorkWeekDetail();
+            tow.WeekNumber = WeekNumber;
+
+            List<TOWorkWeekDetail> listTO = daow.getWeekPerNumber(weekNumber);
+
+            List<WorkWeekDetail> list = new List<WorkWeekDetail>();
+            foreach (TOWorkWeekDetail week in listTO) {
+                WorkWeekDetail w = new WorkWeekDetail();
+                w.CCSSHours = week.CCSSHours;
+                w.ExtraHours = week.ExtraHours;
+                w.Name = week.Name;
+                w.TotalHours = week.TotalHours;
+
+                list.Add(w);
+            }
+            
+            return list;
+        }
+
+        public List<int> getWeekNumbers()
+        {
+            DAOWeekDetail daow = new DAOWeekDetail();
+            return daow.getWeekNumbers();
         }
     }
 

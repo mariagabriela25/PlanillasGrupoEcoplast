@@ -51,7 +51,19 @@ namespace UserInterface
             {
                 String filter = tb_filter.Text.Trim();
                 var query = from l in list where l.Name.ToLower().StartsWith(filter.ToLower()) select l;
-                mg_employees.DataSource = query.ToList();
+                var array = query.ToArray();
+
+                dt = new DataTable();
+                dt.Columns.Add("Código del Empleado");
+                dt.Columns.Add("Nombre");
+                dt.Columns.Add("Apellido");
+                dt.Columns.Add("Departamento");
+
+                foreach (Employee empl in array)
+                {
+                    dt.Rows.Add(empl.Code, empl.Name, empl.LastName, empl.Department.Name);
+                }
+                mg_employees.DataSource = dt;
             }
             catch { }
         }

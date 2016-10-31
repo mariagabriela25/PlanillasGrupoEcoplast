@@ -9,6 +9,9 @@ namespace TransferObjects
     public class TOWorkWeekDetail
     {
         public int Code { get; set; }
+
+        public String Name { get; set; }
+
         public double CCSSHours { get; set; }
         public double TotalHours { get; set; }
         public double ExtraHours { get; set; }

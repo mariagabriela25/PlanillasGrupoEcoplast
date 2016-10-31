@@ -19,6 +19,7 @@ namespace UserInterface
         }
 
         private DataTable dt;
+        private List<Employee> list;
 
         private void EmployeeUserControl_Load(object sender, EventArgs e)
         {
@@ -33,9 +34,9 @@ namespace UserInterface
             dt.Columns.Add("Apellido");
             dt.Columns.Add("Departamento");
 
-            List<Employee> employees = new Employee().GetAllEmployees();
+            list = new Employee().GetAllEmployees();
 
-            foreach (Employee empl in employees)
+            foreach (Employee empl in list)
             {
                 dt.Rows.Add(empl.Code, empl.Name, empl.LastName, empl.Department.Name);
             }
@@ -51,6 +52,29 @@ namespace UserInterface
         private void mgEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void filter(object sender, EventArgs e)
+        {
+            try
+            {
+                String filter = tb_filter.Text.Trim();
+                var query = from l in list where l.Name.ToLower().StartsWith(filter.ToLower()) select l;
+                var array = query.ToArray();
+
+                dt = new DataTable();
+                dt.Columns.Add("Código del Empleado");
+                dt.Columns.Add("Nombre");
+                dt.Columns.Add("Apellido");
+                dt.Columns.Add("Departamento");
+
+                foreach (Employee empl in array)
+                {
+                    dt.Rows.Add(empl.Code, empl.Name, empl.LastName, empl.Department.Name);
+                }
+                mgEmployees.DataSource = dt;   
+            }
+            catch { }
         }
 
         private void mtRefresh_Click(object sender, EventArgs e)
