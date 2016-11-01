@@ -118,6 +118,12 @@
     <Compile Include="EmployeeWeekLaborDetail.Designer.cs">
       <DependentUpon>EmployeeWeekLaborDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExcelExportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExcelExportUserControl.Designer.cs">
+      <DependentUpon>ExcelExportUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="WeekDetailUserControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeWeekLaborDetail.resx">
       <DependentUpon>EmployeeWeekLaborDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcelExportUserControl.resx">
+      <DependentUpon>ExcelExportUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeekDetailUserControl.resx">
       <DependentUpon>WeekDetailUserControl.cs</DependentUpon>

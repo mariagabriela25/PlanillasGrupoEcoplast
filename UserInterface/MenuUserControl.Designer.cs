@@ -80,6 +80,7 @@
             this.mtExportData.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.mtExportData.UseSelectable = true;
             this.mtExportData.UseTileImage = true;
+            this.mtExportData.Click += new System.EventHandler(this.mtExportData_Click);
             // 
             // mtPayroll
             // 

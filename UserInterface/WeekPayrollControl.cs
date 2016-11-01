@@ -26,7 +26,7 @@ namespace UserInterface
 
         private void WeekPayrollControl_Load(object sender, EventArgs e)
         {
-             week = new WorkWeekDetail();
+            week = new WorkWeekDetail();
             list = new List<WorkWeekDetail>();
 
             dt = new DataTable();
