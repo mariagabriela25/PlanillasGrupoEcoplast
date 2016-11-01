@@ -21,25 +21,27 @@ namespace BusinessLogic
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
 
-            DateTime inicio = new DateTime();
-            DateTime fin = new DateTime();
+            //DateTime inicio = new DateTime();
+            //DateTime fin = new DateTime();
 
-            DayOfWeek firstDay = DayOfWeek.Monday;
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-CR");
-        
+            //DayOfWeek firstDay = DayOfWeek.Monday;
+            //System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-CR");
 
-            DateTime day = new DateTime(2016, 09, 12);
 
-            day.AddDays(DayOfWeek.Sunday - day.DayOfWeek);
+            //DateTime day = new DateTime(2016, 09, 12);
 
-            GregorianCalendar FJ = new GregorianCalendar();
+            //day.AddDays(DayOfWeek.Sunday - day.DayOfWeek);
 
-            int w = FJ.GetWeekOfYear(day, CalendarWeekRule.FirstDay, firstDay);
+            //GregorianCalendar FJ = new GregorianCalendar();
 
-            fin = sem(45);
-            inicio = fin.AddDays(-6);
+            //int w = FJ.GetWeekOfYear(day, CalendarWeekRule.FirstDay, firstDay);
 
-            MessageBox.Show("Inicio: " + inicio.ToShortDateString() + " Fin: " + fin.ToShortDateString());
+            //fin = sem(45);
+            //inicio = fin.AddDays(-6);
+
+            //MessageBox.Show("Inicio: " + inicio.ToShortDateString() + " Fin: " + fin.ToShortDateString());
+
+            new ExcelManager().test();
         }
 
         public static DateTime sem(int num)
