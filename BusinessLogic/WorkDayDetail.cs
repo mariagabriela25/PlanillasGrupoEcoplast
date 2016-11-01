@@ -10,6 +10,7 @@ namespace BusinessLogic
 {
     public class WorkDayDetail
     {
+        public int Day { get; set; }
         public int CodeEmployee { get; set; }
         public double OrdinaryHours { get; set; }
         public double TotalHours { get; set; }
@@ -57,5 +58,23 @@ namespace BusinessLogic
             
         }
 
+        public List<WorkDayDetail> getWeeks(int codEmpl, int codWeek)
+        {
+            List<WorkDayDetail> list = new List<WorkDayDetail>();
+            DAOWorkDay dao = new DAOWorkDay();
+
+            List<TOWorkDayDetail> tos = dao.getWorkedWeeks(codEmpl, codWeek);
+
+            foreach(TOWorkDayDetail to in tos)
+            {
+                WorkDayDetail workDay = new WorkDayDetail();
+                workDay.Date = to.Date;
+                workDay.Day = to.Day;
+                workDay.TotalHours = to.TotalHours;
+                list.Add(workDay);
+            }
+
+            return list;
+        }
     }
 }

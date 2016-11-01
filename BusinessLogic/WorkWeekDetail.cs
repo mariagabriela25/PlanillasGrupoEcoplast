@@ -78,6 +78,14 @@ namespace BusinessLogic
             DAOWeekDetail daow = new DAOWeekDetail();
             return daow.getWeekNumbers();
         }
+
+        public List<int> getEmployeeWeeks(int codeEmployee)
+        {
+            DAOWeekDetail dao = new DAOWeekDetail();
+
+            List<int> list = dao.getWeekNumbers(codeEmployee);
+            return list;
+        }
     }
 
     

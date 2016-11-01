@@ -97,5 +97,34 @@ namespace DataAccess
             }
             return weeks;
         }
+
+        public List<int> getWeekNumbers(int CodEmployee)
+        {
+            List<int> weeks = new List<int>();
+            SqlCommand query = new SqlCommand("select NumSemana from DetalleSemanaLaborada where codEmpleado = @codEmployee", conex);
+            query.Parameters.AddWithValue("@codEmployee", CodEmployee);
+
+
+            if (conex.State != ConnectionState.Open)
+            {
+                conex.Open();
+            }
+
+            SqlDataReader reader = query.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                reader.Read();
+                int week = reader.GetInt32(0);
+
+                weeks.Add(week);
+            }
+
+            if (conex.State != ConnectionState.Closed)
+            {
+                conex.Close();
+            }
+            return weeks;
+        }
     }
 }

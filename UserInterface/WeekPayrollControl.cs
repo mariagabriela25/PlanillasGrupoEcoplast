@@ -34,7 +34,6 @@ namespace UserInterface
             dt.Columns.Add("Total Horas");
             dt.Columns.Add("Horas CCSS");
             dt.Columns.Add("Horas Extra");
-
             
             cbo_Weeks.DataSource = week.getWeekNumbers();
         }
