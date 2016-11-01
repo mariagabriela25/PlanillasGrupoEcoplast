@@ -53,16 +53,18 @@ namespace DataAccess
 
             if (reader.HasRows)
             {
-                reader.Read();
+                while (reader.Read())
+                {
 
-                TOWorkWeekDetail week = new TOWorkWeekDetail();
-                week.EmployeeCode = reader.GetInt32(0);
-                week.Name = reader.GetString(1) + " " + reader.GetString(2);
-                week.CCSSHours = (Double) reader.GetDecimal(3);
-                week.TotalHours = (Double) reader.GetDecimal(4);
-                week.ExtraHours = (Double) reader.GetDecimal(5);
+                    TOWorkWeekDetail week = new TOWorkWeekDetail();
+                    week.EmployeeCode = reader.GetInt32(0);
+                    week.Name = reader.GetString(1) + " " + reader.GetString(2);
+                    week.CCSSHours = (Double)reader.GetDecimal(3);
+                    week.TotalHours = (Double)reader.GetDecimal(4);
+                    week.ExtraHours = (Double)reader.GetDecimal(5);
 
-                list.Add(week);
+                    list.Add(week);
+                }
             }
 
             if (conex.State != ConnectionState.Closed)

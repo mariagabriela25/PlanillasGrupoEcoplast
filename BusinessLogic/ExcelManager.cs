@@ -14,9 +14,12 @@ namespace BusinessLogic
             Microsoft.Office.Interop.Excel.Application xla = new Microsoft.Office.Interop.Excel.Application();
             Workbook wb = xla.Workbooks.Open(path);
             Worksheet ws = (Worksheet)wb.Sheets[1];
-            ws.Copy(Type.Missing, wb.Sheets[wb.Sheets.Count]); // copy
-            ws = (Worksheet)wb.Sheets[wb.Sheets.Count];
-            ws.Name = "Semana " + week;
+            if (ws.Name != ("Semana " + week))
+            {
+                ws.Copy(Type.Missing, wb.Sheets[wb.Sheets.Count]); // copy
+                ws = (Worksheet)wb.Sheets[wb.Sheets.Count];
+                ws.Name = "Semana " + week;
+            }
             ws = clearSpaces(ws);
             xla.Visible = true;
 
