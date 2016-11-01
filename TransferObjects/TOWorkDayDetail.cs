@@ -17,6 +17,7 @@ namespace TransferObjects
         public Boolean State { get; set; }
         public int WeekCode { get; set; }
         public int ID { get; set;}
+        public int Day { get; set; }
 
         public TOWorkDayDetail()
         {

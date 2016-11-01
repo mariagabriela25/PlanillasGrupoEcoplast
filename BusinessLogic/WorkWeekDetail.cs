@@ -62,6 +62,7 @@ namespace BusinessLogic
             List<WorkWeekDetail> list = new List<WorkWeekDetail>();
             foreach (TOWorkWeekDetail week in listTO) {
                 WorkWeekDetail w = new WorkWeekDetail();
+                w.EmployeeCode = week.EmployeeCode;
                 w.CCSSHours = week.CCSSHours;
                 w.ExtraHours = week.ExtraHours;
                 w.Name = week.Name;
@@ -77,6 +78,14 @@ namespace BusinessLogic
         {
             DAOWeekDetail daow = new DAOWeekDetail();
             return daow.getWeekNumbers();
+        }
+
+        public List<int> getEmployeeWeeks(int codeEmployee)
+        {
+            DAOWeekDetail dao = new DAOWeekDetail();
+
+            List<int> list = dao.getWeekNumbers(codeEmployee);
+            return list;
         }
     }
 

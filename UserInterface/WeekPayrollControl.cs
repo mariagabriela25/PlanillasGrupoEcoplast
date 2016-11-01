@@ -26,15 +26,15 @@ namespace UserInterface
 
         private void WeekPayrollControl_Load(object sender, EventArgs e)
         {
-             week = new WorkWeekDetail();
+            week = new WorkWeekDetail();
             list = new List<WorkWeekDetail>();
 
             dt = new DataTable();
+            dt.Columns.Add("No. Empleado");
             dt.Columns.Add("Nombre");
             dt.Columns.Add("Total Horas");
             dt.Columns.Add("Horas CCSS");
             dt.Columns.Add("Horas Extra");
-
             
             cbo_Weeks.DataSource = week.getWeekNumbers();
         }
@@ -53,6 +53,7 @@ namespace UserInterface
                 var array = query.ToArray();
 
                 dt = new DataTable();
+                dt.Columns.Add("No. Empleado");
                 dt.Columns.Add("Nombre");
                 dt.Columns.Add("Total Horas");
                 dt.Columns.Add("Horas CCSS");
@@ -60,7 +61,7 @@ namespace UserInterface
 
                 foreach (WorkWeekDetail week in array)
                 {
-                    dt.Rows.Add(week.Name, week.TotalHours,  week.CCSSHours, week.ExtraHours);
+                    dt.Rows.Add(week.EmployeeCode, week.Name, week.TotalHours,  week.CCSSHours, week.ExtraHours);
                 }
                 mg_weeks.DataSource = dt;
             }
@@ -75,7 +76,7 @@ namespace UserInterface
 
                 foreach (WorkWeekDetail w in list)
                 {
-                    dt.Rows.Add(w.Name, w.TotalHours, w.CCSSHours, w.ExtraHours);
+                    dt.Rows.Add(w.EmployeeCode, w.Name, w.TotalHours, w.CCSSHours, w.ExtraHours);
                 }
                 mg_weeks.DataSource = dt;
             }
@@ -84,6 +85,17 @@ namespace UserInterface
                 MessageBox.Show("Primero debe escoger una Semana");
             }
         }
+
+        private void mg_weeks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedRow = Int32.Parse(mg_weeks.SelectedRows[0].Index.ToString());
+            int codeEmployee = Int32.Parse(mg_weeks.Rows[selectedRow].Cells[0].Value.ToString());
+            int totalHours = Int32.Parse(mg_weeks.Rows[selectedRow].Cells[2].Value.ToString());
+            int ordinaryHours = Int32.Parse(mg_weeks.Rows[selectedRow].Cells[3].Value.ToString());
+            int extraHours = Int32.Parse(mg_weeks.Rows[selectedRow].Cells[4].Value.ToString());
+
+            new EmployeeWeekLaborDetail(week_selected, codeEmployee, totalHours, ordinaryHours, extraHours).Show();
         }
+    }
     
 }

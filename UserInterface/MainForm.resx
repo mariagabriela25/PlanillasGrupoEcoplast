@@ -148,13 +148,13 @@
     <value>True</value>
   </data>
   <data name="mpMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 211</value>
+    <value>31, 210</value>
   </data>
   <data name="mpMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="mpMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 847</value>
+    <value>365, 847</value>
   </data>
   <data name="mpMenu.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -175,13 +175,13 @@
     <value>True</value>
   </data>
   <data name="mpContent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>234, 211</value>
+    <value>419, 210</value>
   </data>
   <data name="mpContent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="mpContent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1891, 847</value>
+    <value>1707, 847</value>
   </data>
   <data name="mpContent.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -214,7 +214,7 @@
     <value>4, 0, 4, 0</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>501, 83</value>
+    <value>399, 67</value>
   </data>
   <data name="lblTitle.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -588,6 +588,9 @@
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 41</value>
   </data>
+  <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 135</value>
   </data>
@@ -651,7 +654,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 69</value>
+    <value>91, 69</value>
   </data>
   <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -678,10 +681,31 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1612, 1087</value>
+    <value>1379, 780</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAMIOAADCDgAAAAAAAAAA
+        AAD/////////////////////////////////////6/ng/9XpxP/i79b/////////////////////////
+        //////////////////////////////X+7v92rEP/ClsA/wAyAP8AKAD/AC0A/wBDAP9KfhH/xdiy////
+        /////////////////////////////6PJgP8ATgD/ADoA/z5vBf+FpGD/rMKT/7fMof+ivoT/dp9I/1OL
+        F/+Pu2X/9/30/////////////////3ytTf8RWwD/mrR8////////////////////////////////////
+        ////////7/fp/+n14P///////////5W+b/9flif//v/+////////////////////////////////////
+        ////////5Ojg/8HNtP+ywqL/ztjD/8vit/+kx4H///////////////////////////+yw5//9/j2////
+        /////////////93k1v/p7eb/2eHR///////h79X/jqdy/8DMs/+6yKn/obSJ/8XQtv+ou5L/cpFN/4Oe
+        Y/+uwJn/nLGC/36bXf+2xqX/pbiP/6G2if/+/f7//////1Z7Kv+zwqD/priO/5uvgP96llb/Z4g+/16A
+        Mf9tjEX/X4Iz/4agZv9Lcx7/dJNR/1+DN/9niUL///////////9Ueib/qrqT//Ty7P+6xKL/0ta//8fO
+        sv/EzK//tMCb/5WqdP+ktor/t8Sj/83Wv//Ez7b/dpJT//b29P//////qruS/8HLrv/0+fb/////////
+        ///9////7v/////////d4tL/+vXy//////////////////D26v/2/fH/////////////////yfbr/7rx
+        4f+z793/oOnS/5roz/+o7Nj/9v////////////////////D97/+h2Y7////8/////////////////9f3
+        8P/h+fb/6fz6//j////t/v3/+v///////////////////8fsyv9NuUj/3fHX///////3+vH/7vfj////
+        ////////////////////////////////////////+P7+/2rNjf8aqSn/yunB///////////////+/7Xc
+        mf9pwFX/h9GL/77mwf/f89//4/Tk/8vs1P+W3LP/P8B8/wCkNf8mrjf/3/DS////////////////////
+        ////////3fDX/2PFdv8JqTz/AKIw/wChMv8Any7/AJ8q/xisO/+Z1Y//////////////////////////
+        /////////////////////////////9Tt0P+14bH/u+Kw/+Xw0///////////////////////////////
+        ////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>

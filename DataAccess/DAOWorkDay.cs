@@ -43,7 +43,7 @@ namespace DataAccess
         {
             TOWorkDayDetail workDay = new TOWorkDayDetail();
 
-            SqlCommand query = new SqlCommand ("select SUM(TotalHoras) from DetalleDiaLaborado where codEmpleado = @CodeEmployee and codSemana = @CodeWeek", conex);
+            SqlCommand query = new SqlCommand("select SUM(TotalHoras) from DetalleDiaLaborado where codEmpleado = @CodeEmployee and codSemana = @CodeWeek", conex);
             query.Parameters.AddWithValue("@CodeEmployee", tow.CodeEmployee);
             query.Parameters.AddWithValue("@CodeWeek", tow.WeekCode);
 
@@ -51,14 +51,14 @@ namespace DataAccess
             {
                 conex.Open();
             }
-            
+
             SqlDataReader reader = query.ExecuteReader();
 
-            if(reader.HasRows)
+            if (reader.HasRows)
             {
                 reader.Read();
 
-                workDay.TotalHours = (Double) reader.GetDecimal(0);
+                workDay.TotalHours = (Double)reader.GetDecimal(0);
             }
 
 
@@ -69,6 +69,49 @@ namespace DataAccess
             }
 
             return workDay;
+        }
+
+        public List<TOWorkDayDetail> getWorkedWeeks(int codEmpl, int codWeek)
+        {
+            List<TOWorkDayDetail> list = new List<TOWorkDayDetail>();
+
+           SqlCommand query = new SqlCommand("select d.CodDia, d.Fecha, d.TotalHoras from DetalleDiaLaborado as d where CodEmpleado = @CodeEmployee and CodSemana = @CodeWeek", conex);
+            query.Parameters.AddWithValue("@CodeEmployee", codEmpl);
+            query.Parameters.AddWithValue("@CodeWeek", codWeek);
+
+            if (conex.State != System.Data.ConnectionState.Open)
+            {
+                conex.Open();
+            }
+
+            SqlDataReader reader = query.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    TOWorkDayDetail e = new TOWorkDayDetail();
+
+                    e.ID = reader.GetInt32(0);
+
+                    DateTime datevalue = reader.GetDateTime(1);
+                    int day = (Int32) datevalue.DayOfWeek;
+
+                    e.Date = datevalue;
+                    e.Day = day;
+                    e.TotalHours = (Double) reader.GetDecimal(2);
+
+                    list.Add(e);
+                }
+            }
+
+            if (conex.State != System.Data.ConnectionState.Closed)
+            {
+                conex.Close();
+            }
+
+            return list;
+
         }
 
     }
