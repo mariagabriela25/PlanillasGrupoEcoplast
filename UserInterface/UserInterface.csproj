@@ -112,6 +112,12 @@
     <Compile Include="DayReviewUserControl.Designer.cs">
       <DependentUpon>DayReviewUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeWeekLaborDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeWeekLaborDetail.Designer.cs">
+      <DependentUpon>EmployeeWeekLaborDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="WeekDetailUserControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,12 @@
     <Compile Include="WeekPayrollControl.Designer.cs">
       <DependentUpon>WeekPayrollControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="WeekUserPayrollControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeekUserPayrollControl.Designer.cs">
+      <DependentUpon>WeekUserPayrollControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="WelcomeUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -213,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DayReviewUserControl.resx">
       <DependentUpon>DayReviewUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeWeekLaborDetail.resx">
+      <DependentUpon>EmployeeWeekLaborDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeekDetailUserControl.resx">
       <DependentUpon>WeekDetailUserControl.cs</DependentUpon>
@@ -262,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WeekPayrollControl.resx">
       <DependentUpon>WeekPayrollControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeekUserPayrollControl.resx">
+      <DependentUpon>WeekUserPayrollControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WelcomeUserControl.resx">
       <DependentUpon>WelcomeUserControl.cs</DependentUpon>

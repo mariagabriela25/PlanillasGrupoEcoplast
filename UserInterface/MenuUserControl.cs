@@ -94,5 +94,18 @@ namespace UserInterface
             MainForm.Instance.BackButton.Visible = true;
             MainForm.Instance.LabelTitle.Text = "Marcas del Reloj";
         }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            if (!MainForm.Instance.Content.Controls.ContainsKey("WeekUserPayrollControl"))
+            {
+                WeekUserPayrollControl uc = new WeekUserPayrollControl();
+                uc.Dock = DockStyle.Fill;
+                MainForm.Instance.Content.Controls.Add(uc);
+            }
+            MainForm.Instance.Content.Controls["WeekUserPayrollControl"].BringToFront();
+            MainForm.Instance.BackButton.Visible = true;
+            MainForm.Instance.LabelTitle.Text = "Detalle de la Semana";
+        }
     }
 }
