@@ -41,7 +41,7 @@ namespace DataAccess
         public List<TOWorkWeekDetail> getWeekPerNumber(int weekNumber)
         {
             List<TOWorkWeekDetail> list = new List<TOWorkWeekDetail>();
-            SqlCommand query = new SqlCommand("select e.Nombre, e.Apellido, s.HorasCCSS, s.HorasTotales, s.HorasExtras from DetalleSemanaLaborada as s inner join Empleado as e on s.CodEmpleado = e.CodEmpleado where NumSemana = @WeekNumber", conex);
+            SqlCommand query = new SqlCommand("select e.CodEmpleado, e.Nombre, e.Apellido, s.HorasCCSS, s.HorasTotales, s.HorasExtras from DetalleSemanaLaborada as s inner join Empleado as e on s.CodEmpleado = e.CodEmpleado where NumSemana = @WeekNumber", conex);
             query.Parameters.AddWithValue("@WeekNumber", weekNumber);
 
             if (conex.State != ConnectionState.Open)
@@ -56,10 +56,11 @@ namespace DataAccess
                 reader.Read();
 
                 TOWorkWeekDetail week = new TOWorkWeekDetail();
-                week.Name = reader.GetString(0) + " " + reader.GetString(1);
-                week.CCSSHours = (Double) reader.GetDecimal(2);
-                week.TotalHours = (Double) reader.GetDecimal(3);
-                week.ExtraHours = (Double) reader.GetDecimal(4);
+                week.EmployeeCode = reader.GetInt32(0);
+                week.Name = reader.GetString(1) + " " + reader.GetString(2);
+                week.CCSSHours = (Double) reader.GetDecimal(3);
+                week.TotalHours = (Double) reader.GetDecimal(4);
+                week.ExtraHours = (Double) reader.GetDecimal(5);
 
                 list.Add(week);
             }

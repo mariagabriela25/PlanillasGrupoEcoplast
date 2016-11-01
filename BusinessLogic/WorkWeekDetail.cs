@@ -62,6 +62,7 @@ namespace BusinessLogic
             List<WorkWeekDetail> list = new List<WorkWeekDetail>();
             foreach (TOWorkWeekDetail week in listTO) {
                 WorkWeekDetail w = new WorkWeekDetail();
+                w.EmployeeCode = week.EmployeeCode;
                 w.CCSSHours = week.CCSSHours;
                 w.ExtraHours = week.ExtraHours;
                 w.Name = week.Name;
