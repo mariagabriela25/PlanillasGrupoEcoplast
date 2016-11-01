@@ -9,20 +9,20 @@ namespace BusinessLogic
 {
     public class ExcelManager
     {
-        public void test()
+        public void export(string path, int week)
         {
             Microsoft.Office.Interop.Excel.Application xla = new Microsoft.Office.Interop.Excel.Application();
-            Workbook wb = xla.Workbooks.Open("C:\\Users\\Jose\\Downloads\\Planilla Producción Semana 43.xlsx");
+            Workbook wb = xla.Workbooks.Open(path);
             Worksheet ws = (Worksheet)wb.Sheets[1];
             ws.Copy(Type.Missing, wb.Sheets[wb.Sheets.Count]); // copy
             ws = (Worksheet)wb.Sheets[wb.Sheets.Count];
-            ws.Name = "NEW SHEET";
+            ws.Name = "Semana " + week;
             ws = clearSpaces(ws);
             xla.Visible = true;
 
 
             
-            List<WorkWeekDetail> weeks = new WorkWeekDetail().getWeek(37);
+            List<WorkWeekDetail> weeks = new WorkWeekDetail().getWeek(week);
 
             for (int i = 0; i < weeks.Count; i++)
             {

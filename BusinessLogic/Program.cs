@@ -40,8 +40,7 @@ namespace BusinessLogic
             //inicio = fin.AddDays(-6);
 
             //MessageBox.Show("Inicio: " + inicio.ToShortDateString() + " Fin: " + fin.ToShortDateString());
-
-            new ExcelManager().test();
+            
         }
 
         public static DateTime sem(int num)
