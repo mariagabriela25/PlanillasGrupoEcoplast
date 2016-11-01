@@ -114,9 +114,40 @@ namespace DataAccess
             catch (Exception e)
             {
                 MessageBox.Show("Error de conexion");
-                GetChecks(id, inicio, fin);
+                GetChecksWithRests(id, inicio, fin);
             }
             return null;
+        }
+
+        public Boolean AddDayDetail(TOWorkDayDetail daydetail)
+        {
+
+            SqlCommand query = new SqlCommand("INSERT INTO DetalleDiaLaborado VALUES " +
+                "(@CodEmpl, @TotalOrdinary, @Total, @Date, @Note, @ID, @State, @CodWeek)", conex);
+            query.Parameters.AddWithValue("@CodEmpl", daydetail.CodeEmployee);
+            query.Parameters.AddWithValue("@TotalOrdinary", daydetail.OrdinaryHours);
+            query.Parameters.AddWithValue("@Total", daydetail.TotalHours);
+            query.Parameters.AddWithValue("@Date", daydetail.Date);
+            query.Parameters.AddWithValue("@Note", daydetail.Note == null ? System.Data.SqlTypes.SqlString.Null : daydetail.Note);
+            query.Parameters.AddWithValue("@ID", daydetail.ID);
+            query.Parameters.AddWithValue("@State", daydetail.State);
+            query.Parameters.AddWithValue("@CodWeek", daydetail.WeekCode);
+
+
+
+            if (conex.State != System.Data.ConnectionState.Open)
+            {
+                conex.Open();
+            }
+
+            query.ExecuteNonQuery();
+
+            if (conex.State != System.Data.ConnectionState.Closed)
+            {
+                conex.Close();
+            }
+
+            return true;
         }
 
     }

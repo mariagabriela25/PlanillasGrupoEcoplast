@@ -6,19 +6,24 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-  public class Anomaly
+    public class Anomaly
     {
-        int employeeCode;
-        TimeSpan checkin;
-        TimeSpan checkout;
-        DateTime dayOfTheWeek;
+        public DateTime currentDay;
+        public int code;
+        public Employee emp;
+        public bool type;
 
-
-        public Anomaly(int employeeCode, TimeSpan checkin, TimeSpan checkout, DateTime dayOfTheWeek) {
-            this.employeeCode = employeeCode;
-            this.checkin = checkin;
-            this.checkout = checkout;
-            this.dayOfTheWeek = dayOfTheWeek;
+        public Anomaly(DateTime currentday, int code, bool type)
+        {
+            this.currentDay = currentday;
+            this.code = code;
+            this.type = type;
+            Employee emp = new Employee();
+            emp.Code = this.code;
+            emp = emp.GetEmployee();
+            this.emp = emp;
         }
+
     }
+
 }

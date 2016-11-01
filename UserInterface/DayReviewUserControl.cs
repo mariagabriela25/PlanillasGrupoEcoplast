@@ -19,7 +19,9 @@ namespace UserInterface
         private DateTime EstandarDate;
         private DateTime SundayDate;
         public int CodDepartment;
-        DayOfWeek firstDayOfWeek;
+        public DayOfWeek firstDayOfWeek;
+        public List<Anomaly> list;
+        public List<Employee> employees;
 
         public DayReviewUserControl()
         {
@@ -32,9 +34,14 @@ namespace UserInterface
         private void mbCheck_Click(object sender, EventArgs e)
         {
             WeekNum = Int32.Parse(mnWeekNum.Value.ToString());
+            list = new List<Anomaly>();
             SundayDate = CalcWeekNum(WeekNum);
             CodDepartment = ((Department)cbDepart.SelectedItem).Code;
+            employees = new Employee().GetEmployeesDep(CodDepartment);
+            mpgCalculation.Maximum = employees.Count;
+            mpgCalculation.Value = 0;
             backgroundWorker2.RunWorkerAsync();
+            mbCheck.Enabled = false;
         }
 
         public DateTime CalcWeekNum(int weeknum)
@@ -61,7 +68,6 @@ namespace UserInterface
                 cbDepart.Items.Add(d); 
             }
 
-
             backgroundWorker2.WorkerReportsProgress = true;
         }
 
@@ -73,13 +79,10 @@ namespace UserInterface
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-            List<Employee> employees = new Employee().GetEmployeesDep(CodDepartment);
-            mpgCalculation.Maximum = employees.Count;
             int cont = 0;
-
             foreach (Employee em in employees)
             {
-                Boolean test = new ValidationProcess(WeekNum, SundayDate, CodDepartment, em.Code).core();
+                Boolean test = new ValidationProcess(WeekNum, SundayDate, CodDepartment, em.Code, list).core();
                 backgroundWorker2.ReportProgress(++cont);
                 System.Threading.Thread.Sleep(5);
             }
@@ -88,12 +91,15 @@ namespace UserInterface
         private void backgroundWorker2_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             mpgCalculation.Value = e.ProgressPercentage;
-            this.label1.Text = e.ProgressPercentage.ToString() + "%";
+            this.label1.Text = e.ProgressPercentage.ToString() + "/" + mpgCalculation.Maximum;
         }
 
         private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            new AnomaliesReview().Show();
+            mbCheck.Enabled = true;
+            cbDepart.SelectedItem = null;
+            mnWeekNum.Value = 1;
+            new AnomaliesReview(list, WeekNum).Show();
         }
     }
 }

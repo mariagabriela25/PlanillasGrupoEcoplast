@@ -33,7 +33,7 @@ namespace BusinessLogic
 
         List<Anomaly> weeklyAnomalies;
 
-        public ValidationProcess(int weekNumber, DateTime lastWeekDay, int departmentCode, int employeeCode) {
+        public ValidationProcess(int weekNumber, DateTime lastWeekDay, int departmentCode, int employeeCode, List<Anomaly> list) {
 
             allowedPositive = new TimeSpan(0, 10, 0);
             allowedNegative = new TimeSpan(0, -10, 0);
@@ -48,9 +48,10 @@ namespace BusinessLogic
             this.department = departmentCode;
             this.employee = employeeCode;
 
-            weeklyAnomalies = new List<Anomaly>();
+            weeklyAnomalies = list;
 
         }
+
         public Boolean core()
         {
             checkin = null;
@@ -60,7 +61,8 @@ namespace BusinessLogic
 
             TimeSpan timein = new TimeSpan(0, 0, 0);
             TimeSpan timeout = new TimeSpan(23, 59, 59);
-            
+
+            //MessageBox.Show("Empleado: " + employee);
             currentDay = firstWeekDay.Date + timein;
             nextDay = currentDay.AddDays(1).Date + timeout;
 
@@ -72,9 +74,11 @@ namespace BusinessLogic
                     checkin = null;
                     checkout = null;
 
+                    //MessageBox.Show("Dia no laborado, Dia: " + currentDay.Date);
+
                     currentDay = nextDay.Date + timein;
                     nextDay = nextDay.AddDays(1);
-                    MessageBox.Show("Dia no laborado, Dia: " + currentDay.Date);
+                   
                 }
                 else
                 {
@@ -87,9 +91,14 @@ namespace BusinessLogic
                         {
                             checkin = checks[i];
                         }
+                        else if (checks[i].CheckType.Equals("I") && checkin != null)
+                        {
+                            break;
+                        }
                         else if (checkin != null && checkout == null && checks[i].CheckType.Equals("O"))
                         {
                             checkout = checks[i];
+                            break;
                         }
                     }
 
@@ -102,25 +111,30 @@ namespace BusinessLogic
                             if (SetCheckIn(schedules[i].InitialHour, checkin.CheckTime) &&
                                 SetCheckOut(schedules[i].finalHour, checkout.CheckTime))
                             {
-                                MessageBox.Show("Chequeo correcto, Dia: " + currentDay.Date);
+                                
                                 flag = true;
                                 int ordinaryhours = schedules[i].OrdinaryHours;
+                                new WorkDayDetail(employee, ordinaryhours, ordinaryhours, currentDay, null, true, weekNumber, 1).AddWorkDay();
+                                //MessageBox.Show("Dia Correcto, Dia: " + currentDay.Date);
                                 break;
                             }
                         }
                         if(!flag)
                         {
-                            MessageBox.Show("Intervalo invalido, Dia: " + currentDay.Date);
+                            weeklyAnomalies.Add(new Anomaly(currentDay.Date, employee, false));
+                            //MessageBox.Show("Intervalo invalido, Dia: " + currentDay.Date);
+
                         }
 
                     }
                     else if (checkin == null && checkout == null)
                     {
-                        MessageBox.Show("Dia no laboradorado, Dia: " + currentDay.Date);    
+                        //MessageBox.Show("Dia no laborado, Dia: " + currentDay.Date);    
                     }
                     else
                     {
-                        MessageBox.Show("Ausencia de marca, Dia: " + currentDay.Date);
+                        weeklyAnomalies.Add(new Anomaly(currentDay.Date, employee, true));
+                        //MessageBox.Show("Marca Ausente, Dia: " + currentDay.Date);
                     }
 
                     checkin = null;
