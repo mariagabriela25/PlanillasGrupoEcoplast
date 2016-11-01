@@ -62,59 +62,59 @@ namespace UserInterface
             daysList = work.getWeeks(codeE, week);
 
             int i = 1;
-            for (int n = 0; i < daysList.Count; n++)
+            for (int n = 0; n < daysList.Count; n++)
             {
                 if (i==1)
                 {
-                    setLabels(lbDay1, daysList[i].Day, lbDate1, daysList[i].Date.ToString(),
-                        lbH1, txtHours1, daysList[i].TotalHours, lbN1, txtNote1, daysList[i].Note,
-                        lbCodeDB1, daysList[i].ID);
-                    iniRange = new DateTime(daysList[i].Date.Year, daysList[i].Date.Month, daysList[i].Date.Day, 0,0,0);
+                    setLabels(lbDay1, daysList[n].Day, lbDate1, daysList[n].Date.Date.ToString(),
+                        lbH1, txtHours1, daysList[n].TotalHours, lbN1, txtNote1, daysList[n].Note,
+                        lbCodeDB1, daysList[n].ID);
+                    iniRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0,0,0);
                 }
                 else if (i == 2)
                 {
-                    setLabels(lbDay2, daysList[i].Day, lbDate2, daysList[i].Date.ToString(),
-                        lbH2, txtHours2, daysList[i].TotalHours, lbN2, txtNote2, daysList[i].Note,
-                        lbCodeDB2, daysList[i].ID);
-                    finRange = new DateTime(daysList[i].Date.Year, daysList[i].Date.Month, daysList[i].Date.Day, 0, 0, 0);
+                    setLabels(lbDay2, daysList[n].Day, lbDate2, daysList[n].Date.Date.ToString(),
+                        lbH2, txtHours2, daysList[n].TotalHours, lbN2, txtNote2, daysList[n].Note,
+                        lbCodeDB2, daysList[n].ID);
+                    finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);
                 }
                 else if (i == 3)
                 {
-                    setLabels(lbDay3, daysList[i].Day, lbDate3, daysList[i].Date.ToString(),
-                        lbH3, txtHours3, daysList[i].TotalHours, lbN3, txtNote3, daysList[i].Note,
-                        lbCodeDB3, daysList[i].ID);
+                    setLabels(lbDay3, daysList[n].Day, lbDate3, daysList[n].Date.Date.ToString(),
+                        lbH3, txtHours3, daysList[n].TotalHours, lbN3, txtNote3, daysList[n].Note,
+                        lbCodeDB3, daysList[n].ID);
                     separator1.Visible = true;
-                    finRange = new DateTime(daysList[i].Date.Year, daysList[i].Date.Month, daysList[i].Date.Day, 0, 0, 0);
+                    finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);
                 }
                 else if (i == 4)
                 {
-                    setLabels(lbDay4, daysList[i].Day, lbDate4, daysList[i].Date.ToString(),
-                        lbH4, txtHours4, daysList[i].TotalHours, lbN4, txtNote4, daysList[i].Note,
-                        lbCodeDB4, daysList[i].ID);
-                    finRange = new DateTime(daysList[i].Date.Year, daysList[i].Date.Month, daysList[i].Date.Day, 0, 0, 0);
+                    setLabels(lbDay4, daysList[n].Day, lbDate4, daysList[n].Date.Date.ToString(),
+                        lbH4, txtHours4, daysList[n].TotalHours, lbN4, txtNote4, daysList[n].Note,
+                        lbCodeDB4, daysList[n].ID);
+                    finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);
                 }
                 else if (i == 5)
                 {
-                    setLabels(lbDay5, daysList[i].Day, lbDate5, daysList[i].Date.ToString(),
-                        lbH5, txtHours5, daysList[i].TotalHours, lbN5, txtNote5, daysList[i].Note,
-                        lbCodeDB5, daysList[i].ID);
+                    setLabels(lbDay5, daysList[n].Day, lbDate5, daysList[n].Date.Date.ToString(),
+                        lbH5, txtHours5, daysList[n].TotalHours, lbN5, txtNote5, daysList[n].Note,
+                        lbCodeDB5, daysList[n].ID);
                     separator2.Visible = true;
-                    finRange = new DateTime(daysList[i].Date.Year, daysList[i].Date.Month, daysList[i].Date.Day, 0, 0, 0);
+                    finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);
                 }
                 else if (i == 6)
                 {
-                    setLabels(lbDay6, daysList[i].Day, lbDate6, daysList[i].Date.ToString(),
-                        lbH6, txtHours6, daysList[i].TotalHours, lbN6, txtNote6, daysList[i].Note,
-                        lbCodeDB6, daysList[i].ID);
-                    finRange = new DateTime(daysList[i].Date.Year, daysList[i].Date.Month, daysList[i].Date.Day, 0, 0, 0);
+                    setLabels(lbDay6, daysList[n].Day, lbDate6, daysList[n].Date.Date.ToString(),
+                        lbH6, txtHours6, daysList[n].TotalHours, lbN6, txtNote6, daysList[n].Note,
+                        lbCodeDB6, daysList[n].ID);
+                    finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);
                 }
                 else if (i == 7)
                 {
-                    setLabels(lbDay7, daysList[i].Day, lbDate7, daysList[i].Date.ToString(),
-                           lbH7, txtHours7, daysList[i].TotalHours, lbN7, txtNote7, daysList[i].Note,
-                           lbCodeDB7, daysList[i].ID);
+                    setLabels(lbDay7, daysList[n].Day, lbDate7, daysList[n].Date.Date.ToString(),
+                           lbH7, txtHours7, daysList[n].TotalHours, lbN7, txtNote7, daysList[n].Note,
+                           lbCodeDB7, daysList[n].ID);
                     separator3.Visible = true;
-                    finRange = new DateTime(daysList[i].Date.Year, daysList[i].Date.Month, daysList[i].Date.Day, 0, 0, 0);
+                    finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);
                 }
                 i += 1;
             }
