@@ -89,7 +89,7 @@
             this.mbCheck.Name = "mbCheck";
             this.mbCheck.Size = new System.Drawing.Size(148, 54);
             this.mbCheck.TabIndex = 4;
-            this.mbCheck.Text = "¡Calcular!";
+            this.mbCheck.Text = "Calcular";
             this.mbCheck.UseSelectable = true;
             this.mbCheck.Click += new System.EventHandler(this.mbCheck_Click);
             // 
@@ -137,7 +137,7 @@
             this.Controls.Add(this.mnWeekNum);
             this.Controls.Add(this.mlDepart);
             this.Name = "DayReviewUserControl";
-            this.Size = new System.Drawing.Size(547, 248);
+            this.Size = new System.Drawing.Size(547, 214);
             this.Load += new System.EventHandler(this.DayReviewUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mnWeekNum)).EndInit();
             this.ResumeLayout(false);

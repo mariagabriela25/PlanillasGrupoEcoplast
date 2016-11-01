@@ -12,7 +12,7 @@ using BusinessLogic;
 
 namespace UserInterface
 {
-    public partial class DayReviewUserControl : UserControl
+    public partial class DayReviewUserControl : MetroFramework.Forms.MetroForm
     {
 
         private int WeekNum;
@@ -84,7 +84,7 @@ namespace UserInterface
             {
                 Boolean test = new ValidationProcess(WeekNum, SundayDate, CodDepartment, em.Code, list).core();
                 backgroundWorker2.ReportProgress(++cont);
-                System.Threading.Thread.Sleep(5);
+                System.Threading.Thread.Sleep(100);
             }
         }
 
@@ -99,7 +99,36 @@ namespace UserInterface
             mbCheck.Enabled = true;
             cbDepart.SelectedItem = null;
             mnWeekNum.Value = 1;
-            new AnomaliesReview(list, WeekNum).Show();
+            if (list.Count != 0)
+            {
+                new AnomaliesReview(list, WeekNum, employees).Show();
+
+            }
+            else
+            {
+                SaveWeeks();
+            }
+
+        }
+
+        public void SaveWeeks()
+        {
+            foreach (Employee emp in employees)
+            {
+                double total = new Employee().GetTotalHours(emp.Code, WeekNum);
+                double ccss = 48;
+                double extras = 0;
+                if (total <= 48)
+                {
+                    ccss = total;
+                }
+                else
+                {
+                    extras = total - ccss;
+                }
+                new WorkWeekDetail(1, ccss, total, extras, emp.Code, WeekNum, DateTime.Now.Year).SaveWeekReport();
+            }
+            MessageBox.Show("Se guardó el detalle de la semana");
         }
     }
 }

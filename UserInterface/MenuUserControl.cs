@@ -71,15 +71,16 @@ namespace UserInterface
 
         private void mtDailyPayroll_Click(object sender, EventArgs e)
         {
-            if (!MainForm.Instance.Content.Controls.ContainsKey("DayReviewUserControl"))
-            {
-                DayReviewUserControl dd = new DayReviewUserControl();
-                dd.Dock = DockStyle.Fill;
-                MainForm.Instance.Content.Controls.Add(dd);
-            }
-            MainForm.Instance.Content.Controls["DayReviewUserControl"].BringToFront();
-            MainForm.Instance.BackButton.Visible = true;
-            MainForm.Instance.LabelTitle.Text = "Administración de Planillas";
+            //if (!MainForm.Instance.Content.Controls.ContainsKey("DayReviewUserControl"))
+            //{
+            //    DayReviewUserControl dd = new DayReviewUserControl();
+            //    dd.Dock = DockStyle.Fill;
+            //    MainForm.Instance.Content.Controls.Add(dd);
+            //}
+            //MainForm.Instance.Content.Controls["DayReviewUserControl"].BringToFront();
+            //MainForm.Instance.BackButton.Visible = true;
+            //MainForm.Instance.LabelTitle.Text = "Administración de Planillas";
+            new DayReviewUserControl().Show();
         }
 
         private void metroTile1_Click(object sender, EventArgs e)

@@ -13,7 +13,7 @@ namespace DataAccess
 
     public class DAEmployee
     {
-        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConex);
+        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
         public void AddEmployee(TOEmployee employee)
         {
@@ -187,6 +187,33 @@ namespace DataAccess
 
 
             return employees;
+        }
+
+        public double GetTotalHoursPerWeek(int code, int weeknumber)
+        {
+
+            SqlCommand query = new SqlCommand("SELECT SUM(TotalHoras) FROM DetalleDiaLaborado Where CodEmpleado = @employee AND CodSemana = @week", conex);
+            query.Parameters.AddWithValue("@employee", code);
+            query.Parameters.AddWithValue("@week", weeknumber);
+
+            if (conex.State != ConnectionState.Open)
+            {
+                conex.Open();
+            }
+
+            SqlDataReader reader = query.ExecuteReader();
+
+            if(reader.HasRows)
+            {
+                reader.Read();
+                return (Double)reader.GetDecimal(0);
+            }
+
+            if (conex.State != ConnectionState.Closed)
+            {
+                conex.Close();
+            }
+            return 0;
         }
 
     }

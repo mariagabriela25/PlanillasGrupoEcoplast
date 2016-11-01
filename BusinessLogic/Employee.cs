@@ -108,6 +108,11 @@ namespace BusinessLogic
             return employees;
         }
 
+        public double GetTotalHours(int code, int week)
+        {
+            return new DAEmployee().GetTotalHoursPerWeek(code, week);
+        }
+
 
     }
 }

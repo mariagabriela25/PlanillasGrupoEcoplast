@@ -39,7 +39,6 @@ namespace BusinessLogic
         public Boolean SaveWeekReport()
         {
             TOWorkWeekDetail twd = new TOWorkWeekDetail();
-            twd.Code = Code;
             twd.CCSSHours = CCSSHours;
             twd.TotalHours = TotalHours;
             twd.ExtraHours = ExtraHours;
