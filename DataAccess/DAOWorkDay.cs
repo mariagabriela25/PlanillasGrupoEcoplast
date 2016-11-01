@@ -11,7 +11,7 @@ namespace DataAccess
 {
     public class DAOWorkDay
     {
-        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConex);
+        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
         public Boolean AddWorkDayDetail(TOWorkDayDetail workday)
         {
@@ -75,7 +75,7 @@ namespace DataAccess
         {
             List<TOWorkDayDetail> list = new List<TOWorkDayDetail>();
 
-           SqlCommand query = new SqlCommand("select d.Fecha, d.TotalHoras from DetalleDiaLaborado as d where CodEmpleado = @CodeEmployee and CodSemana = @CodeWeek", conex);
+           SqlCommand query = new SqlCommand("select d.CodDia, d.Fecha, d.TotalHoras from DetalleDiaLaborado as d where CodEmpleado = @CodeEmployee and CodSemana = @CodeWeek", conex);
             query.Parameters.AddWithValue("@CodeEmployee", codEmpl);
             query.Parameters.AddWithValue("@CodeWeek", codWeek);
 
@@ -92,12 +92,14 @@ namespace DataAccess
                 {
                     TOWorkDayDetail e = new TOWorkDayDetail();
 
-                    DateTime datevalue = reader.GetDateTime(0);
+                    e.ID = reader.GetInt32(0);
+
+                    DateTime datevalue = reader.GetDateTime(1);
                     int day = (Int32) datevalue.DayOfWeek;
 
                     e.Date = datevalue;
                     e.Day = day;
-                    e.TotalHours = (Double) reader.GetDecimal(1);
+                    e.TotalHours = (Double) reader.GetDecimal(2);
 
                     list.Add(e);
                 }

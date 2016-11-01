@@ -11,7 +11,7 @@ namespace DataAccess
 {
     public class DAOWeekDetail
     {
-        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConex);
+        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
         public Boolean SaveWeekDetail(TOWorkWeekDetail twd)
         {
@@ -75,7 +75,7 @@ namespace DataAccess
         public List<int> getWeekNumbers()
         {
             List<int> weeks = new List<int>();
-            SqlCommand query = new SqlCommand("select NumSemana from DetalleSemanaLaborada", conex);
+            SqlCommand query = new SqlCommand("select distinct NumSemana from DetalleSemanaLaborada", conex);
 
             if (conex.State != ConnectionState.Open)
             {
@@ -86,10 +86,12 @@ namespace DataAccess
 
             if (reader.HasRows)
             {
-                reader.Read();
-                int week = reader.GetInt32(0);
+                while (reader.Read())
+                {
+                    int week = reader.GetInt32(0);
 
-                weeks.Add(week);
+                    weeks.Add(week);
+                }
             }
 
             if (conex.State != ConnectionState.Closed)

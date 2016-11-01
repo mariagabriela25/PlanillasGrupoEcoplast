@@ -68,6 +68,7 @@ namespace BusinessLogic
             foreach(TOWorkDayDetail to in tos)
             {
                 WorkDayDetail workDay = new WorkDayDetail();
+                workDay.ID = to.ID;
                 workDay.Date = to.Date;
                 workDay.Day = to.Day;
                 workDay.TotalHours = to.TotalHours;

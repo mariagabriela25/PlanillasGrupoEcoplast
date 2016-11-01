@@ -90,8 +90,11 @@ namespace UserInterface
         {
             int selectedRow = Int32.Parse(mg_weeks.SelectedRows[0].Index.ToString());
             int codeEmployee = Int32.Parse(mg_weeks.Rows[selectedRow].Cells[0].Value.ToString());
-           
+            int totalHours = Int32.Parse(mg_weeks.Rows[selectedRow].Cells[2].Value.ToString());
+            int ordinaryHours = Int32.Parse(mg_weeks.Rows[selectedRow].Cells[3].Value.ToString());
+            int extraHours = Int32.Parse(mg_weeks.Rows[selectedRow].Cells[4].Value.ToString());
 
+            new EmployeeWeekLaborDetail(week_selected, codeEmployee, totalHours, ordinaryHours, extraHours).Show();
         }
     }
     
