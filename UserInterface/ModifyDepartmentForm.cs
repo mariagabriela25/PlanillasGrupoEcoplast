@@ -37,15 +37,24 @@ namespace UserInterface
         {
             if (MessageBox.Show("¿Está seguro de que desea modificar este departamento?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Department dpt = new Department();
-                dpt.Code = deptCode;
-                dpt.Name = txtDepartName.Text;
+                if (txtDepartName.Text.Length != 0)
+                {
+                    Department dpt = new Department();
+                    dpt.Code = deptCode;
+                    dpt.Name = txtDepartName.Text;
 
-                dpt.ModifyDepartment();
+                    dpt.ModifyDepartment();
 
-                uc.refresh();
-                this.Close();
+                    uc.refresh();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar el nombre del departamento");
+                }
             }
         }
+
+
     }
 }

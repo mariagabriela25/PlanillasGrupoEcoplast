@@ -33,15 +33,22 @@ namespace UserInterface
 
         private void mbCheck_Click(object sender, EventArgs e)
         {
-            WeekNum = Int32.Parse(mnWeekNum.Value.ToString());
-            list = new List<Anomaly>();
-            SundayDate = CalcWeekNum(WeekNum);
-            CodDepartment = ((Department)cbDepart.SelectedItem).Code;
-            employees = new Employee().GetEmployeesDep(CodDepartment);
-            mpgCalculation.Maximum = employees.Count;
-            mpgCalculation.Value = 0;
-            backgroundWorker2.RunWorkerAsync();
-            mbCheck.Enabled = false;
+            if (cbDepart.SelectedItem != null)
+            {
+                WeekNum = Int32.Parse(mnWeekNum.Value.ToString());
+                list = new List<Anomaly>();
+                SundayDate = CalcWeekNum(WeekNum);
+                CodDepartment = ((Department)cbDepart.SelectedItem).Code;
+                employees = new Employee().GetEmployeesDep(CodDepartment);
+                mpgCalculation.Maximum = employees.Count;
+                mpgCalculation.Value = 0;
+                backgroundWorker2.RunWorkerAsync();
+                mbCheck.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un departamento");
+            }
         }
 
         public DateTime CalcWeekNum(int weeknum)
@@ -65,7 +72,7 @@ namespace UserInterface
             cbDepart.ValueMember = "Code";
             foreach (Department d in list)
             {
-                cbDepart.Items.Add(d); 
+                cbDepart.Items.Add(d);
             }
 
             backgroundWorker2.WorkerReportsProgress = true;
@@ -74,7 +81,7 @@ namespace UserInterface
         private void cbDepart_SelectedIndexChanged(object sender, EventArgs e)
         {
             mbCheck.Enabled = true;
-            
+
         }
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
