@@ -36,10 +36,17 @@ namespace UserInterface
 
         private void mbSave_Click(object sender, EventArgs e)
         {
-            Department de = (Department)mcbDepart.SelectedItem;
-            new Employee(Int32.Parse(mtCod.Text), mtName.Text, mtLastName.Text, new Department(de.Code, de.Name)).AddEmployee();
-            uc.refresh();
-            this.Close();
+            if (mtCod.Text.Length != 0 && mtName.Text.Length != 0 && mtLastName.Text.Length != 0 && mcbDepart.SelectedItem != null)
+            {
+                Department de = (Department)mcbDepart.SelectedItem;
+                new Employee(Int32.Parse(mtCod.Text), mtName.Text, mtLastName.Text, new Department(de.Code, de.Name)).AddEmployee();
+                uc.refresh();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No deben haber espacios en blanco");
+            }
         }
     }
 }

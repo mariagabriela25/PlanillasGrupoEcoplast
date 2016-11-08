@@ -36,8 +36,9 @@ namespace DataAccess
 
                 if (reader.HasRows)
                 {
-                    
-                    while(reader.Read()) {
+
+                    while (reader.Read())
+                    {
 
                         check = new TOCheck();
                         check.ID = Int32.Parse(reader.GetString(0));
@@ -46,7 +47,8 @@ namespace DataAccess
                         list.Add(check);
 
                     }
-                } else
+                }
+                else
                 {
                     return null;
                 }
@@ -57,7 +59,8 @@ namespace DataAccess
                 }
 
                 return list;
-            } catch(Exception e)
+            }
+            catch (Exception e)
             {
                 MessageBox.Show("Error de conexion");
                 GetChecks(id, inicio, fin);
@@ -121,30 +124,40 @@ namespace DataAccess
 
         public Boolean AddDayDetail(TOWorkDayDetail daydetail)
         {
+            try
+            {
 
-            SqlCommand query = new SqlCommand("INSERT INTO DetalleDiaLaborado VALUES " +
+                SqlCommand query = new SqlCommand("INSERT INTO DetalleDiaLaborado VALUES " +
                 "(@CodEmpl, @TotalOrdinary, @Total, @Date, @Note, @ID, @State, @CodWeek)", conex);
-            query.Parameters.AddWithValue("@CodEmpl", daydetail.CodeEmployee);
-            query.Parameters.AddWithValue("@TotalOrdinary", daydetail.OrdinaryHours);
-            query.Parameters.AddWithValue("@Total", daydetail.TotalHours);
-            query.Parameters.AddWithValue("@Date", daydetail.Date);
-            query.Parameters.AddWithValue("@Note", daydetail.Note == null ? System.Data.SqlTypes.SqlString.Null : daydetail.Note);
-            query.Parameters.AddWithValue("@ID", daydetail.ID);
-            query.Parameters.AddWithValue("@State", daydetail.State);
-            query.Parameters.AddWithValue("@CodWeek", daydetail.WeekCode);
+                query.Parameters.AddWithValue("@CodEmpl", daydetail.CodeEmployee);
+                query.Parameters.AddWithValue("@TotalOrdinary", daydetail.OrdinaryHours);
+                query.Parameters.AddWithValue("@Total", daydetail.TotalHours);
+                query.Parameters.AddWithValue("@Date", daydetail.Date);
+                query.Parameters.AddWithValue("@Note", daydetail.Note == null ? System.Data.SqlTypes.SqlString.Null : daydetail.Note);
+                query.Parameters.AddWithValue("@ID", daydetail.ID);
+                query.Parameters.AddWithValue("@State", daydetail.State);
+                query.Parameters.AddWithValue("@CodWeek", daydetail.WeekCode);
 
 
 
-            if (conex.State != System.Data.ConnectionState.Open)
-            {
-                conex.Open();
+                if (conex.State != System.Data.ConnectionState.Open)
+                {
+                    conex.Open();
+                }
+
+                query.ExecuteNonQuery();
+
             }
-
-            query.ExecuteNonQuery();
-
-            if (conex.State != System.Data.ConnectionState.Closed)
+            catch (Exception ex)
             {
-                conex.Close();
+                MessageBox.Show("Error de conexión");
+            }
+            finally
+            {
+                if (conex.State != System.Data.ConnectionState.Closed)
+                {
+                    conex.Close();
+                }
             }
 
             return true;

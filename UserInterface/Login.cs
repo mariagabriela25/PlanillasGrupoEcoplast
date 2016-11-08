@@ -41,13 +41,22 @@ namespace UserInterface
 
         private void mbSave_Click(object sender, EventArgs e)
         {
-            User user = new User(1, metroTextBox2.Text.Trim());
-            if (user.login())
+            if (metroTextBox2.Text.Length != 0)
             {
-                MainForm mf = new MainForm();
-                mf.Visible = true;
-                this.Hide();
+                User user = new User(1, metroTextBox2.Text.Trim());
+                if (user.login())
+                {
+                    MainForm mf = new MainForm();
+                    mf.Visible = true;
+                    this.Hide();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe ingresar una contraseña");
             }
         }
+
+
     }
 }
