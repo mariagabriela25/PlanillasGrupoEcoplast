@@ -23,6 +23,8 @@ namespace UserInterface
         public List<Anomaly> list;
         public List<Employee> employees;
 
+        public List<LaboredDay> listCorrectDays;
+
         public DayReviewUserControl()
         {
             InitializeComponent();
@@ -35,6 +37,7 @@ namespace UserInterface
         {
             WeekNum = Int32.Parse(mnWeekNum.Value.ToString());
             list = new List<Anomaly>();
+            listCorrectDays = new List<LaboredDay>();
             SundayDate = CalcWeekNum(WeekNum);
             CodDepartment = ((Department)cbDepart.SelectedItem).Code;
             employees = new Employee().GetEmployeesDep(CodDepartment);
@@ -82,7 +85,9 @@ namespace UserInterface
             int cont = 0;
             foreach (Employee em in employees)
             {
-                Boolean test = new ValidationProcess(WeekNum, SundayDate, CodDepartment, em.Code, list).core();
+                ValidationProcess testProcess = new ValidationProcess(WeekNum, SundayDate, CodDepartment, em.Code, list, listCorrectDays);
+                Boolean test = testProcess.core();
+                listCorrectDays = testProcess.correctLaboredDays;
                 backgroundWorker2.ReportProgress(++cont);
                 System.Threading.Thread.Sleep(100);
             }
@@ -101,12 +106,15 @@ namespace UserInterface
             mnWeekNum.Value = 1;
             if (list.Count != 0)
             {
-                new AnomaliesReview(list, WeekNum, employees).Show();
+                new MiddleStepReview(listCorrectDays, list, employees).Show();
+
+                //new AnomaliesReview(list, WeekNum, employees).Show();
 
             }
             else
             {
-                SaveWeeks();
+                new MiddleStepReview(listCorrectDays, list, employees).Show();
+                //SaveWeeks();
             }
 
         }

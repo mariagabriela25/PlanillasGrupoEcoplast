@@ -32,8 +32,9 @@ namespace BusinessLogic
         int employee;
 
         List<Anomaly> weeklyAnomalies;
+        public List<LaboredDay> correctLaboredDays { get; set; }
 
-        public ValidationProcess(int weekNumber, DateTime lastWeekDay, int departmentCode, int employeeCode, List<Anomaly> list) {
+        public ValidationProcess(int weekNumber, DateTime lastWeekDay, int departmentCode, int employeeCode, List<Anomaly> list, List<LaboredDay> correctDays) {
 
             allowedPositive = new TimeSpan(0, 10, 0);
             allowedNegative = new TimeSpan(0, -10, 0);
@@ -49,7 +50,7 @@ namespace BusinessLogic
             this.employee = employeeCode;
 
             weeklyAnomalies = list;
-
+            correctLaboredDays = correctDays;
         }
 
         public Boolean core()
@@ -114,7 +115,11 @@ namespace BusinessLogic
                                 
                                 flag = true;
                                 int ordinaryhours = schedules[i].OrdinaryHours;
-                                new WorkDayDetail(employee, ordinaryhours, ordinaryhours, currentDay, null, true, weekNumber, 1).AddWorkDay();
+                                LaboredDay ld = new LaboredDay(employee, ordinaryhours);
+                                ld.AddCheckedCheck(checkin);
+                                ld.AddCheckedCheck(checkout);
+                                correctLaboredDays.Add(ld);
+                             //   new WorkDayDetail(employee, ordinaryhours, ordinaryhours, currentDay, null, true, weekNumber, 1).AddWorkDay();
                                 //MessageBox.Show("Dia Correcto, Dia: " + currentDay.Date);
                                 break;
                             }

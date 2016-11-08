@@ -130,6 +130,12 @@
     <Compile Include="ExcelExportUserControl.Designer.cs">
       <DependentUpon>ExcelExportUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MiddleStepReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MiddleStepReview.Designer.cs">
+      <DependentUpon>MiddleStepReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="WeekDetailUserControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExcelExportUserControl.resx">
       <DependentUpon>ExcelExportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiddleStepReview.resx">
+      <DependentUpon>MiddleStepReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeekDetailUserControl.resx">
       <DependentUpon>WeekDetailUserControl.cs</DependentUpon>
