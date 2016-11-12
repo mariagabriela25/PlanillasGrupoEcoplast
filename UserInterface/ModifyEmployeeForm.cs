@@ -53,22 +53,31 @@ namespace UserInterface
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            InputValidations validation = new InputValidations();
+
             if (MessageBox.Show("¿Está seguro de que desea modificar el Empleado #" + code + "? ", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (txtEmployeeNames.Text.Length != 0 && txtEmployeeLastNames.Text.Length != 0 && mcbDepart.SelectedItem != null)
                 {
-                    Employee empl = new Employee();
-                    empl.Code = code;
-                    empl.Department = (Department)mcbDepart.SelectedItem;
-                    empl.Name = txtEmployeeNames.Text;
-                    empl.LastName = txtEmployeeLastNames.Text;
-                    empl.ModifyEmployee();
-                    uc.refresh();
-                    this.Close();
+                    if (validation.wordsValidation(txtEmployeeNames.Text) && validation.wordsValidation(txtEmployeeLastNames.Text))
+                    {
+                        Employee empl = new Employee();
+                        empl.Code = code;
+                        empl.Department = (Department)mcbDepart.SelectedItem;
+                        empl.Name = txtEmployeeNames.Text;
+                        empl.LastName = txtEmployeeLastNames.Text;
+                        empl.ModifyEmployee();
+                        uc.refresh();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nombre y apellidos de la persona solamente deben contener letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("No deben haber espacios en blanco");
+                    MessageBox.Show("No deben haber espacios en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

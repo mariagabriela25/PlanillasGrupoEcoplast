@@ -35,11 +35,15 @@ namespace UserInterface
 
         private void mBtSaveChanges_Click(object sender, EventArgs e)
         {
+            InputValidations validation = new InputValidations(); 
+
             if (MessageBox.Show("¿Está seguro de que desea modificar este departamento?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (txtDepartName.Text.Length != 0)
                 {
-                    Department dpt = new Department();
+                    if (validation.wordsValidation(txtDepartName.Text))
+                    {
+                        Department dpt = new Department();
                     dpt.Code = deptCode;
                     dpt.Name = txtDepartName.Text;
 
@@ -47,6 +51,11 @@ namespace UserInterface
 
                     uc.refresh();
                     this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nombre del departamento solamente deben contener letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {

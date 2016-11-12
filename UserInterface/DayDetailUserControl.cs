@@ -59,7 +59,7 @@ namespace UserInterface
 
         private void mcbDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             List<Schedule> list = new Schedule().GetDepSchedules(((Department)mcbDepartment.SelectedItem).Code);
             mcbSchedule.Items.Clear();
             mcbSchedule.DisplayMember = "Code";
@@ -86,36 +86,43 @@ namespace UserInterface
 
         private void mbCalculate_Click(object sender, EventArgs e)
         {
-
-            checkin = null;
-            checkout = null;
-
-            employee = (Employee)mcbEmployee.SelectedItem;
-            schedule = (Schedule)mcbSchedule.SelectedItem;
-            
-            DateTime initialDay = mdtDay.Value;
-
-            TimeSpan timein = new TimeSpan(schedule.InitialHour.Hour - 1, schedule.InitialHour.Minute, 0);
-            initialDay = initialDay.Date + timein;
-
-
-            DateTime finalDay = new DateTime();
-
-            if (schedule.InitialHour.Hour >= schedule.finalHour.Hour)
+            if (mdtDay.Value < DateTime.Now)
             {
-                finalDay = initialDay.AddDays(1);
-            } else
-            {
-                finalDay = initialDay;
+                checkin = null;
+                checkout = null;
+
+                employee = (Employee)mcbEmployee.SelectedItem;
+                schedule = (Schedule)mcbSchedule.SelectedItem;
+
+                DateTime initialDay = mdtDay.Value;
+
+                TimeSpan timein = new TimeSpan(schedule.InitialHour.Hour - 1, schedule.InitialHour.Minute, 0);
+                initialDay = initialDay.Date + timein;
+
+
+                DateTime finalDay = new DateTime();
+
+                if (schedule.InitialHour.Hour >= schedule.finalHour.Hour)
+                {
+                    finalDay = initialDay.AddDays(1);
+                }
+                else
+                {
+                    finalDay = initialDay;
+                }
+
+                TimeSpan timeout = new TimeSpan(23, 59, 59);
+                finalDay = finalDay.Date + timeout;
+
+                //FillGrid(new Check().GetChecks(employee.Code, initialDay, finalDay));
+
+                expected = schedule.finalHour.Subtract(schedule.InitialHour);
+                mlWeekRange.Text = expected.ToString();
             }
-
-            TimeSpan timeout = new TimeSpan(23, 59, 59);
-            finalDay = finalDay.Date + timeout;
-
-            //FillGrid(new Check().GetChecks(employee.Code, initialDay, finalDay));
-
-            expected = schedule.finalHour.Subtract(schedule.InitialHour);
-            mlWeekRange.Text = expected.ToString();
+            else
+            {
+                MessageBox.Show("La fecha debe ser anterior a la fecha actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -217,7 +224,7 @@ namespace UserInterface
         public String RestChecksFormat(List<Check> list)
         {
             string txt = "";
-            foreach(Check ch in list)
+            foreach (Check ch in list)
             {
                 if (!txt.Equals(""))
                 {
@@ -262,7 +269,7 @@ namespace UserInterface
             return checkin;
         }
 
-        public DateTime SetCheckOut(DateTime timeout, DateTime checkout) 
+        public DateTime SetCheckOut(DateTime timeout, DateTime checkout)
         {
             TimeSpan range = timeout.TimeOfDay.Subtract(checkout.TimeOfDay);
             if (penaltyNegative <= range && range <= allowedPositive)
@@ -310,7 +317,7 @@ namespace UserInterface
 
             mgrWorkDayDetail.DataSource = null;
 
-            if(saved)
+            if (saved)
             {
                 MessageBox.Show("Detalle Guardado exitosamente");
             }

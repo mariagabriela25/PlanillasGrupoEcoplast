@@ -45,7 +45,7 @@ namespace UserInterface
             foreach (var item in employeesList)
             {
                 ListViewItem lvi;
-                lvi = new ListViewItem(new string[] {"        "+ item.Code, item.Name + " " + item.LastName, item.Department.Name });
+                lvi = new ListViewItem(new string[] { "        " + item.Code, item.Name + " " + item.LastName, item.Department.Name });
                 mlvEmployees.Items.Add(lvi);
             }
 
@@ -53,46 +53,53 @@ namespace UserInterface
             mlvEmployees.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             mlvEmployees.EndUpdate();
             mlvEmployees.AllowSorting = true;
-            
+
         }
 
         private void mbSave_Click(object sender, EventArgs e)
         {
             if (!changedIniDate && !changedFinDate)
             {
-                MessageBox.Show("Debe indicar el rango de fechas primero");
+                MessageBox.Show("Debe indicar el rango de fechas primero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!changedIniDate)
             {
-                MessageBox.Show("Debe indicar el rango inicial para cargas las marcas");
+                MessageBox.Show("Debe indicar el rango inicial para cargas las marcas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (!changedFinDate)
             {
-                MessageBox.Show("Debe indicar el rango final para cargas las marcas");
+                MessageBox.Show("Debe indicar el rango final para cargas las marcas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
             else
             {
                 DateTime initialDate = mdtInitialDate.Value;
                 DateTime finalDate = mdtFinalDate.Value;
 
-                int xPosition = 0;
-                int yPosition = 0;
-
-                GetSelectedEmployees();
-
-                foreach (Employee emp in selectedEmployees)
+                if (initialDate < finalDate && finalDate < DateTime.Now)
                 {
-                    ChecksRangeForm cForm = new ChecksRangeForm(emp, initialDate, finalDate);
-                    cForm.Show();
-                    cForm.StartPosition = FormStartPosition.Manual;
-                    cForm.Location = new Point(xPosition, yPosition);
-                    xPosition += 200;
-                    if (xPosition > SystemInformation.VirtualScreen.Width-200)
+                    int xPosition = 0;
+                    int yPosition = 0;
+
+                    GetSelectedEmployees();
+
+                    foreach (Employee emp in selectedEmployees)
                     {
-                        xPosition = 0;
-                        yPosition = 500;
-                    } 
+                        ChecksRangeForm cForm = new ChecksRangeForm(emp, initialDate, finalDate);
+                        cForm.Show();
+                        cForm.StartPosition = FormStartPosition.Manual;
+                        cForm.Location = new Point(xPosition, yPosition);
+                        xPosition += 200;
+                        if (xPosition > SystemInformation.VirtualScreen.Width - 200)
+                        {
+                            xPosition = 0;
+                            yPosition = 500;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("La fecha inicial debe ser anterior a la fecha final \nAmbas fechas deben se anteriores a la fecha actual", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             selectedEmployees = new List<Employee>();
