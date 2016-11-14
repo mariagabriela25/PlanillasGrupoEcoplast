@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Anomaly.cs" />
     <Compile Include="Check.cs" />
+    <Compile Include="ConfigManager.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="ExcelManager.cs" />
@@ -92,6 +93,9 @@
       <Project>{55be160e-c731-4fc0-ae8a-0f12d773568b}</Project>
       <Name>TransferObjects</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConfigFile.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
