@@ -27,9 +27,24 @@ namespace UserInterface
 
         private void mbSave_Click(object sender, EventArgs e)
         {
-            new Department(Int32.Parse(mtbCode.Text), mtbName.Text).AddDepartment();
-            c.refresh();
-            this.Close();
+            InputValidations validation = new InputValidations();
+            if (mtbCode.Text.Length != 0 && mtbName.Text.Length != 0)
+            {
+                if (validation.numbersValidation(mtbCode.Text) && validation.wordsValidation(mtbName.Text))
+                {
+                    new Department(Int32.Parse(mtbCode.Text), mtbName.Text).AddDepartment();
+                    c.refresh();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("El codigo debe contener solamente numeros \nEl nombre debe contener solamente letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No deben haber espacios en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

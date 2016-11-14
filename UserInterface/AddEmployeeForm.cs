@@ -36,10 +36,35 @@ namespace UserInterface
 
         private void mbSave_Click(object sender, EventArgs e)
         {
-            Department de = (Department)mcbDepart.SelectedItem;
-            new Employee(Int32.Parse(mtCod.Text), mtName.Text, mtLastName.Text, new Department(de.Code, de.Name)).AddEmployee();
-            uc.refresh();
-            this.Close();
+            InputValidations validation = new InputValidations();
+
+            if (mtCod.Text.Length != 0 && mtName.Text.Length != 0 && mtLastName.Text.Length != 0 && mcbDepart.SelectedItem != null)
+            {
+                if (validation.numbersValidation(mtCod.Text))
+                {
+                    if (validation.wordsValidation(mtName.Text) && validation.wordsValidation(mtLastName.Text))
+                    {
+                        Department de = (Department)mcbDepart.SelectedItem;
+                        new Employee(Int32.Parse(mtCod.Text), mtName.Text, mtLastName.Text, new Department(de.Code, de.Name)).AddEmployee();
+                        uc.refresh();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nombre y apellidos de la persona solamente deben contener letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El codigo debe contener solamente numeros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No deben haber espacios en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
     }
 }

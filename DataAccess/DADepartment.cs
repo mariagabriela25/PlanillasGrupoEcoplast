@@ -34,7 +34,7 @@ namespace DataAccess
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error de conexión");
             }
             finally
             {
@@ -64,7 +64,7 @@ namespace DataAccess
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error de conexión");
             }
             finally
             {
@@ -137,7 +137,7 @@ namespace DataAccess
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error de conexión");
             }
             finally
             {
@@ -155,28 +155,38 @@ namespace DataAccess
         {
             TODepartment department = new TODepartment();
 
-            SqlCommand query = new SqlCommand("SELECT * FROM Departamento WHERE CodDepartamento = @Code;", conexion);
-            query.Parameters.AddWithValue("@Code", Code);
-
-            if (conexion.State != ConnectionState.Open)
+            try
             {
-                conexion.Open();
+
+                SqlCommand query = new SqlCommand("SELECT * FROM Departamento WHERE CodDepartamento = @Code;", conexion);
+                query.Parameters.AddWithValue("@Code", Code);
+
+                if (conexion.State != ConnectionState.Open)
+                {
+                    conexion.Open();
+                }
+
+                SqlDataReader reader = query.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    department.Code = reader.GetInt32(1);
+                    department.Name = reader.GetString(0);
+                }
+
             }
-
-            SqlDataReader reader = query.ExecuteReader();
-
-            if (reader.HasRows)
+            catch (Exception ex)
             {
-                reader.Read();                
-                department.Code = reader.GetInt32(1);
-                department.Name = reader.GetString(0);               
+                MessageBox.Show("Error de conexión");
             }
-
-            if (conexion.State != ConnectionState.Closed)
+            finally
             {
-                conexion.Close();
+                if (conexion.State != System.Data.ConnectionState.Closed)
+                {
+                    conexion.Close();
+                }
             }
-
             return department;
         }
 
@@ -212,7 +222,7 @@ namespace DataAccess
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error de conexión");
             }
             finally
             {

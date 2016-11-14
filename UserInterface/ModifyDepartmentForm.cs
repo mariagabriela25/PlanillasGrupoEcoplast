@@ -35,17 +35,35 @@ namespace UserInterface
 
         private void mBtSaveChanges_Click(object sender, EventArgs e)
         {
+            InputValidations validation = new InputValidations(); 
+
             if (MessageBox.Show("¿Está seguro de que desea modificar este departamento?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Department dpt = new Department();
-                dpt.Code = deptCode;
-                dpt.Name = txtDepartName.Text;
+                if (txtDepartName.Text.Length != 0)
+                {
+                    if (validation.wordsValidation(txtDepartName.Text))
+                    {
+                        Department dpt = new Department();
+                    dpt.Code = deptCode;
+                    dpt.Name = txtDepartName.Text;
 
-                dpt.ModifyDepartment();
+                    dpt.ModifyDepartment();
 
-                uc.refresh();
-                this.Close();
+                    uc.refresh();
+                    this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nombre del departamento solamente deben contener letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar el nombre del departamento");
+                }
             }
         }
+
+
     }
 }
