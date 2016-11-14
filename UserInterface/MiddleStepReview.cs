@@ -110,6 +110,7 @@ namespace UserInterface
             if (list.Count != 0)
             {
                 new AnomaliesReview(list, weekNum, listEmployees).Show();
+                this.Hide();
             }
             else
             {
