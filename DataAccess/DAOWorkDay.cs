@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TransferObjects;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace DataAccess
 {
@@ -15,25 +16,36 @@ namespace DataAccess
 
         public Boolean AddWorkDayDetail(TOWorkDayDetail workday)
         {
-            SqlCommand query = new SqlCommand("INSERT INTO DetalleDiaLaborado VALUES (@CodeEmpl, @OrdinaryHour, @TotalHours, @Date, @Note, @ID, @State, @WeekCode)", conex);
-            query.Parameters.AddWithValue("@CodeEmpl", workday.CodeEmployee);
-            query.Parameters.AddWithValue("@OrdinaryHour", workday.OrdinaryHours);
-            query.Parameters.AddWithValue("@TotalHours", workday.TotalHours);
-            query.Parameters.AddWithValue("@Date", workday.Date);
-            query.Parameters.AddWithValue("@Note", workday.Note == null ? System.Data.SqlTypes.SqlString.Null : workday.Note);
-            query.Parameters.AddWithValue("@ID", 1);
-            query.Parameters.AddWithValue("@State", workday.State == true ? 1 : 0);
-            query.Parameters.AddWithValue("@WeekCode", workday.WeekCode);
-
-            if (conex.State != System.Data.ConnectionState.Open)
+            try
             {
-                conex.Open();
+
+                SqlCommand query = new SqlCommand("INSERT INTO DetalleDiaLaborado VALUES (@CodeEmpl, @OrdinaryHour, @TotalHours, @Date, @Note, @ID, @State, @WeekCode)", conex);
+                query.Parameters.AddWithValue("@CodeEmpl", workday.CodeEmployee);
+                query.Parameters.AddWithValue("@OrdinaryHour", workday.OrdinaryHours);
+                query.Parameters.AddWithValue("@TotalHours", workday.TotalHours);
+                query.Parameters.AddWithValue("@Date", workday.Date);
+                query.Parameters.AddWithValue("@Note", workday.Note == null ? System.Data.SqlTypes.SqlString.Null : workday.Note);
+                query.Parameters.AddWithValue("@ID", 1);
+                query.Parameters.AddWithValue("@State", workday.State == true ? 1 : 0);
+                query.Parameters.AddWithValue("@WeekCode", workday.WeekCode);
+
+                if (conex.State != System.Data.ConnectionState.Open)
+                {
+                    conex.Open();
+                }
+                query.ExecuteNonQuery();
+
             }
-            query.ExecuteNonQuery();
-
-            if (conex.State != System.Data.ConnectionState.Closed)
+            catch (Exception ex)
             {
-                conex.Close();
+                MessageBox.Show("Error de conexión");
+            }
+            finally
+            {
+                if (conex.State != System.Data.ConnectionState.Closed)
+                {
+                    conex.Close();
+                }
             }
 
             return true;
@@ -43,29 +55,37 @@ namespace DataAccess
         {
             TOWorkDayDetail workDay = new TOWorkDayDetail();
 
-            SqlCommand query = new SqlCommand("select SUM(TotalHoras) from DetalleDiaLaborado where codEmpleado = @CodeEmployee and codSemana = @CodeWeek", conex);
-            query.Parameters.AddWithValue("@CodeEmployee", tow.CodeEmployee);
-            query.Parameters.AddWithValue("@CodeWeek", tow.WeekCode);
-
-            if (conex.State != System.Data.ConnectionState.Open)
+            try
             {
-                conex.Open();
+                SqlCommand query = new SqlCommand("select SUM(TotalHoras) from DetalleDiaLaborado where codEmpleado = @CodeEmployee and codSemana = @CodeWeek", conex);
+                query.Parameters.AddWithValue("@CodeEmployee", tow.CodeEmployee);
+                query.Parameters.AddWithValue("@CodeWeek", tow.WeekCode);
+
+                if (conex.State != System.Data.ConnectionState.Open)
+                {
+                    conex.Open();
+                }
+
+                SqlDataReader reader = query.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+
+                    workDay.TotalHours = (Double)reader.GetDecimal(0);
+                }
+
             }
-
-            SqlDataReader reader = query.ExecuteReader();
-
-            if (reader.HasRows)
+            catch (Exception ex)
             {
-                reader.Read();
-
-                workDay.TotalHours = (Double)reader.GetDecimal(0);
+                MessageBox.Show("Error de conexión");
             }
-
-
-
-            if (conex.State != System.Data.ConnectionState.Closed)
+            finally
             {
-                conex.Close();
+                if (conex.State != System.Data.ConnectionState.Closed)
+                {
+                    conex.Close();
+                }
             }
 
             return workDay;
@@ -74,40 +94,50 @@ namespace DataAccess
         public List<TOWorkDayDetail> getWorkedWeeks(int codEmpl, int codWeek)
         {
             List<TOWorkDayDetail> list = new List<TOWorkDayDetail>();
-
-           SqlCommand query = new SqlCommand("select d.CodDia, d.Fecha, d.TotalHoras from DetalleDiaLaborado as d where CodEmpleado = @CodeEmployee and CodSemana = @CodeWeek", conex);
-            query.Parameters.AddWithValue("@CodeEmployee", codEmpl);
-            query.Parameters.AddWithValue("@CodeWeek", codWeek);
-
-            if (conex.State != System.Data.ConnectionState.Open)
+            try
             {
-                conex.Open();
-            }
 
-            SqlDataReader reader = query.ExecuteReader();
+                SqlCommand query = new SqlCommand("select d.CodDia, d.Fecha, d.TotalHoras from DetalleDiaLaborado as d where CodEmpleado = @CodeEmployee and CodSemana = @CodeWeek", conex);
+                query.Parameters.AddWithValue("@CodeEmployee", codEmpl);
+                query.Parameters.AddWithValue("@CodeWeek", codWeek);
 
-            if (reader.HasRows)
-            {
-                while (reader.Read())
+                if (conex.State != System.Data.ConnectionState.Open)
                 {
-                    TOWorkDayDetail e = new TOWorkDayDetail();
-
-                    e.ID = reader.GetInt32(0);
-
-                    DateTime datevalue = reader.GetDateTime(1);
-                    int day = (Int32) datevalue.DayOfWeek;
-
-                    e.Date = datevalue;
-                    e.Day = day;
-                    e.TotalHours = (Double) reader.GetDecimal(2);
-
-                    list.Add(e);
+                    conex.Open();
                 }
-            }
 
-            if (conex.State != System.Data.ConnectionState.Closed)
+                SqlDataReader reader = query.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        TOWorkDayDetail e = new TOWorkDayDetail();
+
+                        e.ID = reader.GetInt32(0);
+
+                        DateTime datevalue = reader.GetDateTime(1);
+                        int day = (Int32)datevalue.DayOfWeek;
+
+                        e.Date = datevalue;
+                        e.Day = day;
+                        e.TotalHours = (Double)reader.GetDecimal(2);
+
+                        list.Add(e);
+                    }
+                }
+
+            }
+            catch (Exception ex)
             {
-                conex.Close();
+                MessageBox.Show("Error de conexión");
+            }
+            finally
+            {
+                if (conex.State != System.Data.ConnectionState.Closed)
+                {
+                    conex.Close();
+                }
             }
 
             return list;

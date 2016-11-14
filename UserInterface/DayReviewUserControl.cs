@@ -23,8 +23,6 @@ namespace UserInterface
         public List<Anomaly> list;
         public List<Employee> employees;
 
-        public List<LaboredDay> listCorrectDays;
-
         public DayReviewUserControl()
         {
             InitializeComponent();
@@ -35,16 +33,22 @@ namespace UserInterface
 
         private void mbCheck_Click(object sender, EventArgs e)
         {
-            WeekNum = Int32.Parse(mnWeekNum.Value.ToString());
-            list = new List<Anomaly>();
-            listCorrectDays = new List<LaboredDay>();
-            SundayDate = CalcWeekNum(WeekNum);
-            CodDepartment = ((Department)cbDepart.SelectedItem).Code;
-            employees = new Employee().GetEmployeesDep(CodDepartment);
-            mpgCalculation.Maximum = employees.Count;
-            mpgCalculation.Value = 0;
-            backgroundWorker2.RunWorkerAsync();
-            mbCheck.Enabled = false;
+            if (cbDepart.SelectedItem != null)
+            {
+                WeekNum = Int32.Parse(mnWeekNum.Value.ToString());
+                list = new List<Anomaly>();
+                SundayDate = CalcWeekNum(WeekNum);
+                CodDepartment = ((Department)cbDepart.SelectedItem).Code;
+                employees = new Employee().GetEmployeesDep(CodDepartment);
+                mpgCalculation.Maximum = employees.Count;
+                mpgCalculation.Value = 0;
+                backgroundWorker2.RunWorkerAsync();
+                mbCheck.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un departamento");
+            }
         }
 
         public DateTime CalcWeekNum(int weeknum)
@@ -68,7 +72,7 @@ namespace UserInterface
             cbDepart.ValueMember = "Code";
             foreach (Department d in list)
             {
-                cbDepart.Items.Add(d); 
+                cbDepart.Items.Add(d);
             }
 
             backgroundWorker2.WorkerReportsProgress = true;
@@ -77,7 +81,7 @@ namespace UserInterface
         private void cbDepart_SelectedIndexChanged(object sender, EventArgs e)
         {
             mbCheck.Enabled = true;
-            
+
         }
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
@@ -85,9 +89,7 @@ namespace UserInterface
             int cont = 0;
             foreach (Employee em in employees)
             {
-                ValidationProcess testProcess = new ValidationProcess(WeekNum, SundayDate, CodDepartment, em.Code, list, listCorrectDays);
-                Boolean test = testProcess.core();
-                listCorrectDays = testProcess.correctLaboredDays;
+                Boolean test = new ValidationProcess(WeekNum, SundayDate, CodDepartment, em.Code, list).core();
                 backgroundWorker2.ReportProgress(++cont);
                 System.Threading.Thread.Sleep(100);
             }
@@ -104,40 +106,36 @@ namespace UserInterface
             mbCheck.Enabled = true;
             cbDepart.SelectedItem = null;
             mnWeekNum.Value = 1;
-            new MiddleStepReview(listCorrectDays, list, employees, WeekNum).Show();
-            //if (list.Count != 0)
-            //{
-            //    new MiddleStepReview(listCorrectDays, list, employees).Show();
+            if (list.Count != 0)
+            {
+                new AnomaliesReview(list, WeekNum, employees).Show();
 
-            //    //new AnomaliesReview(list, WeekNum, employees).Show();
-
-            //}
-            //else
-            //{
-            //    new MiddleStepReview(listCorrectDays, list, employees).Show();
-            //    //SaveWeeks();
-            //}
+            }
+            else
+            {
+                SaveWeeks();
+            }
 
         }
 
-        //public void SaveWeeks()
-        //{
-        //    foreach (Employee emp in employees)
-        //    {
-        //        double total = new Employee().GetTotalHours(emp.Code, WeekNum);
-        //        double ccss = 48;
-        //        double extras = 0;
-        //        if (total <= 48)
-        //        {
-        //            ccss = total;
-        //        }
-        //        else
-        //        {
-        //            extras = total - ccss;
-        //        }
-        //        new WorkWeekDetail(1, ccss, total, extras, emp.Code, WeekNum, DateTime.Now.Year).SaveWeekReport();
-        //    }
-        //    MessageBox.Show("Se guardó el detalle de la semana");
-        //}
+        public void SaveWeeks()
+        {
+            foreach (Employee emp in employees)
+            {
+                double total = new Employee().GetTotalHours(emp.Code, WeekNum);
+                double ccss = 48;
+                double extras = 0;
+                if (total <= 48)
+                {
+                    ccss = total;
+                }
+                else
+                {
+                    extras = total - ccss;
+                }
+                new WorkWeekDetail(1, ccss, total, extras, emp.Code, WeekNum, DateTime.Now.Year).SaveWeekReport();
+            }
+            MessageBox.Show("Se guardó el detalle de la semana");
+        }
     }
 }
