@@ -104,39 +104,40 @@ namespace UserInterface
             mbCheck.Enabled = true;
             cbDepart.SelectedItem = null;
             mnWeekNum.Value = 1;
-            if (list.Count != 0)
-            {
-                new MiddleStepReview(listCorrectDays, list, employees).Show();
+            new MiddleStepReview(listCorrectDays, list, employees, WeekNum).Show();
+            //if (list.Count != 0)
+            //{
+            //    new MiddleStepReview(listCorrectDays, list, employees).Show();
 
-                //new AnomaliesReview(list, WeekNum, employees).Show();
+            //    //new AnomaliesReview(list, WeekNum, employees).Show();
 
-            }
-            else
-            {
-                new MiddleStepReview(listCorrectDays, list, employees).Show();
-                //SaveWeeks();
-            }
+            //}
+            //else
+            //{
+            //    new MiddleStepReview(listCorrectDays, list, employees).Show();
+            //    //SaveWeeks();
+            //}
 
         }
 
-        public void SaveWeeks()
-        {
-            foreach (Employee emp in employees)
-            {
-                double total = new Employee().GetTotalHours(emp.Code, WeekNum);
-                double ccss = 48;
-                double extras = 0;
-                if (total <= 48)
-                {
-                    ccss = total;
-                }
-                else
-                {
-                    extras = total - ccss;
-                }
-                new WorkWeekDetail(1, ccss, total, extras, emp.Code, WeekNum, DateTime.Now.Year).SaveWeekReport();
-            }
-            MessageBox.Show("Se guardó el detalle de la semana");
-        }
+        //public void SaveWeeks()
+        //{
+        //    foreach (Employee emp in employees)
+        //    {
+        //        double total = new Employee().GetTotalHours(emp.Code, WeekNum);
+        //        double ccss = 48;
+        //        double extras = 0;
+        //        if (total <= 48)
+        //        {
+        //            ccss = total;
+        //        }
+        //        else
+        //        {
+        //            extras = total - ccss;
+        //        }
+        //        new WorkWeekDetail(1, ccss, total, extras, emp.Code, WeekNum, DateTime.Now.Year).SaveWeekReport();
+        //    }
+        //    MessageBox.Show("Se guardó el detalle de la semana");
+        //}
     }
 }

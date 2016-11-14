@@ -17,13 +17,15 @@ namespace UserInterface
         List<LaboredDay> correctLaboredDays;
         List<Anomaly> list;
         List<Employee> listEmployees;
+        int weekNum;
 
-        public MiddleStepReview(List<LaboredDay> correctLaboredDays, List<Anomaly> list, List<Employee> listEmployees)
+        public MiddleStepReview(List<LaboredDay> correctLaboredDays, List<Anomaly> list, List<Employee> listEmployees, int weekNumber)
         {
             InitializeComponent();
             this.correctLaboredDays = correctLaboredDays;
             this.list = list;
             this.listEmployees = listEmployees;
+            this.weekNum = weekNumber;
         }
 
         private void MiddleStepReview_Load(object sender, EventArgs e)
@@ -71,11 +73,11 @@ namespace UserInterface
             checkBoxColumn.HeaderText = "";
             checkBoxColumn.Width = 30;
             checkBoxColumn.Name = "checkBoxColumn";
-            mgCorrectChecks.Columns.Insert(0, checkBoxColumn);
+            mgCorrectChecks.Columns.Insert(5, checkBoxColumn);
 
             foreach (DataGridViewRow row in mgCorrectChecks.Rows)
             {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[5];
                 chk.Value = !(chk.Value == null ? false : (bool)chk.Value); 
             }
 
@@ -91,15 +93,48 @@ namespace UserInterface
             string message = string.Empty;
             foreach (DataGridViewRow row in mgCorrectChecks.Rows)
             {
+                int rowNumber = row.Index;
+
                 bool isSelected = Convert.ToBoolean(row.Cells["checkBoxColumn"].Value);
                 if (isSelected)
                 {
-                    message += Environment.NewLine;
-                    message += row.Cells[2].Value.ToString();
+                    new WorkDayDetail(Int32.Parse(row.Cells[0].Value.ToString()), Double.Parse(row.Cells[4].Value.ToString()), Double.Parse(row.Cells[4].Value.ToString()), correctLaboredDays[rowNumber].currentDay, null, true, weekNum, 1).AddWorkDay();
+                }
+                else
+                {
+                    list.Add(new Anomaly(correctLaboredDays[rowNumber].currentDay.Date, Int32.Parse(row.Cells[0].Value.ToString()), false));
                 }
             }
 
-            MessageBox.Show("Selected Values" + message);
+
+            if (list.Count != 0)
+            {
+                new AnomaliesReview(list, weekNum, listEmployees).Show();
+            }
+            else
+            {
+                SaveWeeks();
+            }            
+        }
+
+        public void SaveWeeks()
+        {
+            foreach (Employee emp in listEmployees)
+            {
+                double total = new Employee().GetTotalHours(emp.Code, weekNum);
+                double ccss = 48;
+                double extras = 0;
+                if (total <= 48)
+                {
+                    ccss = total;
+                }
+                else
+                {
+                    extras = total - ccss;
+                }
+                new WorkWeekDetail(1, ccss, total, extras, emp.Code, weekNum, DateTime.Now.Year).SaveWeekReport();
+            }
+            //MessageBox.Show("¡Se guardaron los días laborados seleccionados!");
         }
     }
 }

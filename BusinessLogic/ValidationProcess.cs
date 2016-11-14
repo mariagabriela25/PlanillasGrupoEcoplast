@@ -119,7 +119,8 @@ namespace BusinessLogic
                                 ld.AddCheckedCheck(checkin);
                                 ld.AddCheckedCheck(checkout);
                                 correctLaboredDays.Add(ld);
-                             //   new WorkDayDetail(employee, ordinaryhours, ordinaryhours, currentDay, null, true, weekNumber, 1).AddWorkDay();
+                                ld.currentDay = currentDay;
+                                //new WorkDayDetail(employee, ordinaryhours, ordinaryhours, currentDay, null, true, weekNumber, 1).AddWorkDay();
                                 //MessageBox.Show("Dia Correcto, Dia: " + currentDay.Date);
                                 break;
                             }

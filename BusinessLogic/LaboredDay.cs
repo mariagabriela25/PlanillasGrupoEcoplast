@@ -11,6 +11,7 @@ namespace BusinessLogic
         public List<Check> checkedChecks { get; set; }
         public int employee { get; set; }
         public int ordinaryhours { get; set; }
+        public DateTime currentDay { get; set; }
 
         public LaboredDay(int employee, int ordinaryhours)
         {
