@@ -28,13 +28,6 @@ namespace UserInterface
         {
             week = new WorkWeekDetail();
             list = new List<WorkWeekDetail>();
-
-            dt = new DataTable();
-            dt.Columns.Add("No. Empleado");
-            dt.Columns.Add("Nombre");
-            dt.Columns.Add("Total Horas");
-            dt.Columns.Add("Horas CCSS");
-            dt.Columns.Add("Horas Extra");
             
             cbo_Weeks.DataSource = week.getWeekNumbers();
         }
@@ -56,7 +49,7 @@ namespace UserInterface
                 dt.Columns.Add("No. Empleado");
                 dt.Columns.Add("Nombre");
                 dt.Columns.Add("Total Horas");
-                dt.Columns.Add("Horas CCSS");
+                dt.Columns.Add("Horas Regulares");
                 dt.Columns.Add("Horas Extra");
 
                 foreach (WorkWeekDetail week in array)
@@ -72,6 +65,13 @@ namespace UserInterface
         {
             try
             {
+                dt = new DataTable();
+                dt.Columns.Add("No. Empleado");
+                dt.Columns.Add("Nombre");
+                dt.Columns.Add("Total Horas");
+                dt.Columns.Add("Horas CCSS");
+                dt.Columns.Add("Horas Extra");
+
                 list = week.getWeek(week_selected);
 
                 foreach (WorkWeekDetail w in list)
