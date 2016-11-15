@@ -106,18 +106,6 @@
     <Compile Include="ChecksUserControl.Designer.cs">
       <DependentUpon>ChecksUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConfigTime.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConfigTime.Designer.cs">
-      <DependentUpon>ConfigTime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ConfigUserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ConfigUserControl1.Designer.cs">
-      <DependentUpon>ConfigUserControl1.cs</DependentUpon>
-    </Compile>
     <Compile Include="DayDetailUserControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,7 +113,7 @@
       <DependentUpon>DayDetailUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DayReviewUserControl.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DayReviewUserControl.Designer.cs">
       <DependentUpon>DayReviewUserControl.cs</DependentUpon>
@@ -142,17 +130,11 @@
     <Compile Include="ExcelExportUserControl.Designer.cs">
       <DependentUpon>ExcelExportUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="MiddleStepReview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PswChangeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PswChangeForm.Designer.cs">
-      <DependentUpon>PswChangeForm.cs</DependentUpon>
+    <Compile Include="MiddleStepReview.Designer.cs">
+      <DependentUpon>MiddleStepReview.cs</DependentUpon>
     </Compile>
     <Compile Include="WeekDetailUserControl.cs">
       <SubType>Form</SubType>
@@ -177,6 +159,12 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuUserControl.cs">
       <SubType>UserControl</SubType>
@@ -250,12 +238,6 @@
     <EmbeddedResource Include="ChecksUserControl.resx">
       <DependentUpon>ChecksUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfigTime.resx">
-      <DependentUpon>ConfigTime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ConfigUserControl1.resx">
-      <DependentUpon>ConfigUserControl1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DayDetailUserControl.resx">
       <DependentUpon>DayDetailUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,11 +250,8 @@
     <EmbeddedResource Include="ExcelExportUserControl.resx">
       <DependentUpon>ExcelExportUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PswChangeForm.resx">
-      <DependentUpon>PswChangeForm.cs</DependentUpon>
+    <EmbeddedResource Include="MiddleStepReview.resx">
+      <DependentUpon>MiddleStepReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeekDetailUserControl.resx">
       <DependentUpon>WeekDetailUserControl.cs</DependentUpon>
@@ -285,6 +264,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.es-CR.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuUserControl.resx">
       <DependentUpon>MenuUserControl.cs</DependentUpon>

@@ -43,15 +43,17 @@
             // 
             this.mlDepart.AutoSize = true;
             this.mlDepart.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.mlDepart.Location = new System.Drawing.Point(220, 50);
+            this.mlDepart.Location = new System.Drawing.Point(293, 62);
+            this.mlDepart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlDepart.Name = "mlDepart";
-            this.mlDepart.Size = new System.Drawing.Size(125, 25);
+            this.mlDepart.Size = new System.Drawing.Size(134, 25);
             this.mlDepart.TabIndex = 1;
             this.mlDepart.Text = "Departamento:";
             // 
             // mnWeekNum
             // 
-            this.mnWeekNum.Location = new System.Drawing.Point(110, 55);
+            this.mnWeekNum.Location = new System.Drawing.Point(188, 68);
+            this.mnWeekNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mnWeekNum.Maximum = new decimal(new int[] {
             52,
             0,
@@ -63,7 +65,7 @@
             0,
             0});
             this.mnWeekNum.Name = "mnWeekNum";
-            this.mnWeekNum.Size = new System.Drawing.Size(66, 20);
+            this.mnWeekNum.Size = new System.Drawing.Size(88, 22);
             this.mnWeekNum.TabIndex = 2;
             this.mnWeekNum.Value = new decimal(new int[] {
             1,
@@ -75,9 +77,10 @@
             // 
             this.mlWeekNum.AutoSize = true;
             this.mlWeekNum.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.mlWeekNum.Location = new System.Drawing.Point(27, 50);
+            this.mlWeekNum.Location = new System.Drawing.Point(36, 62);
+            this.mlWeekNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mlWeekNum.Name = "mlWeekNum";
-            this.mlWeekNum.Size = new System.Drawing.Size(77, 25);
+            this.mlWeekNum.Size = new System.Drawing.Size(79, 25);
             this.mlWeekNum.TabIndex = 3;
             this.mlWeekNum.Text = "Semana:";
             // 
@@ -85,9 +88,10 @@
             // 
             this.mbCheck.Enabled = false;
             this.mbCheck.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.mbCheck.Location = new System.Drawing.Point(197, 114);
+            this.mbCheck.Location = new System.Drawing.Point(263, 140);
+            this.mbCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mbCheck.Name = "mbCheck";
-            this.mbCheck.Size = new System.Drawing.Size(148, 54);
+            this.mbCheck.Size = new System.Drawing.Size(197, 66);
             this.mbCheck.TabIndex = 4;
             this.mbCheck.Text = "Calcular";
             this.mbCheck.UseSelectable = true;
@@ -96,17 +100,19 @@
             // cbDepart
             // 
             this.cbDepart.FormattingEnabled = true;
-            this.cbDepart.Location = new System.Drawing.Point(351, 55);
+            this.cbDepart.Location = new System.Drawing.Point(468, 68);
+            this.cbDepart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbDepart.Name = "cbDepart";
-            this.cbDepart.Size = new System.Drawing.Size(176, 21);
+            this.cbDepart.Size = new System.Drawing.Size(233, 24);
             this.cbDepart.TabIndex = 5;
             this.cbDepart.SelectedIndexChanged += new System.EventHandler(this.cbDepart_SelectedIndexChanged);
             // 
             // mpgCalculation
             // 
-            this.mpgCalculation.Location = new System.Drawing.Point(-2, 210);
+            this.mpgCalculation.Location = new System.Drawing.Point(-3, 258);
+            this.mpgCalculation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mpgCalculation.Name = "mpgCalculation";
-            this.mpgCalculation.Size = new System.Drawing.Size(548, 5);
+            this.mpgCalculation.Size = new System.Drawing.Size(731, 6);
             this.mpgCalculation.Style = MetroFramework.MetroColorStyle.Lime;
             this.mpgCalculation.TabIndex = 6;
             // 
@@ -119,16 +125,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 182);
+            this.label1.Location = new System.Drawing.Point(343, 224);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 7;
             // 
             // DayReviewUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(729, 263);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mpgCalculation);
             this.Controls.Add(this.cbDepart);
@@ -136,8 +143,9 @@
             this.Controls.Add(this.mlWeekNum);
             this.Controls.Add(this.mnWeekNum);
             this.Controls.Add(this.mlDepart);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DayReviewUserControl";
-            this.Size = new System.Drawing.Size(547, 214);
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Load += new System.EventHandler(this.DayReviewUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mnWeekNum)).EndInit();
             this.ResumeLayout(false);
