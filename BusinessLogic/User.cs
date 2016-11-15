@@ -19,11 +19,18 @@ namespace BusinessLogic
             this.Password = password;
         }
 
+        public User() { }
+
 
         public Boolean login()
         {
             DAOuser daouser = new DAOuser();
             return daouser.grantAccess(Password);
+        }
+
+        public Boolean ChangePsw(string oldpsw, string newpsw)
+        {
+            return new DAOuser().ChangePsw(oldpsw, newpsw);
         }
     }
 

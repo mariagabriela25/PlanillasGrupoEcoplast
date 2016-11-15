@@ -36,10 +36,11 @@ namespace BusinessLogic
 
         public ValidationProcess(int weekNumber, DateTime lastWeekDay, int departmentCode, int employeeCode, List<Anomaly> list, List<LaboredDay> correctDays) {
 
-            allowedPositive = new TimeSpan(0, 10, 0);
-            allowedNegative = new TimeSpan(0, -10, 0);
-            penaltyPositive = new TimeSpan(1, 0, 0);
-            penaltyNegative = new TimeSpan(0, -30, 0);
+            allowedPositive = new TimeSpan(0, new ConfigManager().GetValue("allowedPositive"), 0);
+            allowedNegative = new TimeSpan(0, -1 * new ConfigManager().GetValue("allowedNegative"), 0);
+            penaltyPositive = new TimeSpan(0, new ConfigManager().GetValue("penaltyPositive"), 0);
+            penaltyNegative = new TimeSpan(0, -1 * new ConfigManager().GetValue("penaltyNegative"), 0);
+
             interval = new TimeSpan(0, 30, 0);
 
             this.weekNumber = weekNumber;
