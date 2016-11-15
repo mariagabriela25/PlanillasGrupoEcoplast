@@ -106,6 +106,12 @@
     <Compile Include="ChecksUserControl.Designer.cs">
       <DependentUpon>ChecksUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfigTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigTime.Designer.cs">
+      <DependentUpon>ConfigTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConfigUserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,6 +141,18 @@
     </Compile>
     <Compile Include="ExcelExportUserControl.Designer.cs">
       <DependentUpon>ExcelExportUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PswChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PswChangeForm.Designer.cs">
+      <DependentUpon>PswChangeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WeekDetailUserControl.cs">
       <SubType>Form</SubType>
@@ -232,6 +250,9 @@
     <EmbeddedResource Include="ChecksUserControl.resx">
       <DependentUpon>ChecksUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConfigTime.resx">
+      <DependentUpon>ConfigTime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConfigUserControl1.resx">
       <DependentUpon>ConfigUserControl1.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +267,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExcelExportUserControl.resx">
       <DependentUpon>ExcelExportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PswChangeForm.resx">
+      <DependentUpon>PswChangeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeekDetailUserControl.resx">
       <DependentUpon>WeekDetailUserControl.cs</DependentUpon>

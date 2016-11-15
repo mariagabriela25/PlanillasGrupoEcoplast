@@ -72,6 +72,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bin\Debug\App.config" />
+    <None Include="bin\Debug\BusinessLogic.exe.config" />
+    <None Include="bin\Debug\BusinessLogic.vshost.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,7 +99,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ConfigFile.xml" />
+    <Content Include="bin\Debug\BusinessLogic.exe" />
+    <Content Include="bin\Debug\BusinessLogic.pdb" />
+    <Content Include="bin\Debug\BusinessLogic.vshost.exe" />
+    <Content Include="bin\Debug\ConfigFile.xml" />
+    <Content Include="bin\Debug\DataAccess.exe" />
+    <Content Include="bin\Debug\DataAccess.pdb" />
+    <Content Include="bin\Debug\TransferObjects.exe" />
+    <Content Include="bin\Debug\TransferObjects.pdb" />
+    <Content Include="ConfigFile.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
