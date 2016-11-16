@@ -38,6 +38,7 @@
             this.mgEmployeeRegisteredChecks = new MetroFramework.Controls.MetroGrid();
             this.lbDates = new System.Windows.Forms.Label();
             this.mbPrint = new MetroFramework.Controls.MetroButton();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.mgEmployeeRegisteredChecks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.lbEmployeeNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmployeeNumber.Location = new System.Drawing.Point(56, 78);
             this.lbEmployeeNumber.Name = "lbEmployeeNumber";
-            this.lbEmployeeNumber.Size = new System.Drawing.Size(27, 19);
+            this.lbEmployeeNumber.Size = new System.Drawing.Size(32, 24);
             this.lbEmployeeNumber.TabIndex = 0;
             this.lbEmployeeNumber.Text = "00";
             // 
@@ -57,7 +58,7 @@
             this.lbEmployeeName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmployeeName.Location = new System.Drawing.Point(91, 78);
             this.lbEmployeeName.Name = "lbEmployeeName";
-            this.lbEmployeeName.Size = new System.Drawing.Size(143, 19);
+            this.lbEmployeeName.Size = new System.Drawing.Size(172, 24);
             this.lbEmployeeName.TabIndex = 1;
             this.lbEmployeeName.Text = "lbEmployeeName";
             // 
@@ -68,7 +69,7 @@
             this.lbDepartment.ForeColor = System.Drawing.Color.Red;
             this.lbDepartment.Location = new System.Drawing.Point(56, 34);
             this.lbDepartment.Name = "lbDepartment";
-            this.lbDepartment.Size = new System.Drawing.Size(135, 22);
+            this.lbDepartment.Size = new System.Drawing.Size(167, 29);
             this.lbDepartment.TabIndex = 2;
             this.lbDepartment.Text = "lbDepartment";
             // 
@@ -119,7 +120,7 @@
             this.mgEmployeeRegisteredChecks.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.mgEmployeeRegisteredChecks.RowTemplate.Height = 30;
             this.mgEmployeeRegisteredChecks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgEmployeeRegisteredChecks.Size = new System.Drawing.Size(470, 436);
+            this.mgEmployeeRegisteredChecks.Size = new System.Drawing.Size(772, 436);
             this.mgEmployeeRegisteredChecks.Style = MetroFramework.MetroColorStyle.Lime;
             this.mgEmployeeRegisteredChecks.TabIndex = 3;
             // 
@@ -130,22 +131,22 @@
             this.lbDates.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lbDates.Location = new System.Drawing.Point(253, 37);
             this.lbDates.Name = "lbDates";
-            this.lbDates.Size = new System.Drawing.Size(54, 19);
+            this.lbDates.Size = new System.Drawing.Size(65, 24);
             this.lbDates.TabIndex = 4;
             this.lbDates.Text = "label1";
             // 
             // mbPrint
             // 
             this.mbPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.mbPrint.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.mbPrint.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.mbPrint.ForeColor = System.Drawing.Color.Lime;
-            this.mbPrint.Location = new System.Drawing.Point(586, 34);
+            this.mbPrint.Location = new System.Drawing.Point(751, 64);
             this.mbPrint.Margin = new System.Windows.Forms.Padding(4);
             this.mbPrint.Name = "mbPrint";
-            this.mbPrint.Size = new System.Drawing.Size(70, 22);
+            this.mbPrint.Size = new System.Drawing.Size(70, 38);
             this.mbPrint.Style = MetroFramework.MetroColorStyle.Lime;
             this.mbPrint.TabIndex = 23;
-            this.mbPrint.Text = "Imprimir";
+            this.mbPrint.Text = "PDF";
             this.mbPrint.UseSelectable = true;
             this.mbPrint.Click += new System.EventHandler(this.mbPrint_Click);
             // 
@@ -155,7 +156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(680, 905);
+            this.ClientSize = new System.Drawing.Size(874, 905);
             this.Controls.Add(this.mbPrint);
             this.Controls.Add(this.lbDates);
             this.Controls.Add(this.mgEmployeeRegisteredChecks);
@@ -179,5 +180,6 @@
         private MetroFramework.Controls.MetroGrid mgEmployeeRegisteredChecks;
         private System.Windows.Forms.Label lbDates;
         private MetroFramework.Controls.MetroButton mbPrint;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }

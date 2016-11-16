@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Downloads\itextsharp-all-5.5.10\itextsharp-dll-core\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
       <Private>True</Private>
@@ -45,6 +48,7 @@
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -308,6 +312,10 @@
     <EmbeddedResource Include="WelcomeUserControl.resx">
       <DependentUpon>WelcomeUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\App.config" />
+    <None Include="bin\Debug\UserInterface.exe.config" />
+    <None Include="bin\Debug\UserInterface.vshost.exe.config" />
+    <None Include="bin\Debug\UserInterface.vshost.exe.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -329,6 +337,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\BusinessLogic.exe" />
+    <Content Include="bin\Debug\BusinessLogic.pdb" />
+    <Content Include="bin\Debug\ConfigFile.xml" />
+    <Content Include="bin\Debug\DataAccess.exe" />
+    <Content Include="bin\Debug\DataAccess.pdb" />
+    <Content Include="bin\Debug\es-CR\UserInterface.resources.dll" />
+    <Content Include="bin\Debug\itextsharp.dll" />
+    <Content Include="bin\Debug\itextsharp.xml" />
+    <Content Include="bin\Debug\MetroFramework.Design.dll" />
+    <Content Include="bin\Debug\MetroFramework.dll" />
+    <Content Include="bin\Debug\MetroFramework.Fonts.dll" />
+    <Content Include="bin\Debug\TransferObjects.exe" />
+    <Content Include="bin\Debug\TransferObjects.pdb" />
+    <Content Include="bin\Debug\UserInterface.exe" />
+    <Content Include="bin\Debug\UserInterface.pdb" />
+    <Content Include="bin\Debug\UserInterface.vshost.exe" />
     <Content Include="MetroFramework.txt" />
     <None Include="Resources\grupo-ecoplast-logo.jpg" />
   </ItemGroup>
