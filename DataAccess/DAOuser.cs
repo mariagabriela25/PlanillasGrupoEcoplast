@@ -64,6 +64,42 @@ namespace DataAccess
             return false;
         }
 
+        public Boolean ChangePsw(String oldpsw, String newpsw)
+        {
 
+            try
+            {
+                if (grantAccess(oldpsw))
+                {
+                    if (con.State != System.Data.ConnectionState.Open)
+                    {
+                        con.Open();
+                    }
+
+                    SqlCommand command = new SqlCommand("UPDATE Usuario Set password = @Psw where Usuario.ID = @id", con);
+                    command.Parameters.AddWithValue("@id", 1);
+                    command.Parameters.AddWithValue("@Psw", newpsw);
+
+                    command.ExecuteNonQuery();
+                    return true;
+
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña antigua incorrecta");
+                    return false;
+                }
+            } catch (Exception ex)
+            {
+
+            } finally
+            {
+                if (con.State != System.Data.ConnectionState.Closed)
+                {
+                    con.Close();
+                }
+            }
+            return false;
+        }
     }
 }

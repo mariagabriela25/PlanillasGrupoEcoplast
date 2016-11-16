@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Parameters>
+  <Parameter Name="allowedPositive">10</Parameter>
+  <Parameter Name="allowedNegative">-10</Parameter>
+  <Parameter Name="penaltyPositive">59</Parameter>
+  <Parameter Name="penaltyNegative">-30</Parameter>
+</Parameters>

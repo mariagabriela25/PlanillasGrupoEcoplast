@@ -11,6 +11,11 @@ using BusinessLogic;
 using System.Windows.Controls;
 using System.Drawing.Printing;
 using Microsoft.VisualBasic;
+using System.IO;
+using System.Reflection;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.Diagnostics;
 
 namespace UserInterface
 {
@@ -98,26 +103,79 @@ namespace UserInterface
 
         private void mbPrint_Click(object sender, EventArgs e)
         {
-            mbPrint.Click += new EventHandler(mbPrint_Click);
-            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
-            this.Controls.Add(mbPrint);
+            try
+            {
+                FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+                folderBrowserDialog.RootFolder = System.Environment.SpecialFolder.MyComputer;
 
-            CaptureScreen();
-            printDocument1.Print();
-        }
+                DialogResult result = folderBrowserDialog.ShowDialog();
+            string folderPath = "";
+            if (result == DialogResult.OK)
+                {
+                    folderPath = folderBrowserDialog.SelectedPath.Replace(@"\", @"\\");
+                }
 
-        private void CaptureScreen()
-        {
-            Graphics myGraphics = this.CreateGraphics();
-            Size s = this.Size;
-            memoryImage = new Bitmap(mgEmployeeRegisteredChecks.Width, mgEmployeeRegisteredChecks.Height+200, myGraphics);
-            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
-            memoryGraphics.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, s);
-        }
+            folderPath += @"\\";
 
-        private void printDocument1_PrintPage(System.Object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            e.Graphics.DrawImage(memoryImage, 0, 0);
+                String pdfName = Microsoft.VisualBasic.Interaction.InputBox("Digite el nombre con el que quiere guardar su archivo PDF", "Nombre PDF");
+            pdfName += ".pdf";
+
+                PdfPTable pdfTable = new PdfPTable(mgEmployeeRegisteredChecks.ColumnCount);
+                pdfTable.DefaultCell.Padding = 3;
+                pdfTable.WidthPercentage = 50;
+                pdfTable.HorizontalAlignment = Element.ALIGN_CENTER;
+                pdfTable.DefaultCell.BorderWidth = 1;
+
+                foreach (DataGridViewColumn column in mgEmployeeRegisteredChecks.Columns)
+                {
+                    PdfPCell pdfCell = new PdfPCell(new Phrase(column.HeaderText));
+                    pdfCell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                    pdfTable.AddCell(pdfCell);
+                }
+
+                foreach (DataGridViewRow row in mgEmployeeRegisteredChecks.Rows)
+                {
+                    foreach (DataGridViewCell mgCell in row.Cells)
+                    {
+                        pdfTable.AddCell(mgCell.Value.ToString());
+                    }
+                }
+                
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+                using (FileStream stream = new FileStream(folderPath + pdfName, FileMode.Create))
+                {
+                    Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+                    PdfWriter.GetInstance(pdfDoc, stream);
+
+                    pdfDoc.Open();
+
+                    Paragraph p1 = new Paragraph(lbDepartment.Text);
+                    p1.Alignment = Element.ALIGN_CENTER;
+                    Paragraph p2 = new Paragraph(lbDates.Text);
+                    p2.Alignment = Element.ALIGN_CENTER;
+                    Paragraph p3 = new Paragraph(lbEmployeeNumber.Text + "     " + lbEmployeeName.Text);
+                    p3.Alignment = Element.ALIGN_CENTER;
+                    Paragraph p4 = new Paragraph("   ");
+
+                    pdfDoc.Add(p1);
+                    pdfDoc.Add(p2);
+                    pdfDoc.Add(p3);
+                    pdfDoc.Add(p4);
+                    pdfDoc.Add(pdfTable);
+
+                    pdfDoc.Close();
+                    stream.Close();
+                    
+                    Process.Start(folderPath + pdfName);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrió un problema al generar el archivo .pdf, asegúrese de que el nombre que eligió para el archivo aún no exista en la carpeta destino ¡Inténtelo de nuevo!");
+            }
         }
     }
 }
