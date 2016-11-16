@@ -113,7 +113,7 @@
       <DependentUpon>DayDetailUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DayReviewUserControl.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="DayReviewUserControl.Designer.cs">
       <DependentUpon>DayReviewUserControl.cs</DependentUpon>
