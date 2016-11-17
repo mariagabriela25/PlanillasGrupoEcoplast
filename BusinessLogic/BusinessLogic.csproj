@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnomaliesManager.cs" />
     <Compile Include="Anomaly.cs" />
     <Compile Include="Check.cs" />
     <Compile Include="ConfigManager.cs" />
@@ -100,6 +101,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AnomaliesFile.xml" />
     <Content Include="bin\Debug\BusinessLogic.exe" />
     <Content Include="bin\Debug\BusinessLogic.pdb" />
     <Content Include="bin\Debug\BusinessLogic.vshost.exe" />

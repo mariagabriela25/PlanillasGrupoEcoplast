@@ -16,27 +16,19 @@ namespace UserInterface
     {
         public DataTable dt;
         List<Anomaly> list;
-        List<Employee> listEmployees;
-
         private DateTime currentDate;
         private int empcode;
         private string empname;
-        private int weekcode;
 
-        public AnomaliesReview(List<Anomaly> list, int weekcode, List<Employee> listEmployees)
+        public AnomaliesReview()
         {
             InitializeComponent();
             /////////////////////////////////
-            this.list = list;
-            this.weekcode = weekcode;
-            this.listEmployees = listEmployees;
-
+            this.list = new AnomaliesManager().GetValues();
         }
 
         private void AnomaliesReview_Load(object sender, EventArgs e)
         {
-
-
        
             dt = new DataTable();
             dt.Columns.Add("Código");
@@ -126,7 +118,7 @@ namespace UserInterface
         private void btGuardar_Click(object sender, EventArgs e)
         {
             double totalHours = calculateTotal();
-            WorkDayDetail wdd = new WorkDayDetail(empcode, totalHours, totalHours, currentDate, richTextBox1.Text, true, weekcode, 1);
+            WorkDayDetail wdd = new WorkDayDetail(empcode, totalHours, totalHours, currentDate, richTextBox1.Text, true, WeekCode(currentDate), 1);
             wdd.AddWorkDay();
             int a = 0;
 
@@ -134,7 +126,8 @@ namespace UserInterface
             {
                 if (an.code == empcode && an.currentDay.Equals(currentDate))
                 {
-                    list.RemoveAt(a);  
+                    list.RemoveAt(a);
+                    new AnomaliesManager().RemoveValue(an.code, an.currentDay.Date);
                     break;
                 }
                 a++;
@@ -142,7 +135,6 @@ namespace UserInterface
 
             if (list.Count == 0)
             {
-                SaveWeeks();
                 this.Close();
             }
 
@@ -182,25 +174,9 @@ namespace UserInterface
             return full+half;
         }
 
-        public void SaveWeeks()
+        private int WeekCode(DateTime date)
         {
-            foreach (Employee emp in listEmployees)
-            {
-                double total = new Employee().GetTotalHours(emp.Code, weekcode);
-                double ccss = 48;
-                double extras = 0;
-                if (total <= 48)
-                {
-                    ccss = total;
-                }
-                else
-                {
-                    extras = total - ccss;
-                }
-                new WorkWeekDetail(1, ccss, total, extras, emp.Code, weekcode, DateTime.Now.Year).SaveWeekReport();
-            }
-            MessageBox.Show("Se guardó el detalle de la semana");
-
+            return System.Globalization.CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
         }
     }
 }

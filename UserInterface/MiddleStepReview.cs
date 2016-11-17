@@ -102,14 +102,14 @@ namespace UserInterface
                 }
                 else
                 {
-                    list.Add(new Anomaly(correctLaboredDays[rowNumber].currentDay.Date, Int32.Parse(row.Cells[0].Value.ToString()), false));
+                   new AnomaliesManager().AddValue(Int32.Parse(row.Cells[0].Value.ToString()), correctLaboredDays[rowNumber].currentDay.Date);
                 }
             }
 
 
             if (list.Count != 0)
             {
-                new AnomaliesReview(list, weekNum, listEmployees).Show();
+                new AnomaliesReview().Show();
                 this.Hide();
             }
             else
