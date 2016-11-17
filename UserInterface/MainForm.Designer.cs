@@ -33,9 +33,10 @@
             this.mpMenu = new MetroFramework.Controls.MetroPanel();
             this.mpContent = new MetroFramework.Controls.MetroPanel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lbDate = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             this.mpContent.VerticalScrollbarBarColor = false;
             this.mpContent.VerticalScrollbarHighlightOnWheel = false;
             this.mpContent.VerticalScrollbarSize = 0;
+            this.mpContent.Paint += new System.Windows.Forms.PaintEventHandler(this.mpContent_Paint);
             // 
             // lblTitle
             // 
@@ -76,10 +78,13 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
-            // lbDate
+            // pictureBox2
             // 
-            resources.ApplyResources(this.lbDate, "lbDate");
-            this.lbDate.Name = "lbDate";
+            this.pictureBox2.Image = global::UserInterface.Properties.Resources.Material_Icons_e869_0__64;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -100,7 +105,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lbDate);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnBack);
@@ -113,6 +118,7 @@
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,6 +133,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbDate;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

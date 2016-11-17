@@ -110,6 +110,18 @@
     <Compile Include="ChecksUserControl.Designer.cs">
       <DependentUpon>ChecksUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfigTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigTime.Designer.cs">
+      <DependentUpon>ConfigTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigUserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConfigUserControl1.Designer.cs">
+      <DependentUpon>ConfigUserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="DayDetailUserControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +151,12 @@
     </Compile>
     <Compile Include="MiddleStepReview.Designer.cs">
       <DependentUpon>MiddleStepReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PswChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PswChangeForm.Designer.cs">
+      <DependentUpon>PswChangeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WeekDetailUserControl.cs">
       <SubType>Form</SubType>
@@ -242,6 +260,12 @@
     <EmbeddedResource Include="ChecksUserControl.resx">
       <DependentUpon>ChecksUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConfigTime.resx">
+      <DependentUpon>ConfigTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigUserControl1.resx">
+      <DependentUpon>ConfigUserControl1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DayDetailUserControl.resx">
       <DependentUpon>DayDetailUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MiddleStepReview.resx">
       <DependentUpon>MiddleStepReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PswChangeForm.resx">
+      <DependentUpon>PswChangeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeekDetailUserControl.resx">
       <DependentUpon>WeekDetailUserControl.cs</DependentUpon>
@@ -354,6 +381,7 @@
     <Content Include="bin\Debug\UserInterface.pdb" />
     <Content Include="bin\Debug\UserInterface.vshost.exe" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\Material Icons_e869%280%29_64.png" />
     <None Include="Resources\grupo-ecoplast-logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

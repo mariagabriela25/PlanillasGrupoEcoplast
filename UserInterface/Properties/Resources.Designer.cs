@@ -69,5 +69,15 @@ namespace UserInterface.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Material_Icons_e869_0__64 {
+            get {
+                object obj = ResourceManager.GetObject("Material Icons_e869(0)_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
