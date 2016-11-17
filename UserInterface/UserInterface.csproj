@@ -381,6 +381,7 @@
     <Content Include="bin\Debug\UserInterface.pdb" />
     <Content Include="bin\Debug\UserInterface.vshost.exe" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\Material Icons_e869%280%29_64.png" />
     <None Include="Resources\grupo-ecoplast-logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -80,5 +80,14 @@ namespace UserInterface
 
         }
 
+        private void mpContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("CONFIGURACIÓN");
+        }
     }
 }

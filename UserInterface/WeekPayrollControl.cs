@@ -96,6 +96,31 @@ namespace UserInterface
 
             new EmployeeWeekLaborDetail(week_selected, codeEmployee, totalHours, ordinaryHours, extraHours).Show();
         }
+
+        private void mbWeekReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dt = new DataTable();
+                dt.Columns.Add("No. Empleado");
+                dt.Columns.Add("Nombre");
+                dt.Columns.Add("Total Horas");
+                dt.Columns.Add("Horas CCSS");
+                dt.Columns.Add("Horas Extra");
+
+                list = week.getWeek(week_selected);
+
+                foreach (WorkWeekDetail w in list)
+                {
+                    dt.Rows.Add(w.EmployeeCode, w.Name, w.TotalHours, w.CCSSHours, w.ExtraHours);
+                }
+                mg_weeks.DataSource = dt;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Primero debe escoger una Semana");
+            }
+        }
     }
     
 }
