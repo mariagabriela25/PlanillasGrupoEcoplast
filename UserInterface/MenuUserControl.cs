@@ -40,7 +40,7 @@ namespace UserInterface
             }
             MainForm.Instance.Content.Controls["EmployeeUserControl"].BringToFront();
             MainForm.Instance.BackButton.Visible = true;
-            MainForm.Instance.LabelTitle.Text = "Administración de Empleados";
+            MainForm.Instance.LabelTitle.Text = "Empleados";
         }
 
         private void mtSchedules_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace UserInterface
             }
             MainForm.Instance.Content.Controls["ScheduleUserControl"].BringToFront();
             MainForm.Instance.BackButton.Visible = true;
-            MainForm.Instance.LabelTitle.Text = "Administración de Horarios";
+            MainForm.Instance.LabelTitle.Text = "Horarios";
         }
 
         private void mtDepartments_Click(object sender, EventArgs e)
@@ -66,20 +66,14 @@ namespace UserInterface
             }
             MainForm.Instance.Content.Controls["DepartmentUserControl"].BringToFront();
             MainForm.Instance.BackButton.Visible = true;
-            MainForm.Instance.LabelTitle.Text = "Administración de Departamentos";
+            MainForm.Instance.LabelTitle.Text = "Departamentos";
         }
 
         private void mtDailyPayroll_Click(object sender, EventArgs e)
         {
-        //    if (!MainForm.Instance.Content.Controls.ContainsKey("ConfigUserControl1"))
-        //    {
-        //        ConfigUserControl1 cf = new ConfigUserControl1();
-        //        cf.Dock = DockStyle.Fill;
-        //        MainForm.Instance.Content.Controls.Add(cf);
-        //    }
-        //    MainForm.Instance.Content.Controls["ConfigUserControl1"].BringToFront();
-        //    MainForm.Instance.BackButton.Visible = true;
-        //    MainForm.Instance.LabelTitle.Text = "Configuración de tiempos";
+            MainForm.Instance.Content.Controls["WelcomeUserControl"].BringToFront();
+            MainForm.Instance.BackButton.Visible = false;
+            MainForm.Instance.LabelTitle.Text = "Sistema de Planillas";
             new DayReviewUserControl().Show();
         }
 

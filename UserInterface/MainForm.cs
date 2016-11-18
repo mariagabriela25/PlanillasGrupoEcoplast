@@ -97,5 +97,10 @@ namespace UserInterface
             MainForm.Instance.BackButton.Visible = true;
             MainForm.Instance.LabelTitle.Text = "Configuración de tiempos";
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -117,44 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="metroUserControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 322</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="metroUserControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="metroUserControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 185</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="metroUserControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;metroUserControl1.Name" xml:space="preserve">
-    <value>metroUserControl1</value>
-  </data>
-  <data name="&gt;&gt;metroUserControl1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroUserControl, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroUserControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroUserControl1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="mpMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="mpMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 210</value>
+    <value>57, 213</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="mpMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
+  <data name="mpMenu.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>236, 727</value>
+  </data>
+  <data name="mpMenu.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>236, 727</value>
+  </data>
   <data name="mpMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 847</value>
+    <value>236, 727</value>
   </data>
   <data name="mpMenu.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -169,19 +151,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;mpMenu.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="mpContent.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>mpContent</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="mpContent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>419, 210</value>
+    <value>346, 213</value>
   </data>
   <data name="mpContent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="mpContent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1707, 847</value>
+    <value>1402, 727</value>
   </data>
   <data name="mpContent.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -208,7 +202,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>403, 64</value>
+    <value>332, 70</value>
   </data>
   <data name="lblTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -232,13 +226,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="pictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 81</value>
+    <value>1677, 84</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 66</value>
@@ -586,7 +580,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 44</value>
+    <value>1207, 592</value>
   </data>
   <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -607,10 +601,10 @@
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>mpContent</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnBack.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -648,7 +642,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>305, 78</value>
+    <value>57, 84</value>
   </data>
   <data name="btnBack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -669,7 +663,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -681,7 +675,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1379, 780</value>
+    <value>1809, 990</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -707,17 +701,20 @@
         AAAAAAAAAAAAAA==
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1809, 990</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1809, 990</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>27, 74, 27, 25</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>WindowsDefaultBounds</value>
+    <value>CenterParent</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

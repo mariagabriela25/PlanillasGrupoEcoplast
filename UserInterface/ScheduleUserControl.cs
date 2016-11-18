@@ -101,5 +101,9 @@ namespace UserInterface
             }
         }
 
+        private void mgSchedules_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
