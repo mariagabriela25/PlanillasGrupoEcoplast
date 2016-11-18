@@ -95,7 +95,7 @@ namespace UserInterface
             }
             MainForm.Instance.Content.Controls["ConfigUserControl1"].BringToFront();
             MainForm.Instance.BackButton.Visible = true;
-            MainForm.Instance.LabelTitle.Text = "Configuración de tiempos";
+            MainForm.Instance.LabelTitle.Text = "Configuración";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -41,5 +41,10 @@ namespace UserInterface
                 l_newpsw2.Text = "";
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

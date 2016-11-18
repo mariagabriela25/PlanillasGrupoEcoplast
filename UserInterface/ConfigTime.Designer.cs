@@ -35,16 +35,20 @@
             // 
             // numValue
             // 
-            this.numValue.Location = new System.Drawing.Point(48, 78);
+            this.numValue.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numValue.Location = new System.Drawing.Point(31, 110);
+            this.numValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numValue.Name = "numValue";
-            this.numValue.Size = new System.Drawing.Size(120, 20);
+            this.numValue.Size = new System.Drawing.Size(113, 39);
             this.numValue.TabIndex = 0;
             // 
             // bSave
             // 
-            this.bSave.Location = new System.Drawing.Point(48, 115);
+            this.bSave.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.bSave.Location = new System.Drawing.Point(188, 110);
+            this.bSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bSave.Name = "bSave";
-            this.bSave.Size = new System.Drawing.Size(120, 41);
+            this.bSave.Size = new System.Drawing.Size(160, 39);
             this.bSave.TabIndex = 1;
             this.bSave.Text = "Guardar";
             this.bSave.UseSelectable = true;
@@ -52,12 +56,14 @@
             // 
             // ConfigTime
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(230, 179);
+            this.ClientSize = new System.Drawing.Size(379, 203);
             this.Controls.Add(this.bSave);
             this.Controls.Add(this.numValue);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ConfigTime";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Cambiar Tiempo";
             this.Load += new System.EventHandler(this.ConfigTime_Load);
