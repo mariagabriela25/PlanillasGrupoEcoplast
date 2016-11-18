@@ -51,6 +51,38 @@ namespace DataAccess
             return true;
         }
 
+        public Boolean UpdateWorkDayDetail(TOWorkDayDetail workday, int dbCode)
+        {
+            try
+            {
+                SqlCommand query = new SqlCommand("UPDATE DetalleDiaLaborado SET TotalHorasOrdinarias = @OrdinaryHour, TotalHoras = @TotalHours, Nota = @Note WHERE CodDia = @DayCode;", conex);
+                query.Parameters.AddWithValue("@OrdinaryHour", workday.OrdinaryHours);
+                query.Parameters.AddWithValue("@TotalHours", workday.TotalHours);
+                query.Parameters.AddWithValue("@Note", workday.Note == null ? System.Data.SqlTypes.SqlString.Null : workday.Note);
+                query.Parameters.AddWithValue("@DayCode", dbCode);
+
+                if (conex.State != System.Data.ConnectionState.Open)
+                {
+                    conex.Open();
+                }
+                query.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de conexión");
+            }
+            finally
+            {
+                if (conex.State != System.Data.ConnectionState.Closed)
+                {
+                    conex.Close();
+                }
+            }
+
+            return true;
+        }
+
         public TOWorkDayDetail getWorkDay(TOWorkDayDetail tow)
         {
             TOWorkDayDetail workDay = new TOWorkDayDetail();
@@ -97,7 +129,7 @@ namespace DataAccess
             try
             {
 
-                SqlCommand query = new SqlCommand("select d.CodDia, d.Fecha, d.TotalHoras from DetalleDiaLaborado as d where CodEmpleado = @CodeEmployee and CodSemana = @CodeWeek", conex);
+                SqlCommand query = new SqlCommand("select d.CodDia, d.Fecha, d.TotalHoras, d.Nota from DetalleDiaLaborado as d where CodEmpleado = @CodeEmployee and CodSemana = @CodeWeek ORDER BY d.Fecha", conex);
                 query.Parameters.AddWithValue("@CodeEmployee", codEmpl);
                 query.Parameters.AddWithValue("@CodeWeek", codWeek);
 
@@ -123,11 +155,17 @@ namespace DataAccess
                         e.Day = day;
                         e.TotalHours = (Double)reader.GetDecimal(2);
 
+                    try
+                    {
+                        e.Note = reader.GetString(3);
+                    }
+                    catch (Exception) {}
+                       
                         list.Add(e);
                     }
                 }
 
-            }
+        }
             catch (Exception ex)
             {
                 MessageBox.Show("Error de conexión");

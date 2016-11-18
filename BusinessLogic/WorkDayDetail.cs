@@ -48,6 +48,20 @@ namespace BusinessLogic
             return new DAOWorkDay().AddWorkDayDetail(workday);
         }
 
+        public Boolean UpdateWorkDay(int dbCode)
+        {
+            TOWorkDayDetail workday = new TOWorkDayDetail();
+            workday.CodeEmployee = this.CodeEmployee;
+            workday.OrdinaryHours = this.OrdinaryHours;
+            workday.TotalHours = this.TotalHours;
+            workday.Date = this.Date;
+            workday.WeekCode = this.WeekCode;
+            workday.Note = this.Note;
+            workday.State = this.State;
+
+            return new DAOWorkDay().UpdateWorkDayDetail(workday, dbCode);
+        }
+
         public void get_WorkDayUser(int code_Employee, int codeWeek)
         {
             TOWorkDayDetail toe = new TOWorkDayDetail();
@@ -72,6 +86,7 @@ namespace BusinessLogic
                 workDay.Date = to.Date;
                 workDay.Day = to.Day;
                 workDay.TotalHours = to.TotalHours;
+                workDay.Note = to.Note;
                 list.Add(workDay);
             }
 
