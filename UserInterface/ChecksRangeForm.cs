@@ -52,7 +52,9 @@ namespace UserInterface
             dt.Columns.Add("Marca");
 
             List<Check> checksList = new List<Check>();
-            checksList = new Check().GetChecksWithRests(choosenEmployee.Code, iDate, fDate);
+            DateTime fDate2 = fDate;
+            fDate2 = fDate2.AddDays(1);
+            checksList = new Check().GetChecksWithRests(choosenEmployee.Code, iDate, fDate2);
 
             if (checksList != null)
             {

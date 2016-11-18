@@ -41,14 +41,11 @@
             this.lbH1 = new System.Windows.Forms.Label();
             this.lbN1 = new System.Windows.Forms.Label();
             this.txtNote1 = new System.Windows.Forms.TextBox();
-            this.txtHours1 = new System.Windows.Forms.TextBox();
-            this.txtHours2 = new System.Windows.Forms.TextBox();
             this.txtNote2 = new System.Windows.Forms.TextBox();
             this.lbN2 = new System.Windows.Forms.Label();
             this.lbH2 = new System.Windows.Forms.Label();
             this.lbDay2 = new System.Windows.Forms.Label();
             this.lbDay4 = new System.Windows.Forms.Label();
-            this.txtHours3 = new System.Windows.Forms.TextBox();
             this.lbH3 = new System.Windows.Forms.Label();
             this.lbDay3 = new System.Windows.Forms.Label();
             this.lbDay6 = new System.Windows.Forms.Label();
@@ -73,10 +70,6 @@
             this.lbH6 = new System.Windows.Forms.Label();
             this.lbH5 = new System.Windows.Forms.Label();
             this.lbH4 = new System.Windows.Forms.Label();
-            this.txtHours7 = new System.Windows.Forms.TextBox();
-            this.txtHours6 = new System.Windows.Forms.TextBox();
-            this.txtHours5 = new System.Windows.Forms.TextBox();
-            this.txtHours4 = new System.Windows.Forms.TextBox();
             this.lbN5 = new System.Windows.Forms.Label();
             this.lbN4 = new System.Windows.Forms.Label();
             this.lbN3 = new System.Windows.Forms.Label();
@@ -90,6 +83,20 @@
             this.lbTxtOrdinaryHours = new System.Windows.Forms.Label();
             this.lbTxtExtraHours = new System.Windows.Forms.Label();
             this.lbTxtTotalHours = new System.Windows.Forms.Label();
+            this.txtHours1 = new System.Windows.Forms.NumericUpDown();
+            this.txtHours7 = new System.Windows.Forms.NumericUpDown();
+            this.txtHours6 = new System.Windows.Forms.NumericUpDown();
+            this.txtHours5 = new System.Windows.Forms.NumericUpDown();
+            this.txtHours4 = new System.Windows.Forms.NumericUpDown();
+            this.txtHours3 = new System.Windows.Forms.NumericUpDown();
+            this.txtHours2 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbDepartment
@@ -230,26 +237,6 @@
             this.txtNote1.Visible = false;
             this.txtNote1.TextChanged += new System.EventHandler(this.txtNote1_TextChanged);
             // 
-            // txtHours1
-            // 
-            this.txtHours1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHours1.Location = new System.Drawing.Point(408, 398);
-            this.txtHours1.Name = "txtHours1";
-            this.txtHours1.Size = new System.Drawing.Size(41, 30);
-            this.txtHours1.TabIndex = 44;
-            this.txtHours1.Visible = false;
-            this.txtHours1.TextChanged += new System.EventHandler(this.txtHours1_TextChanged);
-            // 
-            // txtHours2
-            // 
-            this.txtHours2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHours2.Location = new System.Drawing.Point(409, 470);
-            this.txtHours2.Name = "txtHours2";
-            this.txtHours2.Size = new System.Drawing.Size(41, 30);
-            this.txtHours2.TabIndex = 58;
-            this.txtHours2.Visible = false;
-            this.txtHours2.TextChanged += new System.EventHandler(this.txtHours2_TextChanged);
-            // 
             // txtNote2
             // 
             this.txtNote2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -304,16 +291,6 @@
             this.lbDay4.Text = "label10";
             this.lbDay4.Visible = false;
             // 
-            // txtHours3
-            // 
-            this.txtHours3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHours3.Location = new System.Drawing.Point(409, 542);
-            this.txtHours3.Name = "txtHours3";
-            this.txtHours3.Size = new System.Drawing.Size(41, 30);
-            this.txtHours3.TabIndex = 64;
-            this.txtHours3.Visible = false;
-            this.txtHours3.TextChanged += new System.EventHandler(this.txtHours3_TextChanged);
-            // 
             // lbH3
             // 
             this.lbH3.AutoSize = true;
@@ -335,7 +312,6 @@
             this.lbDay3.TabIndex = 59;
             this.lbDay3.Text = "label15";
             this.lbDay3.Visible = false;
-            this.lbDay3.Click += new System.EventHandler(this.lbDay3_Click);
             // 
             // lbDay6
             // 
@@ -580,42 +556,6 @@
             this.lbH4.Text = "H. L:";
             this.lbH4.Visible = false;
             // 
-            // txtHours7
-            // 
-            this.txtHours7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHours7.Location = new System.Drawing.Point(409, 822);
-            this.txtHours7.Name = "txtHours7";
-            this.txtHours7.Size = new System.Drawing.Size(41, 30);
-            this.txtHours7.TabIndex = 106;
-            this.txtHours7.Visible = false;
-            // 
-            // txtHours6
-            // 
-            this.txtHours6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHours6.Location = new System.Drawing.Point(409, 753);
-            this.txtHours6.Name = "txtHours6";
-            this.txtHours6.Size = new System.Drawing.Size(41, 30);
-            this.txtHours6.TabIndex = 107;
-            this.txtHours6.Visible = false;
-            // 
-            // txtHours5
-            // 
-            this.txtHours5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHours5.Location = new System.Drawing.Point(408, 682);
-            this.txtHours5.Name = "txtHours5";
-            this.txtHours5.Size = new System.Drawing.Size(41, 30);
-            this.txtHours5.TabIndex = 108;
-            this.txtHours5.Visible = false;
-            // 
-            // txtHours4
-            // 
-            this.txtHours4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHours4.Location = new System.Drawing.Point(409, 611);
-            this.txtHours4.Name = "txtHours4";
-            this.txtHours4.Size = new System.Drawing.Size(41, 30);
-            this.txtHours4.TabIndex = 109;
-            this.txtHours4.Visible = false;
-            // 
             // lbN5
             // 
             this.lbN5.AutoSize = true;
@@ -706,6 +646,7 @@
             this.txtNote6.Size = new System.Drawing.Size(467, 30);
             this.txtNote6.TabIndex = 118;
             this.txtNote6.Visible = false;
+            this.txtNote6.TextChanged += new System.EventHandler(this.txtNote6_TextChanged);
             // 
             // txtNote7
             // 
@@ -750,11 +691,165 @@
             this.lbTxtTotalHours.Text = "00";
             this.lbTxtTotalHours.Visible = false;
             // 
+            // txtHours1
+            // 
+            this.txtHours1.DecimalPlaces = 1;
+            this.txtHours1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHours1.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.txtHours1.Location = new System.Drawing.Point(409, 400);
+            this.txtHours1.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.txtHours1.Name = "txtHours1";
+            this.txtHours1.Size = new System.Drawing.Size(73, 30);
+            this.txtHours1.TabIndex = 123;
+            this.txtHours1.Visible = false;
+            this.txtHours1.ValueChanged += new System.EventHandler(this.txtHours1_ValueChanged);
+            // 
+            // txtHours7
+            // 
+            this.txtHours7.DecimalPlaces = 1;
+            this.txtHours7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHours7.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.txtHours7.Location = new System.Drawing.Point(409, 822);
+            this.txtHours7.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.txtHours7.Name = "txtHours7";
+            this.txtHours7.Size = new System.Drawing.Size(73, 30);
+            this.txtHours7.TabIndex = 124;
+            this.txtHours7.Visible = false;
+            this.txtHours7.ValueChanged += new System.EventHandler(this.txtHours7_ValueChanged);
+            // 
+            // txtHours6
+            // 
+            this.txtHours6.DecimalPlaces = 1;
+            this.txtHours6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHours6.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.txtHours6.Location = new System.Drawing.Point(409, 753);
+            this.txtHours6.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.txtHours6.Name = "txtHours6";
+            this.txtHours6.Size = new System.Drawing.Size(73, 30);
+            this.txtHours6.TabIndex = 125;
+            this.txtHours6.Visible = false;
+            this.txtHours6.ValueChanged += new System.EventHandler(this.txtHours6_ValueChanged);
+            // 
+            // txtHours5
+            // 
+            this.txtHours5.DecimalPlaces = 1;
+            this.txtHours5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHours5.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.txtHours5.Location = new System.Drawing.Point(409, 682);
+            this.txtHours5.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.txtHours5.Name = "txtHours5";
+            this.txtHours5.Size = new System.Drawing.Size(73, 30);
+            this.txtHours5.TabIndex = 126;
+            this.txtHours5.Visible = false;
+            this.txtHours5.ValueChanged += new System.EventHandler(this.txtHours5_ValueChanged);
+            // 
+            // txtHours4
+            // 
+            this.txtHours4.DecimalPlaces = 1;
+            this.txtHours4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHours4.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.txtHours4.Location = new System.Drawing.Point(409, 611);
+            this.txtHours4.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.txtHours4.Name = "txtHours4";
+            this.txtHours4.Size = new System.Drawing.Size(73, 30);
+            this.txtHours4.TabIndex = 127;
+            this.txtHours4.Visible = false;
+            this.txtHours4.ValueChanged += new System.EventHandler(this.txtHours4_ValueChanged);
+            // 
+            // txtHours3
+            // 
+            this.txtHours3.DecimalPlaces = 1;
+            this.txtHours3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHours3.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.txtHours3.Location = new System.Drawing.Point(409, 540);
+            this.txtHours3.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.txtHours3.Name = "txtHours3";
+            this.txtHours3.Size = new System.Drawing.Size(73, 30);
+            this.txtHours3.TabIndex = 128;
+            this.txtHours3.Visible = false;
+            this.txtHours3.ValueChanged += new System.EventHandler(this.txtHours3_ValueChanged);
+            // 
+            // txtHours2
+            // 
+            this.txtHours2.DecimalPlaces = 1;
+            this.txtHours2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHours2.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.txtHours2.Location = new System.Drawing.Point(409, 473);
+            this.txtHours2.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.txtHours2.Name = "txtHours2";
+            this.txtHours2.Size = new System.Drawing.Size(73, 30);
+            this.txtHours2.TabIndex = 129;
+            this.txtHours2.Visible = false;
+            this.txtHours2.ValueChanged += new System.EventHandler(this.txtHours2_ValueChanged);
+            // 
             // EmployeeWeekLaborDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 1015);
+            this.Controls.Add(this.txtHours2);
+            this.Controls.Add(this.txtHours3);
+            this.Controls.Add(this.txtHours4);
+            this.Controls.Add(this.txtHours5);
+            this.Controls.Add(this.txtHours6);
+            this.Controls.Add(this.txtHours7);
+            this.Controls.Add(this.txtHours1);
             this.Controls.Add(this.lbTxtTotalHours);
             this.Controls.Add(this.lbTxtExtraHours);
             this.Controls.Add(this.lbTxtOrdinaryHours);
@@ -768,10 +863,6 @@
             this.Controls.Add(this.lbN3);
             this.Controls.Add(this.lbN4);
             this.Controls.Add(this.lbN5);
-            this.Controls.Add(this.txtHours4);
-            this.Controls.Add(this.txtHours5);
-            this.Controls.Add(this.txtHours6);
-            this.Controls.Add(this.txtHours7);
             this.Controls.Add(this.lbH4);
             this.Controls.Add(this.lbH5);
             this.Controls.Add(this.lbH6);
@@ -795,15 +886,12 @@
             this.Controls.Add(this.lbDay6);
             this.Controls.Add(this.lbDay5);
             this.Controls.Add(this.lbDay4);
-            this.Controls.Add(this.txtHours3);
             this.Controls.Add(this.lbH3);
             this.Controls.Add(this.lbDay3);
-            this.Controls.Add(this.txtHours2);
             this.Controls.Add(this.txtNote2);
             this.Controls.Add(this.lbN2);
             this.Controls.Add(this.lbH2);
             this.Controls.Add(this.lbDay2);
-            this.Controls.Add(this.txtHours1);
             this.Controls.Add(this.txtNote1);
             this.Controls.Add(this.lbN1);
             this.Controls.Add(this.lbH1);
@@ -820,6 +908,13 @@
             this.Name = "EmployeeWeekLaborDetail";
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Load += new System.EventHandler(this.EmployeeWeekLaborDetail_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHours2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -840,14 +935,11 @@
         private System.Windows.Forms.Label lbH1;
         private System.Windows.Forms.Label lbN1;
         private System.Windows.Forms.TextBox txtNote1;
-        private System.Windows.Forms.TextBox txtHours1;
-        private System.Windows.Forms.TextBox txtHours2;
         private System.Windows.Forms.TextBox txtNote2;
         private System.Windows.Forms.Label lbN2;
         private System.Windows.Forms.Label lbH2;
         private System.Windows.Forms.Label lbDay2;
         private System.Windows.Forms.Label lbDay4;
-        private System.Windows.Forms.TextBox txtHours3;
         private System.Windows.Forms.Label lbH3;
         private System.Windows.Forms.Label lbDay3;
         private System.Windows.Forms.Label lbDay6;
@@ -872,10 +964,6 @@
         private System.Windows.Forms.Label lbH6;
         private System.Windows.Forms.Label lbH5;
         private System.Windows.Forms.Label lbH4;
-        private System.Windows.Forms.TextBox txtHours7;
-        private System.Windows.Forms.TextBox txtHours6;
-        private System.Windows.Forms.TextBox txtHours5;
-        private System.Windows.Forms.TextBox txtHours4;
         private System.Windows.Forms.Label lbN5;
         private System.Windows.Forms.Label lbN4;
         private System.Windows.Forms.Label lbN3;
@@ -889,5 +977,12 @@
         private System.Windows.Forms.Label lbTxtOrdinaryHours;
         private System.Windows.Forms.Label lbTxtExtraHours;
         private System.Windows.Forms.Label lbTxtTotalHours;
+        private System.Windows.Forms.NumericUpDown txtHours1;
+        private System.Windows.Forms.NumericUpDown txtHours7;
+        private System.Windows.Forms.NumericUpDown txtHours6;
+        private System.Windows.Forms.NumericUpDown txtHours5;
+        private System.Windows.Forms.NumericUpDown txtHours4;
+        private System.Windows.Forms.NumericUpDown txtHours3;
+        private System.Windows.Forms.NumericUpDown txtHours2;
     }
 }

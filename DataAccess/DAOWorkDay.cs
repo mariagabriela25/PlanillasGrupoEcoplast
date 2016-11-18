@@ -56,8 +56,8 @@ namespace DataAccess
             try
             {
                 SqlCommand query = new SqlCommand("UPDATE DetalleDiaLaborado SET TotalHorasOrdinarias = @OrdinaryHour, TotalHoras = @TotalHours, Nota = @Note WHERE CodDia = @DayCode;", conex);
-                query.Parameters.AddWithValue("@OrdinaryHour", workday.OrdinaryHours);
-                query.Parameters.AddWithValue("@TotalHours", workday.TotalHours);
+                query.Parameters.AddWithValue("@OrdinaryHour", (Decimal)workday.OrdinaryHours);
+                query.Parameters.AddWithValue("@TotalHours", (Decimal)workday.TotalHours);
                 query.Parameters.AddWithValue("@Note", workday.Note == null ? System.Data.SqlTypes.SqlString.Null : workday.Note);
                 query.Parameters.AddWithValue("@DayCode", dbCode);
 

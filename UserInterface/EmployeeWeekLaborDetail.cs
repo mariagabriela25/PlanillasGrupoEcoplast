@@ -21,9 +21,9 @@ namespace UserInterface
         DateTime finRange;
         Employee emp;
 
-        int totalH;
-        int ordinaryH;
-        int extraH;
+        Double totalH;
+        Double ordinaryH;
+        Double extraH;
 
         bool changesDay1;
         bool changesDay2;
@@ -43,7 +43,7 @@ namespace UserInterface
 
         WeekPayrollControl uc;
 
-        public EmployeeWeekLaborDetail(int weekSelected, int codeEmployee, int totalHours, int ordinaryHours, int extraHours, int weekDBCode, WeekPayrollControl uc)
+        public EmployeeWeekLaborDetail(int weekSelected, int codeEmployee, Double totalHours, Double ordinaryHours, Double extraHours, int weekDBCode, WeekPayrollControl uc)
         {
             InitializeComponent();
             week = weekSelected;
@@ -161,7 +161,7 @@ namespace UserInterface
         }
 
         public void setLabels(Label lbDay, int day, Label lbDate, String date, Label lbH,
-            TextBox txtHours, double tHours, Label lbN, TextBox txtNote, String note, Label lbCodeDB,
+            NumericUpDown txtHours, double tHours, Label lbN, TextBox txtNote, String note, Label lbCodeDB,
             int codeDay)
         {
             String rDay = "";
@@ -191,7 +191,7 @@ namespace UserInterface
             }
             lbDay.Text = rDay;
             lbDate.Text = date;
-            txtHours.Text = tHours + "";
+            txtHours.Value = (Decimal)tHours;
             txtNote.Text = note;
             lbCodeDB.Text = codeDay + "";
 
@@ -203,9 +203,9 @@ namespace UserInterface
             txtNote.Visible = true;
         }
 
-        public TextBox getTextBox(int i)
+        public NumericUpDown getTextBox(int i)
         {
-            TextBox tbReturn = null;
+            NumericUpDown tbReturn = null;
             switch (i)
             {
                 case 1:
@@ -241,10 +241,10 @@ namespace UserInterface
                 
             for (int i = 1; i < 8; i++)
             {
-                TextBox tb = getTextBox(i);
-                if (!tb.Text.Equals("") && tb.Visible)
+                NumericUpDown tb = getTextBox(i);
+                if (tb.Value != 0 && tb.Visible)
                 {
-                    totalH += Int32.Parse(tb.Text);
+                    totalH += (Double)tb.Value;
                 }
             }
 
@@ -261,34 +261,10 @@ namespace UserInterface
             lbTxtTotalHours.Text = totalH + "";
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-            if (changesDay6C == 0)
-            {
-                changesDay6C = 1;
-            }
-            else
-            {
-                changesDay6 = true;
-            }
-        }
-
         private void mbRequestChecks_Click(object sender, EventArgs e)
         {
-            ChecksRangeForm cForm = new ChecksRangeForm(emp, iniRange, finRange);
+            ChecksRangeForm cForm = new ChecksRangeForm(emp, iniRange, finRange.AddDays(1));
             cForm.Show();
-        }
-
-        private void txtHours1_TextChanged(object sender, EventArgs e)
-        {
-            if (changesDay1C == 0)
-            {
-                changesDay1C = 1;
-            }
-            else
-            {
-                changesDay1 = true;
-            }
         }
 
         private void txtNote1_TextChanged(object sender, EventArgs e)
@@ -300,18 +276,6 @@ namespace UserInterface
             else
             {
                 changesDay1 = true;
-            }
-        }
-
-        private void txtHours2_TextChanged(object sender, EventArgs e)
-        {
-            if (changesDay2C == 0)
-            {
-                changesDay2C = 1;
-            }
-            else
-            {
-                changesDay2 = true;
             }
         }
 
@@ -327,18 +291,6 @@ namespace UserInterface
             }
         }
 
-        private void txtHours3_TextChanged(object sender, EventArgs e)
-        {
-            if (changesDay3C == 0)
-            {
-                changesDay3C = 1;
-            }
-            else
-            {
-                changesDay3 = true;
-            }
-        }
-
         private void txtNote3_TextChanged(object sender, EventArgs e)
         {
             if (changesDay3C == 0)
@@ -348,18 +300,6 @@ namespace UserInterface
             else
             {
                 changesDay3 = true;
-            }
-        }
-
-        private void txtHours4_TextChanged(object sender, EventArgs e)
-        {
-            if (changesDay4C == 0)
-            {
-                changesDay4C = 1;
-            }
-            else
-            {
-                changesDay4 = true;
             }
         }
 
@@ -375,18 +315,6 @@ namespace UserInterface
             }
         }
 
-        private void txtHours5_TextChanged(object sender, EventArgs e)
-        {
-            if (changesDay5C == 0)
-            {
-                changesDay5C = 1;
-            }
-            else
-            {
-                changesDay5 = true;
-            }
-        }
-
         private void txtNote5_TextChanged(object sender, EventArgs e)
         {
             if (changesDay5C == 0)
@@ -398,31 +326,7 @@ namespace UserInterface
                 changesDay5 = true;
             }
         }
-
-        private void txtHours6_TextChanged(object sender, EventArgs e)
-        {
-            if (changesDay6C == 0)
-            {
-                changesDay6C = 1;
-            }
-            else
-            {
-                changesDay6 = true;
-            }
-        }
-
-        private void txtHours7_TextChanged(object sender, EventArgs e)
-        {
-            if (changesDay7C == 0)
-            {
-                changesDay7C = 1;
-            }
-            else
-            {
-                changesDay7 = true;
-            }
-        }
-
+        
         private void txtNote7_TextChanged(object sender, EventArgs e)
         {
             if (changesDay7C == 0)
@@ -440,31 +344,31 @@ namespace UserInterface
             updateHoursDetail();
             if (changesDay1)
             {
-                updateDayChanges(Int32.Parse(txtHours1.Text), Int32.Parse(txtHours1.Text), txtNote1.Text, Int32.Parse(lbCodeDB1.Text));
+                updateDayChanges(Double.Parse(txtHours1.Text), Double.Parse(txtHours1.Text), txtNote1.Text, Int32.Parse(lbCodeDB1.Text));
             }
             if (changesDay2)
             {
-                updateDayChanges(Int32.Parse(txtHours2.Text), Int32.Parse(txtHours2.Text), txtNote2.Text, Int32.Parse(lbCodeDB2.Text));
+                updateDayChanges(Double.Parse(txtHours2.Text), Double.Parse(txtHours2.Text), txtNote2.Text, Int32.Parse(lbCodeDB2.Text));
             }
             if (changesDay3)
             {
-                updateDayChanges(Int32.Parse(txtHours3.Text), Int32.Parse(txtHours3.Text), txtNote3.Text, Int32.Parse(lbCodeDB3.Text));
+                updateDayChanges(Double.Parse(txtHours3.Text), Double.Parse(txtHours3.Text), txtNote3.Text, Int32.Parse(lbCodeDB3.Text));
             }
             if (changesDay4)
             {
-                updateDayChanges(Int32.Parse(txtHours4.Text), Int32.Parse(txtHours4.Text), txtNote4.Text, Int32.Parse(lbCodeDB4.Text));
+                updateDayChanges(Double.Parse(txtHours4.Text), Double.Parse(txtHours4.Text), txtNote4.Text, Int32.Parse(lbCodeDB4.Text));
             }
             if (changesDay5)
             {
-                updateDayChanges(Int32.Parse(txtHours5.Text), Int32.Parse(txtHours5.Text), txtNote5.Text, Int32.Parse(lbCodeDB5.Text));
+                updateDayChanges(Double.Parse(txtHours5.Text), Double.Parse(txtHours5.Text), txtNote5.Text, Int32.Parse(lbCodeDB5.Text));
             }
             if (changesDay6)
             {
-                updateDayChanges(Int32.Parse(txtHours6.Text), Int32.Parse(txtHours6.Text), txtNote6.Text, Int32.Parse(lbCodeDB6.Text));
+                updateDayChanges(Double.Parse(txtHours6.Text), Double.Parse(txtHours6.Text), txtNote6.Text, Int32.Parse(lbCodeDB6.Text));
             }
             if (changesDay7)
             {
-                updateDayChanges(Int32.Parse(txtHours7.Text), Int32.Parse(txtHours7.Text), txtNote7.Text, Int32.Parse(lbCodeDB7.Text));
+                updateDayChanges(Double.Parse(txtHours7.Text), Double.Parse(txtHours7.Text), txtNote7.Text, Int32.Parse(lbCodeDB7.Text));
             }
             bool process = new WorkWeekDetail(weekReportCodeDB, ordinaryH, totalH, extraH, 0, 0, 0).UpdateWeekReport();
             if (process)
@@ -479,7 +383,7 @@ namespace UserInterface
             }
         }
 
-        public void updateDayChanges(double oHours, double tHours, String dayNote, int dbCode)
+        public void updateDayChanges(Double oHours, Double tHours, String dayNote, int dbCode)
         {
             new WorkDayDetail(0, oHours, tHours, new DateTime(), dayNote, true, 0, 0).UpdateWorkDay(dbCode);
         }
@@ -490,9 +394,100 @@ namespace UserInterface
             uc.generateReport(week);
         }
 
-        private void lbDay3_Click(object sender, EventArgs e)
+        private void txtHours1_ValueChanged(object sender, EventArgs e)
         {
+            if (changesDay1C == 0)
+            {
+                changesDay1C = 1;
+            }
+            else
+            {
+                changesDay1 = true;
+            }
+        }
 
+        private void txtHours2_ValueChanged(object sender, EventArgs e)
+        {
+            if (changesDay2C == 0)
+            {
+                changesDay2C = 1;
+            }
+            else
+            {
+                changesDay2 = true;
+            }
+        }
+
+        private void txtHours3_ValueChanged(object sender, EventArgs e)
+        {
+            if (changesDay3C == 0)
+            {
+                changesDay3C = 1;
+            }
+            else
+            {
+                changesDay3 = true;
+            }
+        }
+
+        private void txtHours4_ValueChanged(object sender, EventArgs e)
+        {
+            if (changesDay4C == 0)
+            {
+                changesDay4C = 1;
+            }
+            else
+            {
+                changesDay4 = true;
+            }
+        }
+
+        private void txtHours5_ValueChanged(object sender, EventArgs e)
+        {
+            if (changesDay5C == 0)
+            {
+                changesDay5C = 1;
+            }
+            else
+            {
+                changesDay5 = true;
+            }
+        }
+
+        private void txtHours6_ValueChanged(object sender, EventArgs e)
+        {
+            if (changesDay6C == 0)
+            {
+                changesDay6C = 1;
+            }
+            else
+            {
+                changesDay6 = true;
+            }
+        }
+
+        private void txtHours7_ValueChanged(object sender, EventArgs e)
+        {
+            if (changesDay7C == 0)
+            {
+                changesDay7C = 1;
+            }
+            else
+            {
+                changesDay7 = true;
+            }
+        }
+
+        private void txtNote6_TextChanged(object sender, EventArgs e)
+        {
+            if (changesDay6C == 0)
+            {
+                changesDay6C = 1;
+            }
+            else
+            {
+                changesDay6 = true;
+            }
         }
     }
 }
