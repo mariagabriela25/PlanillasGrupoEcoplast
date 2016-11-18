@@ -53,7 +53,7 @@ namespace UserInterface
 
             List<Check> checksList = new List<Check>();
             DateTime fDate2 = fDate;
-            fDate2 = fDate2.AddDays(1);
+            //fDate2 = fDate2.AddDays(1);
             checksList = new Check().GetChecksWithRests(choosenEmployee.Code, iDate, fDate2);
 
             if (checksList != null)
