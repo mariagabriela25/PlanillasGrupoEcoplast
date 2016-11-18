@@ -51,10 +51,11 @@ namespace UserInterface
                 dt.Columns.Add("Total Horas");
                 dt.Columns.Add("Horas Regulares");
                 dt.Columns.Add("Horas Extra");
+                dt.Columns.Add("Cod. Reporte");
 
                 foreach (WorkWeekDetail week in array)
                 {
-                    dt.Rows.Add(week.EmployeeCode, week.Name, week.TotalHours,  week.CCSSHours, week.ExtraHours);
+                    dt.Rows.Add(week.EmployeeCode, week.Name, week.TotalHours,  week.CCSSHours, week.ExtraHours, week.Code);
                 }
                 mg_weeks.DataSource = dt;
             }
@@ -71,12 +72,13 @@ namespace UserInterface
                 dt.Columns.Add("Total Horas");
                 dt.Columns.Add("Horas CCSS");
                 dt.Columns.Add("Horas Extra");
+                dt.Columns.Add("Cod. Reporte");
 
                 list = week.getWeek(week_selected);
 
                 foreach (WorkWeekDetail w in list)
                 {
-                    dt.Rows.Add(w.EmployeeCode, w.Name, w.TotalHours, w.CCSSHours, w.ExtraHours);
+                    dt.Rows.Add(w.EmployeeCode, w.Name, w.TotalHours, w.CCSSHours, w.ExtraHours, w.Code);
                 }
                 mg_weeks.DataSource = dt;
             }
@@ -95,7 +97,9 @@ namespace UserInterface
             int extraHours = Int32.Parse(mg_weeks.Rows[selectedRow].Cells[4].Value.ToString());
             int weekDBCode = Int32.Parse(mg_weeks.Rows[selectedRow].Cells[5].Value.ToString());
 
+            tb_filter.Text = "";
             new EmployeeWeekLaborDetail(week_selected, codeEmployee, totalHours, ordinaryHours, extraHours, weekDBCode, this).Show();
+
         }
 
         private void mbWeekReport_Click(object sender, EventArgs e)
