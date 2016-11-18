@@ -50,6 +50,18 @@ namespace BusinessLogic
             return dwd.SaveWeekDetail(twd);
         }
 
+        public Boolean UpdateWeekReport()
+        {
+            TOWorkWeekDetail twd = new TOWorkWeekDetail();
+            twd.Code = Code;
+            twd.CCSSHours = CCSSHours;
+            twd.TotalHours = TotalHours;
+            twd.ExtraHours = ExtraHours;
+
+            DAOWeekDetail dwd = new DAOWeekDetail();
+            return dwd.UpdateWeekDetail(twd);
+        }
+
         public List<WorkWeekDetail> getWeek(int weekNumber)
         {
             DAOWeekDetail daow = new DAOWeekDetail();
@@ -66,6 +78,7 @@ namespace BusinessLogic
                 w.ExtraHours = week.ExtraHours;
                 w.Name = week.Name;
                 w.TotalHours = week.TotalHours;
+                w.Code = week.Code;
 
                 list.Add(w);
             }

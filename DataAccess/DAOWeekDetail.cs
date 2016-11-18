@@ -50,13 +50,46 @@ namespace DataAccess
             return true;
         }
 
+        public Boolean UpdateWeekDetail(TOWorkWeekDetail twd)
+        {
+            try
+            {
+                SqlCommand query = new SqlCommand("UPDATE DetalleSemanaLaborada SET HorasCCSS = @Ordinary, HorasTotales = @Total, HorasExtras = @Extra WHERE CodSemana = @WeekCode", conex);
+
+                query.Parameters.AddWithValue("@Ordinary", twd.CCSSHours);
+                query.Parameters.AddWithValue("@Total", twd.TotalHours);
+                query.Parameters.AddWithValue("@Extra", twd.ExtraHours);
+                query.Parameters.AddWithValue("@WeekCode", twd.Code);
+
+                if (conex.State != System.Data.ConnectionState.Open)
+                {
+                    conex.Open();
+                }
+                query.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de conexión");
+            }
+            finally
+            {
+                if (conex.State != System.Data.ConnectionState.Closed)
+                {
+                    conex.Close();
+                }
+            }
+
+            return true;
+        }
+
         public List<TOWorkWeekDetail> getWeekPerNumber(int weekNumber)
         {
             List<TOWorkWeekDetail> list = new List<TOWorkWeekDetail>();
 
             try
             {
-                SqlCommand query = new SqlCommand("select e.CodEmpleado, e.Nombre, e.Apellido, s.HorasCCSS, s.HorasTotales, s.HorasExtras from DetalleSemanaLaborada as s inner join Empleado as e on s.CodEmpleado = e.CodEmpleado where NumSemana = @WeekNumber", conex);
+                SqlCommand query = new SqlCommand("select e.CodEmpleado, e.Nombre, e.Apellido, s.HorasCCSS, s.HorasTotales, s.HorasExtras, s.CodSemana from DetalleSemanaLaborada as s inner join Empleado as e on s.CodEmpleado = e.CodEmpleado where NumSemana = @WeekNumber", conex);
                 query.Parameters.AddWithValue("@WeekNumber", weekNumber);
 
                 if (conex.State != ConnectionState.Open)
@@ -77,6 +110,7 @@ namespace DataAccess
                         week.CCSSHours = (Double)reader.GetDecimal(3);
                         week.TotalHours = (Double)reader.GetDecimal(4);
                         week.ExtraHours = (Double)reader.GetDecimal(5);
+                        week.Code = (int)reader.GetInt32(6);
 
                         list.Add(week);
                     }
