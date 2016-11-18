@@ -33,11 +33,8 @@
             this.mpContent = new MetroFramework.Controls.MetroPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
-            this.mpContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // mpMenu
@@ -54,7 +51,6 @@
             // mpContent
             // 
             resources.ApplyResources(this.mpContent, "mpContent");
-            this.mpContent.Controls.Add(this.pictureBox1);
             this.mpContent.HorizontalScrollbar = true;
             this.mpContent.HorizontalScrollbarBarColor = false;
             this.mpContent.HorizontalScrollbarHighlightOnWheel = false;
@@ -81,13 +77,6 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // btnBack
             // 
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -101,20 +90,18 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.mpContent);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.mpMenu);
-            this.Controls.Add(this.mpContent);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.mpContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,7 +112,6 @@
         private MetroFramework.Controls.MetroPanel mpContent;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

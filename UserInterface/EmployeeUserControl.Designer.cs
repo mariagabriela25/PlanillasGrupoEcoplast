@@ -75,7 +75,7 @@
             this.mgEmployees.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgEmployees.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mgEmployees.Location = new System.Drawing.Point(0, 84);
-            this.mgEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mgEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.mgEmployees.Name = "mgEmployees";
             this.mgEmployees.ReadOnly = true;
             this.mgEmployees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -98,7 +98,7 @@
             this.mtModify.ActiveControl = null;
             this.mtModify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtModify.Location = new System.Drawing.Point(1141, 84);
-            this.mtModify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtModify.Margin = new System.Windows.Forms.Padding(4);
             this.mtModify.Name = "mtModify";
             this.mtModify.Size = new System.Drawing.Size(261, 76);
             this.mtModify.Style = MetroFramework.MetroColorStyle.Silver;
@@ -117,7 +117,7 @@
             this.mtDelete.ActiveControl = null;
             this.mtDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtDelete.Location = new System.Drawing.Point(1141, 168);
-            this.mtDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtDelete.Margin = new System.Windows.Forms.Padding(4);
             this.mtDelete.Name = "mtDelete";
             this.mtDelete.Size = new System.Drawing.Size(261, 76);
             this.mtDelete.Style = MetroFramework.MetroColorStyle.Silver;
@@ -136,7 +136,7 @@
             this.mtAdd.ActiveControl = null;
             this.mtAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mtAdd.Location = new System.Drawing.Point(1141, 0);
-            this.mtAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtAdd.Margin = new System.Windows.Forms.Padding(4);
             this.mtAdd.Name = "mtAdd";
             this.mtAdd.Size = new System.Drawing.Size(261, 76);
             this.mtAdd.Style = MetroFramework.MetroColorStyle.Silver;
@@ -157,7 +157,7 @@
             // 
             this.tb_filter.CustomButton.Image = null;
             this.tb_filter.CustomButton.Location = new System.Drawing.Point(274, 2);
-            this.tb_filter.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_filter.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.tb_filter.CustomButton.Name = "";
             this.tb_filter.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.tb_filter.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -168,7 +168,7 @@
             this.tb_filter.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.tb_filter.Lines = new string[0];
             this.tb_filter.Location = new System.Drawing.Point(156, 12);
-            this.tb_filter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_filter.Margin = new System.Windows.Forms.Padding(4);
             this.tb_filter.MaxLength = 32767;
             this.tb_filter.Name = "tb_filter";
             this.tb_filter.PasswordChar = '\0';
@@ -210,7 +210,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_filter);
@@ -218,7 +219,7 @@
             this.Controls.Add(this.mtModify);
             this.Controls.Add(this.mtDelete);
             this.Controls.Add(this.mtAdd);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeUserControl";
             this.Size = new System.Drawing.Size(1402, 727);
             this.Load += new System.EventHandler(this.EmployeeUserControl_Load);

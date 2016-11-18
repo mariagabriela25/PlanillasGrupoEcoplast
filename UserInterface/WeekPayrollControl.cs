@@ -104,6 +104,8 @@ namespace UserInterface
 
         private void mbWeekReport_Click(object sender, EventArgs e)
         {
+            label2.Visible = true;
+            tb_filter.Visible = true;
             generateReport(week_selected);
         }
 
@@ -120,7 +122,6 @@ namespace UserInterface
                 dt.Columns.Add("Cod. Reporte");
 
                 list = week.getWeek(weekS);
-
                 foreach (WorkWeekDetail w in list)
                 {
                     dt.Rows.Add(w.EmployeeCode, w.Name, w.TotalHours, w.CCSSHours, w.ExtraHours, w.Code);
