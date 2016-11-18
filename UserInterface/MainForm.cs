@@ -87,7 +87,15 @@ namespace UserInterface
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("CONFIGURACIÓN");
+            if (!MainForm.Instance.Content.Controls.ContainsKey("ConfigUserControl1"))
+            {
+                ConfigUserControl1 cf = new ConfigUserControl1();
+                cf.Dock = DockStyle.Fill;
+                MainForm.Instance.Content.Controls.Add(cf);
+            }
+            MainForm.Instance.Content.Controls["ConfigUserControl1"].BringToFront();
+            MainForm.Instance.BackButton.Visible = true;
+            MainForm.Instance.LabelTitle.Text = "Configuración de tiempos";
         }
     }
 }

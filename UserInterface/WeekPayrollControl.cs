@@ -121,6 +121,11 @@ namespace UserInterface
                 MessageBox.Show("Primero debe escoger una Semana");
             }
         }
+
+        private void mbAnomaliesReview_Click(object sender, EventArgs e)
+        {
+            new AnomaliesReview().Show();
+        }
     }
     
 }

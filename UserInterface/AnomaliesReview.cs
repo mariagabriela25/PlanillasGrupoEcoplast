@@ -127,7 +127,7 @@ namespace UserInterface
                 if (an.code == empcode && an.currentDay.Equals(currentDate))
                 {
                     list.RemoveAt(a);
-                    new AnomaliesManager().RemoveValue(an.code, an.currentDay.Date);
+                    new AnomaliesManager().RemoveValue(an.code, an.currentDay);
                     break;
                 }
                 a++;

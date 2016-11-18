@@ -21,14 +21,7 @@ namespace BusinessLogic
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
 
-            DateTime date = new DateTime(2016, 11, 21);
-            //int se = 
-
-
-
-            //new AnomaliesManager().AddValue(2, new DateTime(2016, 11, 16, 0, 0, 0));
         }
-
 
     }
 }
