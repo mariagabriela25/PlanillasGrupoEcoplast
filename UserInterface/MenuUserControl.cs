@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogic;
 
 namespace UserInterface
 {
@@ -105,15 +106,24 @@ namespace UserInterface
 
         private void mtExportData_Click(object sender, EventArgs e)
         {
-            if (!MainForm.Instance.Content.Controls.ContainsKey("ExcelExportUserControl"))
+            List<Anomaly> list = new AnomaliesManager().GetValues();
+            if (list.Count() != 0)
             {
-                ExcelExportUserControl uc = new ExcelExportUserControl();
-                uc.Dock = DockStyle.Fill;
-                MainForm.Instance.Content.Controls.Add(uc);
+                MessageBox.Show("¡Existen anomalías pendientes! Debe revisar todas la anomalías antes de exportar los datos a Excel");
             }
-            MainForm.Instance.Content.Controls["ExcelExportUserControl"].BringToFront();
-            MainForm.Instance.BackButton.Visible = true;
-            MainForm.Instance.LabelTitle.Text = "Exportar a Excel";
+            else
+            {
+                if (!MainForm.Instance.Content.Controls.ContainsKey("ExcelExportUserControl"))
+                {
+                    ExcelExportUserControl uc = new ExcelExportUserControl();
+                    uc.Dock = DockStyle.Fill;
+                    MainForm.Instance.Content.Controls.Add(uc);
+                }
+                MainForm.Instance.Content.Controls["ExcelExportUserControl"].BringToFront();
+                MainForm.Instance.BackButton.Visible = true;
+                MainForm.Instance.LabelTitle.Text = "Exportar a Excel";
+            }
+            
         }
     }
 }

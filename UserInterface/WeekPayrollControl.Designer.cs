@@ -51,7 +51,7 @@
             // 
             this.tb_filter.CustomButton.Image = null;
             this.tb_filter.CustomButton.Location = new System.Drawing.Point(780, 2);
-            this.tb_filter.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_filter.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.tb_filter.CustomButton.Name = "";
             this.tb_filter.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.tb_filter.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -62,7 +62,7 @@
             this.tb_filter.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.tb_filter.Lines = new string[0];
             this.tb_filter.Location = new System.Drawing.Point(172, 85);
-            this.tb_filter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_filter.Margin = new System.Windows.Forms.Padding(4);
             this.tb_filter.MaxLength = 32767;
             this.tb_filter.Name = "tb_filter";
             this.tb_filter.PasswordChar = '\0';
@@ -111,7 +111,7 @@
             this.mg_weeks.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mg_weeks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mg_weeks.Location = new System.Drawing.Point(0, 121);
-            this.mg_weeks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mg_weeks.Margin = new System.Windows.Forms.Padding(4);
             this.mg_weeks.Name = "mg_weeks";
             this.mg_weeks.ReadOnly = true;
             this.mg_weeks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -134,7 +134,7 @@
             this.cbo_Weeks.FormattingEnabled = true;
             this.cbo_Weeks.ItemHeight = 24;
             this.cbo_Weeks.Location = new System.Drawing.Point(172, 22);
-            this.cbo_Weeks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbo_Weeks.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_Weeks.Name = "cbo_Weeks";
             this.cbo_Weeks.Size = new System.Drawing.Size(122, 30);
             this.cbo_Weeks.TabIndex = 3;
@@ -146,7 +146,7 @@
             this.mbAnomaliesReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.mbAnomaliesReview.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.mbAnomaliesReview.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.mbAnomaliesReview.Location = new System.Drawing.Point(994, 17);
+            this.mbAnomaliesReview.Location = new System.Drawing.Point(984, 17);
             this.mbAnomaliesReview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mbAnomaliesReview.Name = "mbAnomaliesReview";
             this.mbAnomaliesReview.Size = new System.Drawing.Size(378, 46);
@@ -216,7 +216,7 @@
             this.Controls.Add(this.cbo_Weeks);
             this.Controls.Add(this.mg_weeks);
             this.Controls.Add(this.tb_filter);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WeekPayrollControl";
             this.Size = new System.Drawing.Size(1402, 727);
             this.Load += new System.EventHandler(this.WeekPayrollControl_Load);

@@ -12,7 +12,7 @@ namespace DataAccess
 {
     public class DAOAnviz
     {
-        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexServer);
+        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
         public List<TOCheck> GetChecks(int id, DateTime inicio, DateTime fin)
         {
@@ -162,6 +162,67 @@ namespace DataAccess
 
             return true;
         }
+        public decimal checksbyDate(DateTime date, string type)
+        {
+            DateTime start = date + new TimeSpan(0, 0, 0);
+            DateTime end = date + new TimeSpan(23, 59, 59);
+            SqlCommand query = new SqlCommand();
+
+            try
+            {
+                if (type == "I")
+                {
+                    query = new SqlCommand("  SELECT SUM(TOTALHORAS) FROM DetalleDiaLaborado WHERE  DetalleDiaLaborado.Fecha = @date", conex);
+
+                }
+                else
+                {
+                    query = new SqlCommand("select count(*)  from checkinout where  CheckTime between @start and @end and checktype = 'o'", conex);
+                }
+                query.Parameters.AddWithValue("@date", date);
+
+                query.Parameters.AddWithValue("@start", start);
+                query.Parameters.AddWithValue("@end", end);
+
+
+                if (conex.State != System.Data.ConnectionState.Open)
+                {
+                    conex.Open();
+                }
+                SqlDataReader reader = query.ExecuteReader();
+                decimal number = 0;
+                if (reader.HasRows)
+                {
+
+                    while (reader.Read())
+                    {
+
+                        number = reader.GetDecimal(0);
+
+                    }
+                }
+                else
+                {
+                    return number;
+                }
+
+                if (conex.State != System.Data.ConnectionState.Closed)
+                {
+                    conex.Close();
+                }
+
+                return number;
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show(e.ToString());
+
+            }
+            return 0;
+
+
+        }
 
     }
+
 }

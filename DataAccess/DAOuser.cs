@@ -13,7 +13,7 @@ namespace DataAccess
         public int ID { get; set; }
         public string Password { get; set; }
 
-        SqlConnection con = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexServer);
+        SqlConnection con = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
         public DAOuser()
         {
@@ -51,7 +51,7 @@ namespace DataAccess
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Sus credenciales son incorrectos");
+                MessageBox.Show("Sus credenciales son incorrectos o ocurrió un error en la conexión ¡Inténtelo de nuevo!");
             }
             finally
             {

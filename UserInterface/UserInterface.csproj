@@ -53,6 +53,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -381,6 +382,8 @@
     <Content Include="bin\Debug\UserInterface.pdb" />
     <Content Include="bin\Debug\UserInterface.vshost.exe" />
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\spinner.gif" />
+    <None Include="Resources\spinner2.gif" />
     <None Include="Resources\Material Icons_e869%280%29_64.png" />
     <None Include="Resources\grupo-ecoplast-logo.jpg" />
   </ItemGroup>

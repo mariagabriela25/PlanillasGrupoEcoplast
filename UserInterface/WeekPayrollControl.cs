@@ -136,7 +136,14 @@ namespace UserInterface
 
         private void mbAnomaliesReview_Click(object sender, EventArgs e)
         {
-            new AnomaliesReview().Show();
+            List<Anomaly> list = new AnomaliesManager().GetValues();
+            if (list.Count() != 0)
+            {
+                new AnomaliesReview(list).Show();
+            } else
+            {
+                MessageBox.Show("No existen anomalias pendientes");
+            }
         }
     }
     

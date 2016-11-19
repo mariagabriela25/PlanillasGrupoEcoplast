@@ -12,7 +12,7 @@ namespace DataAccess
 {
     public class DAOWorkDay
     {
-        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexServer);
+        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
         public Boolean AddWorkDayDetail(TOWorkDayDetail workday)
         {

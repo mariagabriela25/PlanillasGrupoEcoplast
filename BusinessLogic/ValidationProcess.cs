@@ -128,7 +128,7 @@ namespace BusinessLogic
                         }
                         if(!flag)
                         {
-                            new AnomaliesManager().AddValue(employee, currentDay.Date);
+                            new AnomaliesManager().AddValue(employee, currentDay);
                             //MessageBox.Show("Intervalo invalido, Dia: " + currentDay.Date);
 
                         }
@@ -140,7 +140,7 @@ namespace BusinessLogic
                     }
                     else
                     {
-                        new AnomaliesManager().AddValue(employee, currentDay.Date);
+                        new AnomaliesManager().AddValue(employee, currentDay);
                         //MessageBox.Show("Marca Ausente, Dia: " + currentDay.Date);
                     }
 

@@ -72,5 +72,11 @@ namespace BusinessLogic
                 return null;
             }
         }
+
+        public decimal checksbyDate(DateTime date, string type)
+        {
+            return new DAOAnviz().checksbyDate(date, type);
+
+        }
     }
 }

@@ -19,11 +19,10 @@ namespace UserInterface
         List<Employee> listEmployees;
         int weekNum;
 
-        public MiddleStepReview(List<LaboredDay> correctLaboredDays, List<Anomaly> list, List<Employee> listEmployees, int weekNumber)
+        public MiddleStepReview(List<LaboredDay> correctLaboredDays, List<Employee> listEmployees, int weekNumber)
         {
             InitializeComponent();
             this.correctLaboredDays = correctLaboredDays;
-            this.list = list;
             this.listEmployees = listEmployees;
             this.weekNum = weekNumber;
         }
@@ -102,19 +101,20 @@ namespace UserInterface
                 }
                 else
                 {
-                   new AnomaliesManager().AddValue(Int32.Parse(row.Cells[0].Value.ToString()), correctLaboredDays[rowNumber].currentDay.Date);
+                   new AnomaliesManager().AddValue(Int32.Parse(row.Cells[0].Value.ToString()), correctLaboredDays[rowNumber].currentDay);
                 }
             }
 
-
+            list = new AnomaliesManager().GetValues();
             if (list.Count != 0)
             {
-                new AnomaliesReview().Show();
+                new AnomaliesReview(list).Show();
                 this.Hide();
             }
             else
             {
                 SaveWeeks();
+                this.Close();
             }            
         }
 

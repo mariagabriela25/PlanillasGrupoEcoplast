@@ -20,33 +20,32 @@ namespace UserInterface
         private int empcode;
         private string empname;
 
-        public AnomaliesReview()
+        public AnomaliesReview(List<Anomaly> list)
         {
             InitializeComponent();
             /////////////////////////////////
-            this.list = new AnomaliesManager().GetValues();
+            this.list = list;
         }
 
         private void AnomaliesReview_Load(object sender, EventArgs e)
         {
-       
-            dt = new DataTable();
-            dt.Columns.Add("Código");
-            dt.Columns.Add("Nombre completo");
-            dt.Columns.Add("    Fecha");
+                dt = new DataTable();
+                dt.Columns.Add("Código");
+                dt.Columns.Add("Nombre completo");
+                dt.Columns.Add("    Fecha");
 
-            CultureInfo ci = new CultureInfo("Es-Es");
+                CultureInfo ci = new CultureInfo("Es-Es");
 
 
-            foreach (Anomaly an in list)
-            {
-                dt.Rows.Add(an.code, an.emp.Name +" "+ an.emp.LastName,"    "+ ci.DateTimeFormat.GetDayName(an.currentDay.DayOfWeek).ToUpper() +" "+an.currentDay.ToString("dd MMMM").ToUpper());
-            }
+                foreach (Anomaly an in list)
+                {
+                    dt.Rows.Add(an.code, an.emp.Name + " " + an.emp.LastName, "    " + ci.DateTimeFormat.GetDayName(an.currentDay.DayOfWeek).ToUpper() + " " + an.currentDay.ToString("dd MMMM").ToUpper());
+                }
 
-            mgEmployee.DataSource = dt;
+                mgEmployee.DataSource = dt;
 
-            mgEmployee.AutoResizeColumns();
-            mgEmployee.AutoResizeRows();
+                mgEmployee.AutoResizeColumns();
+                mgEmployee.AutoResizeRows();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)

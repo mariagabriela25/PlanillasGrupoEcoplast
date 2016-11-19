@@ -104,7 +104,7 @@ namespace UserInterface
             mbCheck.Enabled = true;
             cbDepart.SelectedItem = null;
             mnWeekNum.Value = 1;
-            new MiddleStepReview(listCorrectDays, list, employees, WeekNum).Show();
+            new MiddleStepReview(listCorrectDays, employees, WeekNum).Show();
             this.Hide();
             //if (list.Count != 0)
             //{
