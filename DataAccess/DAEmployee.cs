@@ -14,7 +14,7 @@ namespace DataAccess
 
     public class DAEmployee
     {
-        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
+        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexServer);
 
         public void AddEmployee(TOEmployee employee)
         {

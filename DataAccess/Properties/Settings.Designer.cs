@@ -45,5 +45,16 @@ namespace DataAccess.Properties {
                 return ((string)(this["StringConexAnviz"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ECOSVR001;Initial Catalog=Anziz;Persist Security Info=True;User ID=sa" +
+            ";Password=Ecoplast2016$")]
+        public string StringConexServer {
+            get {
+                return ((string)(this["StringConexServer"]));
+            }
+        }
     }
 }

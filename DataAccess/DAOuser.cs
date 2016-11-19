@@ -13,7 +13,7 @@ namespace DataAccess
         public int ID { get; set; }
         public string Password { get; set; }
 
-        SqlConnection con = new SqlConnection(DataAccess.Properties.Settings.Default.StringConex);
+        SqlConnection con = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexServer);
 
         public DAOuser()
         {

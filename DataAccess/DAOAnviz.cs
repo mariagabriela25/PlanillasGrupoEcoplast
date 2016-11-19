@@ -12,7 +12,7 @@ namespace DataAccess
 {
     public class DAOAnviz
     {
-        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
+        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexServer);
 
         public List<TOCheck> GetChecks(int id, DateTime inicio, DateTime fin)
         {

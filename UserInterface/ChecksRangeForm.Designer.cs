@@ -78,6 +78,8 @@
             this.mgEmployeeRegisteredChecks.AllowUserToAddRows = false;
             this.mgEmployeeRegisteredChecks.AllowUserToDeleteRows = false;
             this.mgEmployeeRegisteredChecks.AllowUserToResizeRows = false;
+            this.mgEmployeeRegisteredChecks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.mgEmployeeRegisteredChecks.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.mgEmployeeRegisteredChecks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mgEmployeeRegisteredChecks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mgEmployeeRegisteredChecks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;

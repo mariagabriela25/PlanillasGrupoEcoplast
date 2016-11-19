@@ -18,6 +18,7 @@ namespace UserInterface
         List<Employee> selectedEmployees;
         Boolean changedIniDate = false;
         Boolean changedFinDate = false;
+        DataTable dt;
 
         public ChecksUserControl()
         {
@@ -26,33 +27,70 @@ namespace UserInterface
 
         private void ChecksUserControl_Load(object sender, EventArgs e)
         {
+            //dt.Columns.Add("Código del Empleado");
+            //dt.Columns.Add("Nombre");
+            //dt.Columns.Add("Apellido");
+            //dt.Columns.Add("Departamento");
+
+            //list = new Employee().GetAllEmployees();
+
+            //foreach (Employee empl in list)
+            //{
+            //    dt.Rows.Add(empl.Code, empl.Name, empl.LastName, empl.Department.Name);
+            //}
+            //mgEmployees.DataSource = dt;
 
             empControl = new Employee();
             selectedEmployees = new List<Employee>();
 
-            mlvEmployees.BeginUpdate();
-            mlvEmployees.Items.Clear();
-            mlvEmployees.View = View.Details;
+            //mlvEmployees.BeginUpdate();
+            //mlvEmployees.Items.Clear();
+            //mlvEmployees.View = View.Details;
 
-            mlvEmployees.Columns.Add("Empleado");
-            mlvEmployees.Columns.Add("Nombre");
-            mlvEmployees.Columns.Add("Departamento");
+            dt = new DataTable();
 
-            mlvEmployees.CheckBoxes = true;
+            dt.Columns.Add("Empleado");
+            dt.Columns.Add("Nombre");
+            dt.Columns.Add("Departamento");
 
             List<Employee> employeesList = empControl.GetAllEmployees();
 
-            foreach (var item in employeesList)
+            foreach (Employee empl in employeesList)
             {
-                ListViewItem lvi;
-                lvi = new ListViewItem(new string[] { "        " + item.Code, item.Name + " " + item.LastName, item.Department.Name });
-                mlvEmployees.Items.Add(lvi);
+                dt.Rows.Add(empl.Code, empl.Name + " " + empl.LastName, empl.Department.Name);
+            }
+            mgEmployeesList.DataSource = dt;
+
+            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+            checkBoxColumn.HeaderText = "";
+            checkBoxColumn.Width = 30;
+            checkBoxColumn.Name = "checkBoxColumn";
+            mgEmployeesList.Columns.Insert(3, checkBoxColumn);
+
+            foreach (DataGridViewRow row in mgEmployeesList.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
             }
 
+            //mlvEmployees.Columns.Add("Empleado");
+            //mlvEmployees.Columns.Add("Nombre");
+            //mlvEmployees.Columns.Add("Departamento");
+
+            //mlvEmployees.CheckBoxes = true;
+
+            //List<Employee> employeesList = empControl.GetAllEmployees();
+
+            //foreach (var item in employeesList)
+            //{
+            //    ListViewItem lvi;
+            //    lvi = new ListViewItem(new string[] { "        " + item.Code, item.Name + " " + item.LastName, item.Department.Name });
+            //    mlvEmployees.Items.Add(lvi);
+            //}
+
+            ////mlvEmployees.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             //mlvEmployees.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            mlvEmployees.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            mlvEmployees.EndUpdate();
-            mlvEmployees.AllowSorting = true;
+            //mlvEmployees.EndUpdate();
+            //mlvEmployees.AllowSorting = true;
 
         }
 
@@ -107,10 +145,21 @@ namespace UserInterface
 
         public void GetSelectedEmployees()
         {
-            foreach (ListViewItem item in mlvEmployees.CheckedItems)
+            foreach (DataGridViewRow row in mgEmployeesList.Rows)
             {
-                selectedEmployees.Add(new Employee(Int32.Parse(item.SubItems[0].Text), item.SubItems[1].Text, "", new Department(0, item.SubItems[2].Text)));
+                int rowNumber = row.Index;
+
+                bool isSelected = Convert.ToBoolean(row.Cells["checkBoxColumn"].Value);
+                if (isSelected)
+                {
+                    selectedEmployees.Add(new Employee(Int32.Parse(row.Cells[0].Value.ToString()), row.Cells[1].Value.ToString(), "", new Department(0, row.Cells[2].Value.ToString())));
+                }
             }
+
+            //foreach (ListViewItem item in mlvEmployees.CheckedItems)
+            //{
+            //    selectedEmployees.Add(new Employee(Int32.Parse(item.SubItems[0].Text), item.SubItems[1].Text, "", new Department(0, item.SubItems[2].Text)));
+            //}
         }
 
         private void mdtInitialDate_ValueChanged(object sender, EventArgs e)
@@ -121,6 +170,11 @@ namespace UserInterface
         private void mdtFinalDate_ValueChanged(object sender, EventArgs e)
         {
             changedFinDate = true;
+        }
+
+        private void mgEmployeesList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

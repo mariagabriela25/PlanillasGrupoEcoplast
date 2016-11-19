@@ -12,7 +12,7 @@ namespace DataAccess
 {
     public class DAOSchedule
     {
-        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConex);
+        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexServer);
 
         public Boolean AddSchedule(TOSchedule newSchedule)
         {

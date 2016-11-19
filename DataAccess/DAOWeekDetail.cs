@@ -12,7 +12,7 @@ namespace DataAccess
 {
     public class DAOWeekDetail
     {
-        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
+        SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexServer);
 
         public Boolean SaveWeekDetail(TOWorkWeekDetail twd)
         {

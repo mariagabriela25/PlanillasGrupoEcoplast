@@ -13,7 +13,7 @@ namespace DataAccess
     public class DADepartment
     {
 
-        SqlConnection conexion = new SqlConnection(DataAccess.Properties.Settings.Default.StringConex);
+        SqlConnection conexion = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexServer);
 
         public void addDepartment(TODepartment dep)
         {

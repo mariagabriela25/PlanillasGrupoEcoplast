@@ -29,14 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChecksUserControl));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.mdtFinalDate = new MetroFramework.Controls.MetroDateTime();
             this.mdtInitialDate = new MetroFramework.Controls.MetroDateTime();
             this.mbSave = new MetroFramework.Controls.MetroButton();
-            this.mlvEmployees = new MetroFramework.Controls.MetroListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mgEmployeesList = new MetroFramework.Controls.MetroGrid();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mgEmployeesList)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -95,23 +99,6 @@
             this.mbSave.UseSelectable = true;
             this.mbSave.Click += new System.EventHandler(this.mbSave_Click);
             // 
-            // mlvEmployees
-            // 
-            this.mlvEmployees.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
-            this.mlvEmployees.AllowSorting = true;
-            this.mlvEmployees.Font = new System.Drawing.Font("Arial", 16F);
-            this.mlvEmployees.FullRowSelect = true;
-            this.mlvEmployees.Location = new System.Drawing.Point(0, 0);
-            this.mlvEmployees.Margin = new System.Windows.Forms.Padding(0);
-            this.mlvEmployees.Name = "mlvEmployees";
-            this.mlvEmployees.OwnerDraw = true;
-            this.mlvEmployees.Size = new System.Drawing.Size(755, 727);
-            this.mlvEmployees.Style = MetroFramework.MetroColorStyle.Lime;
-            this.mlvEmployees.TabIndex = 23;
-            this.mlvEmployees.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.mlvEmployees.UseCompatibleStateImageBehavior = false;
-            this.mlvEmployees.UseSelectable = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -124,12 +111,61 @@
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
+            // mgEmployeesList
+            // 
+            this.mgEmployeesList.AllowUserToAddRows = false;
+            this.mgEmployeesList.AllowUserToDeleteRows = false;
+            this.mgEmployeesList.AllowUserToResizeRows = false;
+            this.mgEmployeesList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.mgEmployeesList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.mgEmployeesList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mgEmployeesList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mgEmployeesList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.mgEmployeesList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mgEmployeesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.mgEmployeesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mgEmployeesList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.mgEmployeesList.EnableHeadersVisualStyles = false;
+            this.mgEmployeesList.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mgEmployeesList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mgEmployeesList.Location = new System.Drawing.Point(0, 0);
+            this.mgEmployeesList.Name = "mgEmployeesList";
+            this.mgEmployeesList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mgEmployeesList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.mgEmployeesList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.mgEmployeesList.RowTemplate.Height = 24;
+            this.mgEmployeesList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.mgEmployeesList.Size = new System.Drawing.Size(774, 727);
+            this.mgEmployeesList.TabIndex = 25;
+            this.mgEmployeesList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgEmployeesList_CellContentClick);
+            // 
             // ChecksUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.mgEmployeesList);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.mlvEmployees);
             this.Controls.Add(this.mbSave);
             this.Controls.Add(this.mdtInitialDate);
             this.Controls.Add(this.mdtFinalDate);
@@ -139,6 +175,7 @@
             this.Size = new System.Drawing.Size(1402, 727);
             this.Load += new System.EventHandler(this.ChecksUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mgEmployeesList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,7 +188,7 @@
         private MetroFramework.Controls.MetroDateTime mdtFinalDate;
         private MetroFramework.Controls.MetroDateTime mdtInitialDate;
         private MetroFramework.Controls.MetroButton mbSave;
-        private MetroFramework.Controls.MetroListView mlvEmployees;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroGrid mgEmployeesList;
     }
 }
