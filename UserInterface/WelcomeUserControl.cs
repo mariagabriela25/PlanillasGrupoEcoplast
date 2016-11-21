@@ -40,7 +40,7 @@ namespace UserInterface
             legend2.Name = "Salidas";
             chart.Legends.Add(legend1);
             chart.Legends.Add(legend2);
-            chart.Location = new System.Drawing.Point(3, 77);
+            chart.Location = new System.Drawing.Point(120, 220);
             chart.Name = "chart";
             chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             chart.PaletteCustomColors = new System.Drawing.Color[] {
@@ -78,7 +78,7 @@ namespace UserInterface
                 time = time.AddDays(3);
             }
 
-            return CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(time, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
+            return CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(time, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
         }
 
         public static DateTime FirstDateOfWeek(int year, int weekOfYear, System.Globalization.CultureInfo ci)
@@ -98,13 +98,18 @@ namespace UserInterface
         {
         
         }
-
+        private int WeekCode(DateTime date)
+        {
+            return System.Globalization.CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+        }
 
         private void load() {
-        
 
-            DateTime startDate = FirstDateOfWeek(2016, 37-1, CultureInfo.CurrentCulture);
-            title.Text += " " + 37 + "   (" + startDate.ToString("dd MMMM, yyyy") + " - " + startDate.AddDays(6).ToString("dd MMMM, yyyy") + ")";
+            DateTime today = DateTime.Now;
+            int weekNo = WeekCode(today);
+
+            DateTime startDate = FirstDateOfWeek(today.Year, weekNo-2, CultureInfo.CurrentCulture);
+            title.Text += " " + Environment.NewLine + "Semana #" + (weekNo-1) + " (" + startDate.ToString("dd MMMM") + " - " + startDate.AddDays(6).ToString("dd MMMM")+")";
             chart.Visible = false;
             chart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             chart.ChartAreas[0].AxisX.MinorGrid.Enabled = false;
@@ -115,7 +120,7 @@ namespace UserInterface
             chart.Series.Clear();
             chart.Series.Add("Horas laboradas");
    
-            String[] days = { "Lunes","Martes","Miercoles","Jueves", "Viernes" , "Sabado", "Domingo" };
+            String[] days = { "Lunes","Martes","Miércoles","Jueves", "Viernes" , "Sábado", "Domingo" };
             for (int i = 0; i < days.Length; i++)
             {
                 DataPoint dp = new DataPoint();
@@ -129,6 +134,7 @@ namespace UserInterface
          
             pb.Visible = false;
             chart.Visible = true;
+            //chart.Location = new Point(701, 300);
         }
     }
 }

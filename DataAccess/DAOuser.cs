@@ -51,7 +51,7 @@ namespace DataAccess
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Sus credenciales son incorrectos o ocurrió un error en la conexión ¡Inténtelo de nuevo!");
+                MessageBox.Show("Sus credenciales son incorrectos u ocurrió un error en la conexión ¡Inténtelo de nuevo!");
             }
             finally
             {

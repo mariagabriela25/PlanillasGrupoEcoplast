@@ -37,32 +37,36 @@
             // 
             this.title.AutoSize = true;
             this.title.BackColor = System.Drawing.Color.White;
-            this.title.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.Location = new System.Drawing.Point(-7, 10);
+            this.title.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Location = new System.Drawing.Point(391, 116);
+            this.title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(520, 37);
+            this.title.Size = new System.Drawing.Size(266, 28);
             this.title.TabIndex = 1;
-            this.title.Text = "Detalle de horas laboradas para la semana";
+            this.title.Text = "Horas laboradas por día";
+            this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pb
             // 
             this.pb.Image = global::UserInterface.Properties.Resources.spinner2;
             this.pb.InitialImage = global::UserInterface.Properties.Resources.spinner;
-            this.pb.Location = new System.Drawing.Point(52, 76);
+            this.pb.Location = new System.Drawing.Point(457, 301);
+            this.pb.Margin = new System.Windows.Forms.Padding(4);
             this.pb.Name = "pb";
-            this.pb.Size = new System.Drawing.Size(293, 273);
+            this.pb.Size = new System.Drawing.Size(391, 336);
             this.pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb.TabIndex = 2;
             this.pb.TabStop = false;
             // 
             // WelcomeUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pb);
             this.Controls.Add(this.title);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WelcomeUserControl";
-            this.Size = new System.Drawing.Size(677, 665);
+            this.Size = new System.Drawing.Size(1402, 727);
             this.Load += new System.EventHandler(this.WelcomeUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb)).EndInit();
             this.ResumeLayout(false);

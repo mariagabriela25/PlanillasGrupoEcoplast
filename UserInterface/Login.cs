@@ -21,7 +21,7 @@ namespace UserInterface
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            this.AcceptButton = mbSave;
         }
 
         private void htmlLabel1_Click(object sender, EventArgs e)

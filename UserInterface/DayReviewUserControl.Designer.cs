@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mnWeekNum = new System.Windows.Forms.NumericUpDown();
             this.mbCheck = new MetroFramework.Controls.MetroButton();
             this.cbDepart = new System.Windows.Forms.ComboBox();
             this.mpgCalculation = new MetroFramework.Controls.MetroProgressBar();
@@ -36,32 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.mnWeekNum)).BeginInit();
+            this.mnWeekNum = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // mnWeekNum
-            // 
-            this.mnWeekNum.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnWeekNum.Location = new System.Drawing.Point(196, 58);
-            this.mnWeekNum.Margin = new System.Windows.Forms.Padding(4);
-            this.mnWeekNum.Maximum = new decimal(new int[] {
-            52,
-            0,
-            0,
-            0});
-            this.mnWeekNum.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.mnWeekNum.Name = "mnWeekNum";
-            this.mnWeekNum.Size = new System.Drawing.Size(88, 34);
-            this.mnWeekNum.TabIndex = 2;
-            this.mnWeekNum.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // mbCheck
             // 
@@ -105,10 +80,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(343, 224);
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(343, 215);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.Size = new System.Drawing.Size(0, 23);
             this.label1.TabIndex = 7;
             // 
             // label2
@@ -131,30 +107,41 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "Departamento:";
             // 
+            // mnWeekNum
+            // 
+            this.mnWeekNum.AutoSize = true;
+            this.mnWeekNum.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnWeekNum.ForeColor = System.Drawing.Color.Red;
+            this.mnWeekNum.Location = new System.Drawing.Point(174, 65);
+            this.mnWeekNum.Name = "mnWeekNum";
+            this.mnWeekNum.Size = new System.Drawing.Size(38, 27);
+            this.mnWeekNum.TabIndex = 18;
+            this.mnWeekNum.Text = "00";
+            // 
             // DayReviewUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 263);
+            this.Controls.Add(this.mnWeekNum);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mpgCalculation);
             this.Controls.Add(this.cbDepart);
             this.Controls.Add(this.mbCheck);
-            this.Controls.Add(this.mnWeekNum);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "DayReviewUserControl";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
+            this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Load += new System.EventHandler(this.DayReviewUserControl_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.mnWeekNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.NumericUpDown mnWeekNum;
         private MetroFramework.Controls.MetroButton mbCheck;
         private System.Windows.Forms.ComboBox cbDepart;
         private MetroFramework.Controls.MetroProgressBar mpgCalculation;
@@ -163,5 +150,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label mnWeekNum;
     }
 }

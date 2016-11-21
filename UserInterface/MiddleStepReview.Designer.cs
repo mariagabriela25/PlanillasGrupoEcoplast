@@ -49,8 +49,8 @@
             this.mgCorrectChecks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -65,15 +65,15 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.mgCorrectChecks.DefaultCellStyle = dataGridViewCellStyle2;
             this.mgCorrectChecks.EnableHeadersVisualStyles = false;
-            this.mgCorrectChecks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mgCorrectChecks.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgCorrectChecks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mgCorrectChecks.Location = new System.Drawing.Point(52, 92);
             this.mgCorrectChecks.Name = "mgCorrectChecks";
             this.mgCorrectChecks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -81,14 +81,14 @@
             this.mgCorrectChecks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgCorrectChecks.RowTemplate.Height = 24;
             this.mgCorrectChecks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgCorrectChecks.Size = new System.Drawing.Size(1008, 571);
+            this.mgCorrectChecks.Size = new System.Drawing.Size(1502, 571);
             this.mgCorrectChecks.TabIndex = 0;
             this.mgCorrectChecks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgCorrectChecks_CellContentClick);
             // 
             // mbSendAnomalies
             // 
             this.mbSendAnomalies.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.mbSendAnomalies.Location = new System.Drawing.Point(718, 699);
+            this.mbSendAnomalies.Location = new System.Drawing.Point(1212, 693);
             this.mbSendAnomalies.Name = "mbSendAnomalies";
             this.mbSendAnomalies.Size = new System.Drawing.Size(342, 49);
             this.mbSendAnomalies.TabIndex = 1;
@@ -100,10 +100,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 788);
+            this.ClientSize = new System.Drawing.Size(1612, 788);
             this.Controls.Add(this.mbSendAnomalies);
             this.Controls.Add(this.mgCorrectChecks);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MiddleStepReview";
+            this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Marcas Correctas";
             this.Load += new System.EventHandler(this.MiddleStepReview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mgCorrectChecks)).EndInit();

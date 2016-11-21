@@ -35,16 +35,24 @@ namespace UserInterface
 
         private void mbCheck_Click(object sender, EventArgs e)
         {
-            WeekNum = Int32.Parse(mnWeekNum.Value.ToString());
-            list = new List<Anomaly>();
-            listCorrectDays = new List<LaboredDay>();
-            SundayDate = CalcWeekNum(WeekNum);
             CodDepartment = ((Department)cbDepart.SelectedItem).Code;
-            employees = new Employee().GetEmployeesDep(CodDepartment);
-            mpgCalculation.Maximum = employees.Count;
-            mpgCalculation.Value = 0;
-            backgroundWorker2.RunWorkerAsync();
-            mbCheck.Enabled = false;
+            
+            if (new AnomaliesManager().DepartmentInAnomaly(CodDepartment))
+            {
+                MessageBox.Show("¡Ya se calcularon las horas laboradas en este departamento en la semana " + mnWeekNum.Text + "! Elija otro departamento para continuar...");
+            }
+            else
+            {
+                WeekNum = Int32.Parse(mnWeekNum.Text);
+                list = new List<Anomaly>();
+                listCorrectDays = new List<LaboredDay>();
+                SundayDate = CalcWeekNum(WeekNum);
+                employees = new Employee().GetEmployeesDep(CodDepartment);
+                mpgCalculation.Maximum = employees.Count;
+                mpgCalculation.Value = 0;
+                backgroundWorker2.RunWorkerAsync();
+                mbCheck.Enabled = false;
+            }
         }
 
         public DateTime CalcWeekNum(int weeknum)
@@ -62,7 +70,8 @@ namespace UserInterface
 
         private void DayReviewUserControl_Load(object sender, EventArgs e)
         {
-
+            //mnWeekNum.Text = (System.Globalization.CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday) -1) + "";
+            mnWeekNum.Text = "37";
             List<Department> list = new Department().GetAllDepartment();
             cbDepart.DisplayMember = "Name";
             cbDepart.ValueMember = "Code";
@@ -72,6 +81,7 @@ namespace UserInterface
             }
 
             backgroundWorker2.WorkerReportsProgress = true;
+
         }
 
         private void cbDepart_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,7 +113,7 @@ namespace UserInterface
         {
             mbCheck.Enabled = true;
             cbDepart.SelectedItem = null;
-            mnWeekNum.Value = 1;
+            mnWeekNum.Text = 1+"";
             new MiddleStepReview(listCorrectDays, employees, WeekNum).Show();
             this.Hide();
             //if (list.Count != 0)

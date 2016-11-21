@@ -66,7 +66,67 @@ namespace UserInterface
                 DataGridViewRow selectedRow = mgEmployee.Rows[selectedrowindex];
                 int a = Convert.ToInt32(selectedRow.Cells["Código"].Value);
                 String name = Convert.ToString(selectedRow.Cells["Nombre completo"].Value);
-                DateTime d = Convert.ToDateTime(selectedRow.Cells["    Fecha"].Value);
+
+                String dateString = selectedRow.Cells["    Fecha"].Value.ToString();
+                String[] dateStringVector = dateString.Split(' ');
+
+                String month = dateStringVector[6];
+                int convertedMonth = 0;
+
+                switch (month)
+                {
+                    case "ENERO":
+                        convertedMonth = 1;
+                        break;
+                    case "FEBRERO":
+                        convertedMonth = 2;
+                        break;
+                    case "MARZO":
+                        convertedMonth = 3;
+                        break;
+                    case "ABRIL":
+                        convertedMonth = 4;
+                        break;
+                    case "MAYO":
+                        convertedMonth = 5;
+                        break;
+                    case "JUNIO":
+                        convertedMonth = 6;
+                        break;
+                    case "JULIO":
+                        convertedMonth = 7;
+                        break;
+                    case "AGOSTO":
+                        convertedMonth = 8;
+                        break;
+                    case "SEPTIEMBRE":
+                        MessageBox.Show("Entro al SEPTIEMBRE del switch");
+                        convertedMonth = 9;
+                        break;
+                    case "OCTUBRE":
+                        convertedMonth = 10;
+                        break;
+                    case "NOVIEMBRE":
+                        convertedMonth = 11;
+                        break;
+                    case "DICIEMBRE":
+                        convertedMonth = 12;
+                        break;
+                }
+
+                int tdtY = DateTime.Now.Year;
+                MessageBox.Show("Año " + tdtY);
+
+                int tdtM = convertedMonth;
+                MessageBox.Show("Mes " + convertedMonth);
+
+                int tdtD = int.Parse(dateStringVector[5]);
+                MessageBox.Show("Día " + tdtD);
+
+                DateTime d = new DateTime(tdtY, tdtM, tdtD);
+
+                //DateTime d = Convert.ToDateTime(selectedRow.Cells["    Fecha"].Value);
+
                 empcode = a;
                 empname = name;
                 currentDate = d;
@@ -77,7 +137,7 @@ namespace UserInterface
                     if (item.code == a && item.currentDay.Equals(d))
                     {
                         lbFecha.Text = "Revisión para "+ name + " el "+ d.ToString("dd MMMM, yyyy");
-                        lbJornada.Text = " para jornada del " + d.ToString("dd MMMM, yyyy");
+                        lbJornada.Text = " para el " + d.ToString("dd MMMM, yyyy");
                         Employee em = new Employee();
                         em.Code = a;
                         em = em.GetEmployee();
@@ -176,6 +236,11 @@ namespace UserInterface
         private int WeekCode(DateTime date)
         {
             return System.Globalization.CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+        }
+
+        private void mgEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
