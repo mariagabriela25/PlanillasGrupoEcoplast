@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic;
+using System.Threading;
 
 namespace UserInterface
 {
@@ -82,14 +83,13 @@ namespace UserInterface
 
         }
 
-        private void mgCorrectChecks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        void SendAnomalies()
         {
+            mgCorrectChecks.Enabled = true;
+            mbSendAnomalies.Enabled = true;
 
-        }
-
-        private void mbSendAnomalies_Click(object sender, EventArgs e)
-        {
             string message = string.Empty;
+
             foreach (DataGridViewRow row in mgCorrectChecks.Rows)
             {
                 int rowNumber = row.Index;
@@ -101,21 +101,31 @@ namespace UserInterface
                 }
                 else
                 {
-                   new AnomaliesManager().AddValue(Int32.Parse(row.Cells[0].Value.ToString()), correctLaboredDays[rowNumber].currentDay);
+                    new AnomaliesManager().AddValue(Int32.Parse(row.Cells[0].Value.ToString()), correctLaboredDays[rowNumber].currentDay);
                 }
             }
 
             list = new AnomaliesManager().GetValues();
+            
+            Thread.Sleep(1000);
+        }
+
+        private void mbSendAnomalies_Click(object sender, EventArgs e)
+        {
+            using (var waitForm = new WaitForm(SendAnomalies))
+            {
+                waitForm.ShowDialog(this);
+            }
             if (list.Count != 0)
             {
-                new AnomaliesReview(list).Show();
                 this.Hide();
+                new AnomaliesReview(list).Show();
             }
             else
             {
                 SaveWeeks();
                 this.Close();
-            }            
+            }
         }
 
         public void SaveWeeks()
@@ -134,6 +144,7 @@ namespace UserInterface
                     extras = total - ccss;
                 }
                 new WorkWeekDetail(1, ccss, total, extras, emp.Code, weekNum, DateTime.Now.Year).SaveWeekReport();
+                
             }
             //MessageBox.Show("¡Se guardaron los días laborados seleccionados!");
         }

@@ -100,7 +100,6 @@ namespace UserInterface
                         convertedMonth = 8;
                         break;
                     case "SEPTIEMBRE":
-                        MessageBox.Show("Entro al SEPTIEMBRE del switch");
                         convertedMonth = 9;
                         break;
                     case "OCTUBRE":
@@ -115,13 +114,8 @@ namespace UserInterface
                 }
 
                 int tdtY = DateTime.Now.Year;
-                MessageBox.Show("Año " + tdtY);
-
                 int tdtM = convertedMonth;
-                MessageBox.Show("Mes " + convertedMonth);
-
                 int tdtD = int.Parse(dateStringVector[5]);
-                MessageBox.Show("Día " + tdtD);
 
                 DateTime d = new DateTime(tdtY, tdtM, tdtD);
 

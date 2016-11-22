@@ -159,6 +159,12 @@
     <Compile Include="PswChangeForm.Designer.cs">
       <DependentUpon>PswChangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WeekDetailUserControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     <EmbeddedResource Include="AnomaliesReview.resx">
       <DependentUpon>AnomaliesReview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BreakChecks.resx">
+      <DependentUpon>BreakChecks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChecksRangeForm.resx">
       <DependentUpon>ChecksRangeForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -284,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PswChangeForm.resx">
       <DependentUpon>PswChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeekDetailUserControl.resx">
       <DependentUpon>WeekDetailUserControl.cs</DependentUpon>

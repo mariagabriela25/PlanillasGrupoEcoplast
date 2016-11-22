@@ -81,14 +81,13 @@
             this.mgCorrectChecks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgCorrectChecks.RowTemplate.Height = 24;
             this.mgCorrectChecks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgCorrectChecks.Size = new System.Drawing.Size(1502, 571);
+            this.mgCorrectChecks.Size = new System.Drawing.Size(1297, 571);
             this.mgCorrectChecks.TabIndex = 0;
-            this.mgCorrectChecks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mgCorrectChecks_CellContentClick);
             // 
             // mbSendAnomalies
             // 
             this.mbSendAnomalies.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.mbSendAnomalies.Location = new System.Drawing.Point(1212, 693);
+            this.mbSendAnomalies.Location = new System.Drawing.Point(1007, 702);
             this.mbSendAnomalies.Name = "mbSendAnomalies";
             this.mbSendAnomalies.Size = new System.Drawing.Size(342, 49);
             this.mbSendAnomalies.TabIndex = 1;
@@ -100,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1612, 788);
+            this.ClientSize = new System.Drawing.Size(1405, 788);
             this.Controls.Add(this.mbSendAnomalies);
             this.Controls.Add(this.mgCorrectChecks);
             this.MaximizeBox = false;
