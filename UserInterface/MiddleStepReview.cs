@@ -30,6 +30,7 @@ namespace UserInterface
 
         private void MiddleStepReview_Load(object sender, EventArgs e)
         {
+
             dt = new DataTable();
             dt.Columns.Add("#");
             dt.Columns.Add("Empleado");

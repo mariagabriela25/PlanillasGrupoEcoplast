@@ -141,7 +141,7 @@ namespace UserInterface
                         lblist.Text = "";
                         foreach (Schedule s in schedules)
                         {
-                            lblist.Text += "\n -> Hora de inicio: " + s.InitialHour.ToString("HH:mm") +"  |   Hora de salida: "+ s.finalHour.ToString("HH:mm") +" <-\n";
+                            lblist.Text += "-> Hora de inicio: " + s.InitialHour.ToString("HH:mm") +"  |   Hora de salida: "+ s.finalHour.ToString("HH:mm") +" <-\n";
                         }
 
                         List<Check> checks = new Check().GetChecks(em.Code, d + new TimeSpan(0, 0, 0), d.AddDays(1).Date + new TimeSpan(23,59,59));
@@ -211,6 +211,9 @@ namespace UserInterface
             mgEmployee.AutoResizeColumns();
             mgEmployee.AutoResizeRows();
 
+            richTextBox1.Text = "";
+            fullHour.Value = 0;
+            halfHour.Value = 0;
         }
 
         private double calculateTotal() {

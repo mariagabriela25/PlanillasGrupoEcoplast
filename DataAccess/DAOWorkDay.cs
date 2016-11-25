@@ -182,5 +182,82 @@ namespace DataAccess
 
         }
 
+        public List<int> getEmployeesCalculatedWeek(int week)
+        {
+            List<int> returnList = new List<int>();
+            try
+            {
+                SqlCommand query = new SqlCommand("select CodEmpleado from detalledialaborado where CodSemana = @WeekCode group by CodEmpleado;", conex);
+                query.Parameters.AddWithValue("@WeekCode", week);
+
+                if (conex.State != System.Data.ConnectionState.Open)
+                {
+                    conex.Open();
+                }
+
+                SqlDataReader reader = query.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        int e = reader.GetInt32(0);
+                        returnList.Add(e);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de conexión");
+            }
+            finally
+            {
+                if (conex.State != System.Data.ConnectionState.Closed)
+                {
+                    conex.Close();
+                }
+            }
+            return returnList;
+        }
+
+        public int CalculatedDepartments(int week)
+        {
+            int result = 0;
+            try
+            {
+                SqlCommand query = new SqlCommand("select e.CodDepartamento from Empleado as e Join DetalleDiaLaborado as d on e.CodEmpleado = d.CodEmpleado where CodSemana = @Week group by e.CodDepartamento;", conex);
+                query.Parameters.AddWithValue("@Week", week);
+
+                if (conex.State != System.Data.ConnectionState.Open)
+                {
+                    conex.Open();
+                }
+
+                SqlDataReader reader = query.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        result += 1;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de conexión");
+            }
+            finally
+            {
+                if (conex.State != System.Data.ConnectionState.Closed)
+                {
+                    conex.Close();
+                }
+            }
+            return result;
+        }
+
     }
 }

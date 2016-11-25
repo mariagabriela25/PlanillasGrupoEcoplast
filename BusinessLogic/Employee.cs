@@ -113,6 +113,19 @@ namespace BusinessLogic
             return new DAEmployee().GetTotalHoursPerWeek(code, week);
         }
 
+        public List<int> getEmployeesCalculatedWeek(int week)
+        {
+            DAOWorkDay dwd = new DAOWorkDay();
+            List<int> employeesRegistered = dwd.getEmployeesCalculatedWeek(week);
+            List<int> returnList = new List<int>();
 
+            foreach (int item in employeesRegistered)
+            {
+                returnList.Add(item);
+            }
+
+            return returnList;
+        }
+        
     }
 }

@@ -99,6 +99,24 @@ namespace BusinessLogic
             List<int> list = dao.getWeekNumbers(codeEmployee);
             return list;
         }
+
+        public Boolean isComplete(int week)
+        {
+            Boolean result = false;
+
+            int calculatedDepartments = new DAOWorkDay().CalculatedDepartments(week);
+            List<TODepartment> departments = new DADepartment().GetAllDepartments();
+            int departmentsAmount = departments.Count;
+
+            Boolean isWeekInTable = new DAOWeekDetail().isWeekSaved(week);
+
+            if (calculatedDepartments == departmentsAmount && !isWeekInTable)
+            {
+                result = true;
+            }
+
+            return result;
+        }
     }
 
     

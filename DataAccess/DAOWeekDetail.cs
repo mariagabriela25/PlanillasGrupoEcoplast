@@ -208,5 +208,41 @@ namespace DataAccess
             }
             return weeks;
         }
+
+        public Boolean isWeekSaved(int week)
+        {
+            Boolean result = false;
+            try
+            {
+                SqlCommand query = new SqlCommand("select NumSemana from DetalleSemanaLaborada where NumSemana = @Week;", conex);
+                query.Parameters.AddWithValue("@Week", week);
+
+
+                if (conex.State != ConnectionState.Open)
+                {
+                    conex.Open();
+                }
+
+                SqlDataReader reader = query.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    result = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de conexión");
+            }
+            finally
+            {
+                if (conex.State != System.Data.ConnectionState.Closed)
+                {
+                    conex.Close();
+                }
+            }
+            return result;
+        }
     }
 }

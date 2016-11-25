@@ -33,11 +33,11 @@ namespace DataAccess
                 }
 
                 query.ExecuteNonQuery();
-
+                MessageBox.Show("¡El empleado fue agregado con éxito!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de conexión");
+                MessageBox.Show("¡Ocurrió un error! Inténtelo de nuevo.");
             }
             finally
             {

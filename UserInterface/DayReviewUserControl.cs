@@ -33,6 +33,15 @@ namespace UserInterface
             System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-CR");
         }
 
+        public DayReviewUserControl(MiddleStepReview msr)
+        {
+            InitializeComponent();
+            EstandarDate = DateTime.Now;
+            firstDayOfWeek = DayOfWeek.Monday;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-CR");
+            msr.Dispose();
+        }
+
         private void mbCheck_Click(object sender, EventArgs e)
         {
             CodDepartment = ((Department)cbDepart.SelectedItem).Code;
@@ -71,7 +80,6 @@ namespace UserInterface
         private void DayReviewUserControl_Load(object sender, EventArgs e)
         {
             mnWeekNum.Text = (System.Globalization.CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday) -1) + "";
-            //mnWeekNum.Text = "37";
             List<Department> list = new Department().GetAllDepartment();
             cbDepart.DisplayMember = "Name";
             cbDepart.ValueMember = "Code";
@@ -111,44 +119,30 @@ namespace UserInterface
 
         private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+
             mbCheck.Enabled = true;
             cbDepart.SelectedItem = null;
-            mnWeekNum.Text = 1+"";
-            new MiddleStepReview(listCorrectDays, employees, WeekNum).Show();
-            this.Hide();
-            //if (list.Count != 0)
-            //{
-            //    new MiddleStepReview(listCorrectDays, list, employees).Show();
+            if (listCorrectDays.Count > 0)
+            {
+                new MiddleStepReview(listCorrectDays, employees, WeekNum).Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("¡No se registraron MARCAS CORRECTAS para este departamento!");
+                List<Anomaly> anomaliesGottenList = new AnomaliesManager().GetValues();
+                if (anomaliesGottenList.Count != 0)
+                {
+                    this.Hide();
+                    new AnomaliesReview(anomaliesGottenList).Show();
+                }
+                else
+                {
+                    MessageBox.Show("¡No se registraron ANOMALÍAS para este departamento!");
+                }
 
-            //    //new AnomaliesReview(list, WeekNum, employees).Show();
-
-            //}
-            //else
-            //{
-            //    new MiddleStepReview(listCorrectDays, list, employees).Show();
-            //    //SaveWeeks();
-            //}
-
+            }
         }
 
-        //public void SaveWeeks()
-        //{
-        //    foreach (Employee emp in employees)
-        //    {
-        //        double total = new Employee().GetTotalHours(emp.Code, WeekNum);
-        //        double ccss = 48;
-        //        double extras = 0;
-        //        if (total <= 48)
-        //        {
-        //            ccss = total;
-        //        }
-        //        else
-        //        {
-        //            extras = total - ccss;
-        //        }
-        //        new WorkWeekDetail(1, ccss, total, extras, emp.Code, WeekNum, DateTime.Now.Year).SaveWeekReport();
-        //    }
-        //    MessageBox.Show("Se guardó el detalle de la semana");
-        //}
     }
 }

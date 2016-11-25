@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mbCreateReport = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.mg_weeks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -125,7 +126,7 @@
             this.mg_weeks.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mg_weeks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mg_weeks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mg_weeks.Size = new System.Drawing.Size(978, 606);
+            this.mg_weeks.Size = new System.Drawing.Size(978, 535);
             this.mg_weeks.TabIndex = 2;
             this.mg_weeks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mg_weeks_CellContentClick);
             // 
@@ -202,12 +203,24 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // mbCreateReport
+            // 
+            this.mbCreateReport.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.mbCreateReport.Location = new System.Drawing.Point(11, 678);
+            this.mbCreateReport.Name = "mbCreateReport";
+            this.mbCreateReport.Size = new System.Drawing.Size(1190, 46);
+            this.mbCreateReport.TabIndex = 19;
+            this.mbCreateReport.Text = "Crear Reporte Semanal Semana";
+            this.mbCreateReport.UseSelectable = true;
+            this.mbCreateReport.Click += new System.EventHandler(this.mbCreateReport_Click);
+            // 
             // WeekPayrollControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.Controls.Add(this.mbCreateReport);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -237,5 +250,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private MetroFramework.Controls.MetroButton mbCreateReport;
     }
 }

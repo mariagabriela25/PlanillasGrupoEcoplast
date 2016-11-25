@@ -8,33 +8,52 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic;
+using System.Globalization;
+using System.Windows.Controls;
 
 namespace UserInterface
 {
     public partial class WeekPayrollControl : MetroFramework.Controls.MetroUserControl
     {
 
+        List<int> weeksExistence;
         List<WorkWeekDetail> list;
         private WorkWeekDetail week;
         private DataTable dt;
         int week_selected;
+        int calculationWeek;
 
         public WeekPayrollControl()
         {
             InitializeComponent();
+            DateTime date = DateTime.Now;
+            calculationWeek = System.Globalization.CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            calculationWeek -= 1;
         }
+
+    
 
         private void WeekPayrollControl_Load(object sender, EventArgs e)
         {
+            mbCreateReport.Text += " " + calculationWeek;
             week = new WorkWeekDetail();
             list = new List<WorkWeekDetail>();
+            weeksExistence = week.getWeekNumbers();
             
-            cbo_Weeks.DataSource = week.getWeekNumbers();
+            foreach (int w in weeksExistence)
+            {
+                ComboBoxItem item = new ComboBoxItem();
+                item.Content = w;
+                cbo_Weeks.Items.Add(item);
+            }
+
+            cbo_Weeks.DisplayMember = "Content";
+            
         }
 
         private void cbo_weekSelection(object sender, EventArgs e)
         {
-            week_selected = (Int32) cbo_Weeks.SelectedValue;
+         
         }
 
         private void filter(object sender, EventArgs e)
@@ -104,9 +123,19 @@ namespace UserInterface
 
         private void mbWeekReport_Click(object sender, EventArgs e)
         {
-            label2.Visible = true;
-            tb_filter.Visible = true;
-            generateReport(week_selected);
+            if (cbo_Weeks.SelectedItem != null)
+            {
+                ComboBoxItem selection = (ComboBoxItem)cbo_Weeks.SelectedItem;
+                String selectionString = selection.Content.ToString();
+                week_selected = int.Parse(selectionString);
+                label2.Visible = true;
+                tb_filter.Visible = true;
+                generateReport(week_selected);
+            }
+            else
+            {
+                MessageBox.Show("Primero debe elegir la semana que desea consultar");
+            }
         }
 
         public void generateReport(int weekS)
@@ -145,6 +174,36 @@ namespace UserInterface
                 MessageBox.Show("No existen anomalias pendientes");
             }
         }
+
+        private void mbCreateReport_Click(object sender, EventArgs e)
+        {
+            if (new WorkWeekDetail().isComplete(calculationWeek))
+            {
+                List<int> eList = new Employee().getEmployeesCalculatedWeek(calculationWeek);
+
+                foreach (int emp in eList)
+                {
+                    double total = new Employee().GetTotalHours(emp, calculationWeek);
+                    double ccss = 48;
+                    double extras = 0;
+                    if (total <= 48)
+                    {
+                        ccss = total;
+                    }
+                    else
+                    {
+                        extras = total - ccss;
+                    }
+                    new WorkWeekDetail(1, ccss, total, extras, emp, calculationWeek, DateTime.Now.Year).SaveWeekReport();
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("¡Aún faltan departamentos de calcular o el reporte semanal para esta semana ya existe!");
+            }
+       
+    }
     }
     
 }
