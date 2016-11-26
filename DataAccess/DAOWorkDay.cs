@@ -259,5 +259,41 @@ namespace DataAccess
             return result;
         }
 
+        public Boolean isDepartmentRegistered(int dCode, int week)
+        {
+            Boolean result = false;
+            try
+            {
+                SqlCommand query = new SqlCommand("select e.CodDepartamento from Empleado as e Join DetalleDiaLaborado as d on e.CodEmpleado = d.CodEmpleado where CodSemana = @Week and e.CodDepartamento = @DepartCode;", conex);
+                query.Parameters.AddWithValue("@Week", week);
+                query.Parameters.AddWithValue("@DepartCode", dCode);
+
+                if (conex.State != System.Data.ConnectionState.Open)
+                {
+                    conex.Open();
+                }
+
+                SqlDataReader reader = query.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    result = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de conexión");
+            }
+            finally
+            {
+                if (conex.State != System.Data.ConnectionState.Closed)
+                {
+                    conex.Close();
+                }
+            }
+            return result;
+        }
+
     }
 }

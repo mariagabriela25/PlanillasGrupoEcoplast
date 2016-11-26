@@ -93,5 +93,10 @@ namespace BusinessLogic
             return list;
         }
 
+        public Boolean isDepartmentRegistered(int departmentCode, int weekNum)
+        {
+            return new DAOWorkDay().isDepartmentRegistered(departmentCode, weekNum);
+        }
+
     }
 }

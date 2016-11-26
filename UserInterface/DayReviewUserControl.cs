@@ -44,9 +44,10 @@ namespace UserInterface
 
         private void mbCheck_Click(object sender, EventArgs e)
         {
+            WeekNum = Int32.Parse(mnWeekNum.Text);
             CodDepartment = ((Department)cbDepart.SelectedItem).Code;
             
-            if (new AnomaliesManager().DepartmentInAnomaly(CodDepartment))
+            if (new AnomaliesManager().DepartmentInAnomaly(CodDepartment) || new WorkDayDetail().isDepartmentRegistered(CodDepartment, WeekNum))
             {
                 MessageBox.Show("¡Ya se calcularon las horas laboradas en este departamento en la semana " + mnWeekNum.Text + "! Elija otro departamento para continuar...");
             }

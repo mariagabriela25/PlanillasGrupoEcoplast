@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic;
+using System.Globalization;
 
 namespace UserInterface
 {
@@ -106,10 +107,15 @@ namespace UserInterface
 
         private void mtExportData_Click(object sender, EventArgs e)
         {
+            int w = System.Globalization.CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday) - 1;
             List<Anomaly> list = new AnomaliesManager().GetValues();
             if (list.Count() != 0)
             {
                 MessageBox.Show("¡Existen anomalías pendientes! Debe revisar todas la anomalías antes de exportar los datos a Excel");
+            }
+            else if (!(new WorkWeekDetail().isComplete(w)))
+            {
+                MessageBox.Show("¡Faltan departamentos por calcular!");
             }
             else
             {
@@ -122,8 +128,7 @@ namespace UserInterface
                 MainForm.Instance.Content.Controls["ExcelExportUserControl"].BringToFront();
                 MainForm.Instance.BackButton.Visible = true;
                 MainForm.Instance.LabelTitle.Text = "Exportar a Excel";
-            }
-            
+            }            
         }
     }
 }
