@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDepartmentForm));
             this.mlCode = new MetroFramework.Controls.MetroLabel();
             this.mbSave = new MetroFramework.Controls.MetroButton();
             this.mtbCode = new MetroFramework.Controls.MetroTextBox();
@@ -133,6 +134,7 @@
             this.Controls.Add(this.mtbCode);
             this.Controls.Add(this.mbSave);
             this.Controls.Add(this.mlCode);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddDepartmentForm";
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Agregar Departamento";

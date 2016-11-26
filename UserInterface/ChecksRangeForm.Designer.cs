@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChecksRangeForm));
             this.lbEmployeeNumber = new System.Windows.Forms.Label();
             this.lbEmployeeName = new System.Windows.Forms.Label();
             this.lbDepartment = new System.Windows.Forms.Label();
@@ -46,9 +47,10 @@
             // 
             this.lbEmployeeNumber.AutoSize = true;
             this.lbEmployeeNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmployeeNumber.Location = new System.Drawing.Point(56, 78);
+            this.lbEmployeeNumber.Location = new System.Drawing.Point(42, 63);
+            this.lbEmployeeNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbEmployeeNumber.Name = "lbEmployeeNumber";
-            this.lbEmployeeNumber.Size = new System.Drawing.Size(32, 24);
+            this.lbEmployeeNumber.Size = new System.Drawing.Size(27, 19);
             this.lbEmployeeNumber.TabIndex = 0;
             this.lbEmployeeNumber.Text = "00";
             // 
@@ -56,9 +58,10 @@
             // 
             this.lbEmployeeName.AutoSize = true;
             this.lbEmployeeName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmployeeName.Location = new System.Drawing.Point(91, 78);
+            this.lbEmployeeName.Location = new System.Drawing.Point(68, 63);
+            this.lbEmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbEmployeeName.Name = "lbEmployeeName";
-            this.lbEmployeeName.Size = new System.Drawing.Size(172, 24);
+            this.lbEmployeeName.Size = new System.Drawing.Size(143, 19);
             this.lbEmployeeName.TabIndex = 1;
             this.lbEmployeeName.Text = "lbEmployeeName";
             // 
@@ -67,9 +70,10 @@
             this.lbDepartment.AutoSize = true;
             this.lbDepartment.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDepartment.ForeColor = System.Drawing.Color.Red;
-            this.lbDepartment.Location = new System.Drawing.Point(56, 34);
+            this.lbDepartment.Location = new System.Drawing.Point(42, 28);
+            this.lbDepartment.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDepartment.Name = "lbDepartment";
-            this.lbDepartment.Size = new System.Drawing.Size(167, 29);
+            this.lbDepartment.Size = new System.Drawing.Size(135, 22);
             this.lbDepartment.TabIndex = 2;
             this.lbDepartment.Text = "lbDepartment";
             // 
@@ -105,7 +109,8 @@
             this.mgEmployeeRegisteredChecks.EnableHeadersVisualStyles = false;
             this.mgEmployeeRegisteredChecks.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgEmployeeRegisteredChecks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mgEmployeeRegisteredChecks.Location = new System.Drawing.Point(49, 124);
+            this.mgEmployeeRegisteredChecks.Location = new System.Drawing.Point(37, 101);
+            this.mgEmployeeRegisteredChecks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mgEmployeeRegisteredChecks.Name = "mgEmployeeRegisteredChecks";
             this.mgEmployeeRegisteredChecks.ReadOnly = true;
             this.mgEmployeeRegisteredChecks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -122,7 +127,7 @@
             this.mgEmployeeRegisteredChecks.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.mgEmployeeRegisteredChecks.RowTemplate.Height = 30;
             this.mgEmployeeRegisteredChecks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgEmployeeRegisteredChecks.Size = new System.Drawing.Size(772, 436);
+            this.mgEmployeeRegisteredChecks.Size = new System.Drawing.Size(579, 354);
             this.mgEmployeeRegisteredChecks.TabIndex = 3;
             // 
             // lbDates
@@ -130,9 +135,10 @@
             this.lbDates.AutoSize = true;
             this.lbDates.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDates.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lbDates.Location = new System.Drawing.Point(253, 37);
+            this.lbDates.Location = new System.Drawing.Point(190, 30);
+            this.lbDates.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDates.Name = "lbDates";
-            this.lbDates.Size = new System.Drawing.Size(65, 24);
+            this.lbDates.Size = new System.Drawing.Size(54, 19);
             this.lbDates.TabIndex = 4;
             this.lbDates.Text = "label1";
             // 
@@ -141,10 +147,9 @@
             this.mbPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.mbPrint.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.mbPrint.ForeColor = System.Drawing.Color.Lime;
-            this.mbPrint.Location = new System.Drawing.Point(751, 64);
-            this.mbPrint.Margin = new System.Windows.Forms.Padding(4);
+            this.mbPrint.Location = new System.Drawing.Point(563, 52);
             this.mbPrint.Name = "mbPrint";
-            this.mbPrint.Size = new System.Drawing.Size(70, 38);
+            this.mbPrint.Size = new System.Drawing.Size(52, 31);
             this.mbPrint.Style = MetroFramework.MetroColorStyle.Lime;
             this.mbPrint.TabIndex = 23;
             this.mbPrint.Text = "PDF";
@@ -153,18 +158,21 @@
             // 
             // ChecksRangeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(874, 905);
+            this.ClientSize = new System.Drawing.Size(656, 735);
             this.Controls.Add(this.mbPrint);
             this.Controls.Add(this.lbDates);
             this.Controls.Add(this.mgEmployeeRegisteredChecks);
             this.Controls.Add(this.lbDepartment);
             this.Controls.Add(this.lbEmployeeName);
             this.Controls.Add(this.lbEmployeeNumber);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ChecksRangeForm";
+            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Load += new System.EventHandler(this.ChecksRangeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mgEmployeeRegisteredChecks)).EndInit();

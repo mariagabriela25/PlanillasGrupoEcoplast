@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WaitForm));
             this.lbMessage = new System.Windows.Forms.Label();
             this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
             this.SuspendLayout();
@@ -36,34 +37,39 @@
             // 
             this.lbMessage.AutoSize = true;
             this.lbMessage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMessage.Location = new System.Drawing.Point(23, 132);
+            this.lbMessage.Location = new System.Drawing.Point(17, 107);
+            this.lbMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMessage.Name = "lbMessage";
-            this.lbMessage.Size = new System.Drawing.Size(317, 23);
+            this.lbMessage.Size = new System.Drawing.Size(250, 18);
             this.lbMessage.TabIndex = 0;
             this.lbMessage.Text = "Registrando entradas aprobadas...";
             this.lbMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // metroProgressSpinner1
             // 
-            this.metroProgressSpinner1.Location = new System.Drawing.Point(174, 32);
+            this.metroProgressSpinner1.Location = new System.Drawing.Point(130, 26);
+            this.metroProgressSpinner1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.metroProgressSpinner1.Maximum = 100;
             this.metroProgressSpinner1.Name = "metroProgressSpinner1";
-            this.metroProgressSpinner1.Size = new System.Drawing.Size(88, 69);
+            this.metroProgressSpinner1.Size = new System.Drawing.Size(66, 56);
             this.metroProgressSpinner1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroProgressSpinner1.TabIndex = 1;
             this.metroProgressSpinner1.UseSelectable = true;
             // 
             // WaitForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 175);
+            this.ClientSize = new System.Drawing.Size(354, 142);
             this.Controls.Add(this.metroProgressSpinner1);
             this.Controls.Add(this.lbMessage);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
             this.Name = "WaitForm";
+            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
             this.Resizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Style = MetroFramework.MetroColorStyle.Lime;

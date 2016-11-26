@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PswChangeForm));
             this.l_oldpsw = new MetroFramework.Controls.MetroTextBox();
             this.l_newpsw = new MetroFramework.Controls.MetroTextBox();
             this.l_newpsw2 = new MetroFramework.Controls.MetroTextBox();
@@ -43,10 +44,9 @@
             // 
             // 
             this.l_oldpsw.CustomButton.Image = null;
-            this.l_oldpsw.CustomButton.Location = new System.Drawing.Point(315, 1);
-            this.l_oldpsw.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.l_oldpsw.CustomButton.Location = new System.Drawing.Point(177, 2);
             this.l_oldpsw.CustomButton.Name = "";
-            this.l_oldpsw.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.l_oldpsw.CustomButton.Size = new System.Drawing.Size(17, 19);
             this.l_oldpsw.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.l_oldpsw.CustomButton.TabIndex = 1;
             this.l_oldpsw.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -54,8 +54,7 @@
             this.l_oldpsw.CustomButton.Visible = false;
             this.l_oldpsw.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.l_oldpsw.Lines = new string[0];
-            this.l_oldpsw.Location = new System.Drawing.Point(32, 123);
-            this.l_oldpsw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.l_oldpsw.Location = new System.Drawing.Point(24, 100);
             this.l_oldpsw.MaxLength = 32767;
             this.l_oldpsw.Name = "l_oldpsw";
             this.l_oldpsw.PasswordChar = '●';
@@ -64,7 +63,7 @@
             this.l_oldpsw.SelectionLength = 0;
             this.l_oldpsw.SelectionStart = 0;
             this.l_oldpsw.ShortcutsEnabled = true;
-            this.l_oldpsw.Size = new System.Drawing.Size(349, 35);
+            this.l_oldpsw.Size = new System.Drawing.Size(262, 28);
             this.l_oldpsw.TabIndex = 0;
             this.l_oldpsw.UseSelectable = true;
             this.l_oldpsw.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -76,10 +75,9 @@
             // 
             // 
             this.l_newpsw.CustomButton.Image = null;
-            this.l_newpsw.CustomButton.Location = new System.Drawing.Point(315, 1);
-            this.l_newpsw.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.l_newpsw.CustomButton.Location = new System.Drawing.Point(177, 2);
             this.l_newpsw.CustomButton.Name = "";
-            this.l_newpsw.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.l_newpsw.CustomButton.Size = new System.Drawing.Size(17, 19);
             this.l_newpsw.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.l_newpsw.CustomButton.TabIndex = 1;
             this.l_newpsw.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -87,8 +85,7 @@
             this.l_newpsw.CustomButton.Visible = false;
             this.l_newpsw.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.l_newpsw.Lines = new string[0];
-            this.l_newpsw.Location = new System.Drawing.Point(32, 218);
-            this.l_newpsw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.l_newpsw.Location = new System.Drawing.Point(24, 177);
             this.l_newpsw.MaxLength = 32767;
             this.l_newpsw.Name = "l_newpsw";
             this.l_newpsw.PasswordChar = '●';
@@ -97,7 +94,7 @@
             this.l_newpsw.SelectionLength = 0;
             this.l_newpsw.SelectionStart = 0;
             this.l_newpsw.ShortcutsEnabled = true;
-            this.l_newpsw.Size = new System.Drawing.Size(349, 35);
+            this.l_newpsw.Size = new System.Drawing.Size(262, 28);
             this.l_newpsw.TabIndex = 1;
             this.l_newpsw.UseSelectable = true;
             this.l_newpsw.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -109,10 +106,9 @@
             // 
             // 
             this.l_newpsw2.CustomButton.Image = null;
-            this.l_newpsw2.CustomButton.Location = new System.Drawing.Point(315, 1);
-            this.l_newpsw2.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.l_newpsw2.CustomButton.Location = new System.Drawing.Point(177, 2);
             this.l_newpsw2.CustomButton.Name = "";
-            this.l_newpsw2.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.l_newpsw2.CustomButton.Size = new System.Drawing.Size(17, 19);
             this.l_newpsw2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.l_newpsw2.CustomButton.TabIndex = 1;
             this.l_newpsw2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -120,8 +116,7 @@
             this.l_newpsw2.CustomButton.Visible = false;
             this.l_newpsw2.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.l_newpsw2.Lines = new string[0];
-            this.l_newpsw2.Location = new System.Drawing.Point(31, 327);
-            this.l_newpsw2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.l_newpsw2.Location = new System.Drawing.Point(23, 266);
             this.l_newpsw2.MaxLength = 32767;
             this.l_newpsw2.Name = "l_newpsw2";
             this.l_newpsw2.PasswordChar = '●';
@@ -130,7 +125,7 @@
             this.l_newpsw2.SelectionLength = 0;
             this.l_newpsw2.SelectionStart = 0;
             this.l_newpsw2.ShortcutsEnabled = true;
-            this.l_newpsw2.Size = new System.Drawing.Size(349, 35);
+            this.l_newpsw2.Size = new System.Drawing.Size(262, 28);
             this.l_newpsw2.TabIndex = 4;
             this.l_newpsw2.UseSelectable = true;
             this.l_newpsw2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -139,10 +134,9 @@
             // b_Save
             // 
             this.b_Save.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.b_Save.Location = new System.Drawing.Point(32, 401);
-            this.b_Save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.b_Save.Location = new System.Drawing.Point(24, 326);
             this.b_Save.Name = "b_Save";
-            this.b_Save.Size = new System.Drawing.Size(348, 61);
+            this.b_Save.Size = new System.Drawing.Size(261, 50);
             this.b_Save.TabIndex = 6;
             this.b_Save.Text = "Cambiar Contraseña";
             this.b_Save.UseSelectable = true;
@@ -152,9 +146,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 90);
+            this.label1.Location = new System.Drawing.Point(22, 73);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 24);
+            this.label1.Size = new System.Drawing.Size(168, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "Digite la contraseña actual:";
             // 
@@ -162,9 +157,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 185);
+            this.label2.Location = new System.Drawing.Point(22, 150);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 24);
+            this.label2.Size = new System.Drawing.Size(170, 20);
             this.label2.TabIndex = 17;
             this.label2.Text = "Digite la nueva contraseña:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -173,17 +169,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 294);
+            this.label3.Location = new System.Drawing.Point(22, 239);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(272, 24);
+            this.label3.Size = new System.Drawing.Size(222, 20);
             this.label3.TabIndex = 18;
             this.label3.Text = "Digite otra vez la contraseña nueva:";
             // 
             // PswChangeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 506);
+            this.ClientSize = new System.Drawing.Size(378, 411);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -191,9 +188,8 @@
             this.Controls.Add(this.l_newpsw2);
             this.Controls.Add(this.l_newpsw);
             this.Controls.Add(this.l_oldpsw);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PswChangeForm";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Cambio de contraseña";
             this.Load += new System.EventHandler(this.PswChangeForm_Load);

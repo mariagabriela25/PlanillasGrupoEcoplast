@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEmployeeForm));
             this.mtCod = new MetroFramework.Controls.MetroTextBox();
             this.mtName = new MetroFramework.Controls.MetroTextBox();
             this.mtLastName = new MetroFramework.Controls.MetroTextBox();
@@ -184,7 +185,7 @@
             this.mlDepart.AutoSize = true;
             this.mlDepart.Location = new System.Drawing.Point(23, 248);
             this.mlDepart.Name = "mlDepart";
-            this.mlDepart.Size = new System.Drawing.Size(94, 19);
+            this.mlDepart.Size = new System.Drawing.Size(95, 19);
             this.mlDepart.TabIndex = 10;
             this.mlDepart.Text = "Departamento";
             // 
@@ -202,6 +203,7 @@
             this.Controls.Add(this.mtLastName);
             this.Controls.Add(this.mtName);
             this.Controls.Add(this.mtCod);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddEmployeeForm";
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Agregar Empleado";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeWeekLaborDetail));
             this.lbDepartment = new System.Windows.Forms.Label();
             this.lbNumberNameEmployee = new System.Windows.Forms.Label();
             this.lbWeekNo = new System.Windows.Forms.Label();
@@ -104,9 +105,10 @@
             this.lbDepartment.AutoSize = true;
             this.lbDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDepartment.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbDepartment.Location = new System.Drawing.Point(491, 60);
+            this.lbDepartment.Location = new System.Drawing.Point(368, 49);
+            this.lbDepartment.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDepartment.Name = "lbDepartment";
-            this.lbDepartment.Size = new System.Drawing.Size(140, 25);
+            this.lbDepartment.Size = new System.Drawing.Size(118, 20);
             this.lbDepartment.TabIndex = 0;
             this.lbDepartment.Text = "lbDepartment";
             // 
@@ -114,9 +116,10 @@
             // 
             this.lbNumberNameEmployee.AutoSize = true;
             this.lbNumberNameEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumberNameEmployee.Location = new System.Drawing.Point(441, 156);
+            this.lbNumberNameEmployee.Location = new System.Drawing.Point(331, 127);
+            this.lbNumberNameEmployee.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNumberNameEmployee.Name = "lbNumberNameEmployee";
-            this.lbNumberNameEmployee.Size = new System.Drawing.Size(251, 24);
+            this.lbNumberNameEmployee.Size = new System.Drawing.Size(198, 18);
             this.lbNumberNameEmployee.TabIndex = 1;
             this.lbNumberNameEmployee.Text = "lbNumberNameEmployee";
             // 
@@ -124,9 +127,10 @@
             // 
             this.lbWeekNo.AutoSize = true;
             this.lbWeekNo.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWeekNo.Location = new System.Drawing.Point(473, 110);
+            this.lbWeekNo.Location = new System.Drawing.Point(355, 89);
+            this.lbWeekNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbWeekNo.Name = "lbWeekNo";
-            this.lbWeekNo.Size = new System.Drawing.Size(84, 23);
+            this.lbWeekNo.Size = new System.Drawing.Size(67, 20);
             this.lbWeekNo.TabIndex = 3;
             this.lbWeekNo.Text = "lbWeekNo";
             // 
@@ -134,9 +138,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(363, 268);
+            this.label2.Location = new System.Drawing.Point(272, 218);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 22);
+            this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "Ordinarias";
             // 
@@ -144,9 +149,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(541, 268);
+            this.label3.Location = new System.Drawing.Point(406, 218);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 22);
+            this.label3.Size = new System.Drawing.Size(41, 17);
             this.label3.TabIndex = 9;
             this.label3.Text = "Extras";
             // 
@@ -154,9 +160,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(471, 231);
+            this.label5.Location = new System.Drawing.Point(353, 188);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 36);
+            this.label5.Size = new System.Drawing.Size(28, 29);
             this.label5.TabIndex = 11;
             this.label5.Text = "+";
             // 
@@ -164,18 +171,20 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(632, 231);
+            this.label6.Location = new System.Drawing.Point(474, 188);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 36);
+            this.label6.Size = new System.Drawing.Size(28, 29);
             this.label6.TabIndex = 12;
             this.label6.Text = "=";
             // 
             // metroButton1
             // 
             this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.metroButton1.Location = new System.Drawing.Point(400, 912);
+            this.metroButton1.Location = new System.Drawing.Point(300, 741);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(292, 60);
+            this.metroButton1.Size = new System.Drawing.Size(219, 49);
             this.metroButton1.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroButton1.TabIndex = 13;
             this.metroButton1.Text = "Guardar Cambios";
@@ -186,9 +195,10 @@
             // 
             this.lbDay1.AutoSize = true;
             this.lbDay1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDay1.Location = new System.Drawing.Point(190, 405);
+            this.lbDay1.Location = new System.Drawing.Point(142, 329);
+            this.lbDay1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDay1.Name = "lbDay1";
-            this.lbDay1.Size = new System.Drawing.Size(107, 24);
+            this.lbDay1.Size = new System.Drawing.Size(85, 20);
             this.lbDay1.TabIndex = 14;
             this.lbDay1.Text = "lbDay1Date1";
             this.lbDay1.Visible = false;
@@ -196,9 +206,10 @@
             // mbRequestChecks
             // 
             this.mbRequestChecks.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.mbRequestChecks.Location = new System.Drawing.Point(72, 912);
+            this.mbRequestChecks.Location = new System.Drawing.Point(54, 741);
+            this.mbRequestChecks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mbRequestChecks.Name = "mbRequestChecks";
-            this.mbRequestChecks.Size = new System.Drawing.Size(272, 60);
+            this.mbRequestChecks.Size = new System.Drawing.Size(204, 49);
             this.mbRequestChecks.Style = MetroFramework.MetroColorStyle.Lime;
             this.mbRequestChecks.TabIndex = 21;
             this.mbRequestChecks.Text = "Solicitar Marcas";
@@ -209,9 +220,10 @@
             // 
             this.lbH1.AutoSize = true;
             this.lbH1.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbH1.Location = new System.Drawing.Point(313, 407);
+            this.lbH1.Location = new System.Drawing.Point(235, 331);
+            this.lbH1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbH1.Name = "lbH1";
-            this.lbH1.Size = new System.Drawing.Size(49, 22);
+            this.lbH1.Size = new System.Drawing.Size(38, 17);
             this.lbH1.TabIndex = 22;
             this.lbH1.Text = "H. L:";
             this.lbH1.Visible = false;
@@ -220,9 +232,10 @@
             // 
             this.lbN1.AutoSize = true;
             this.lbN1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbN1.Location = new System.Drawing.Point(504, 405);
+            this.lbN1.Location = new System.Drawing.Point(378, 329);
+            this.lbN1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbN1.Name = "lbN1";
-            this.lbN1.Size = new System.Drawing.Size(57, 23);
+            this.lbN1.Size = new System.Drawing.Size(45, 18);
             this.lbN1.TabIndex = 29;
             this.lbN1.Text = "Nota:";
             this.lbN1.Visible = false;
@@ -230,9 +243,10 @@
             // txtNote1
             // 
             this.txtNote1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote1.Location = new System.Drawing.Point(582, 399);
+            this.txtNote1.Location = new System.Drawing.Point(436, 324);
+            this.txtNote1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNote1.Name = "txtNote1";
-            this.txtNote1.Size = new System.Drawing.Size(467, 30);
+            this.txtNote1.Size = new System.Drawing.Size(351, 26);
             this.txtNote1.TabIndex = 37;
             this.txtNote1.Visible = false;
             this.txtNote1.TextChanged += new System.EventHandler(this.txtNote1_TextChanged);
@@ -240,9 +254,10 @@
             // txtNote2
             // 
             this.txtNote2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote2.Location = new System.Drawing.Point(582, 473);
+            this.txtNote2.Location = new System.Drawing.Point(436, 384);
+            this.txtNote2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNote2.Name = "txtNote2";
-            this.txtNote2.Size = new System.Drawing.Size(467, 30);
+            this.txtNote2.Size = new System.Drawing.Size(351, 26);
             this.txtNote2.TabIndex = 57;
             this.txtNote2.Visible = false;
             this.txtNote2.TextChanged += new System.EventHandler(this.txtNote2_TextChanged);
@@ -251,9 +266,10 @@
             // 
             this.lbN2.AutoSize = true;
             this.lbN2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbN2.Location = new System.Drawing.Point(505, 479);
+            this.lbN2.Location = new System.Drawing.Point(379, 389);
+            this.lbN2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbN2.Name = "lbN2";
-            this.lbN2.Size = new System.Drawing.Size(57, 23);
+            this.lbN2.Size = new System.Drawing.Size(45, 18);
             this.lbN2.TabIndex = 56;
             this.lbN2.Text = "Nota:";
             this.lbN2.Visible = false;
@@ -262,9 +278,10 @@
             // 
             this.lbH2.AutoSize = true;
             this.lbH2.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbH2.Location = new System.Drawing.Point(313, 475);
+            this.lbH2.Location = new System.Drawing.Point(235, 386);
+            this.lbH2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbH2.Name = "lbH2";
-            this.lbH2.Size = new System.Drawing.Size(49, 22);
+            this.lbH2.Size = new System.Drawing.Size(38, 17);
             this.lbH2.TabIndex = 55;
             this.lbH2.Text = "H. L:";
             this.lbH2.Visible = false;
@@ -273,9 +290,10 @@
             // 
             this.lbDay2.AutoSize = true;
             this.lbDay2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDay2.Location = new System.Drawing.Point(190, 477);
+            this.lbDay2.Location = new System.Drawing.Point(142, 388);
+            this.lbDay2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDay2.Name = "lbDay2";
-            this.lbDay2.Size = new System.Drawing.Size(64, 24);
+            this.lbDay2.Size = new System.Drawing.Size(53, 20);
             this.lbDay2.TabIndex = 54;
             this.lbDay2.Text = "label27";
             this.lbDay2.Visible = false;
@@ -284,9 +302,10 @@
             // 
             this.lbDay4.AutoSize = true;
             this.lbDay4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDay4.Location = new System.Drawing.Point(190, 619);
+            this.lbDay4.Location = new System.Drawing.Point(142, 503);
+            this.lbDay4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDay4.Name = "lbDay4";
-            this.lbDay4.Size = new System.Drawing.Size(64, 24);
+            this.lbDay4.Size = new System.Drawing.Size(53, 20);
             this.lbDay4.TabIndex = 65;
             this.lbDay4.Text = "label10";
             this.lbDay4.Visible = false;
@@ -295,9 +314,10 @@
             // 
             this.lbH3.AutoSize = true;
             this.lbH3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbH3.Location = new System.Drawing.Point(313, 547);
+            this.lbH3.Location = new System.Drawing.Point(235, 444);
+            this.lbH3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbH3.Name = "lbH3";
-            this.lbH3.Size = new System.Drawing.Size(52, 23);
+            this.lbH3.Size = new System.Drawing.Size(40, 18);
             this.lbH3.TabIndex = 60;
             this.lbH3.Text = "H. L:";
             this.lbH3.Visible = false;
@@ -306,9 +326,10 @@
             // 
             this.lbDay3.AutoSize = true;
             this.lbDay3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDay3.Location = new System.Drawing.Point(190, 550);
+            this.lbDay3.Location = new System.Drawing.Point(142, 447);
+            this.lbDay3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDay3.Name = "lbDay3";
-            this.lbDay3.Size = new System.Drawing.Size(64, 24);
+            this.lbDay3.Size = new System.Drawing.Size(53, 20);
             this.lbDay3.TabIndex = 59;
             this.lbDay3.Text = "label15";
             this.lbDay3.Visible = false;
@@ -317,9 +338,10 @@
             // 
             this.lbDay6.AutoSize = true;
             this.lbDay6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDay6.Location = new System.Drawing.Point(190, 762);
+            this.lbDay6.Location = new System.Drawing.Point(142, 619);
+            this.lbDay6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDay6.Name = "lbDay6";
-            this.lbDay6.Size = new System.Drawing.Size(64, 24);
+            this.lbDay6.Size = new System.Drawing.Size(53, 20);
             this.lbDay6.TabIndex = 76;
             this.lbDay6.Text = "label18";
             this.lbDay6.Visible = false;
@@ -328,9 +350,10 @@
             // 
             this.lbDay5.AutoSize = true;
             this.lbDay5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDay5.Location = new System.Drawing.Point(190, 688);
+            this.lbDay5.Location = new System.Drawing.Point(142, 559);
+            this.lbDay5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDay5.Name = "lbDay5";
-            this.lbDay5.Size = new System.Drawing.Size(64, 24);
+            this.lbDay5.Size = new System.Drawing.Size(53, 20);
             this.lbDay5.TabIndex = 70;
             this.lbDay5.Text = "label23";
             this.lbDay5.Visible = false;
@@ -339,9 +362,10 @@
             // 
             this.lbDay7.AutoSize = true;
             this.lbDay7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDay7.Location = new System.Drawing.Point(190, 831);
+            this.lbDay7.Location = new System.Drawing.Point(142, 675);
+            this.lbDay7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDay7.Name = "lbDay7";
-            this.lbDay7.Size = new System.Drawing.Size(64, 24);
+            this.lbDay7.Size = new System.Drawing.Size(53, 20);
             this.lbDay7.TabIndex = 81;
             this.lbDay7.Text = "label33";
             this.lbDay7.Visible = false;
@@ -350,9 +374,10 @@
             // 
             this.lbDate1.AutoSize = true;
             this.lbDate1.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate1.Location = new System.Drawing.Point(68, 406);
+            this.lbDate1.Location = new System.Drawing.Point(51, 330);
+            this.lbDate1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDate1.Name = "lbDate1";
-            this.lbDate1.Size = new System.Drawing.Size(63, 23);
+            this.lbDate1.Size = new System.Drawing.Size(50, 20);
             this.lbDate1.TabIndex = 87;
             this.lbDate1.Text = "label10";
             this.lbDate1.Visible = false;
@@ -361,9 +386,10 @@
             // 
             this.lbDate3.AutoSize = true;
             this.lbDate3.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate3.Location = new System.Drawing.Point(68, 551);
+            this.lbDate3.Location = new System.Drawing.Point(51, 448);
+            this.lbDate3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDate3.Name = "lbDate3";
-            this.lbDate3.Size = new System.Drawing.Size(63, 23);
+            this.lbDate3.Size = new System.Drawing.Size(50, 20);
             this.lbDate3.TabIndex = 88;
             this.lbDate3.Text = "label10";
             this.lbDate3.Visible = false;
@@ -372,9 +398,10 @@
             // 
             this.lbDate5.AutoSize = true;
             this.lbDate5.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate5.Location = new System.Drawing.Point(68, 689);
+            this.lbDate5.Location = new System.Drawing.Point(51, 560);
+            this.lbDate5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDate5.Name = "lbDate5";
-            this.lbDate5.Size = new System.Drawing.Size(63, 23);
+            this.lbDate5.Size = new System.Drawing.Size(50, 20);
             this.lbDate5.TabIndex = 89;
             this.lbDate5.Text = "label10";
             this.lbDate5.Visible = false;
@@ -383,9 +410,10 @@
             // 
             this.lbDate7.AutoSize = true;
             this.lbDate7.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate7.Location = new System.Drawing.Point(68, 832);
+            this.lbDate7.Location = new System.Drawing.Point(51, 676);
+            this.lbDate7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDate7.Name = "lbDate7";
-            this.lbDate7.Size = new System.Drawing.Size(63, 23);
+            this.lbDate7.Size = new System.Drawing.Size(50, 20);
             this.lbDate7.TabIndex = 90;
             this.lbDate7.Text = "label10";
             this.lbDate7.Visible = false;
@@ -394,9 +422,10 @@
             // 
             this.lbDate2.AutoSize = true;
             this.lbDate2.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate2.Location = new System.Drawing.Point(68, 480);
+            this.lbDate2.Location = new System.Drawing.Point(51, 390);
+            this.lbDate2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDate2.Name = "lbDate2";
-            this.lbDate2.Size = new System.Drawing.Size(63, 23);
+            this.lbDate2.Size = new System.Drawing.Size(50, 20);
             this.lbDate2.TabIndex = 91;
             this.lbDate2.Text = "label10";
             this.lbDate2.Visible = false;
@@ -405,9 +434,10 @@
             // 
             this.lbDate4.AutoSize = true;
             this.lbDate4.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate4.Location = new System.Drawing.Point(68, 620);
+            this.lbDate4.Location = new System.Drawing.Point(51, 504);
+            this.lbDate4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDate4.Name = "lbDate4";
-            this.lbDate4.Size = new System.Drawing.Size(63, 23);
+            this.lbDate4.Size = new System.Drawing.Size(50, 20);
             this.lbDate4.TabIndex = 92;
             this.lbDate4.Text = "label10";
             this.lbDate4.Visible = false;
@@ -416,9 +446,10 @@
             // 
             this.lbDate6.AutoSize = true;
             this.lbDate6.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate6.Location = new System.Drawing.Point(68, 763);
+            this.lbDate6.Location = new System.Drawing.Point(51, 620);
+            this.lbDate6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDate6.Name = "lbDate6";
-            this.lbDate6.Size = new System.Drawing.Size(63, 23);
+            this.lbDate6.Size = new System.Drawing.Size(50, 20);
             this.lbDate6.TabIndex = 93;
             this.lbDate6.Text = "label10";
             this.lbDate6.Visible = false;
@@ -427,9 +458,10 @@
             // 
             this.lbCodeDB1.AutoSize = true;
             this.lbCodeDB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodeDB1.Location = new System.Drawing.Point(931, 405);
+            this.lbCodeDB1.Location = new System.Drawing.Point(698, 329);
+            this.lbCodeDB1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCodeDB1.Name = "lbCodeDB1";
-            this.lbCodeDB1.Size = new System.Drawing.Size(77, 24);
+            this.lbCodeDB1.Size = new System.Drawing.Size(61, 18);
             this.lbCodeDB1.TabIndex = 94;
             this.lbCodeDB1.Text = "label10";
             this.lbCodeDB1.Visible = false;
@@ -438,9 +470,10 @@
             // 
             this.lbCodeDB3.AutoSize = true;
             this.lbCodeDB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodeDB3.Location = new System.Drawing.Point(931, 544);
+            this.lbCodeDB3.Location = new System.Drawing.Point(698, 442);
+            this.lbCodeDB3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCodeDB3.Name = "lbCodeDB3";
-            this.lbCodeDB3.Size = new System.Drawing.Size(77, 24);
+            this.lbCodeDB3.Size = new System.Drawing.Size(61, 18);
             this.lbCodeDB3.TabIndex = 95;
             this.lbCodeDB3.Text = "label10";
             this.lbCodeDB3.Visible = false;
@@ -449,9 +482,10 @@
             // 
             this.lbCodeDB5.AutoSize = true;
             this.lbCodeDB5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodeDB5.Location = new System.Drawing.Point(931, 688);
+            this.lbCodeDB5.Location = new System.Drawing.Point(698, 559);
+            this.lbCodeDB5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCodeDB5.Name = "lbCodeDB5";
-            this.lbCodeDB5.Size = new System.Drawing.Size(77, 24);
+            this.lbCodeDB5.Size = new System.Drawing.Size(61, 18);
             this.lbCodeDB5.TabIndex = 96;
             this.lbCodeDB5.Text = "label10";
             this.lbCodeDB5.Visible = false;
@@ -460,9 +494,10 @@
             // 
             this.lbCodeDB2.AutoSize = true;
             this.lbCodeDB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodeDB2.Location = new System.Drawing.Point(931, 477);
+            this.lbCodeDB2.Location = new System.Drawing.Point(698, 388);
+            this.lbCodeDB2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCodeDB2.Name = "lbCodeDB2";
-            this.lbCodeDB2.Size = new System.Drawing.Size(77, 24);
+            this.lbCodeDB2.Size = new System.Drawing.Size(61, 18);
             this.lbCodeDB2.TabIndex = 97;
             this.lbCodeDB2.Text = "label10";
             this.lbCodeDB2.Visible = false;
@@ -471,9 +506,10 @@
             // 
             this.lbCodeDB4.AutoSize = true;
             this.lbCodeDB4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodeDB4.Location = new System.Drawing.Point(931, 615);
+            this.lbCodeDB4.Location = new System.Drawing.Point(698, 500);
+            this.lbCodeDB4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCodeDB4.Name = "lbCodeDB4";
-            this.lbCodeDB4.Size = new System.Drawing.Size(77, 24);
+            this.lbCodeDB4.Size = new System.Drawing.Size(61, 18);
             this.lbCodeDB4.TabIndex = 98;
             this.lbCodeDB4.Text = "label10";
             this.lbCodeDB4.Visible = false;
@@ -482,9 +518,10 @@
             // 
             this.lbCodeDB6.AutoSize = true;
             this.lbCodeDB6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodeDB6.Location = new System.Drawing.Point(931, 759);
+            this.lbCodeDB6.Location = new System.Drawing.Point(698, 617);
+            this.lbCodeDB6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCodeDB6.Name = "lbCodeDB6";
-            this.lbCodeDB6.Size = new System.Drawing.Size(77, 24);
+            this.lbCodeDB6.Size = new System.Drawing.Size(61, 18);
             this.lbCodeDB6.TabIndex = 99;
             this.lbCodeDB6.Text = "label10";
             this.lbCodeDB6.Visible = false;
@@ -493,9 +530,10 @@
             // 
             this.lbCodeDB7.AutoSize = true;
             this.lbCodeDB7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodeDB7.Location = new System.Drawing.Point(931, 828);
+            this.lbCodeDB7.Location = new System.Drawing.Point(698, 673);
+            this.lbCodeDB7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCodeDB7.Name = "lbCodeDB7";
-            this.lbCodeDB7.Size = new System.Drawing.Size(77, 24);
+            this.lbCodeDB7.Size = new System.Drawing.Size(61, 18);
             this.lbCodeDB7.TabIndex = 100;
             this.lbCodeDB7.Text = "label10";
             this.lbCodeDB7.Visible = false;
@@ -503,9 +541,10 @@
             // mbExit
             // 
             this.mbExit.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.mbExit.Location = new System.Drawing.Point(752, 912);
+            this.mbExit.Location = new System.Drawing.Point(564, 741);
+            this.mbExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mbExit.Name = "mbExit";
-            this.mbExit.Size = new System.Drawing.Size(292, 60);
+            this.mbExit.Size = new System.Drawing.Size(219, 49);
             this.mbExit.Style = MetroFramework.MetroColorStyle.Lime;
             this.mbExit.TabIndex = 101;
             this.mbExit.Text = "Salir";
@@ -516,9 +555,10 @@
             // 
             this.lbH7.AutoSize = true;
             this.lbH7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbH7.Location = new System.Drawing.Point(313, 828);
+            this.lbH7.Location = new System.Drawing.Point(235, 673);
+            this.lbH7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbH7.Name = "lbH7";
-            this.lbH7.Size = new System.Drawing.Size(52, 23);
+            this.lbH7.Size = new System.Drawing.Size(40, 18);
             this.lbH7.TabIndex = 102;
             this.lbH7.Text = "H. L:";
             this.lbH7.Visible = false;
@@ -527,9 +567,10 @@
             // 
             this.lbH6.AutoSize = true;
             this.lbH6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbH6.Location = new System.Drawing.Point(313, 756);
+            this.lbH6.Location = new System.Drawing.Point(235, 614);
+            this.lbH6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbH6.Name = "lbH6";
-            this.lbH6.Size = new System.Drawing.Size(52, 23);
+            this.lbH6.Size = new System.Drawing.Size(40, 18);
             this.lbH6.TabIndex = 103;
             this.lbH6.Text = "H. L:";
             this.lbH6.Visible = false;
@@ -538,9 +579,10 @@
             // 
             this.lbH5.AutoSize = true;
             this.lbH5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbH5.Location = new System.Drawing.Point(313, 688);
+            this.lbH5.Location = new System.Drawing.Point(235, 559);
+            this.lbH5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbH5.Name = "lbH5";
-            this.lbH5.Size = new System.Drawing.Size(52, 23);
+            this.lbH5.Size = new System.Drawing.Size(40, 18);
             this.lbH5.TabIndex = 104;
             this.lbH5.Text = "H. L:";
             this.lbH5.Visible = false;
@@ -549,9 +591,10 @@
             // 
             this.lbH4.AutoSize = true;
             this.lbH4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbH4.Location = new System.Drawing.Point(313, 616);
+            this.lbH4.Location = new System.Drawing.Point(235, 500);
+            this.lbH4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbH4.Name = "lbH4";
-            this.lbH4.Size = new System.Drawing.Size(52, 23);
+            this.lbH4.Size = new System.Drawing.Size(40, 18);
             this.lbH4.TabIndex = 105;
             this.lbH4.Text = "H. L:";
             this.lbH4.Visible = false;
@@ -560,9 +603,10 @@
             // 
             this.lbN5.AutoSize = true;
             this.lbN5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbN5.Location = new System.Drawing.Point(505, 685);
+            this.lbN5.Location = new System.Drawing.Point(379, 557);
+            this.lbN5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbN5.Name = "lbN5";
-            this.lbN5.Size = new System.Drawing.Size(57, 23);
+            this.lbN5.Size = new System.Drawing.Size(45, 18);
             this.lbN5.TabIndex = 110;
             this.lbN5.Text = "Nota:";
             this.lbN5.Visible = false;
@@ -571,9 +615,10 @@
             // 
             this.lbN4.AutoSize = true;
             this.lbN4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbN4.Location = new System.Drawing.Point(504, 615);
+            this.lbN4.Location = new System.Drawing.Point(378, 500);
+            this.lbN4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbN4.Name = "lbN4";
-            this.lbN4.Size = new System.Drawing.Size(57, 23);
+            this.lbN4.Size = new System.Drawing.Size(45, 18);
             this.lbN4.TabIndex = 111;
             this.lbN4.Text = "Nota:";
             this.lbN4.Visible = false;
@@ -582,9 +627,10 @@
             // 
             this.lbN3.AutoSize = true;
             this.lbN3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbN3.Location = new System.Drawing.Point(504, 547);
+            this.lbN3.Location = new System.Drawing.Point(378, 444);
+            this.lbN3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbN3.Name = "lbN3";
-            this.lbN3.Size = new System.Drawing.Size(57, 23);
+            this.lbN3.Size = new System.Drawing.Size(45, 18);
             this.lbN3.TabIndex = 112;
             this.lbN3.Text = "Nota:";
             this.lbN3.Visible = false;
@@ -593,9 +639,10 @@
             // 
             this.lbN6.AutoSize = true;
             this.lbN6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbN6.Location = new System.Drawing.Point(504, 759);
+            this.lbN6.Location = new System.Drawing.Point(378, 617);
+            this.lbN6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbN6.Name = "lbN6";
-            this.lbN6.Size = new System.Drawing.Size(57, 23);
+            this.lbN6.Size = new System.Drawing.Size(45, 18);
             this.lbN6.TabIndex = 113;
             this.lbN6.Text = "Nota:";
             this.lbN6.Visible = false;
@@ -604,9 +651,10 @@
             // 
             this.lbN7.AutoSize = true;
             this.lbN7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbN7.Location = new System.Drawing.Point(505, 829);
+            this.lbN7.Location = new System.Drawing.Point(379, 674);
+            this.lbN7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbN7.Name = "lbN7";
-            this.lbN7.Size = new System.Drawing.Size(57, 23);
+            this.lbN7.Size = new System.Drawing.Size(45, 18);
             this.lbN7.TabIndex = 114;
             this.lbN7.Text = "Nota:";
             this.lbN7.Visible = false;
@@ -614,36 +662,40 @@
             // txtNote3
             // 
             this.txtNote3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote3.Location = new System.Drawing.Point(582, 540);
+            this.txtNote3.Location = new System.Drawing.Point(436, 439);
+            this.txtNote3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNote3.Name = "txtNote3";
-            this.txtNote3.Size = new System.Drawing.Size(467, 30);
+            this.txtNote3.Size = new System.Drawing.Size(351, 26);
             this.txtNote3.TabIndex = 115;
             this.txtNote3.Visible = false;
             // 
             // txtNote4
             // 
             this.txtNote4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote4.Location = new System.Drawing.Point(582, 611);
+            this.txtNote4.Location = new System.Drawing.Point(436, 496);
+            this.txtNote4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNote4.Name = "txtNote4";
-            this.txtNote4.Size = new System.Drawing.Size(467, 30);
+            this.txtNote4.Size = new System.Drawing.Size(351, 26);
             this.txtNote4.TabIndex = 116;
             this.txtNote4.Visible = false;
             // 
             // txtNote5
             // 
             this.txtNote5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote5.Location = new System.Drawing.Point(582, 682);
+            this.txtNote5.Location = new System.Drawing.Point(436, 554);
+            this.txtNote5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNote5.Name = "txtNote5";
-            this.txtNote5.Size = new System.Drawing.Size(467, 30);
+            this.txtNote5.Size = new System.Drawing.Size(351, 26);
             this.txtNote5.TabIndex = 117;
             this.txtNote5.Visible = false;
             // 
             // txtNote6
             // 
             this.txtNote6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote6.Location = new System.Drawing.Point(582, 753);
+            this.txtNote6.Location = new System.Drawing.Point(436, 612);
+            this.txtNote6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNote6.Name = "txtNote6";
-            this.txtNote6.Size = new System.Drawing.Size(467, 30);
+            this.txtNote6.Size = new System.Drawing.Size(351, 26);
             this.txtNote6.TabIndex = 118;
             this.txtNote6.Visible = false;
             this.txtNote6.TextChanged += new System.EventHandler(this.txtNote6_TextChanged);
@@ -651,9 +703,10 @@
             // txtNote7
             // 
             this.txtNote7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote7.Location = new System.Drawing.Point(582, 822);
+            this.txtNote7.Location = new System.Drawing.Point(436, 668);
+            this.txtNote7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNote7.Name = "txtNote7";
-            this.txtNote7.Size = new System.Drawing.Size(467, 30);
+            this.txtNote7.Size = new System.Drawing.Size(351, 26);
             this.txtNote7.TabIndex = 119;
             this.txtNote7.Visible = false;
             // 
@@ -661,9 +714,10 @@
             // 
             this.lbTxtOrdinaryHours.AutoSize = true;
             this.lbTxtOrdinaryHours.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTxtOrdinaryHours.Location = new System.Drawing.Point(383, 232);
+            this.lbTxtOrdinaryHours.Location = new System.Drawing.Point(287, 188);
+            this.lbTxtOrdinaryHours.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTxtOrdinaryHours.Name = "lbTxtOrdinaryHours";
-            this.lbTxtOrdinaryHours.Size = new System.Drawing.Size(41, 33);
+            this.lbTxtOrdinaryHours.Size = new System.Drawing.Size(32, 26);
             this.lbTxtOrdinaryHours.TabIndex = 120;
             this.lbTxtOrdinaryHours.Text = "00";
             this.lbTxtOrdinaryHours.Visible = false;
@@ -673,9 +727,10 @@
             this.lbTxtExtraHours.AutoSize = true;
             this.lbTxtExtraHours.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTxtExtraHours.ForeColor = System.Drawing.Color.Red;
-            this.lbTxtExtraHours.Location = new System.Drawing.Point(550, 232);
+            this.lbTxtExtraHours.Location = new System.Drawing.Point(412, 188);
+            this.lbTxtExtraHours.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTxtExtraHours.Name = "lbTxtExtraHours";
-            this.lbTxtExtraHours.Size = new System.Drawing.Size(41, 33);
+            this.lbTxtExtraHours.Size = new System.Drawing.Size(32, 26);
             this.lbTxtExtraHours.TabIndex = 121;
             this.lbTxtExtraHours.Text = "00";
             this.lbTxtExtraHours.Visible = false;
@@ -684,9 +739,10 @@
             // 
             this.lbTxtTotalHours.AutoSize = true;
             this.lbTxtTotalHours.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTxtTotalHours.Location = new System.Drawing.Point(714, 232);
+            this.lbTxtTotalHours.Location = new System.Drawing.Point(536, 188);
+            this.lbTxtTotalHours.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTxtTotalHours.Name = "lbTxtTotalHours";
-            this.lbTxtTotalHours.Size = new System.Drawing.Size(41, 33);
+            this.lbTxtTotalHours.Size = new System.Drawing.Size(32, 26);
             this.lbTxtTotalHours.TabIndex = 122;
             this.lbTxtTotalHours.Text = "00";
             this.lbTxtTotalHours.Visible = false;
@@ -700,14 +756,15 @@
             0,
             0,
             65536});
-            this.txtHours1.Location = new System.Drawing.Point(409, 400);
+            this.txtHours1.Location = new System.Drawing.Point(307, 325);
+            this.txtHours1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtHours1.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
             this.txtHours1.Name = "txtHours1";
-            this.txtHours1.Size = new System.Drawing.Size(73, 30);
+            this.txtHours1.Size = new System.Drawing.Size(55, 26);
             this.txtHours1.TabIndex = 123;
             this.txtHours1.Visible = false;
             this.txtHours1.ValueChanged += new System.EventHandler(this.txtHours1_ValueChanged);
@@ -721,14 +778,15 @@
             0,
             0,
             65536});
-            this.txtHours7.Location = new System.Drawing.Point(409, 822);
+            this.txtHours7.Location = new System.Drawing.Point(307, 668);
+            this.txtHours7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtHours7.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
             this.txtHours7.Name = "txtHours7";
-            this.txtHours7.Size = new System.Drawing.Size(73, 30);
+            this.txtHours7.Size = new System.Drawing.Size(55, 26);
             this.txtHours7.TabIndex = 124;
             this.txtHours7.Visible = false;
             this.txtHours7.ValueChanged += new System.EventHandler(this.txtHours7_ValueChanged);
@@ -742,14 +800,15 @@
             0,
             0,
             65536});
-            this.txtHours6.Location = new System.Drawing.Point(409, 753);
+            this.txtHours6.Location = new System.Drawing.Point(307, 612);
+            this.txtHours6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtHours6.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
             this.txtHours6.Name = "txtHours6";
-            this.txtHours6.Size = new System.Drawing.Size(73, 30);
+            this.txtHours6.Size = new System.Drawing.Size(55, 26);
             this.txtHours6.TabIndex = 125;
             this.txtHours6.Visible = false;
             this.txtHours6.ValueChanged += new System.EventHandler(this.txtHours6_ValueChanged);
@@ -763,14 +822,15 @@
             0,
             0,
             65536});
-            this.txtHours5.Location = new System.Drawing.Point(409, 682);
+            this.txtHours5.Location = new System.Drawing.Point(307, 554);
+            this.txtHours5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtHours5.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
             this.txtHours5.Name = "txtHours5";
-            this.txtHours5.Size = new System.Drawing.Size(73, 30);
+            this.txtHours5.Size = new System.Drawing.Size(55, 26);
             this.txtHours5.TabIndex = 126;
             this.txtHours5.Visible = false;
             this.txtHours5.ValueChanged += new System.EventHandler(this.txtHours5_ValueChanged);
@@ -784,14 +844,15 @@
             0,
             0,
             65536});
-            this.txtHours4.Location = new System.Drawing.Point(409, 611);
+            this.txtHours4.Location = new System.Drawing.Point(307, 496);
+            this.txtHours4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtHours4.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
             this.txtHours4.Name = "txtHours4";
-            this.txtHours4.Size = new System.Drawing.Size(73, 30);
+            this.txtHours4.Size = new System.Drawing.Size(55, 26);
             this.txtHours4.TabIndex = 127;
             this.txtHours4.Visible = false;
             this.txtHours4.ValueChanged += new System.EventHandler(this.txtHours4_ValueChanged);
@@ -805,14 +866,15 @@
             0,
             0,
             65536});
-            this.txtHours3.Location = new System.Drawing.Point(409, 540);
+            this.txtHours3.Location = new System.Drawing.Point(307, 439);
+            this.txtHours3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtHours3.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
             this.txtHours3.Name = "txtHours3";
-            this.txtHours3.Size = new System.Drawing.Size(73, 30);
+            this.txtHours3.Size = new System.Drawing.Size(55, 26);
             this.txtHours3.TabIndex = 128;
             this.txtHours3.Visible = false;
             this.txtHours3.ValueChanged += new System.EventHandler(this.txtHours3_ValueChanged);
@@ -826,23 +888,24 @@
             0,
             0,
             65536});
-            this.txtHours2.Location = new System.Drawing.Point(409, 473);
+            this.txtHours2.Location = new System.Drawing.Point(307, 384);
+            this.txtHours2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtHours2.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
             this.txtHours2.Name = "txtHours2";
-            this.txtHours2.Size = new System.Drawing.Size(73, 30);
+            this.txtHours2.Size = new System.Drawing.Size(55, 26);
             this.txtHours2.TabIndex = 129;
             this.txtHours2.Visible = false;
             this.txtHours2.ValueChanged += new System.EventHandler(this.txtHours2_ValueChanged);
             // 
             // EmployeeWeekLaborDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 1015);
+            this.ClientSize = new System.Drawing.Size(834, 825);
             this.Controls.Add(this.txtHours2);
             this.Controls.Add(this.txtHours3);
             this.Controls.Add(this.txtHours4);
@@ -905,7 +968,10 @@
             this.Controls.Add(this.lbWeekNo);
             this.Controls.Add(this.lbNumberNameEmployee);
             this.Controls.Add(this.lbDepartment);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EmployeeWeekLaborDetail";
+            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Load += new System.EventHandler(this.EmployeeWeekLaborDetail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtHours1)).EndInit();

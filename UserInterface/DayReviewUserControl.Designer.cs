@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DayReviewUserControl));
             this.mbCheck = new MetroFramework.Controls.MetroButton();
             this.cbDepart = new System.Windows.Forms.ComboBox();
             this.mpgCalculation = new MetroFramework.Controls.MetroProgressBar();
@@ -42,10 +43,9 @@
             // 
             this.mbCheck.Enabled = false;
             this.mbCheck.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.mbCheck.Location = new System.Drawing.Point(545, 153);
-            this.mbCheck.Margin = new System.Windows.Forms.Padding(4);
+            this.mbCheck.Location = new System.Drawing.Point(409, 124);
             this.mbCheck.Name = "mbCheck";
-            this.mbCheck.Size = new System.Drawing.Size(197, 59);
+            this.mbCheck.Size = new System.Drawing.Size(148, 48);
             this.mbCheck.TabIndex = 4;
             this.mbCheck.Text = "Calcular";
             this.mbCheck.UseSelectable = true;
@@ -55,19 +55,17 @@
             // 
             this.cbDepart.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDepart.FormattingEnabled = true;
-            this.cbDepart.Location = new System.Drawing.Point(524, 60);
-            this.cbDepart.Margin = new System.Windows.Forms.Padding(4);
+            this.cbDepart.Location = new System.Drawing.Point(393, 49);
             this.cbDepart.Name = "cbDepart";
-            this.cbDepart.Size = new System.Drawing.Size(218, 32);
+            this.cbDepart.Size = new System.Drawing.Size(164, 28);
             this.cbDepart.TabIndex = 5;
             this.cbDepart.SelectedIndexChanged += new System.EventHandler(this.cbDepart_SelectedIndexChanged);
             // 
             // mpgCalculation
             // 
-            this.mpgCalculation.Location = new System.Drawing.Point(-3, 258);
-            this.mpgCalculation.Margin = new System.Windows.Forms.Padding(4);
+            this.mpgCalculation.Location = new System.Drawing.Point(-2, 210);
             this.mpgCalculation.Name = "mpgCalculation";
-            this.mpgCalculation.Size = new System.Drawing.Size(804, 10);
+            this.mpgCalculation.Size = new System.Drawing.Size(603, 8);
             this.mpgCalculation.Style = MetroFramework.MetroColorStyle.Lime;
             this.mpgCalculation.TabIndex = 6;
             // 
@@ -81,19 +79,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(343, 215);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(257, 175);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 23);
+            this.label1.Size = new System.Drawing.Size(0, 18);
             this.label1.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(52, 61);
+            this.label2.Location = new System.Drawing.Point(39, 50);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 29);
+            this.label2.Size = new System.Drawing.Size(76, 23);
             this.label2.TabIndex = 16;
             this.label2.Text = "Semana:";
             // 
@@ -101,9 +99,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(319, 60);
+            this.label3.Location = new System.Drawing.Point(239, 49);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 29);
+            this.label3.Size = new System.Drawing.Size(122, 23);
             this.label3.TabIndex = 17;
             this.label3.Text = "Departamento:";
             // 
@@ -112,17 +111,18 @@
             this.mnWeekNum.AutoSize = true;
             this.mnWeekNum.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnWeekNum.ForeColor = System.Drawing.Color.Red;
-            this.mnWeekNum.Location = new System.Drawing.Point(174, 65);
+            this.mnWeekNum.Location = new System.Drawing.Point(130, 53);
+            this.mnWeekNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mnWeekNum.Name = "mnWeekNum";
-            this.mnWeekNum.Size = new System.Drawing.Size(38, 27);
+            this.mnWeekNum.Size = new System.Drawing.Size(32, 22);
             this.mnWeekNum.TabIndex = 18;
             this.mnWeekNum.Text = "00";
             // 
             // DayReviewUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 263);
+            this.ClientSize = new System.Drawing.Size(602, 214);
             this.Controls.Add(this.mnWeekNum);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -130,10 +130,9 @@
             this.Controls.Add(this.mpgCalculation);
             this.Controls.Add(this.cbDepart);
             this.Controls.Add(this.mbCheck);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DayReviewUserControl";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Load += new System.EventHandler(this.DayReviewUserControl_Load);
             this.ResumeLayout(false);

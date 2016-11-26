@@ -254,6 +254,9 @@
     <EmbeddedResource Include="AddDepartmentForm.resx">
       <DependentUpon>AddDepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddEmployeeForm.resx">
+      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddScheduleForm.resx">
       <DependentUpon>AddScheduleForm.cs</DependentUpon>
     </EmbeddedResource>

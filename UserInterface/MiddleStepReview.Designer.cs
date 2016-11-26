@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiddleStepReview));
             this.mgCorrectChecks = new MetroFramework.Controls.MetroGrid();
             this.mbSendAnomalies = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.mgCorrectChecks)).BeginInit();
@@ -67,7 +68,8 @@
             this.mgCorrectChecks.EnableHeadersVisualStyles = false;
             this.mgCorrectChecks.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mgCorrectChecks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mgCorrectChecks.Location = new System.Drawing.Point(52, 92);
+            this.mgCorrectChecks.Location = new System.Drawing.Point(39, 75);
+            this.mgCorrectChecks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mgCorrectChecks.Name = "mgCorrectChecks";
             this.mgCorrectChecks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -81,15 +83,16 @@
             this.mgCorrectChecks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mgCorrectChecks.RowTemplate.Height = 24;
             this.mgCorrectChecks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mgCorrectChecks.Size = new System.Drawing.Size(1297, 571);
+            this.mgCorrectChecks.Size = new System.Drawing.Size(973, 464);
             this.mgCorrectChecks.TabIndex = 0;
             // 
             // mbSendAnomalies
             // 
             this.mbSendAnomalies.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.mbSendAnomalies.Location = new System.Drawing.Point(1007, 702);
+            this.mbSendAnomalies.Location = new System.Drawing.Point(755, 570);
+            this.mbSendAnomalies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mbSendAnomalies.Name = "mbSendAnomalies";
-            this.mbSendAnomalies.Size = new System.Drawing.Size(342, 49);
+            this.mbSendAnomalies.Size = new System.Drawing.Size(256, 40);
             this.mbSendAnomalies.TabIndex = 1;
             this.mbSendAnomalies.Text = "Continuar";
             this.mbSendAnomalies.UseSelectable = true;
@@ -97,14 +100,17 @@
             // 
             // MiddleStepReview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1405, 788);
+            this.ClientSize = new System.Drawing.Size(963, 640);
             this.Controls.Add(this.mbSendAnomalies);
             this.Controls.Add(this.mgCorrectChecks);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MiddleStepReview";
+            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Marcas Correctas";
             this.Load += new System.EventHandler(this.MiddleStepReview_Load);

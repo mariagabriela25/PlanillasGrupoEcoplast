@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WeekDetailUserControl));
             this.mg_employees = new MetroFramework.Controls.MetroGrid();
             this.tb_filter = new MetroFramework.Controls.MetroTextBox();
             this.tb_selection = new MetroFramework.Controls.MetroTextBox();
@@ -95,7 +96,6 @@
             this.mg_employees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mg_employees.Size = new System.Drawing.Size(462, 390);
             this.mg_employees.TabIndex = 0;
-          
             this.mg_employees.SelectionChanged += new System.EventHandler(this.mg_selection);
             // 
             // tb_filter
@@ -104,9 +104,9 @@
             // 
             // 
             this.tb_filter.CustomButton.Image = null;
-            this.tb_filter.CustomButton.Location = new System.Drawing.Point(122, 1);
+            this.tb_filter.CustomButton.Location = new System.Drawing.Point(162, 1);
             this.tb_filter.CustomButton.Name = "";
-            this.tb_filter.CustomButton.Size = new System.Drawing.Size(16, 17);
+            this.tb_filter.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_filter.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tb_filter.CustomButton.TabIndex = 1;
             this.tb_filter.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -137,9 +137,9 @@
             // 
             this.tb_selection.CustomButton.Enabled = false;
             this.tb_selection.CustomButton.Image = null;
-            this.tb_selection.CustomButton.Location = new System.Drawing.Point(90, 1);
+            this.tb_selection.CustomButton.Location = new System.Drawing.Point(120, 1);
             this.tb_selection.CustomButton.Name = "";
-            this.tb_selection.CustomButton.Size = new System.Drawing.Size(16, 17);
+            this.tb_selection.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_selection.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tb_selection.CustomButton.TabIndex = 1;
             this.tb_selection.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -201,9 +201,9 @@
             // 
             this.tb_ordinaryHours.CustomButton.Enabled = false;
             this.tb_ordinaryHours.CustomButton.Image = null;
-            this.tb_ordinaryHours.CustomButton.Location = new System.Drawing.Point(97, 1);
+            this.tb_ordinaryHours.CustomButton.Location = new System.Drawing.Point(129, 1);
             this.tb_ordinaryHours.CustomButton.Name = "";
-            this.tb_ordinaryHours.CustomButton.Size = new System.Drawing.Size(16, 17);
+            this.tb_ordinaryHours.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_ordinaryHours.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tb_ordinaryHours.CustomButton.TabIndex = 1;
             this.tb_ordinaryHours.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -243,9 +243,9 @@
             // 
             this.tb_ExtraHours.CustomButton.Enabled = false;
             this.tb_ExtraHours.CustomButton.Image = null;
-            this.tb_ExtraHours.CustomButton.Location = new System.Drawing.Point(97, 1);
+            this.tb_ExtraHours.CustomButton.Location = new System.Drawing.Point(129, 1);
             this.tb_ExtraHours.CustomButton.Name = "";
-            this.tb_ExtraHours.CustomButton.Size = new System.Drawing.Size(16, 17);
+            this.tb_ExtraHours.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_ExtraHours.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tb_ExtraHours.CustomButton.TabIndex = 1;
             this.tb_ExtraHours.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -275,9 +275,9 @@
             // 
             this.tb_week.CustomButton.Enabled = false;
             this.tb_week.CustomButton.Image = null;
-            this.tb_week.CustomButton.Location = new System.Drawing.Point(97, 1);
+            this.tb_week.CustomButton.Location = new System.Drawing.Point(129, 1);
             this.tb_week.CustomButton.Name = "";
-            this.tb_week.CustomButton.Size = new System.Drawing.Size(16, 17);
+            this.tb_week.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tb_week.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tb_week.CustomButton.TabIndex = 1;
             this.tb_week.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -333,7 +333,7 @@
             // nudWeek
             // 
             this.nudWeek.Location = new System.Drawing.Point(727, 94);
-            this.nudWeek.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudWeek.Margin = new System.Windows.Forms.Padding(2);
             this.nudWeek.Maximum = new decimal(new int[] {
             52,
             0,
@@ -386,6 +386,7 @@
             this.Controls.Add(this.tb_selection);
             this.Controls.Add(this.tb_filter);
             this.Controls.Add(this.mg_employees);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WeekDetailUserControl";
             this.Load += new System.EventHandler(this.WeekDetailUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mg_employees)).EndInit();

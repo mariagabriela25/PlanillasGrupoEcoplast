@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddScheduleForm));
             this.lbCode = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,7 +65,7 @@
             // 
             this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCode.Location = new System.Drawing.Point(212, 80);
-            this.txtCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(188, 23);
             this.txtCode.TabIndex = 1;
@@ -84,7 +85,7 @@
             // 
             this.nupFinalHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nupFinalHour.Location = new System.Drawing.Point(212, 259);
-            this.nupFinalHour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nupFinalHour.Margin = new System.Windows.Forms.Padding(2);
             this.nupFinalHour.Maximum = new decimal(new int[] {
             23,
             0,
@@ -109,7 +110,7 @@
             // 
             this.nupFinalMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nupFinalMinute.Location = new System.Drawing.Point(318, 259);
-            this.nupFinalMinute.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nupFinalMinute.Margin = new System.Windows.Forms.Padding(2);
             this.nupFinalMinute.Maximum = new decimal(new int[] {
             59,
             0,
@@ -145,7 +146,7 @@
             // 
             this.nupInitialHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nupInitialHour.Location = new System.Drawing.Point(212, 200);
-            this.nupInitialHour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nupInitialHour.Margin = new System.Windows.Forms.Padding(2);
             this.nupInitialHour.Maximum = new decimal(new int[] {
             23,
             0,
@@ -159,7 +160,7 @@
             // 
             this.nupInitialMinute.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nupInitialMinute.Location = new System.Drawing.Point(318, 200);
-            this.nupInitialMinute.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nupInitialMinute.Margin = new System.Windows.Forms.Padding(2);
             this.nupInitialMinute.Maximum = new decimal(new int[] {
             59,
             0,
@@ -220,7 +221,7 @@
             this.cbDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDepartment.FormattingEnabled = true;
             this.cbDepartment.Location = new System.Drawing.Point(212, 136);
-            this.cbDepartment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbDepartment.Margin = new System.Windows.Forms.Padding(2);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(188, 25);
             this.cbDepartment.TabIndex = 37;
@@ -246,9 +247,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.lbCode);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddScheduleForm";
-            this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 16);
+            this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Agregar nuevo horario";
             this.Load += new System.EventHandler(this.AddScheduleForm_Load);
