@@ -115,12 +115,13 @@ namespace BusinessLogic
                             {
                                 
                                 flag = true;
-                                int ordinaryhours = schedules[i].OrdinaryHours;
+                                double ordinaryhours = schedules[i].OrdinaryHours;
                                 LaboredDay ld = new LaboredDay(employee, ordinaryhours);
                                 ld.AddCheckedCheck(checkin);
                                 ld.AddCheckedCheck(checkout);
                                 correctLaboredDays.Add(ld);
                                 ld.currentDay = currentDay;
+
                                 //new WorkDayDetail(employee, ordinaryhours, ordinaryhours, currentDay, null, true, weekNumber, 1).AddWorkDay();
                                 //MessageBox.Show("Dia Correcto, Dia: " + currentDay.Date);
                                 break;
