@@ -27,7 +27,7 @@ namespace DataAccess
                 query.Parameters.AddWithValue("@CodHorario", newSchedule.Code);
                 query.Parameters.AddWithValue("@HoraInicio", newSchedule.InitialHour);
                 query.Parameters.AddWithValue("@HoraFin", newSchedule.finalHour);
-                query.Parameters.AddWithValue("@CantHorasOrdinarias", newSchedule.OrdinaryHours);
+                query.Parameters.AddWithValue("@CantHorasOrdinarias", (Decimal)newSchedule.OrdinaryHours);
 
                 query.ExecuteNonQuery();
 
@@ -97,7 +97,7 @@ namespace DataAccess
                 query.Parameters.AddWithValue("@CodHorario", schedule.Code);
                 query.Parameters.AddWithValue("@HoraInicio", schedule.InitialHour);
                 query.Parameters.AddWithValue("@HoraFin", schedule.finalHour);
-                query.Parameters.AddWithValue("@CantHorasOrdinarias", schedule.OrdinaryHours);
+                query.Parameters.AddWithValue("@CantHorasOrdinarias", (Decimal)schedule.OrdinaryHours);
 
                 query.ExecuteNonQuery();
 
@@ -170,7 +170,7 @@ namespace DataAccess
                         int finHourM = int.Parse(finArray.GetValue(1).ToString());
                         s.finalHour = new DateTime(2016, 10, 18, finHourH, finHourM, 0);
 
-                        s.OrdinaryHours = reader.GetInt32(3);
+                        s.OrdinaryHours = (Double)reader.GetDecimal(3);
 
                         TODepartment td = new TODepartment();
                         td.Code = reader.GetInt32(4);
@@ -241,7 +241,7 @@ namespace DataAccess
                         int finHourM = int.Parse(finArray.GetValue(1).ToString());
                         s.finalHour = new DateTime(2016, 10, 18, finHourH, finHourM, 0);
 
-                        s.OrdinaryHours = reader.GetInt32(3);
+                        s.OrdinaryHours = (Double)reader.GetDecimal(3);
 
                         TODepartment td = new TODepartment();
                         td.Code = reader.GetInt32(4);
@@ -308,7 +308,7 @@ namespace DataAccess
                         int finHourM = int.Parse(finArray.GetValue(1).ToString());
                         s.finalHour = new DateTime(2016, 10, 18, finHourH, finHourM, 0);
 
-                        s.OrdinaryHours = reader.GetInt32(3);
+                        s.OrdinaryHours = (Double)reader.GetDecimal(3);
 
                         TODepartment td = new TODepartment();
                         td.Code = reader.GetInt32(4);

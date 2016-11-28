@@ -41,13 +41,16 @@ namespace UserInterface
 
                     if (newSchedule.finalHour < newSchedule.InitialHour)
                     {
-                        int expected1 = 24 - newSchedule.InitialHour.Hour + newSchedule.finalHour.Hour;
-                        newSchedule.OrdinaryHours = expected1;
+                        TimeSpan temp = newSchedule.InitialHour.TimeOfDay.Subtract(newSchedule.finalHour.TimeOfDay);
+                        TimeSpan time = new TimeSpan(1, 0, 0, 0).Subtract(temp);
+                        //int expected1 = 24 - newSchedule.InitialHour.Hour + newSchedule.finalHour.Hour;
+                        newSchedule.OrdinaryHours = time.TotalHours;
                     }
                     else
                     {
-                        int expected2 = newSchedule.finalHour.Hour - newSchedule.InitialHour.Hour;
-                        newSchedule.OrdinaryHours = expected2;
+                        TimeSpan time = newSchedule.finalHour.TimeOfDay.Subtract(newSchedule.InitialHour.TimeOfDay);
+                        //int expected2 = newSchedule.finalHour.Hour - newSchedule.InitialHour.Hour;
+                        newSchedule.OrdinaryHours = time.TotalHours;
                     }
 
                     newSchedule.Dept = d;

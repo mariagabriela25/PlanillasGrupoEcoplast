@@ -11,7 +11,7 @@ namespace TransferObjects
         public string Code { get; set; }
         public DateTime InitialHour { get; set; }
         public DateTime finalHour { get; set; }
-        public int OrdinaryHours { get; set; }
+        public double OrdinaryHours { get; set; }
         public TODepartment depart { get; set; }
 
         public TOSchedule()

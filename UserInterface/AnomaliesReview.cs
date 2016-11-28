@@ -128,7 +128,7 @@ namespace UserInterface
                 lbchecks.Text = "";
                 foreach (Anomaly item in list)
                 {
-                    if (item.code == a && item.currentDay.Equals(d))
+                    if (item.code == a && item.currentDay.Date.Equals(d.Date))
                     {
                         lbFecha.Text = "Revisión para "+ name + " el "+ d.ToString("dd MMMM, yyyy");
                         lbJornada.Text = " para el " + d.ToString("dd MMMM, yyyy");
@@ -144,15 +144,15 @@ namespace UserInterface
                             lblist.Text += "-> Hora de inicio: " + s.InitialHour.ToString("HH:mm") +"  |   Hora de salida: "+ s.finalHour.ToString("HH:mm") +" <-\n";
                         }
 
-                        List<Check> checks = new Check().GetChecks(em.Code, d + new TimeSpan(0, 0, 0), d.AddDays(1).Date + new TimeSpan(23,59,59));
+                        List<Check> checks = new Check().GetChecks(em.Code, d.Date + new TimeSpan(0, 0, 0), d.AddDays(1).Date + new TimeSpan(23,59,59));
                         foreach (Check c in checks)
                         {
                             if (c.CheckType == "I")
                             {
-                                lbchecks.Text += "→ " + c.CheckTime.ToString("dd /MMMM /yyyy  -  HH:MM:ss") + "\n";
+                                lbchecks.Text += "→ " + c.CheckTime.ToString("dd /MMMM /yyyy  -  HH:mm:ss") + "\n";
                             }
                             else {
-                                lbchecks.Text += "← " + c.CheckTime.ToString("dd /MMMM /yyyy  -  HH:MM:ss") + "\n"; }
+                                lbchecks.Text += "← " + c.CheckTime.ToString("dd /MMMM /yyyy  -  HH:mm:ss") + "\n"; }
                         }
 
                     }

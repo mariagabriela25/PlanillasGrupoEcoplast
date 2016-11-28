@@ -10,10 +10,10 @@ namespace BusinessLogic
     {
         public List<Check> checkedChecks { get; set; }
         public int employee { get; set; }
-        public int ordinaryhours { get; set; }
+        public double ordinaryhours { get; set; }
         public DateTime currentDay { get; set; }
 
-        public LaboredDay(int employee, int ordinaryhours)
+        public LaboredDay(int employee, double ordinaryhours)
         {
             checkedChecks = new List<Check>();
             this.employee = employee;

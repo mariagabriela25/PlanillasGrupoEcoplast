@@ -13,10 +13,10 @@ namespace BusinessLogic
         public string Code { get; set; }
         public DateTime InitialHour { get; set; }
         public DateTime finalHour { get; set; }
-        public int OrdinaryHours { get; set; }
+        public double OrdinaryHours { get; set; }
         public Department Dept { get; set; }
 
-        public Schedule (string Code, DateTime InitialHour, DateTime finalHour, int OrdinaryHours, Department Dept)
+        public Schedule (string Code, DateTime InitialHour, DateTime finalHour, double OrdinaryHours, Department Dept)
         {
             this.Code = Code;
             this.InitialHour = InitialHour;

@@ -124,7 +124,7 @@ namespace UserInterface
             }
             else
             {
-                SaveWeeks();
+                //SaveWeeks();
                 this.Close();
             }
         }

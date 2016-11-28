@@ -21,7 +21,7 @@ namespace BusinessLogic
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
 
-            //List<Anomaly> list = new AnomaliesManager().GetValues();
+            
         }
 
     }

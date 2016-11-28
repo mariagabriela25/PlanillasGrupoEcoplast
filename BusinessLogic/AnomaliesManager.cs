@@ -64,11 +64,21 @@ namespace BusinessLogic
             List<Anomaly> list = new List<Anomaly>();
             foreach (XmlElement x in param)
             {
-                if(x.GetAttribute("Code").Equals(code.ToString()) && x.InnerText.Equals(value.ToString()))
+                if(x.GetAttribute("Code").Equals(code.ToString()))
                 {
-                    XmlNode firstElement = xdoc.DocumentElement;
-                    firstElement.RemoveChild(x);
-                    break;
+
+                    String dateString = x.InnerText;
+                    String[] dateStringVector = dateString.Split(' ');
+
+                    String[] onlyDateStringVector = dateStringVector[0].Split('/');
+                    DateTime tdt = new DateTime(Int32.Parse(onlyDateStringVector[2]), Int32.Parse(onlyDateStringVector[1]), Int32.Parse(onlyDateStringVector[0]));
+
+                    if (tdt.Date == value.Date)
+                    {
+                        XmlNode firstElement = xdoc.DocumentElement;
+                        firstElement.RemoveChild(x);
+                        break;
+                    }
                 }
 
             }
