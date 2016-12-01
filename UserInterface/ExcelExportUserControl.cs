@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic;
+using System.Threading;
 
 namespace UserInterface
 {
@@ -34,6 +35,12 @@ namespace UserInterface
             }
         }
 
+        void ExportMethod()
+        {
+            new ExcelManager().export(path, int.Parse(mcbWeeks.SelectedValue.ToString()));
+            Thread.Sleep(1000);
+        }
+
         private void mtExport_Click(object sender, EventArgs e)
         {
             if (mcbWeeks.SelectedValue == null || string.IsNullOrEmpty(path))
@@ -41,9 +48,10 @@ namespace UserInterface
                 MessageBox.Show("Todos los campos son requeridos", "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else
-            {
-                new ExcelManager().export(path, int.Parse(mcbWeeks.SelectedValue.ToString()));
-            }
+                using (var waitForm = new WaitForm(ExportMethod, "Exportando datos..."))
+                {
+                    waitForm.ShowDialog(this);
+                }
         }
     }
 }
