@@ -151,7 +151,7 @@ namespace UserInterface
                 }
                 else if (i == 7)
                 {
-                    setLabels(lbDay7, daysList[n].Day, lbDate7, sendDate,
+                    setLabels(lbDay7, 7, lbDate7, sendDate,
                            lbH7, txtHours7, daysList[n].TotalHours, lbN7, txtNote7, daysList[n].Note,
                            lbCodeDB7, daysList[n].ID);
                     finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);

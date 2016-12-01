@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BusinessLogic;
 using System.Globalization;
 using System.Windows.Controls;
+using System.Threading;
 
 namespace UserInterface
 {
@@ -38,8 +39,14 @@ namespace UserInterface
             mbCreateReport.Text += " " + calculationWeek;
             week = new WorkWeekDetail();
             list = new List<WorkWeekDetail>();
+            fillCombobox();         
+        }
+
+        public void fillCombobox()
+        {
+            cbo_Weeks.Items.Clear();
             weeksExistence = week.getWeekNumbers();
-            
+
             foreach (int w in weeksExistence)
             {
                 ComboBoxItem item = new ComboBoxItem();
@@ -48,7 +55,6 @@ namespace UserInterface
             }
 
             cbo_Weeks.DisplayMember = "Content";
-            
         }
 
         private void cbo_weekSelection(object sender, EventArgs e)
@@ -175,35 +181,47 @@ namespace UserInterface
             }
         }
 
+        void CreateReport()
+        {
+            calculationWeek = 47;
+            List<int> eList = new Employee().getEmployeesCalculatedWeek(calculationWeek);
+
+            foreach (int emp in eList)
+            {
+                double total = new Employee().GetTotalHours(emp, calculationWeek);
+                double ccss = 48;
+                double extras = 0;
+                if (total <= 48)
+                {
+                    ccss = total;
+                }
+                else
+                {
+                    extras = total - ccss;
+                }
+                new WorkWeekDetail(1, ccss, total, extras, emp, calculationWeek, DateTime.Now.Year).SaveWeekReport();
+
+            }
+
+            Thread.Sleep(1000);
+        }
+
         private void mbCreateReport_Click(object sender, EventArgs e)
         {
             if (new WorkWeekDetail().isComplete(calculationWeek))
             {
-                List<int> eList = new Employee().getEmployeesCalculatedWeek(calculationWeek);
-
-                foreach (int emp in eList)
+                using (var waitForm = new WaitForm(CreateReport, "Creando reporte semanal..."))
                 {
-                    double total = new Employee().GetTotalHours(emp, calculationWeek);
-                    double ccss = 48;
-                    double extras = 0;
-                    if (total <= 48)
-                    {
-                        ccss = total;
-                    }
-                    else
-                    {
-                        extras = total - ccss;
-                    }
-                    new WorkWeekDetail(1, ccss, total, extras, emp, calculationWeek, DateTime.Now.Year).SaveWeekReport();
-
+                waitForm.ShowDialog(this);
                 }
+                MessageBox.Show("¡El reporte semanal fue creado con éxito!");
+                fillCombobox();
             }
             else
             {
                 MessageBox.Show("¡Aún faltan departamentos de calcular o el reporte semanal para esta semana ya existe!");
             }
-       
-    }
+        }
     }
     
 }
