@@ -110,7 +110,7 @@ namespace BusinessLogic
 
             Boolean isWeekInTable = new DAOWeekDetail().isWeekSaved(week);
 
-            if (calculatedDepartments == departmentsAmount && !isWeekInTable)
+            if (calculatedDepartments == departmentsAmount && isWeekInTable)
             {
                 result = true;
             }
