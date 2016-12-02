@@ -53,10 +53,23 @@ namespace BusinessLogic
                         {
                             if (wsSemana.Cells[j, 1].Value == weeks[i].EmployeeCode)
                             {
-                                wsSemana.Cells[j, 6] = weeks[i].TotalHours;
-                                wsSemana.Cells[j, 7] = weeks[i].ExtraHours;
-                                wsSemana.Cells[j, 8] = weeks[i].TotalHours;
-                                wsSemana.Cells[j, 9] = weeks[i].ExtraHours;
+                                double ordinaryH = 0;
+                                double extraH = 0;
+
+                                double actualTotalHours = weeks[i].TotalHours;
+                                if (actualTotalHours > 48)
+                                {
+                                    ordinaryH = 48;
+                                    extraH = actualTotalHours - 48;
+                                }
+                                else
+                                {
+                                    ordinaryH = actualTotalHours;
+                                    extraH = 0;
+                                }
+
+                                wsSemana.Cells[j, 6] = ordinaryH;
+                                wsSemana.Cells[j, 7] = extraH;
                                 exists = true;
                             }
                         }
@@ -112,8 +125,6 @@ namespace BusinessLogic
             {
                 ws.Cells[i, 6] = 0;
                 ws.Cells[i, 7] = 0;
-                ws.Cells[i, 8] = 0;
-                ws.Cells[i, 9] = 0;
             }
             return ws;
         }

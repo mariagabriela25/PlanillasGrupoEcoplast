@@ -113,7 +113,7 @@ namespace UserInterface
 
         private void mbSendAnomalies_Click(object sender, EventArgs e)
         {
-            using (var waitForm = new WaitForm(SendAnomalies))
+            using (var waitForm = new WaitForm(SendAnomalies, "Registrando entradas aprobadas..."))
             {
                 waitForm.ShowDialog(this);
             }

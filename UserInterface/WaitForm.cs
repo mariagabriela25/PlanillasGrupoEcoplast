@@ -13,9 +13,10 @@ namespace UserInterface
     public partial class WaitForm : MetroFramework.Forms.MetroForm
     {
         public Action Worker { get; set; }
-        public WaitForm(Action worker)
+        public WaitForm(Action worker, String message)
         {
             InitializeComponent();
+            lbMessage.Text = message;
             if (worker == null)
             {
                 throw new ArgumentException();
