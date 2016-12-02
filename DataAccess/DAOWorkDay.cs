@@ -21,8 +21,8 @@ namespace DataAccess
 
                 SqlCommand query = new SqlCommand("INSERT INTO DetalleDiaLaborado VALUES (@CodeEmpl, @OrdinaryHour, @TotalHours, @Date, @Note, @ID, @State, @WeekCode)", conex);
                 query.Parameters.AddWithValue("@CodeEmpl", workday.CodeEmployee);
-                query.Parameters.AddWithValue("@OrdinaryHour", workday.OrdinaryHours);
-                query.Parameters.AddWithValue("@TotalHours", workday.TotalHours);
+                query.Parameters.AddWithValue("@OrdinaryHour", (Decimal)workday.OrdinaryHours);
+                query.Parameters.AddWithValue("@TotalHours", (Decimal)workday.TotalHours);
                 query.Parameters.AddWithValue("@Date", workday.Date);
                 query.Parameters.AddWithValue("@Note", workday.Note == null ? System.Data.SqlTypes.SqlString.Null : workday.Note);
                 query.Parameters.AddWithValue("@ID", 1);

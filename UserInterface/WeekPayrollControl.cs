@@ -46,7 +46,6 @@ namespace UserInterface
                 item.Content = w;
                 cbo_Weeks.Items.Add(item);
             }
-
             cbo_Weeks.DisplayMember = "Content";
             
         }

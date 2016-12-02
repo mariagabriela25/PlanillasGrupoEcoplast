@@ -22,7 +22,7 @@ namespace UserInterface
             {
                 if (i.CheckType == "DS")
                 {
-                    lbChecks.Text += "- DESCANSO: " + i.CheckTime.ToString("dd /MMMM /yyyy  -  HH:MM:ss") + "\n";
+                    lbChecks.Text += "- DESCANSO: " + i.CheckTime.ToString("dd /MMMM /yyyy  -  HH:mm:ss") + "\n";
                 }
             }
 

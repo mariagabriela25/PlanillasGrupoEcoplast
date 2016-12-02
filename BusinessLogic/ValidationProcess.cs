@@ -12,6 +12,7 @@ namespace BusinessLogic
     {
         Check checkin;
         Check checkout;
+        Check lastout;
 
         public TimeSpan allowedPositive;
         public TimeSpan allowedNegative;
@@ -52,12 +53,15 @@ namespace BusinessLogic
 
             weeklyAnomalies = list;
             correctLaboredDays = correctDays;
+
+            
         }
 
         public Boolean core()
         {
             checkin = null;
             checkout = null;
+            lastout = new Check();
 
             List<Schedule> schedules = new Schedule().GetDepSchedules(department);
 
@@ -70,7 +74,7 @@ namespace BusinessLogic
 
             while (currentDay <= lastWeekDay) {
 
-                List<Check> checks = new Check().GetChecks(employee, currentDay, nextDay);
+                List<Check> checks = new Check().GetChecksWithRests(employee, currentDay, nextDay);
                 if (checks == null)
                 {
                     checkin = null;
@@ -85,25 +89,28 @@ namespace BusinessLogic
                 else
                 {
 
-
                     for (int i = 0; i < checks.Count; i++)
                     {
+                        if (!checks[i].CheckType.Equals("2"))
+                        {
 
-                        if (checks[i].CheckTime.Date == currentDay && checkin == null && checks[i].CheckType.Equals("I"))
-                        {
-                            checkin = checks[i];
-                        }
-                        else if (checks[i].CheckType.Equals("I") && checkin != null)
-                        {
-                            break;
-                        }
-                        else if (checkin != null && checkout == null && checks[i].CheckType.Equals("O"))
-                        {
-                            checkout = checks[i];
-                            break;
+                            if (checks[i].CheckTime.Date == currentDay && checkin == null && checks[i].CheckType.Equals("I"))
+                            {
+                                checkin = checks[i];
+                            }
+                            else if (checks[i].CheckType.Equals("I") && checkin != null)
+                            {
+                                break;
+                            }
+                            else if (checkin != null && checkout == null && checks[i].CheckType.Equals("O"))
+                            {
+                                checkout = checks[i];
+                                lastout = checkout;
+                                break;
+                            }
                         }
                     }
-
+                    
                     if (checkin != null && checkout != null)
                     {
                         bool flag = false;
@@ -135,15 +142,34 @@ namespace BusinessLogic
                         }
 
                     }
-                    else if (checkin == null && checkout == null)
+
+                    else if (checkin == null)
                     {
-                        //MessageBox.Show("Dia no laborado, Dia: " + currentDay.Date);    
+                        Boolean flag = false; 
+                        foreach(Check c in checks)
+                        {
+                            if(c.CheckType.Equals("O") && c.CheckTime != lastout.CheckTime)
+                            {
+                                new AnomaliesManager().AddValue(employee, currentDay);
+                                flag = true;
+                                break;
+                                //MessageBox.Show("Marca Ausente, Dia: " + currentDay.Date);
+                            }
+
+                            if (!flag)
+                            {
+                                new AnomaliesManager().AddValue(employee, currentDay);
+                                break;
+                                //MessageBox.Show("Marca Ausente, Dia: " + currentDay.Date);
+                            }
+                        }
                     }
-                    else
-                    {
-                        new AnomaliesManager().AddValue(employee, currentDay);
-                        //MessageBox.Show("Marca Ausente, Dia: " + currentDay.Date);
-                    }
+
+                    //else
+                    //{
+                    //    new AnomaliesManager().AddValue(employee, currentDay);
+                    //    //MessageBox.Show("Marca Ausente, Dia: " + currentDay.Date);
+                    //}
 
                     checkin = null;
                     checkout = null;
