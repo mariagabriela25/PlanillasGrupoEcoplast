@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -10,11 +11,21 @@ using TransferObjects;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// Class DADepartment. Manages information from Departments, and connections with the database 
+    /// </summary>
     public class DADepartment
     {
 
+        /// <summary>
+        /// The connexion with the database
+        /// </summary>
         SqlConnection conexion = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
+        /// <summary>
+        /// Adds a new department.
+        /// </summary>
+        /// <param name="dep">The new department</param>
         public void addDepartment(TODepartment dep)
         {
             try
@@ -45,6 +56,10 @@ namespace DataAccess
             }
         }
 
+        /// <summary>
+        /// Modifies one department.
+        /// </summary>
+        /// <param name="dep"> the department to modified</param>
         public void modifyDepartment(TODepartment dep)
         {
             try
@@ -76,6 +91,10 @@ namespace DataAccess
         }
 
 
+        /// <summary>
+        /// Deletes one department.
+        /// </summary>
+        /// <param name="dep">The department to be deleted</param>
         public void deleteDepartment(TODepartment dep)
         {
             try
@@ -106,6 +125,10 @@ namespace DataAccess
         }
 
 
+        /// <summary>
+        /// Gets all departments.
+        /// </summary>
+        /// <returns>List<TODepartment> a list with all the departments</returns>
         public List<TODepartment> GetAllDepartments()
         {
             List<TODepartment> departments = new List<TODepartment>();
@@ -151,6 +174,11 @@ namespace DataAccess
         }
 
 
+        /// <summary>
+        /// Gets the department.
+        /// </summary>
+        /// <param name="Code">The code.</param>
+        /// <returns>TODepartment.</returns>
         public TODepartment GetDepartment(int Code)
         {
             TODepartment department = new TODepartment();
@@ -191,7 +219,12 @@ namespace DataAccess
         }
 
 
-        //opcional
+        //optional
+        /// <summary>
+        /// Searches one department.
+        /// </summary>
+        /// <param name="request">The request from the user</param>
+        /// <returns>TODepartment the department requested</returns>
         public TODepartment searchDepartment(String request)
         {
             TODepartment department = new TODepartment();

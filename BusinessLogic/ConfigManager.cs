@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,21 @@ using System.Windows.Forms;
 
 namespace BusinessLogic
 {
+    /// <summary>
+    /// Class ConfigManager. Represents the configurations settings in the system.
+    /// </summary>
     public class ConfigManager
     {
+        /// <summary>
+        /// The xdoc XML documents that stores the configuration settings
+        /// </summary>
         XmlDocument xdoc = new XmlDocument();
 
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns>System.Int32.</returns>
         public int GetValue(string name)
         {
             xdoc.Load("ConfigFile.xml");
@@ -29,6 +41,11 @@ namespace BusinessLogic
             return 0;
         }
 
+        /// <summary>
+        /// Sets the value.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="value">The value.</param>
         public void SetValue(string name, int value)
         {
             xdoc.Load("ConfigFile.xml");

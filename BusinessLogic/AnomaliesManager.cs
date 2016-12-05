@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +8,23 @@ using System.Xml;
 
 namespace BusinessLogic
 {
+    /// <summary>
+    /// Class AnomaliesManager, adds and removes anomalies from the XML Document
+    /// </summary>
     public class AnomaliesManager
     {
 
+        /// <summary>
+        /// The xdoc: the XML document where the anomalies are stored.
+        /// </summary>
         XmlDocument xdoc = new XmlDocument();
 
+        /// <summary>
+        /// Gets the values in the XML document
+        /// </summary>
+        /// <returns>
+        /// a list of anomalies
+        /// </returns>
         public List<Anomaly> GetValues()
         {
             xdoc.Load("AnomaliesFile.xml");
@@ -34,6 +47,11 @@ namespace BusinessLogic
             return list;
         }
 
+        /// <summary>
+        /// Adds a new anomalies on the XML Document
+        /// </summary>
+        /// <param name="code">The code of the employee</param>
+        /// <param name="value">The information of the anomalies</param>
         public void AddValue(int code, DateTime value)
         {
             xdoc.Load("AnomaliesFile.xml");
@@ -55,6 +73,11 @@ namespace BusinessLogic
             xdoc.Save("AnomaliesFile.xml");
         }
 
+        /// <summary>
+        /// Removes the anomalies of the XML document
+        /// </summary>
+        /// <param name="code">The code of the employee</param>
+        /// <param name="value">The information of the anomalies</param>
         public void RemoveValue(int code, DateTime value)
         {
             xdoc.Load("AnomaliesFile.xml");
@@ -85,6 +108,11 @@ namespace BusinessLogic
             xdoc.Save("AnomaliesFile.xml");
         }
 
+        /// <summary>
+        /// Specifies if the department received belongs to one of the anomalies  
+        /// </summary>
+        /// <param name="departmentCode">The department code</param>
+        /// <returns> true if the department do belong to one of the anomalies, false if not</returns>
         public Boolean DepartmentInAnomaly(int departmentCode)
         {
             Boolean exists = false;
