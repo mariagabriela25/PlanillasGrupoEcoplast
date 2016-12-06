@@ -10,10 +10,21 @@ using System.Windows.Forms;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// Class DAOSchedule. Manages information from Schedules, and connections with the database 
+    /// </summary>
     public class DAOSchedule
     {
+        /// <summary>
+        /// The connection with the database
+        /// </summary>
         SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
+        /// <summary>
+        /// Adds a new schedule.
+        /// </summary>
+        /// <param name="newSchedule">The new schedule to be added</param>
+        /// <returns>Boolean true if the schedule was successfully added, false if not</returns>
         public Boolean AddSchedule(TOSchedule newSchedule)
         {
             try
@@ -53,6 +64,11 @@ namespace DataAccess
             return true;
         }
 
+        /// <summary>
+        /// Deletes one schedule.
+        /// </summary>
+        /// <param name="scheduleCode">The schedule's code</param>
+        /// <returns>Boolean true if the schedule was removed, false if not</returns>
         public Boolean DeleteSchedule(String scheduleCode)
         {
             try
@@ -82,6 +98,10 @@ namespace DataAccess
             return true;
         }
 
+        /// <summary>
+        /// Modifies one schedule.
+        /// </summary>
+        /// <param name="schedule">The schedule to be modified</param>
         public void ModifySchedule(TOSchedule schedule)
         {
             try
@@ -125,6 +145,11 @@ namespace DataAccess
 
         }
 
+        /// <summary>
+        /// Gets the schedule by its code
+        /// </summary>
+        /// <param name="scheduleCode">The schedule code</param>
+        /// <returns>TOSchedule the schedule found by code</returns>
         public TOSchedule GetSchedule(String scheduleCode)
         {
             TOSchedule s = new TOSchedule();
@@ -197,6 +222,10 @@ namespace DataAccess
             return s;
         }
 
+        /// <summary>
+        /// Gets all schedules.
+        /// </summary>
+        /// <returns>List<TOSchedule> a list for schedules</returns>
         public List<TOSchedule> GetAllSchedules()
         {
             List<TOSchedule> schedules = new List<TOSchedule>();
@@ -268,6 +297,11 @@ namespace DataAccess
             return schedules;
         }
 
+        /// <summary>
+        /// Gets the schedule's department.
+        /// </summary>
+        /// <param name="depCode">The department code.</param>
+        /// <returns>a list with schedules that belong to the selected department</returns>
         public List<TOSchedule> GetSchedulesDep(int depCode)
         {
             List<TOSchedule> schedules = new List<TOSchedule>();

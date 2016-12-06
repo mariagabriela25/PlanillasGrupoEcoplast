@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,20 @@ namespace DataAccess
 {
 
 
+    /// <summary>
+    /// Class DAEmployee. Manages information from employees, and connections with the database 
+    /// </summary>
     public class DAEmployee
     {
+        /// <summary>
+        /// The connection with the database
+        /// </summary>
         SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
+        /// <summary>
+        /// Adds a new employee
+        /// </summary>
+        /// <param name="employee">The new employee</param>
         public void AddEmployee(TOEmployee employee)
         {
             try
@@ -48,6 +59,10 @@ namespace DataAccess
             }
         }
 
+        /// <summary>
+        /// Deletes one employee.
+        /// </summary>
+        /// <param name="employee">The employee to be deleted</param>
         public void DeleteEmployee(TOEmployee employee)
         {
             try
@@ -81,6 +96,10 @@ namespace DataAccess
             }
         }
 
+        /// <summary>
+        /// Gets all employees.
+        /// </summary>
+        /// <returns>List<TOEmployee> a list of employees </returns>
         public List<TOEmployee> GetAllEmployees()
         {
             List<TOEmployee> employees = new List<TOEmployee>();
@@ -131,6 +150,11 @@ namespace DataAccess
             return employees;
         }
 
+        /// <summary>
+        /// Gets one employee by code
+        /// </summary>
+        /// <param name="Code">The code of the employee</param>
+        /// <returns>TOEmployee the employee found by code</returns>
         public TOEmployee GetEmployee(int Code)
         {
             TOEmployee employee = new TOEmployee();
@@ -176,6 +200,10 @@ namespace DataAccess
             return employee;
         }
 
+        /// <summary>
+        /// Modifies one employee.
+        /// </summary>
+        /// <param name="employee">The employee to be modified</param>
         public void ModifyEmployee(TOEmployee employee)
         {
             try
@@ -210,6 +238,11 @@ namespace DataAccess
         }
 
 
+        /// <summary>
+        /// Gets the employee's department.
+        /// </summary>
+        /// <param name="departmentCode">The department code</param>
+        /// <returns>List<TOEmployee> a list of employees that belong to the department requested</returns>
         public List<TOEmployee> GetEmployeesDepartment(int departmentCode)
         {
 
@@ -261,6 +294,12 @@ namespace DataAccess
             return employees;
         }
 
+        /// <summary>
+        /// Gets the total hours per week.
+        /// </summary>
+        /// <param name="code">The code of the week</param>
+        /// <param name="weeknumber">The weeknumber.</param>
+        /// <returns>System.Double the total hours worked in that week</returns>
         public double GetTotalHoursPerWeek(int code, int weeknumber)
         {
 

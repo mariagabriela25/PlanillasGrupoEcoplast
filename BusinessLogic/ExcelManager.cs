@@ -8,8 +8,16 @@ using System.Windows.Forms;
 
 namespace BusinessLogic
 {
+    /// <summary>
+    /// Class ExcelManager. Connects with an external excel file and fills it with information
+    /// </summary>
     public class ExcelManager
     {
+        /// <summary>
+        /// Exports the information in the specified file.
+        /// </summary>
+        /// <param name="path">The path of the file</param>
+        /// <param name="week">The actual week</param>
         public void export(string path, int week)
         {
             Microsoft.Office.Interop.Excel.Application xla = new Microsoft.Office.Interop.Excel.Application();
@@ -119,7 +127,13 @@ namespace BusinessLogic
 
         }
 
+        /// <summary>
+        /// Clears the spaces in the external excel file
+        /// </summary>
+        /// <param name="ws">The excel file</param>
+        /// <returns> the Worksheet without certain information</returns>
         private Worksheet clearSpaces(Worksheet ws)
+
         {
             for (int i = 4; i < ws.UsedRange.Rows.Count; i++)
             {

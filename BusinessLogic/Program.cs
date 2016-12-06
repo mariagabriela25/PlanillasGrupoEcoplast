@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -7,6 +8,9 @@ using System.Windows.Forms;
 
 namespace BusinessLogic
 {
+    /// <summary>
+    /// Class Program. This class is the main class of the program. Is where the program starts its execution.
+    /// </summary>
     static class Program
     {
         /// <summary>

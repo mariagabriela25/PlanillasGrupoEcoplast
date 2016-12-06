@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,21 @@ using System.Windows.Forms;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// Class DAOWeekDetail. manages information about week's details, and the connection to the database
+    /// </summary>
     public class DAOWeekDetail
     {
+        /// <summary>
+        /// The connection to the database
+        /// </summary>
         SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
+        /// <summary>
+        /// Saves the week's detail.
+        /// </summary>
+        /// <param name="twd">The week detail transfer object.</param>
+        /// <returns>Boolean.</returns>
         public Boolean SaveWeekDetail(TOWorkWeekDetail twd)
         {
             try
@@ -50,6 +62,11 @@ namespace DataAccess
             return true;
         }
 
+        /// <summary>
+        /// Updates the week detail.
+        /// </summary>
+        /// <param name="twd">The week detail transfer object.</param>
+        /// <returns>Boolean.</returns>
         public Boolean UpdateWeekDetail(TOWorkWeekDetail twd)
         {
             try
@@ -83,6 +100,11 @@ namespace DataAccess
             return true;
         }
 
+        /// <summary>
+        /// Gets the week per number.
+        /// </summary>
+        /// <param name="weekNumber">The week number.</param>
+        /// <returns>List&lt;TOWorkWeekDetail&gt;.</returns>
         public List<TOWorkWeekDetail> getWeekPerNumber(int weekNumber)
         {
             List<TOWorkWeekDetail> list = new List<TOWorkWeekDetail>();
@@ -131,6 +153,10 @@ namespace DataAccess
             return list;
         }
 
+        /// <summary>
+        /// Gets the week numbers.
+        /// </summary>
+        /// <returns>a list of week's numbers</returns>
         public List<int> getWeekNumbers()
         {
             List<int> weeks = new List<int>();
@@ -170,6 +196,11 @@ namespace DataAccess
             return weeks;
         }
 
+        /// <summary>
+        /// Gets the week numbers.
+        /// </summary>
+        /// <param name="CodEmployee">The cod employee.</param>
+        /// <returns>a list of week's numbers by employee</returns>
         public List<int> getWeekNumbers(int CodEmployee)
         {
             List<int> weeks = new List<int>();
@@ -209,6 +240,11 @@ namespace DataAccess
             return weeks;
         }
 
+        /// <summary>
+        /// Determines whether [is week saved] [the specified week].
+        /// </summary>
+        /// <param name="week">The week selected</param>
+        /// <returns>Boolean true if was saved, false if not</returns>
         public Boolean isWeekSaved(int week)
         {
             Boolean result = false;

@@ -10,10 +10,23 @@ using System.Windows.Forms;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// Class DAOAnviz. Manages information about Anviz-database, and connections with this database
+    /// </summary>
     public class DAOAnviz
     {
+        /// <summary>
+        /// The conection with Anviz-database
+        /// </summary>
         SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
+        /// <summary>
+        /// Gets the checks from anviz-database
+        /// </summary>
+        /// <param name="id">The identifier from the employee</param>
+        /// <param name="inicio">The start of the interval</param>
+        /// <param name="fin">The end of the interval</param>
+        /// <returns>a list with checks</returns>
         public List<TOCheck> GetChecks(int id, DateTime inicio, DateTime fin)
         {
             try
@@ -68,6 +81,13 @@ namespace DataAccess
             return null;
         }
 
+        /// <summary>
+        /// Gets the checks with rests.
+        /// </summary>
+        /// <param name="id">The identifier from the employee</param>
+        /// <param name="inicio">The start of the interval.</param>
+        /// <param name="fin">The end of the interval.</param>
+        /// <returns>a list of checks with their rests</returns>
         public List<TOCheck> GetChecksWithRests(int id, DateTime inicio, DateTime fin)
         {
             try
@@ -122,6 +142,11 @@ namespace DataAccess
             return null;
         }
 
+        /// <summary>
+        /// Adds the day's detail.
+        /// </summary>
+        /// <param name="daydetail">The day detail to be added.</param>
+        /// <returns>true if was added, false if not</returns>
         public Boolean AddDayDetail(TOWorkDayDetail daydetail)
         {
             try
@@ -162,6 +187,12 @@ namespace DataAccess
 
             return true;
         }
+        /// <summary>
+        /// Gets the Checks by the date.
+        /// </summary>
+        /// <param name="date">The date in which to look</param>
+        /// <param name="type">The type of checks</param>
+        /// <returns>System.Decimal the total hours worked in that week</returns>
         public decimal checksbyDate(DateTime date, string type)
         {
             DateTime start = date + new TimeSpan(0, 0, 0);
