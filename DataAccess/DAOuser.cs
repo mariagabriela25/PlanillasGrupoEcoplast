@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -8,17 +9,39 @@ using System.Windows.Forms;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// Class DAOuser. Manages information about users, and the connections to the database.
+    /// </summary>
     public class DAOuser
     {
+        /// <summary>
+        /// Gets or sets the identifier of the user
+        /// </summary>
+        /// <value>The identifier.</value>
         public int ID { get; set; }
+        /// <summary>
+        /// Gets or sets the user's password.
+        /// </summary>
+        /// <value>The password.</value>
         public string Password { get; set; }
 
+        /// <summary>
+        /// The connection to the database
+        /// </summary>
         SqlConnection con = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DAOuser"/> class.
+        /// </summary>
         public DAOuser()
         {
         }
 
+        /// <summary>
+        /// Grants the access to the system
+        /// </summary>
+        /// <param name="password">The password of the user</param>
+        /// <returns>Boolean if its correct, false if not</returns>
         public Boolean grantAccess(string password)
         {
             try
@@ -64,6 +87,12 @@ namespace DataAccess
             return false;
         }
 
+        /// <summary>
+        /// Changes the user's password
+        /// </summary>
+        /// <param name="oldpsw">The old password.</param>
+        /// <param name="newpsw">The new password.</param>
+        /// <returns>Boolean true if the change was made, false if not</returns>
         public Boolean ChangePsw(String oldpsw, String newpsw)
         {
 

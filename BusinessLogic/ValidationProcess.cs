@@ -1,4 +1,5 @@
-﻿using DataAccess;
+﻿
+using DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,33 +9,97 @@ using System.Windows.Forms;
 
 namespace BusinessLogic
 {
-   public class ValidationProcess
+    /// <summary>
+    /// Class ValidationProcess.
+    /// </summary>
+    public class ValidationProcess
     {
+        /// <summary>
+        /// The checkin the check that represents an entrance
+        /// </summary>
         Check checkin;
+        /// <summary>
+        /// The checkout the check that represents an exit
+        /// </summary>
         Check checkout;
+        /// <summary>
+        /// The lastout the last check that represents an exit off all the lastouts.
+        /// </summary>
         Check lastout;
 
+        /// <summary>
+        /// The allowed positive (after the hour of entrance)
+        /// </summary>
         public TimeSpan allowedPositive;
+        /// <summary>
+        /// The allowed negative (before the hour of entrance)
+        /// </summary>
         public TimeSpan allowedNegative;
+        /// <summary>
+        /// The penalty positive (after the entrance)
+        /// </summary>
         public TimeSpan penaltyPositive;
+        /// <summary>
+        /// The penalty negative (before the entrance)
+        /// </summary>
         public TimeSpan penaltyNegative;
+        /// <summary>
+        /// The interval
+        /// </summary>
         public TimeSpan interval;
 
 
+        /// <summary>
+        /// The week number
+        /// </summary>
         int weekNumber;
 
+        /// <summary>
+        /// The last week day
+        /// </summary>
         DateTime lastWeekDay;
+        /// <summary>
+        /// The first week day
+        /// </summary>
         DateTime firstWeekDay;
 
+        /// <summary>
+        /// The current day
+        /// </summary>
         DateTime currentDay;
+        /// <summary>
+        /// The next day
+        /// </summary>
         DateTime nextDay;
 
+        /// <summary>
+        /// The department
+        /// </summary>
         int department;
+        /// <summary>
+        /// The employee 
+        /// </summary>
         int employee;
 
+        /// <summary>
+        /// The weekly anomalies. A list of all the anomalies
+        /// </summary>
         List<Anomaly> weeklyAnomalies;
+        /// <summary>
+        /// Gets or sets the correct labored days.
+        /// </summary>
+        /// <value>The correct labored days.</value>
         public List<LaboredDay> correctLaboredDays { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidationProcess"/> class.
+        /// </summary>
+        /// <param name="weekNumber">The week number.</param>
+        /// <param name="lastWeekDay">The last week day.</param>
+        /// <param name="departmentCode">The department's code.</param>
+        /// <param name="employeeCode">The employee's code.</param>
+        /// <param name="list">The list of anomalies</param>
+        /// <param name="correctDays">The correct days.</param>
         public ValidationProcess(int weekNumber, DateTime lastWeekDay, int departmentCode, int employeeCode, List<Anomaly> list, List<LaboredDay> correctDays) {
 
             allowedPositive = new TimeSpan(0, new ConfigManager().GetValue("allowedPositive"), 0);
@@ -57,6 +122,10 @@ namespace BusinessLogic
             
         }
 
+        /// <summary>
+        /// The process that validates the checks with the schedule of the employee
+        /// </summary>
+        /// <returns>Boolean true if the validation is correct, false if it is an anomaly</returns>
         public Boolean core()
         {
             checkin = null;
@@ -181,6 +250,12 @@ namespace BusinessLogic
             return true;
         }
 
+        /// <summary>
+        /// Sets the check in after being formated
+        /// </summary>
+        /// <param name="timein">The time in</param>
+        /// <param name="checkin">The check in.</param>
+        /// <returns>Boolean.</returns>
         public Boolean SetCheckIn(DateTime timein, DateTime checkin)
         {
             TimeSpan range = timein.TimeOfDay.Subtract(checkin.TimeOfDay);
@@ -194,6 +269,12 @@ namespace BusinessLogic
             
         }
 
+        /// <summary>
+        /// Sets the check out after being formated
+        /// </summary>
+        /// <param name="timeout">The timeout.</param>
+        /// <param name="checkout">The checkout.</param>
+        /// <returns>Boolean.</returns>
         public Boolean SetCheckOut(DateTime timeout, DateTime checkout)
         {
             TimeSpan range = timeout.TimeOfDay.Subtract(checkout.TimeOfDay);
@@ -207,6 +288,11 @@ namespace BusinessLogic
             }
         }
 
+        /// <summary>
+        /// Rounds the specified date time.
+        /// </summary>
+        /// <param name="dateTime">The date time.</param>
+        /// <returns>DateTime </returns>
         private DateTime Round(DateTime dateTime)
         {
             var halfIntervelTicks = ((interval.Ticks + 1) >> 1);
