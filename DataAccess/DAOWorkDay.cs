@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,21 @@ using System.Windows.Forms;
 
 namespace DataAccess
 {
+    /// <summary>
+    /// Class DAOWorkDay.
+    /// </summary>
     public class DAOWorkDay
     {
+        /// <summary>
+        /// The conex
+        /// </summary>
         SqlConnection conex = new SqlConnection(DataAccess.Properties.Settings.Default.StringConexAnviz);
 
+        /// <summary>
+        /// Adds the work day detail.
+        /// </summary>
+        /// <param name="workday">The workday.</param>
+        /// <returns>Boolean.</returns>
         public Boolean AddWorkDayDetail(TOWorkDayDetail workday)
         {
             try
@@ -51,6 +63,12 @@ namespace DataAccess
             return true;
         }
 
+        /// <summary>
+        /// Updates the work day detail.
+        /// </summary>
+        /// <param name="workday">The workday</param>
+        /// <param name="dbCode">The database code</param>
+        /// <returns>Boolean true if was updated, false if not</returns>
         public Boolean UpdateWorkDayDetail(TOWorkDayDetail workday, int dbCode)
         {
             try
@@ -83,6 +101,11 @@ namespace DataAccess
             return true;
         }
 
+        /// <summary>
+        /// Gets the work day.
+        /// </summary>
+        /// <param name="tow">The transfer object </param>
+        /// <returns>TOWorkDayDetail the object with new information</returns>
         public TOWorkDayDetail getWorkDay(TOWorkDayDetail tow)
         {
             TOWorkDayDetail workDay = new TOWorkDayDetail();
@@ -123,6 +146,12 @@ namespace DataAccess
             return workDay;
         }
 
+        /// <summary>
+        /// Gets the worked weeks.
+        /// </summary>
+        /// <param name="codEmpl">The cod of the employee</param>
+        /// <param name="codWeek">The cod week.</param>
+        /// <returns>a list with day details</returns>
         public List<TOWorkDayDetail> getWorkedWeeks(int codEmpl, int codWeek)
         {
             List<TOWorkDayDetail> list = new List<TOWorkDayDetail>();
@@ -182,6 +211,11 @@ namespace DataAccess
 
         }
 
+        /// <summary>
+        /// Gets the employees calculated week.
+        /// </summary>
+        /// <param name="week">The week.</param>
+        /// <returns>a list with calcutaded weeks</returns>
         public List<int> getEmployeesCalculatedWeek(int week)
         {
             List<int> returnList = new List<int>();
@@ -221,6 +255,11 @@ namespace DataAccess
             return returnList;
         }
 
+        /// <summary>
+        /// Calculateds the departments.
+        /// </summary>
+        /// <param name="week">The week.</param>
+        /// <returns>the week of the calculated departments</returns>
         public int CalculatedDepartments(int week)
         {
             int result = 0;
@@ -259,6 +298,12 @@ namespace DataAccess
             return result;
         }
 
+        /// <summary>
+        /// Determines whether [is department registered] [the specified d code].
+        /// </summary>
+        /// <param name="dCode">The department's code.</param>
+        /// <param name="week">The current week</param>
+        /// <returns>Boolean true if the department was registred, false if not</returns>
         public Boolean isDepartmentRegistered(int dCode, int week)
         {
             Boolean result = false;
