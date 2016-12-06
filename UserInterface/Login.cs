@@ -46,9 +46,9 @@ namespace UserInterface
                 User user = new User(1, metroTextBox2.Text.Trim());
                 if (user.login())
                 {
-                    MainForm mf = new MainForm();
-                    mf.Visible = true;
                     this.Hide();
+                    new MainForm().ShowDialog();
+                    this.Close();
                 }
             }
             else

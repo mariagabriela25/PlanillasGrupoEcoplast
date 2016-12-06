@@ -28,8 +28,9 @@ namespace UserInterface
         {
             InitializeComponent();
             DateTime date = DateTime.Now;
-            calculationWeek = System.Globalization.CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
-            calculationWeek -= 1;
+            //calculationWeek = System.Globalization.CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            //calculationWeek -= 1;
+            calculationWeek = 48;
         }
 
     
@@ -182,7 +183,6 @@ namespace UserInterface
 
         void CreateReport()
         {
-            calculationWeek = 47;
             List<int> eList = new Employee().getEmployeesCalculatedWeek(calculationWeek);
 
             foreach (int emp in eList)

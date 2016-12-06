@@ -107,56 +107,56 @@ namespace UserInterface
                         break;
                     }
                 }
-                if (i==1)
+                if (i==0)
                 { 
-                    setLabels(lbDay1, daysList[n].Day, lbDate1, sendDate,
+                    setLabels(lbDay1, daysList[i].Day, lbDate1, sendDate,
                         lbH1, txtHours1, daysList[n].TotalHours, lbN1, txtNote1, daysList[n].Note,
                         lbCodeDB1, daysList[n].ID);
                     iniRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0,0,0);
                 }
-                else if (i == 2)
+                else if (i == 1)
                 {
-                    setLabels(lbDay2, daysList[n].Day, lbDate2, sendDate,
+                    setLabels(lbDay2, daysList[i].Day, lbDate2, sendDate,
                         lbH2, txtHours2, daysList[n].TotalHours, lbN2, txtNote2, daysList[n].Note,
                         lbCodeDB2, daysList[n].ID);
                     finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);
                 }
-                else if (i == 3)
+                else if (i == 2)
                 {
-                    setLabels(lbDay3, daysList[n].Day, lbDate3, sendDate,
+                    setLabels(lbDay3, daysList[i].Day, lbDate3, sendDate,
                         lbH3, txtHours3, daysList[n].TotalHours, lbN3, txtNote3, daysList[n].Note,
                         lbCodeDB3, daysList[n].ID);
                     finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);
                 }
-                else if (i == 4)
+                else if (i == 3)
                 {
-                    setLabels(lbDay4, daysList[n].Day, lbDate4, sendDate,
+                    setLabels(lbDay4, daysList[i].Day, lbDate4, sendDate,
                         lbH4, txtHours4, daysList[n].TotalHours, lbN4, txtNote4, daysList[n].Note,
                         lbCodeDB4, daysList[n].ID);
                     finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);
                 }
-                else if (i == 5)
+                else if (i == 4)
                 {
-                    setLabels(lbDay5, daysList[n].Day, lbDate5, sendDate,
+                    setLabels(lbDay5, daysList[i].Day, lbDate5, sendDate,
                         lbH5, txtHours5, daysList[n].TotalHours, lbN5, txtNote5, daysList[n].Note,
                         lbCodeDB5, daysList[n].ID);
                     finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);
                 }
-                else if (i == 6)
+                else if (i == 5)
                 {
-                    setLabels(lbDay6, daysList[n].Day, lbDate6, sendDate,
+                    setLabels(lbDay6, daysList[i].Day, lbDate6, sendDate,
                         lbH6, txtHours6, daysList[n].TotalHours, lbN6, txtNote6, daysList[n].Note,
                         lbCodeDB6, daysList[n].ID);
                     finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);
                 }
-                else if (i == 7)
+                else if (i == 6)
                 {
-                    setLabels(lbDay7, 7, lbDate7, sendDate,
+                    setLabels(lbDay7, daysList[i].Day, lbDate7, sendDate,
                            lbH7, txtHours7, daysList[n].TotalHours, lbN7, txtNote7, daysList[n].Note,
                            lbCodeDB7, daysList[n].ID);
                     finRange = new DateTime(daysList[n].Date.Year, daysList[n].Date.Month, daysList[n].Date.Day, 0, 0, 0);
                 }
-                i += 1;
+                i++;
             }
         }
 
@@ -185,7 +185,7 @@ namespace UserInterface
                 case 6:
                     rDay = "Sábado";
                     break;
-                case 7:
+                case 0:
                     rDay = "Domingo";
                     break;
             }

@@ -80,7 +80,8 @@ namespace UserInterface
 
         private void DayReviewUserControl_Load(object sender, EventArgs e)
         {
-            mnWeekNum.Text = (System.Globalization.CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday) -1) + "";
+            //mnWeekNum.Text = (System.Globalization.CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday) -1) + "";
+            mnWeekNum.Text = "48";
             List<Department> list = new Department().GetAllDepartment();
             cbDepart.DisplayMember = "Name";
             cbDepart.ValueMember = "Code";

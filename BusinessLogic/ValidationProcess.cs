@@ -88,72 +88,76 @@ namespace BusinessLogic
                 }
                 else
                 {
-
-                    for (int i = 0; i < checks.Count; i++)
-                    {
-                        if (!checks[i].CheckType.Equals("2"))
-                        {
-
-                            if (checks[i].CheckTime.Date == currentDay && checkin == null && checks[i].CheckType.Equals("I"))
-                            {
-                                checkin = checks[i];
-                            }
-                            else if (checks[i].CheckType.Equals("I") && checkin != null)
-                            {
-                                break;
-                            }
-                            else if (checkin != null && checkout == null && checks[i].CheckType.Equals("O"))
-                            {
-                                checkout = checks[i];
-                                lastout = checkout;
-                                break;
-                            }
-                        }
-                    }
                     
-                    if (checkin != null && checkout != null)
-                    {
-                        bool flag = false;
-                        for (int i = 0; i < schedules.Count; i++)
+
+                        for (int i = 0; i < checks.Count; i++)
                         {
-
-                            if (SetCheckIn(schedules[i].InitialHour, checkin.CheckTime) &&
-                                SetCheckOut(schedules[i].finalHour, checkout.CheckTime))
+                            if (!checks[i].CheckType.Equals("DS"))
                             {
-                                
-                                flag = true;
-                                double ordinaryhours = schedules[i].OrdinaryHours;
-                                LaboredDay ld = new LaboredDay(employee, ordinaryhours);
-                                ld.AddCheckedCheck(checkin);
-                                ld.AddCheckedCheck(checkout);
-                                correctLaboredDays.Add(ld);
-                                ld.currentDay = currentDay;
 
-                                //new WorkDayDetail(employee, ordinaryhours, ordinaryhours, currentDay, null, true, weekNumber, 1).AddWorkDay();
-                                //MessageBox.Show("Dia Correcto, Dia: " + currentDay.Date);
-                                break;
+                                if (checks[i].CheckTime.Date == currentDay && checkin == null && checks[i].CheckType.Equals("Entrada"))
+                                {
+                                    checkin = checks[i];
+                                }
+                                else if (checks[i].CheckType.Equals("Entrada") && checkin != null)
+                                {
+                                    break;
+                                }
+                                else if (checkin != null && checkout == null && checks[i].CheckType.Equals("Salida"))
+                                {
+                                    checkout = checks[i];
+                                    lastout = checkout;
+                                    break;
+                                }
                             }
                         }
-                        if(!flag)
+
+                        if (checkin != null && checkout != null)
                         {
-                            new AnomaliesManager().AddValue(employee, currentDay);
-                            //MessageBox.Show("Intervalo invalido, Dia: " + currentDay.Date);
+                            bool flag = false;
+                            for (int i = 0; i < schedules.Count; i++)
+                            {
 
-                        }
+                                if (SetCheckIn(schedules[i].InitialHour, checkin.CheckTime) &&
+                                    SetCheckOut(schedules[i].finalHour, checkout.CheckTime))
+                                {
 
-                    }
+                                    flag = true;
+                                    double ordinaryhours = schedules[i].OrdinaryHours;
+                                    LaboredDay ld = new LaboredDay(employee, ordinaryhours);
+                                    ld.AddCheckedCheck(checkin);
+                                    ld.AddCheckedCheck(checkout);
+                                    correctLaboredDays.Add(ld);
+                                    ld.currentDay = currentDay;
 
-                    else if (checkin == null)
-                    {
-                        Boolean flag = false; 
-                        foreach(Check c in checks)
-                        {
-                            if(c.CheckType.Equals("O") && c.CheckTime != lastout.CheckTime)
+                                    //new WorkDayDetail(employee, ordinaryhours, ordinaryhours, currentDay, null, true, weekNumber, 1).AddWorkDay();
+                                    //MessageBox.Show("Dia Correcto, Dia: " + currentDay.Date);
+                                    break;
+                                }
+                            }
+                            if (!flag)
                             {
                                 new AnomaliesManager().AddValue(employee, currentDay);
-                                flag = true;
-                                break;
-                                //MessageBox.Show("Marca Ausente, Dia: " + currentDay.Date);
+                                //MessageBox.Show("Intervalo invalido, Dia: " + currentDay.Date);
+
+                            }
+
+                        }
+
+                        else if (checkin == null)
+                        {
+                            Boolean flag = false;
+                            foreach (Check c in checks)
+                            {
+                                if (c.CheckType.Equals("Salida") && c.CheckTime != lastout.CheckTime)
+                                {
+                                    new AnomaliesManager().AddValue(employee, currentDay);
+                                    flag = true;
+                                    break;
+                                    //MessageBox.Show("Marca Ausente, Dia: " + currentDay.Date);
+                                }
+
+
                             }
 
                             if (!flag)
@@ -163,20 +167,22 @@ namespace BusinessLogic
                                 //MessageBox.Show("Marca Ausente, Dia: " + currentDay.Date);
                             }
                         }
+
+                        else if (checkin != null && checkout == null)
+
+                        {
+                            new AnomaliesManager().AddValue(employee, currentDay);
+
+                            //messagebox.show("marca ausente, dia: " + currentday.date);
+                        }
+
+                        checkin = null;
+                        checkout = null;
+
+                        currentDay = nextDay.Date + timein;
+                        nextDay = nextDay.AddDays(1);
                     }
-
-                    //else
-                    //{
-                    //    new AnomaliesManager().AddValue(employee, currentDay);
-                    //    //MessageBox.Show("Marca Ausente, Dia: " + currentDay.Date);
-                    //}
-
-                    checkin = null;
-                    checkout = null;
-
-                    currentDay = nextDay.Date + timein;
-                    nextDay = nextDay.AddDays(1);
-                }
+                
             }
             return true;
         }

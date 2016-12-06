@@ -55,11 +55,11 @@ namespace UserInterface
                 }
                 foreach (Check itemC in item.checkedChecks)
                 {
-                    if (itemC.CheckType == "I")
+                    if (itemC.CheckType == "Entrada")
                     {
                         entrance = itemC;
                     }
-                    else if (itemC.CheckType == "O")
+                    else if (itemC.CheckType == "Salida")
                     {
                         exit = itemC;
                     }

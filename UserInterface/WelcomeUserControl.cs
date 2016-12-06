@@ -56,6 +56,7 @@ namespace UserInterface
             Controls.Add(chart);
             ((System.ComponentModel.ISupportInitialize)(chart)).EndInit();
             workerThread = new Thread(doWork);
+            workerThread.IsBackground = true;
             workerThread.Start();
             CheckForIllegalCrossThreadCalls = false;
         }
